@@ -1,0 +1,48 @@
+---
+import "@fontsource/atkinson-hyperlegible/400.css";
+import "@fontsource/atkinson-hyperlegible/700.css";
+import "@fontsource-variable/bricolage-grotesque/opsz.css";
+import "../styles/global.css";
+import { RULES } from "../data/rules.js";
+import { LAUNCHED } from "../data/site.js";
+
+interface Props {
+  title: string;
+  description: string;
+}
+const { title, description } = Astro.props;
+const fullTitle = title === "CarePayNY" ? title : `${title} | CarePayNY`;
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{fullTitle}</title>
+  <meta name="description" content={description}>
+  {!LAUNCHED && <meta name="robots" content="noindex, nofollow">}
+  <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site)}>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="inner">
+      <a class="brand" href="/">CarePay<span>NY</span></a>
+      <nav class="site-nav" aria-label="Main">
+        <a href="/">Pay check</a>
+        <a href="/about/">About</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <slot />
+  </main>
+  <footer class="wrap">
+    <div class="disclaimer">
+      <p><strong>Estimates, not legal advice.</strong> CarePayNY explains New York's home care pay rules as of {RULES.lastReviewed} and can't account for every situation. Union contracts (such as 1199SEIU), shift differentials, holiday pay, paid time off and other benefits can change what you're owed. Confirm with the Department of Labor or a lawyer before acting.</p>
+      <p>We're independent and not affiliated with the New York State Department of Health, the Department of Labor, PPL or Medicaid. Rules version {RULES.version}.</p>
+    </div>
+  </footer>
+</body>
+</html>

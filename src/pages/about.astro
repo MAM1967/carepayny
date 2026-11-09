@@ -1,0 +1,24 @@
+---
+import Base from "../layouts/Base.astro";
+import { RULES } from "../data/rules.js";
+import { CONTACT_EMAIL } from "../data/site.js";
+---
+<Base title="About CarePayNY" description="Who runs CarePayNY, how we check New York's home care pay rules, and how to report a mistake.">
+  <div class="wrap prose">
+    <h1>About CarePayNY</h1>
+    <p>CarePayNY is a free, independent website for home care aides, home health aides and CDPAP caregivers in New York. It explains the state's pay rules in plain language and lets you check one week of pay against them.</p>
+
+    <h2>How we check the rules</h2>
+    <p>Every number in the calculator comes from a published source: New York State law, the Department of Labor, or the Department of Health. Each figure has an effective date, and the whole rule set is reviewed before every change in rates. The rules in use now are version {RULES.version}, in effect since {RULES.effective} and last reviewed on {RULES.lastReviewed}.</p>
+
+    <h2>What we don't do</h2>
+    <ul>
+      <li>We don't give legal advice or file claims for you.</li>
+      <li>We don't save, sell or share anything you type into the calculator. It runs on your own phone or computer.</li>
+      <li>We don't run ads on the calculator.</li>
+    </ul>
+
+    <h2>Found a mistake?</h2>
+    <p>Tell us at <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a> ({CONTACT_EMAIL}). We fix confirmed errors within 48 hours and list every correction on this site.</p>
+  </div>
+</Base>
