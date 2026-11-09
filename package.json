@@ -1,0 +1,21 @@
+{
+  "name": "carepayny",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "CarePayNY: free pay calculator and guides for New York home care workers",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "test": "node --test tests/*.test.js"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "@fontsource-variable/bricolage-grotesque": "5.3.0",
+    "@fontsource/atkinson-hyperlegible": "5.3.0",
+    "astro": "7.4.2"
+  }
+}
