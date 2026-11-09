@@ -85,7 +85,7 @@ import { RULES } from "../data/rules.js";
       </fieldset>
     </form>
 
-    <aside class="card stub" aria-live="polite">
+    <aside class="card stub" id="results" aria-live="polite">
       <h2>What you should be paid</h2>
       <div id="status" class="status"></div>
       <table id="lines"></table>
@@ -120,6 +120,13 @@ import { RULES } from "../data/rules.js";
       {RULES.sources.map((s) => <li><a href={s.url}>{s.label}</a></li>)}
     </ul>
   </section>
+</div>
+<div class="result-bar" id="resultBar" data-status="ok">
+  <div class="result-bar-text">
+    <strong id="barHeadline">Looks right</strong>
+    <span id="barAmount"></span>
+  </div>
+  <a class="result-bar-link" href="#results">See details</a>
 </div>
 </Base>
 
@@ -156,6 +163,9 @@ function render() {
     bad: "Based on what you entered, you may be owed more. See below."
   }[r.status];
   st.innerHTML = `<strong>${headline}</strong><span>${sub}</span>`;
+  $("resultBar").dataset.status = r.status;
+  $("barHeadline").textContent = headline;
+  $("barAmount").textContent = `You should get ${money(r.expectedGross)} this week`;
 
   const rows = [
     ["Minimum hourly wage for you", money(r.minRate)],
@@ -207,5 +217,13 @@ $("copyBtn").addEventListener("click", async () => {
 $("resetBtn").addEventListener("click", () => { $("f").reset(); $("copyMsg").textContent = ""; render(); });
 
 initStatic();
+
+// Phones: hide the pinned result bar while the full results are on screen.
+const bar = $("resultBar");
+if ("IntersectionObserver" in window) {
+  new IntersectionObserver(([entry]) => {
+    bar.classList.toggle("is-hidden", entry.isIntersecting);
+  }, { threshold: 0.15 }).observe($("results"));
+}
 render();
 </script>
