@@ -101,3 +101,27 @@ section.info ul { margin: 0; padding-left: 20px; display: grid; gap: 6px; }
 .prose { max-width: 70ch; }
 .prose h1 { font: 800 clamp(1.7rem, 4vw, 2.2rem)/1.15 var(--font-display); text-wrap: balance; }
 .prose h2 { font: 600 1.3rem/1.3 var(--font-display); margin-top: 1.6em; }
+
+/* Pinned result bar for phones: the verdict stays visible while filling in the form. */
+.result-bar { display: none; }
+@media (max-width: 879px) {
+  body { padding-bottom: calc(76px + env(safe-area-inset-bottom)); }
+  .result-bar {
+    display: flex; align-items: center; justify-content: space-between; gap: 12px;
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 20;
+    padding: 12px 16px calc(12px + env(safe-area-inset-bottom));
+    background: var(--card); border-top: 4px solid var(--ok);
+    box-shadow: 0 -2px 12px rgb(0 0 0 / 0.08);
+    transition: transform .2s ease;
+  }
+  .result-bar[data-status="check"] { border-top-color: var(--warn); background: var(--warn-bg); }
+  .result-bar[data-status="bad"] { border-top-color: var(--bad); background: var(--bad-bg); }
+  .result-bar[data-status="ok"] { background: var(--ok-bg); }
+  .result-bar.is-hidden { transform: translateY(110%); }
+  .result-bar-text { display: grid; gap: 2px; min-width: 0; }
+  .result-bar-text strong { font: 800 1.05rem/1.2 var(--font-display); }
+  .result-bar-text span { font-size: .9rem; font-variant-numeric: tabular-nums; }
+  .result-bar-link { flex: none; font-weight: 700; color: var(--accent); background: var(--card); border: 1.5px solid var(--accent); border-radius: 10px; padding: 8px 12px; text-decoration: none; }
+  .result-bar-link:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+}
+@media (prefers-reduced-motion: reduce) { .result-bar { transition: none; } }
