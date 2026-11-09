@@ -28,7 +28,10 @@ const fullTitle = title === "CarePayNY" ? title : `${title} | CarePayNY`;
   <a class="skip" href="#main">Skip to content</a>
   <header class="site-header">
     <div class="inner">
-      <a class="brand" href="/">CarePay<span>NY</span></a>
+      <a class="brand" href="/" aria-label="CarePayNY home">
+        <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><rect width="64" height="64" rx="16"/><path class="heart" d="M32 51C32 51 12 39.5 12 25.5C12 18.5 17.5 14 23.5 14C27.3 14 30.4 16 32 19C33.6 16 36.7 14 40.5 14C46.5 14 52 18.5 52 25.5C52 39.5 32 51 32 51Z"/><path class="check" d="M23.5 31L29.5 37L41 25"/></svg>
+        <span class="brand-name">CarePay<span>NY</span></span>
+      </a>
       <nav class="site-nav" aria-label="Main">
         <a href="/">Pay check</a>
         <a href="/about/">About</a>
