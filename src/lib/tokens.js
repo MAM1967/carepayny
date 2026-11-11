@@ -1,7 +1,7 @@
 // Pay figures used in guide pages. Pages write {{token}} instead of a number,
 // so every rate comes from src/data/rules.js (CLAUDE.md rule 2) and translators
 // never retype a number. An unknown token stops the build.
-import { RULES } from "../data/rules.js";
+import { RULES, RULES_BY_YEAR } from "../data/rules.js";
 
 const money = (n) => "$" + n.toFixed(2);
 const reg = RULES.regions;
@@ -24,6 +24,21 @@ export const TOKENS = {
   "ot.times": RULES.overtime.multiplier === 1.5 ? "time and a half (1.5 times your rate)" : `${RULES.overtime.multiplier} times your rate`,
   "livein.hours": String(RULES.liveIn.paidHours)
 };
+
+// Year-specific figures, e.g. {{2027.min.nyc}}, for pages that show more than one year.
+const show = (n) => (n == null ? "not posted" : money(n));
+for (const [year, R] of Object.entries(RULES_BY_YEAR)) {
+  for (const [key, reg] of Object.entries(R.regions)) {
+    TOKENS[`${year}.min.${key}`] = show(reg.hcaMin);
+    TOKENS[`${year}.ppl.${key}`] = show(reg.pplBase);
+    if (reg.wpTotal != null) {
+      TOKENS[`${year}.wp.${key}.benefit`] = money(reg.wpBenefit);
+      TOKENS[`${year}.wp.${key}.total`] = money(reg.wpTotal);
+    }
+  }
+  TOKENS[`${year}.general.nyc`] = money(R.regions.nyc.generalMin);
+  TOKENS[`${year}.general.rest`] = money(R.regions.rest.generalMin);
+}
 
 export function fillTokens(text, file = "") {
   return text.replace(/\{\{\s*([\w.]+)\s*\}\}/g, (_, key) => {

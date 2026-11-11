@@ -62,7 +62,7 @@ export function computeWeek(i, R = RULES) {
     flags.push({ level: "bad", text: `Your hourly rate (${money(rate)}) is below the minimum of ${money(minRate)} that applies to you by ${money(rateShort)} an hour.` });
   }
   // CDPAP: PPL publishes its own base wage, which is above the state minimum downstate.
-  const pplRate = employer === "cdpap" && reg.pplBase != null ? reg.pplBase : null;
+  const pplRate = employer === "cdpap" && reg.pplBase != null && reg.pplBase >= minRate ? reg.pplBase : null;
   const pplShort = pplRate != null ? r2(Math.max(0, pplRate - Math.max(rate, minRate))) : 0;
   if (pplShort > 0) {
     flags.push({ level: "warn", text: `PPL says its base pay for CDPAP is ${money(pplRate)} an hour when the person you care for lives in ${reg.label} (since ${R.ppl.effective}). The rate you entered is ${money(pplShort)} less than that.` });

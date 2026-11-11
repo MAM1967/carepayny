@@ -5,6 +5,8 @@ nav: "What changed"
 order: 14
 lastChecked: "November 11, 2026"
 sources:
+  - label: "NYS Governor: New York State Minimum Wage for 2027"
+    url: "https://governor.ny.gov/new-york-state-minimum-wage-2027"
   - label: "amNewYork Law: judge gives final approval to PPL settlement"
     url: "https://www.amny.com/law/federal-judge-finalizes-home-aides-settlement/"
   - label: "NYS Department of Health: MLTC Policy 26.02 (excessive hours)"
@@ -27,6 +29,7 @@ Newest first. Each entry links to its source at the bottom of this page.
 
 | Date | What changed |
 | --- | --- |
+| January 1, 2027 (coming) | The state minimum for home care aides goes up to {{2027.min.nyc}} in New York City, Long Island and Westchester, and {{2027.min.rest}} in the rest of the state. The general minimum wage does not change. More: [Your pay rate in CDPAP](/cdpap/pay-rate/). |
 | November 10, 2026 | A federal judge gave final approval to the $162 million PPL settlement for downstate PAs. More: [The PPL court settlement](/cdpap/ppl-settlement/). |
 | July 22, 2026 | The Department of Health issued MLTC Policy 26.02. PPL will send health plans a report every two weeks on PAs who work very long hours. |
 | July 21, 2026 | Settlement notices were sent to downstate PAs by email and text. |
