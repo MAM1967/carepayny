@@ -105,7 +105,7 @@ import { RULES } from "../data/rules.js";
         <li>Ask your agency's payroll office for your pay notice and your Wage Parity notice. You have a right to both.</li>
         <li>CDPAP caregivers: check your timesheets in your PPL account at <a href="https://pplfirst.com/">pplfirst.com</a>.</li>
         <li>Free legal help: <a href="https://legalaidnyc.org/">The Legal Aid Society</a> helps home care workers with unpaid wages.</li>
-        <li>File a wage claim with the <a href="https://dol.ny.gov/">New York State Department of Labor</a>. It's free and you can do it without a lawyer.</li>
+        <li>The <a href="https://dol.ny.gov/">New York State Department of Labor</a> takes wage claims. It's free to file a wage claim.</li>
       </ul>
     </div>
     <div class="card">
@@ -211,7 +211,7 @@ $("f").addEventListener("input", render);
 $("f").addEventListener("change", render);
 $("f").addEventListener("submit", e => e.preventDefault());
 $("copyBtn").addEventListener("click", async () => {
-  try { await navigator.clipboard.writeText(lastSummary); $("copyMsg").textContent = "Copied. Paste it into a message or email to your agency, PPL or a lawyer."; }
+  try { await navigator.clipboard.writeText(lastSummary); $("copyMsg").textContent = "Copied."; }
   catch { $("copyMsg").textContent = "Your browser blocked copying. Select the numbers above and copy them by hand."; }
 });
 $("resetBtn").addEventListener("click", () => { $("f").reset(); $("copyMsg").textContent = ""; render(); });
