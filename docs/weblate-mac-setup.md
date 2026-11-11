@@ -1,6 +1,6 @@
 # Weblate on the dedicated MacBook: setup guide
 
-**Machine:** MacBook Pro 13-inch, 2020, Intel, macOS 26 (Tahoe)
+**Machine:** MacBook Pro 13-inch, 2020, Four Thunderbolt 3 ports. 2 GHz quad-core Intel Core i5, 16 GB memory, macOS 26.3 (Tahoe)
 **Goal:** run Weblate all the time at `translate.carepayny.com`, reachable only by invited reviewers, with backups.
 **When:** week 4 of the 8-week plan (see `docs/PRD.md`, "Translation plan"). Nothing here is needed before then.
 **Time:** about 2 to 3 hours the first time. About 15 minutes a month after that.
@@ -44,7 +44,7 @@ Because FileVault is on, someone must log in after a restart. That only happens 
 
 1. Download Docker Desktop for Mac (Intel chip) from docker.com and install it.
 2. In Docker Desktop **Settings → General**, turn on **Start Docker Desktop when you sign in to your computer**.
-3. In **Settings → Resources**, give Docker 2 CPUs and 4 GB of memory. Weblate's minimum is 2 CPUs and 3 GB.
+3. In **Settings → Resources**, give Docker 4 CPUs and 8 GB of memory. Weblate's minimum is 2 CPUs and 3 GB; this Mac has 4 cores and 16 GB, so this leaves room for macOS.
 
 ## Step 3: Install Weblate
 
@@ -56,7 +56,7 @@ Because FileVault is on, someone must log in after a restart. That only happens 
    cd weblate-docker
    ```
 
-2. Check the processor. Weblate needs a CPU with SSE4.2. This Mac has it, but check once inside Docker:
+2. Check the processor. Weblate needs a CPU with SSE4.2. This Mac's 10th-generation Core i5 has it, but check once inside Docker:
 
    ```bash
    docker run --rm alpine grep -c sse4_2 /proc/cpuinfo
