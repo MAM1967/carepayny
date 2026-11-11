@@ -211,7 +211,7 @@ $("f").addEventListener("input", render);
 $("f").addEventListener("change", render);
 $("f").addEventListener("submit", e => e.preventDefault());
 $("copyBtn").addEventListener("click", async () => {
-  try { await navigator.clipboard.writeText(lastSummary); $("copyMsg").textContent = "Copied. Paste it into a message or email to your agency, PPL or a lawyer."; }
+  try { await navigator.clipboard.writeText(lastSummary); $("copyMsg").textContent = "Copied."; }
   catch { $("copyMsg").textContent = "Your browser blocked copying. Select the numbers above and copy them by hand."; }
 });
 $("resetBtn").addEventListener("click", () => { $("f").reset(); $("copyMsg").textContent = ""; render(); });
