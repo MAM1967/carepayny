@@ -1,0 +1,17 @@
+---
+import { getCollection, render } from "astro:content";
+import Guide from "../../layouts/Guide.astro";
+
+export async function getStaticPaths() {
+  const pages = await getCollection("guide");
+  return pages.map((page) => ({
+    params: { slug: page.id === "index" ? undefined : page.id.replace(/\/index$/, "") },
+    props: { page }
+  }));
+}
+const { page } = Astro.props;
+const { Content } = await render(page);
+---
+<Guide title={page.data.title} description={page.data.description} lastChecked={page.data.lastChecked} sources={page.data.sources} slug={page.id}>
+  <Content />
+</Guide>
