@@ -1,0 +1,49 @@
+---
+import Base from "./Base.astro";
+import { getCollection } from "astro:content";
+
+interface Props {
+  title: string;
+  description: string;
+  lastChecked: string;
+  sources: { label: string; url: string }[];
+  slug: string;
+}
+const { title, description, lastChecked, sources, slug } = Astro.props;
+const pages = (await getCollection("guide")).sort((a, b) => a.data.order - b.data.order);
+const href = (id: string) => (id === "index" ? "/cdpap/" : `/cdpap/${id.replace(/\/index$/, "")}/`);
+const top = pages.filter((p) => !p.id.startsWith("not-paid/") || p.id === "not-paid/index" || p.id === "not-paid");
+const notPaid = pages.filter((p) => p.id.startsWith("not-paid/") && p.id !== "not-paid/index");
+---
+<Base title={title} description={description}>
+  <div class="wrap guide">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <a href="/cdpap/">CDPAP guide</a>{slug !== "index" && <> › <span>{title}</span></>}
+    </nav>
+    <article class="prose">
+      <h1>{title}</h1>
+      <p class="checked">Last checked: {lastChecked}</p>
+      <slot />
+      <h2>Sources</h2>
+      <ul class="sources">
+        {sources.map((s) => <li><a href={s.url}>{s.label}</a></li>)}
+      </ul>
+      <p class="small">CarePayNY is independent. We are not part of PPL, the New York State Department of Health, the Department of Labor or Medicaid. This page gives general information, not legal advice.</p>
+    </article>
+    <nav class="guide-nav card" aria-label="CDPAP guide pages">
+      <h2>CDPAP guide</h2>
+      <ol>
+        {top.map((p) => (
+          <li>
+            <a href={href(p.id)} aria-current={p.id === slug ? "page" : undefined}>{p.data.nav}</a>
+            {(p.id === "not-paid/index" || p.id === "not-paid") && (
+              <ul>
+                {notPaid.map((c) => <li><a href={href(c.id)} aria-current={c.id === slug ? "page" : undefined}>{c.data.nav}</a></li>)}
+              </ul>
+            )}
+          </li>
+        ))}
+      </ol>
+    </nav>
+  </div>
+</Base>
