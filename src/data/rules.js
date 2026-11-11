@@ -1,12 +1,15 @@
 // New York home care pay rules used by the calculator.
 //
 // THIS IS THE ONLY FILE THAT SHOULD CHANGE WHEN RATES CHANGE.
+// Each year is its own rule set. rulesFor(date) picks the one in effect on that
+// date, so the calculator (which runs in the visitor's browser) switches on its own.
 // Every figure carries its source. Any change here must:
 //   1. update `version`, `effective` and `lastReviewed`,
 //   2. keep `npm test` passing (add worked examples for the new rates),
 //   3. be approved by the owner in a pull request (see CLAUDE.md).
 
-export const RULES = {
+const R2026 = {
+  startsOn: "2026-01-01",
   version: "2026.2",
   effective: "January 1, 2026",
   lastReviewed: "November 11, 2026",
@@ -58,3 +61,44 @@ export const RULES = {
     { label: "Ogletree: Court of Appeals upholds 13-hour rule", url: "https://ogletree.com/insights/new-yorks-highest-court-upholds-13-hour-rule-for-payment-of-live-in-home-health-aides/" }
   ]
 };
+
+// 2027: NYS raised the home care aide minimum on January 1, 2027. The general
+// minimum wage did not change (an inflation "off-ramp" was met). The wage parity
+// benefit portion stays at the amounts set for "all periods on or after January 1, 2024."
+// PPL has not yet published 2027 CDPAP rates; its 2026 downstate rates are carried
+// (they are above the new minimum). Upstate, the 2026 PPL rate ($18.65) is below the
+// new $19.00 minimum, so it is dropped and the legal minimum applies.
+const R2027 = {
+  ...R2026,
+  startsOn: "2027-01-01",
+  version: "2027.1",
+  effective: "January 1, 2027",
+  lastReviewed: "November 11, 2026",
+  regions: {
+    nyc:  { ...R2026.regions.nyc,  hcaMin: 20.00, generalMin: 17.00, wpBenefit: 2.54, wpTotal: 22.54, pplBase: 20.65 },
+    liw:  { ...R2026.regions.liw,  hcaMin: 20.00, generalMin: 17.00, wpBenefit: 1.67, wpTotal: 21.67, pplBase: 20.05 },
+    rest: { ...R2026.regions.rest, hcaMin: 19.00, generalMin: 16.00, wpBenefit: null, wpTotal: null, pplBase: null }
+  },
+  ppl: { effective: "January 1, 2026", note: "PPL has not posted 2027 rates yet. These are its latest posted rates." },
+  sources: [
+    { label: "NYS Governor: New York State Minimum Wage for 2027", url: "https://governor.ny.gov/new-york-state-minimum-wage-2027" },
+    { label: "NYS DOH: Home Care Worker Wage Parity (benefit portion for all periods on or after January 1, 2024)", url: "https://www.health.ny.gov/health_care/medicaid/redesign/mrt_61.htm" },
+    ...R2026.sources
+  ]
+};
+
+export const RULESETS = [R2026, R2027];
+export const RULES_BY_YEAR = { 2026: R2026, 2027: R2027 };
+
+// Local date as YYYY-MM-DD (New York users; avoids UTC rolling the date early).
+const isoDay = (d) => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+
+export function rulesFor(date = new Date()) {
+  const day = isoDay(date);
+  let current = RULESETS[0];
+  for (const r of RULESETS) if (r.startsOn <= day) current = r;
+  return current;
+}
+
+// The rule set in effect today (build time for static text, visit time in the browser).
+export const RULES = rulesFor();
