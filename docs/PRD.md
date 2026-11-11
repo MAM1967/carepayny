@@ -338,7 +338,7 @@ CarePayNY runs as a static website with no database, no logins and no servers of
 | --- | --- | --- |
 | Code and content | One GitHub repository (MAM1967/carepayny) | Pages, the rules file, translations and the training list are all files; agents propose changes as pull requests |
 | Site builder | Astro, static output | Markdown to fast pages, with built-in language routes (/es/, /zh/, …) |
-| Translation | Weblate, connected to the GitHub repository | Glossary, translation memory, reviewer approval; opens pull requests with approved translations (see "Translation plan") |
+| Translation | Weblate (self-hosted on a dedicated Mac, see `docs/weblate-mac-setup.md`), connected to the GitHub repository | Glossary, translation memory, reviewer approval; opens pull requests with approved translations (see "Translation plan") |
 | Hosting and DNS | Cloudflare Pages and Cloudflare DNS | Free tier, fast on phones, deploys on every approved merge |
 | Domain email | Cloudflare Email Routing | hello@carepayny.com forwards to the owner's inbox |
 | Calculator | Plain JavaScript in the page | Runs on the visitor's phone; nothing is sent or stored |
@@ -418,5 +418,5 @@ The site launches publicly at week 8 after a lawyer signs off, and makes no mone
 - [x] Name: CarePayNY. carepayny.com and carepayny.org bought November 9, 2026.
 - [ ] Day-90 targets: confirm or change the numbers in the gate.
 - [ ] Order of languages after Spanish.
-- [ ] Weblate hosting: Hosted Weblate (paid, no upkeep) or run it ourselves on a small server (cheaper, needs upkeep).
+- [x] Weblate hosting: run it ourselves on a dedicated MacBook Pro (13-inch, 2020, Intel, macOS 26) with Docker Desktop and a Cloudflare Tunnel. Setup guide: `docs/weblate-mac-setup.md`. Revisit when macOS 26 security updates end (about 2028).
 - [ ] Budget for lawyer review, insurance and translation.
