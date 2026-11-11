@@ -112,7 +112,7 @@ The calculator checks one week of pay against New York's 2026 rules entirely in 
 4. Wage parity applies to Medicaid agency and CDPAP work downstate. Required benefit per hour = total compensation minus the cash rate, if that is positive.
 5. Pay stub check = expected gross minus stub gross. More than $1 short triggers an underpaid flag.
 
-**Outputs.** A verdict banner, a line-by-line breakdown, plain-language flags with the reason for each, a Copy summary button, and links to agency payroll, PPL, Legal Aid and the NYS Department of Labor.
+**Outputs.** A verdict banner, a line-by-line breakdown, plain-language flags with the reason for each, a Copy summary button, and descriptive links to agency payroll, PPL, Legal Aid and the NYS Department of Labor (what each one does, not an instruction to contact them).
 
 **Acceptance**
 
@@ -146,7 +146,7 @@ The site launches with about 30 pages, each answering one question a caregiver a
 
 - Every page shows a "last checked" date and links to the official sources.
 - Written at a 6th-grade reading level, short sentences, no legal jargon without a definition.
-- Gives general information, never individual advice: "this may mean" plus who can help, never "you should sue."
+- Gives general information, never individual advice or directions: describes what the rules say and what options exist, never tells people what to do with their results (no "you should," no "contact a lawyer").
 - Reported errors are fixed and logged publicly within 48 hours.
 - The English version controls when a translation differs, and every translated page says so.
 
