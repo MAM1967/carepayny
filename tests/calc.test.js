@@ -62,7 +62,37 @@ test("CDPAP on Long Island is Medicaid work with the $21.32 wage parity total", 
   const r = computeWeek({ region: "liw", employer: "cdpap", rate: 20, regularHours: 20 });
   assert.equal(r.minRate, 19.65);
   assert.equal(r.wp.applies, "yes");
-  assert.equal(r.wp.gapPerHour, 1.32);
+  // Expected pay uses PPL's $20.05 base, so the wage parity gap is 21.32 - 20.05.
+  assert.equal(r.wp.gapPerHour, 1.27);
+});
+
+test("CDPAP in NYC at the state minimum is legal but $1.00 under PPL's $20.65 base", () => {
+  const r = computeWeek({ region: "nyc", employer: "cdpap", rate: 19.65, regularHours: 40 });
+  assert.equal(r.rateShort, 0);
+  assert.equal(r.pplRate, 20.65);
+  assert.equal(r.pplShort, 1);
+  assert.equal(r.expectedGross, 826);   // 40 x 20.65
+  assert.equal(r.legalFloorGross, 786); // 40 x 19.65
+  assert.equal(r.status, "check");
+});
+
+test("CDPAP in NYC paid PPL's base: no PPL flag; overtime at 1.5x of $20.65", () => {
+  const r = computeWeek({ region: "nyc", employer: "cdpap", rate: 20.65, regularHours: 45 });
+  assert.equal(r.pplShort, 0);
+  assert.ok(!r.flags.some((f) => f.text.includes("PPL says")));
+  assert.equal(r.expectedGross, r2(40 * 20.65 + 5 * 20.65 * 1.5));
+});
+
+test("CDPAP upstate: PPL base equals the $18.65 state minimum", () => {
+  const r = computeWeek({ region: "rest", employer: "cdpap", rate: 18.65, regularHours: 30 });
+  assert.equal(r.pplRate, 18.65);
+  assert.equal(r.pplShort, 0);
+  assert.equal(r.status, "ok");
+});
+
+test("agency work never uses the PPL rate", () => {
+  const r = computeWeek({ region: "nyc", employer: "agency", medicaid: "yes", rate: 19.65, regularHours: 10 });
+  assert.equal(r.pplRate, null);
 });
 
 test("upstate agency work: $18.65 minimum and no wage parity", () => {

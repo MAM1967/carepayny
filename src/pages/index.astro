@@ -169,6 +169,7 @@ function render() {
 
   const rows = [
     ["Minimum hourly wage for you", money(r.minRate)],
+    ...(r.pplRate != null ? [["PPL's base pay for CDPAP here", money(r.pplRate)]] : []),
     ["Hours you must be paid for", r.totalHours.toLocaleString() + " hrs"],
   ];
   if (r.liveInHours) rows.push(["…of which from 24-hour shifts", r.liveInHours + " hrs"]);

@@ -29,7 +29,7 @@ export function computeWeek(i, R = RULES) {
   const isHCA = employer === "agency" || employer === "cdpap";
   const minRate = isHCA ? reg.hcaMin : reg.generalMin;
   if (employer === "private") {
-    flags.push({ level: "info", text: `If a family hires you directly, the general minimum wage (${money(reg.generalMin)}) is the floor we use. The higher home care aide minimum (${money(reg.hcaMin)}) clearly covers agencies and CDPAP; whether it covers direct hires is less clear, so ask the Department of Labor if your rate is in between.` });
+    flags.push({ level: "info", text: `If a family hires you directly, the general minimum wage (${money(reg.generalMin)}) is the floor we use. The higher home care aide minimum (${money(reg.hcaMin)}) clearly covers agencies and CDPAP. The rules are less clear for direct hires. The Department of Labor answers questions about this.` });
   }
 
   // 2. Hours that must be paid
@@ -61,7 +61,13 @@ export function computeWeek(i, R = RULES) {
   if (rateShort > 0) {
     flags.push({ level: "bad", text: `Your hourly rate (${money(rate)}) is below the minimum of ${money(minRate)} that applies to you by ${money(rateShort)} an hour.` });
   }
-  const payRate = Math.max(rate, minRate);
+  // CDPAP: PPL publishes its own base wage, which is above the state minimum downstate.
+  const pplRate = employer === "cdpap" && reg.pplBase != null ? reg.pplBase : null;
+  const pplShort = pplRate != null ? r2(Math.max(0, pplRate - Math.max(rate, minRate))) : 0;
+  if (pplShort > 0) {
+    flags.push({ level: "warn", text: `PPL says its base pay for CDPAP is ${money(pplRate)} an hour when the person you care for lives in ${reg.label} (since ${R.ppl.effective}). The rate you entered is ${money(pplShort)} less than that.` });
+  }
+  const payRate = Math.max(rate, minRate, pplRate ?? 0);
   const expectedGross = r2(straightHours * payRate + otHours * payRate * R.overtime.multiplier);
   const legalFloorGross = r2(straightHours * minRate + otHours * minRate * R.overtime.multiplier);
 
@@ -94,7 +100,7 @@ export function computeWeek(i, R = RULES) {
   else if (flags.some((f) => f.level === "warn") || (wp && !wp.coveredInCash)) status = "check";
 
   return {
-    minRate, isHCA, medicaid, regularHours, liveInHours, totalHours, threshold, otHours, straightHours,
+    minRate, pplRate, pplShort, isHCA, medicaid, regularHours, liveInHours, totalHours, threshold, otHours, straightHours,
     payRate, expectedGross, legalFloorGross, rateShort, wp, stub, flags, status, regionLabel: reg.label
   };
 }
