@@ -152,68 +152,92 @@ The site launches with about 30 pages, each answering one question a caregiver a
 
 ## Translation plan
 
-Every page must be easy to read in every language we offer, not just in English. We use the standard method for website translation (called "internationalization" or "i18n"): every piece of text has a key, and each language has its own copy of the text for that key. **Weblate** is the tool that manages the work.
+**Decision (November 12, 2026): AI-only translation, no translation platform.** Weblate is deferred. It is too much infrastructure for an unproven site. We can revisit it if translated traffic grows. The setup guide stays in `docs/weblate-mac-setup.md` for later.
 
-**Two kinds of text**
+**Goal:** clear, consistent translations of the pay pages into 3 languages, using AI only, at a 6th-grade reading level, for home care workers in New York with limited or no English.
 
-| Kind | Examples | How it is stored | How Weblate shows it |
-| --- | --- | --- | --- |
-| Short text | Buttons, labels, calculator notes, menus, error messages | One file per language in `src/i18n/` (for example `en.json`, `es.json`). Each line is a key and its text, like `copy.done = "Copied."` | One line at a time |
-| Long text | Guide pages, the about page, terms and privacy | One Markdown file per page per language, for example `src/content/en/cdpap/basics.md` and `src/content/es/cdpap/basics.md` | One paragraph at a time |
+**Scope**
 
-- Short text uses **ICU MessageFormat**. It handles plurals and values that change, so "1 hour" and "5 hours" read right in every language.
-- **Numbers are never typed by translators.** Pay rates come only from `src/data/rules.js`. Code formats money and dates for each language.
-- English is the source. Translators never change the meaning, only the words.
+- English pages about pay only: rates, timesheets, payment methods, pay schedules, sign-up, payroll problems, benefits and the PPL settlement. This is the pay calculator and the CDPAP guide.
+- 4 languages in total, and no more: English (the source), **Spanish (`es`), Chinese, Simplified (`zh-Hans`) and Russian (`ru`)**.
+- Why these 3: they are the 3 largest groups of New Yorkers with limited English (Spanish about 1.2 million, Chinese about 378,000, Russian about 124,000; American Community Survey 2018–2022, as cited in New York State language access plans). They are also the 3 languages, besides Korean, in which the state has approved home care aide training. Haitian Creole is the next candidate if traffic data shows demand.
+- No clinical or care procedures.
+- One maintainer. No paid translators.
 
-**Tools that keep translations consistent**
+**Where things live (all in this repository)**
 
-- **Glossary (word list).** Kept in Weblate for each language.
-  - Never translated: CarePayNY, PPL, CDPAP, Time4Care, PPL@Home, I-9, W-4.
-  - One approved translation each: wage parity, personal assistant, consumer, service authorization, overtime, fiscal intermediary, designated representative, health plan.
-- **Translation memory.** Weblate saves every approved sentence. When the same sentence comes up again, it reuses it. This keeps wording the same across pages and lowers cost.
-- **Quality checks.** Weblate flags missing values (like `{rate}`), broken links, wrong punctuation and glossary words that weren't used.
+| What | Where |
+| --- | --- |
+| English pages (the master) | `src/content/en/` |
+| One folder per language | `src/content/<language code>/`, for example `src/content/es/` |
+| Glossary | `docs/translation/glossary.md` |
+| AI prompts (first translation and updates) | `docs/translation/prompts.md` |
+| Changelog | `docs/translation/CHANGELOG.md` |
 
-**How a page gets translated**
+Git keeps the full history, with dates.
 
-1. The English page is approved and merged.
-2. Weblate sees the new or changed text in the repository.
-3. A machine draft is made for each paragraph. It is marked "needs editing." It is never published as is.
-4. A paid native speaker edits the draft. They check meaning, the glossary and a 6th-grade reading level in their language.
-5. The reviewer marks it "approved."
-6. Weblate opens a pull request. The owner merges it, and Cloudflare publishes it.
-7. A page goes live in a language only when all of it is approved. Until then, that language links to the English page. We do not publish half-translated pages.
+**1. Source**
 
-**When the English changes**
+- Write and edit only in English first.
+- Every English page stays at a 6th-grade reading level.
+- Pay numbers are never typed into any page. They are `{{tokens}}` filled from `src/data/rules.js`, so translations can never get a number wrong.
 
-- Weblate marks the changed paragraphs "needs editing" in every language.
-- Pay numbers update by themselves, because they come from the rules file.
-- Changes to pay rules or legal wording go to the reviewers first. The goal is an updated translation within 7 days. Until it is done, the translated page shows a note that the English page is newer, with a link to it.
+**2. Glossary (keeps wording consistent)**
+
+- 15 to 40 key terms, with one approved translation for each language.
+- Some terms are never translated: CarePayNY, PPL, PPL@Home, CDPAP, Time4Care, I-9, W-4.
+- Update the glossary first whenever a new term appears.
+- The glossary goes into every AI prompt.
+
+**3. First translation**
+
+- Give a strong AI model the full English page, the glossary and the "first translation" prompt from `docs/translation/prompts.md`.
+- The prompt asks for: home care workers in New York with limited English as the audience; a 6th-grade reading level; glossary terms exactly; accurate meaning and a practical tone; `{{tokens}}`, links and Markdown left exactly as they are; and clean text, ready to use.
+- One complete version per language, saved in that language's folder with the same file name as the English page.
+
+**4. Review and light edit**
+
+- An automatic check (`npm test`) confirms that every translated page has the same `{{tokens}}` and links as the English page.
+- **Back-translation check:** a separate AI pass translates the page back into English, without seeing the original. The maintainer compares that with the English page and fixes any change in meaning. This is the main safety check, because the maintainer may not read the language.
+- A quick scan for glossary terms and sentences the AI made too long.
+- Fix only clear problems. Do not rewrite for style.
+
+**5. Updates**
+
+When English changes:
+
+1. Update the English page.
+2. Add a line to `docs/translation/CHANGELOG.md`: the date, the page and what changed.
+3. Give the AI the old English, the old translation, the new English and the glossary, using the "update" prompt.
+4. It changes only the parts that changed and keeps everything else the same.
+5. Run the back-translation check on the changed parts.
+6. Commit with a clear message.
+
+Pay numbers update by themselves, because they come from the rules file. The goal is to update translations within 7 days of an English change. Until then, the translated page shows a note that the English page is newer, with a link to it.
+
+**Notice on every translated page**
+
+Every translated page says, in its own language: "This page was translated from English with the help of AI. If they are different, the English page is correct." It links to the English page, shows the "last checked" date and gives an email address for reporting mistakes.
+
+**Optional, when available:** if a partner group, such as a worker center or legal services group, offers a native speaker to review a page, take the help. It is not required to publish.
 
 **Web addresses and search engines (SEO and AEO)**
 
-- Each language has its own address: `/` for English, `/es/` for Spanish, then `/zh/`, `/ru/`, `/ht/` and `/bn/`. Language codes follow the BCP 47 standard.
+- Each language has its own address: `/` for English, `/es/` for Spanish, `/zh/` for Chinese and `/ru/` for Russian. In `hreflang` tags, Chinese is `zh-Hans`. Language codes follow the BCP 47 standard.
 - Each page lists all its language versions with `hreflang` tags, plus an `x-default` tag pointing to English.
 - Page titles, descriptions and the sitemap are translated too.
-- Every translated page has a "last checked" date and says: "This page was translated from English. If they are different, the English page is correct."
+- Translations keep English link addresses. When the site builds, it adds the language folder to links between our own pages, so a Spanish page links to other Spanish pages.
 
-**Order of languages**
+**Success**
 
-Spanish at launch. Then Chinese (Simplified), Russian, Haitian Creole and Bengali. The order after Spanish is set by traffic and requests.
+- Translations stay consistent across updates, thanks to the glossary and the update prompt.
+- The language stays simple and practical.
+- After setup, an update takes minutes.
+- No platform or server to maintain.
 
-**Weblate setup**
+**Out of scope**
 
-- Connect Weblate to the GitHub repository. Weblate opens pull requests only. It never pushes to `main`.
-- Create two parts in Weblate: "site text" (the JSON files) and "pages" (the Markdown files).
-- Load the glossary for Spanish before the first page goes in.
-- Give each reviewer an account with the "reviewer" role for their language only.
-- Turn on a machine translation service for drafts only.
-
-**Acceptance**
-
-- [ ] No text in the site's code is outside the language files. The build fails if a page uses a key that doesn't exist.
-- [ ] Spanish calculator and CDPAP pages 1, 2 and 4 to 8 are approved by a native speaker before launch.
-- [ ] `hreflang` tags are correct on every page (checked by a test).
-- [ ] Every translated page shows the "English is correct" note and a "last checked" date.
+Collaborative web tools, automatic quality checks beyond the token and link check, multiple editors at once, complex file formats and translation platforms.
 
 ## Job requirements and training referrals
 
@@ -307,7 +331,7 @@ Flow: agents draft changes → review queue (pull requests) → owner's weekly r
 | Rules watcher | Daily | Checks NYS DOL and DOH wage pages and PPL notices for changes | Alert plus a draft rules update |
 | Community listener | Daily | Scans public caregiver forums and Reddit for new CDPAP problems | Draft answer page or update |
 | Site health | Hourly | Uptime, broken links, job feed status | Alert or auto-fix of links |
-| Translator | On each approved page | Starts the machine draft in Weblate and checks glossary use | Draft marked "needs editing" for the native-speaker reviewer |
+| Translator | On each approved English page or change | Translates with the glossary and prompts in `docs/translation/`, then runs the back-translation check | Translated page plus changelog line, in a pull request |
 | Reporter | Weekly | Traffic, completions, subscribers, error reports | Metrics summary for the review |
 | Newsletter | Weekly | Assembles alerts and what changed | Draft for approval |
 
@@ -338,7 +362,7 @@ CarePayNY runs as a static website with no database, no logins and no servers of
 | --- | --- | --- |
 | Code and content | One GitHub repository (MAM1967/carepayny) | Pages, the rules file, translations and the training list are all files; agents propose changes as pull requests |
 | Site builder | Astro, static output | Markdown to fast pages, with built-in language routes (/es/, /zh/, …) |
-| Translation | Weblate (self-hosted on a dedicated Mac, see `docs/weblate-mac-setup.md`), connected to the GitHub repository | Glossary, translation memory, reviewer approval; opens pull requests with approved translations (see "Translation plan") |
+| Translation | AI-only process in the repository (`docs/translation/`) | Glossary, prompts and changelog; no platform or server (see "Translation plan") |
 | Hosting and DNS | Cloudflare Pages and Cloudflare DNS | Free tier, fast on phones, deploys on every approved merge |
 | Domain email | Cloudflare Email Routing | hello@carepayny.com forwards to the owner's inbox |
 | Calculator | Plain JavaScript in the page | Runs on the visitor's phone; nothing is sent or stored |
@@ -388,8 +412,8 @@ The site launches publicly at week 8 after a lawyer signs off, and makes no mone
 - [ ] Week 2: hosting, analytics and email provider.
 - [ ] Weeks 3–4: write the 20 worked examples for the lawyer.
 - [ ] Weeks 3–6: write the rules explainer and CDPAP guide pages, about 30 in all.
-- [ ] Week 4: set up Weblate, move all site text into language files, load the Spanish glossary, hire a Spanish reviewer.
-- [ ] Weeks 5–7: Spanish translation in Weblate with native-speaker review.
+- [ ] Week 4: fill in the glossary for the 3 languages; add language routes and the translated-page notice.
+- [ ] Weeks 5–7: AI translation of the calculator and the CDPAP guide into the 3 languages, with back-translation checks.
 - [ ] Week 7: lawyer sign-off on rules, terms, privacy policy and disclaimers.
 - [ ] Week 8: public launch; start the weekly review cycle.
 - [ ] Before January 1, 2027: load and test the 2027 rates.
@@ -417,6 +441,6 @@ The site launches publicly at week 8 after a lawyer signs off, and makes no mone
 
 - [x] Name: CarePayNY. carepayny.com and carepayny.org bought November 9, 2026.
 - [ ] Day-90 targets: confirm or change the numbers in the gate.
-- [ ] Order of languages after Spanish.
-- [x] Weblate hosting: run it ourselves on a dedicated MacBook Pro (13-inch, 2020, Intel, macOS 26) with Docker Desktop and a Cloudflare Tunnel. Setup guide: `docs/weblate-mac-setup.md`. Revisit when macOS 26 security updates end (about 2028).
-- [ ] Budget for lawyer review, insurance and translation.
+- [x] Languages (November 12, 2026): English, Spanish, Chinese (Simplified) and Russian. Four in total, no more.
+- [x] Translation tooling (November 12, 2026): AI-only process, no Weblate for now. The Weblate setup guide for the dedicated MacBook stays in `docs/weblate-mac-setup.md` if it is needed later.
+- [ ] Budget for lawyer review and insurance.
