@@ -28,7 +28,7 @@ sources:
 | Что пишет PPL@Home | Что это значит |
 | --- | --- |
 | Provider is not Paperwork Complete | Регистрация PA (личного помощника) не закончена. |
-| Provider must have SSN | В записях нет номера социального страхования (SSN) PA. |
+| Provider must have SSN | В записях нет номера социального обеспечения (Social Security, SSN) PA. |
 | Provider is not PA for Consumer | Учётная запись PA не связана с получателем ухода. |
 | Consumer is not enrolled during Time Entry's Date of Service | В эту дату получатель ухода ещё не закончил регистрацию. |
 | Consumer is missing CIN/Medicaid ID/Member ID | В записи времени нет номера Medicaid (Медикейд) получателя ухода. |
