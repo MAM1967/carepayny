@@ -1,3 +1,5 @@
+> **Status: deferred (November 12, 2026).** The site uses the AI-only translation process in `docs/translation/` instead. This guide is kept in case Weblate is needed later.
+
 # Weblate on the dedicated MacBook: setup guide
 
 **Machine:** MacBook Pro 13-inch, 2020, Four Thunderbolt 3 ports. 2 GHz quad-core Intel Core i5, 16 GB memory, macOS 26.3 (Tahoe)
