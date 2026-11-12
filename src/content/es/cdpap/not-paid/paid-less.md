@@ -21,7 +21,7 @@ El pago llegó, pero es por menos horas de las que el PA (asistente personal) en
 PPL paga solo las horas que están dentro de la **autorización de servicios** del consumidor (la persona que recibe el cuidado). Las horas aprobadas vuelven a empezar cada domingo a las 12:00 a.m. Las horas que pasan del límite muestran el mensaje "Time Entry's Units exceed remaining on Authorization."
 
 **2. Redondeo.**
-PPL redondea cada turno. En los códigos de servicio por hora, hasta 29 minutos después de la hora se redondea hacia abajo. Ejemplo: 5 horas y 19 minutos se pagan como 5 horas. En los códigos de 15 minutos, hasta 7 minutos después de un cuarto de hora se redondea hacia abajo.
+PPL redondea cada turno. En los códigos de servicio por hora, hasta 29 minutos después de la hora se redondea hacia abajo. Ejemplo: 5 horas y 25 minutos se pagan como 5 horas. En los códigos de 15 minutos, hasta 7 minutos después de un cuarto de hora se redondea hacia abajo.
 
 **3. El consumidor estuvo en el hospital.**
 PPL no paga el tiempo en que el consumidor está en un hospital u otro centro de salud. El día en que entra y el día en que vuelve a casa son las excepciones.
