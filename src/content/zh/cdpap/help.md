@@ -9,7 +9,7 @@ sources:
     url: "https://pplfirst.com/new-york-cdpap-frequently-asked-questions/"
   - label: "PPL：给个人助理的 CDPAP 资料（联系方式）"
     url: "https://pplfirst.com/cdpap-resources-personal-assistants/"
-  - label: "PPL：CDPAP 协助机构"
+  - label: "PPL：CDPAP 协助团体"
     url: "https://pplfirst.com/cdpap-facilitators/"
   - label: "The Legal Aid Society：Medicaid 居家护理指南"
     url: "https://legalaidnyc.org/?p=59629"
@@ -34,22 +34,22 @@ PPL 负责全州的 CDPAP 发工资。
 | 福利（GSA National） | 1-888-250-8303 |
 | Wisely 工资卡（Wisely Pay card） | 1-866-313-6901 |
 
-PPL 有办公室，可以预约见面。
+PPL 有办公室，接待预约来访的人。
 
-## CDPAP 协助机构
+## CDPAP 协助团体
 
-协助机构（facilitator）是与 PPL 合作的社区团体。它们帮忙处理注册、表格和 EVV（电子探访核实）打卡系统。有些协助机构会说英语以外的语言。PPL 在它的网站上列出了批准的协助机构，以及每个机构服务的县和语言。PPL 要求，如果有人自称是协助机构但不在名单上，人们在向他们提供资料之前先打电话给 PPL。
+协助团体（facilitator）是与 PPL 合作的社区团体。它们帮忙处理注册、表格和 EVV（电子探访核实）打卡系统。有些协助团体会说英语以外的语言。PPL 在它的网站上列出了批准的协助团体，以及每个团体服务的县和语言。有时有人说自己是协助团体，但不在名单上。PPL 希望大家在把资料给这样的人之前，先打电话给 PPL。
 
 ## 健康计划或地方社会服务办公室（批准的时数）
 
-消费者（接受照顾的人）的健康计划（常常是管理式长期护理计划）或地方社会服务办公室决定：
+受照顾者（CDPAP 中称为“消费者”，即接受照顾的人）的健康计划（常常是管理式长期护理计划）或地方社会服务办公室决定：
 
-- 消费者是否符合 CDPAP 资格
+- 受照顾者是否符合 CDPAP 资格
 - 批准多少小时的护理
 
-他们的电话号码在消费者的会员卡和通知上。健康计划减少或拒绝时数时，必须寄书面通知，说明这个决定以及怎样上诉。
+他们的电话号码在受照顾者的会员卡和通知上。健康计划减少或拒绝时数时，必须寄书面通知，说明这个决定以及怎样上诉。
 
-## 纽约州 Medicaid（联邦医疗补助）
+## 纽约州 Medicaid（医疗补助，常称“白卡”）
 
 - Medicaid 帮助热线：1-800-541-2831。它帮忙解答 Medicaid 问题，例如查找 Medicaid 号码（CIN）。
 - 公平听证（就居家护理决定向州政府上诉）：1-800-342-3334
@@ -64,7 +64,7 @@ The Legal Aid Society（法律援助协会）为符合条件的纽约居民提�
 
 ## PPL 和解管理人
 
-Atticus Administration 负责为下州地区 PA（个人助理）处理的1.62亿美元 PPL 和解：1-800-314-2601，或 PublicPartnershipsSettlement@AtticusAdmin.com。更多内容见 [PPL 诉讼和解](/cdpap/ppl-settlement/)页面。
+Atticus Administration 负责为纽约市、拿骚县、萨福克县和威彻斯特县的 PA（个人助理）处理的1.62亿美元 PPL 和解：1-800-314-2601，或 PublicPartnershipsSettlement@AtticusAdmin.com。更多内容见 [PPL 诉讼和解](/cdpap/ppl-settlement/)页面。
 
 ## NY State of Health（医疗保险）
 
