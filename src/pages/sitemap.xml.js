@@ -1,15 +1,18 @@
 import { getCollection } from "astro:content";
-import { SITE_URL, isoDate, guideHref } from "../lib/seo.js";
+import { SITE_URL, isoDate } from "../lib/seo.js";
+import { parseGuideId, guidePath, publishedLocales } from "../i18n/index.js";
+import { localizePath } from "../i18n/locales.js";
 import { RULES } from "../data/rules.js";
 
 // One entry per public page. Guide pages use their "last checked" date.
 export async function GET() {
-  const guide = await getCollection("guide");
+  const live = await publishedLocales();
+  const guide = (await getCollection("guide")).filter((p) => live.includes(parseGuideId(p.id).lang));
   const rulesDay = isoDate(RULES.lastReviewed);
   const urls = [
-    { loc: "/", lastmod: rulesDay },
+    ...live.map((lang) => ({ loc: localizePath(lang, "/"), lastmod: rulesDay })),
     { loc: "/about/", lastmod: rulesDay },
-    ...guide.map((p) => ({ loc: guideHref(p.id), lastmod: isoDate(p.data.lastChecked) }))
+    ...guide.map((p) => { const { lang, slug } = parseGuideId(p.id); return { loc: guidePath(lang, slug), lastmod: isoDate(p.data.lastChecked) }; })
   ];
   const body = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">

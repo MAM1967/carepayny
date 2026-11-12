@@ -1,4 +1,6 @@
 // Pure pay-check logic. No DOM, no network, no storage.
+// Each flag has a `code` and `params` so the page can show it in any language
+// (src/i18n/ui/<lang>.json, keys "flag.<code>"); `text` is the English version.
 // Runs in the browser (bundled by Astro) and in Node (tests).
 import { RULES } from "../data/rules.js";
 
@@ -29,7 +31,7 @@ export function computeWeek(i, R = RULES) {
   const isHCA = employer === "agency" || employer === "cdpap";
   const minRate = isHCA ? reg.hcaMin : reg.generalMin;
   if (employer === "private") {
-    flags.push({ level: "info", text: `If a family hires you directly, the general minimum wage (${money(reg.generalMin)}) is the floor we use. The higher home care aide minimum (${money(reg.hcaMin)}) clearly covers agencies and CDPAP. The rules are less clear for direct hires. The Department of Labor answers questions about this.` });
+    flags.push({ level: "info", code: "privateFloor", params: { general: money(reg.generalMin), hca: money(reg.hcaMin) }, text: `If a family hires you directly, the general minimum wage (${money(reg.generalMin)}) is the floor we use. The higher home care aide minimum (${money(reg.hcaMin)}) clearly covers agencies and CDPAP. The rules are less clear for direct hires. The Department of Labor answers questions about this.` });
   }
 
   // 2. Hours that must be paid
@@ -44,6 +46,8 @@ export function computeWeek(i, R = RULES) {
     const missed = sleepMissed || mealsMissed;
     flags.push({
       level: missed ? "warn" : "info",
+      code: missed ? "shiftsMissed" : "shiftsOk",
+      params: missed ? { count: Math.max(sleepMissed, mealsMissed), hours: liveInHours } : {},
       text: missed
         ? `On ${Math.max(sleepMissed, mealsMissed)} of your 24-hour shifts you didn't get the required breaks, so you must be paid for more than 13 hours on those shifts (up to all 24). We counted ${liveInHours} paid hours for your 24-hour shifts.`
         : `24-hour shifts can be paid as 13 hours only if you actually got 8 hours for sleep (5 of them uninterrupted) and 3 hours of meal breaks. If you were woken up or worked through meals, change the answers above.`
@@ -59,13 +63,13 @@ export function computeWeek(i, R = RULES) {
   const rate = Math.max(0, i.rate || 0);
   const rateShort = r2(Math.max(0, minRate - rate));
   if (rateShort > 0) {
-    flags.push({ level: "bad", text: `Your hourly rate (${money(rate)}) is below the minimum of ${money(minRate)} that applies to you by ${money(rateShort)} an hour.` });
+    flags.push({ level: "bad", code: "rateShort", params: { rate: money(rate), min: money(minRate), short: money(rateShort) }, text: `Your hourly rate (${money(rate)}) is below the minimum of ${money(minRate)} that applies to you by ${money(rateShort)} an hour.` });
   }
   // CDPAP: PPL publishes its own base wage, which is above the state minimum downstate.
   const pplRate = employer === "cdpap" && reg.pplBase != null && reg.pplBase >= minRate ? reg.pplBase : null;
   const pplShort = pplRate != null ? r2(Math.max(0, pplRate - Math.max(rate, minRate))) : 0;
   if (pplShort > 0) {
-    flags.push({ level: "warn", text: `PPL says its base pay for CDPAP is ${money(pplRate)} an hour when the person you care for lives in ${reg.label} (since ${R.ppl.effective}). The rate you entered is ${money(pplShort)} less than that.` });
+    flags.push({ level: "warn", code: "pplShort", params: { ppl: money(pplRate), region: i.region, date: R.ppl.effective, short: money(pplShort) }, text: `PPL says its base pay for CDPAP is ${money(pplRate)} an hour when the person you care for lives in ${reg.label} (since ${R.ppl.effective}). The rate you entered is ${money(pplShort)} less than that.` });
   }
   const payRate = Math.max(rate, minRate, pplRate ?? 0);
   const expectedGross = r2(straightHours * payRate + otHours * payRate * R.overtime.multiplier);
@@ -91,7 +95,7 @@ export function computeWeek(i, R = RULES) {
     const entered = Number(i.stubGross);
     const diff = r2(expectedGross - entered);
     stub = { entered, diff };
-    if (diff > 1) flags.push({ level: "bad", text: `Your pay stub shows ${money(entered)}, about ${money(diff)} less than we'd expect for these hours.` });
+    if (diff > 1) flags.push({ level: "bad", code: "stubShort", params: { entered: money(entered), diff: money(diff) }, text: `Your pay stub shows ${money(entered)}, about ${money(diff)} less than we'd expect for these hours.` });
   }
 
   // 7. Overall status
@@ -101,6 +105,6 @@ export function computeWeek(i, R = RULES) {
 
   return {
     minRate, pplRate, pplShort, isHCA, medicaid, regularHours, liveInHours, totalHours, threshold, otHours, straightHours,
-    payRate, expectedGross, legalFloorGross, rateShort, wp, stub, flags, status, regionLabel: reg.label
+    payRate, expectedGross, legalFloorGross, rateShort, wp, stub, flags, status, region: i.region, regionLabel: reg.label
   };
 }

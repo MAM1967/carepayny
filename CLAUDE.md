@@ -22,7 +22,10 @@ CarePayNY (carepayny.com) is a free, static website that helps New York home car
 | `src/data/rules.js` | The versioned NY pay rules, with sources |
 | `src/data/site.js` | Launch flag and contact email |
 | `src/lib/calc.js` | Pure calculator logic (browser and Node) |
-| `src/pages/index.astro` | The pay calculator page |
+| `src/components/Calculator.astro` | The pay calculator (any language) |
+| `src/pages/index.astro`, `src/pages/[lang]/` | English and translated page routes |
+| `src/i18n/` | Languages (`locales.js`), site text per language (`ui/<lang>.json`) |
+| `src/content/<lang>/cdpap/` | CDPAP guide pages, one folder per language |
 | `src/pages/about.astro` | About, method, corrections contact |
 | `src/layouts/Base.astro` | Header, footer disclaimer, meta |
 | `tests/calc.test.js` | Worked examples; CI runs them on every PR |
