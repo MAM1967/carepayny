@@ -35,7 +35,7 @@ PPL publica una lista completa de las fechas de pago de 2026 en su "NY CDPAP Pay
 
 Hay tres formas: la aplicación Time4Care, una línea telefónica o una hoja de horas en papel.
 
-- **Aplicación Time4Care.** El PA marca la entrada y marca la salida en un teléfono. La aplicación funciona sin internet y envía las horas cuando el teléfono vuelve a tener conexión. PPL dice que la aplicación solo se baje de la Apple App Store o de Google Play.
+- **Aplicación Time4Care.** El PA marca la entrada y marca la salida en un teléfono. La aplicación funciona sin internet y envía las horas cuando el teléfono vuelve a tener conexión. Según PPL, la aplicación se descarga solo de la Apple App Store o de Google Play.
 - **Teléfono.** Los PA y consumidores sin internet pueden marcar la entrada, marcar la salida o aprobar horas llamando al 1-833-278-3959.
 - **Hoja de horas en papel.** Solo con una excepción aprobada por PPL.
 
@@ -48,7 +48,7 @@ Sí. PPL redondea cada turno. La forma de redondear depende del código de servi
 - **Códigos de 15 minutos:** hasta 7 minutos después de un cuarto de hora se redondea hacia abajo. Más de 7 minutos se redondea hacia arriba. Ejemplo: 5 horas y 19 minutos se convierten en 5 horas y 15 minutos.
 - **Códigos por hora:** hasta 29 minutos después de la hora se redondea hacia abajo. Más de 29 minutos se redondea hacia arriba. Ejemplo: 5 horas y 43 minutos se convierten en 6 horas.
 
-Cuando el tiempo se redondea hacia arriba, usa más de las horas aprobadas del consumidor.
+Cuando PPL redondea un turno hacia arriba, ese turno usa más de las horas aprobadas del consumidor.
 
 ## ¿Cuánto tarda en empezar el depósito directo?
 

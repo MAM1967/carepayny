@@ -48,4 +48,4 @@ La pestaña **Timesheet** en PPL@Home muestra cada registro y su estado: enviado
 - **El consumidor o el representante designado:** aprueba las horas a más tardar el domingo a mediodía
 - **PPL:** maneja la nómina. La línea telefónica de PPL es 1-833-247-5346.
 
-Relacionado: [Cómo le paga PPL](/cdpap/how-ppl-pays/) · [Le pagaron menos que las horas enviadas](/cdpap/not-paid/paid-less/)
+Relacionado: [Cómo le paga PPL](/cdpap/how-ppl-pays/) · [Me pagaron menos que mis horas](/cdpap/not-paid/paid-less/)

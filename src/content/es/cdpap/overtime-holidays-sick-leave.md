@@ -26,7 +26,7 @@ Las reglas de PPL sobre las horas extra:
 - Las horas extra se permiten cuando hacen falta para que el consumidor (la persona que recibe el cuidado) siga recibiendo cuidado.
 - Tienen que quedarse dentro de los límites que fija el plan de salud o la oficina local de servicios sociales, y de las guías del Departamento de Salud.
 - El Departamento de Salud recomienda por lo menos un PA (asistente personal) por cada 40 horas aprobadas. Por ejemplo, para 80 horas aprobadas por semana, eso significa por lo menos dos PA.
-- En julio de 2026, el Departamento de Salud les informó a los planes de salud que PPL les va a enviar un reporte cada dos semanas sobre los PA que trabajan muchísimas horas.
+- En julio de 2026, el Departamento de Salud les informó a los planes de salud que PPL les va a enviar un reporte cada dos semanas sobre los PA que trabajan horas muy largas.
 
 ### Horas extra del séptimo día
 
@@ -48,7 +48,7 @@ Sí, a los PA de tiempo completo.
 
 Las horas después de las primeras 8 en un día feriado se pagan a la tarifa regular.
 
-El pago extra por días feriados y el pago extra por horas extra no se pagan juntos en la misma semana. Cada hora extra baja en una hora el pago extra por día feriado.
+El pago extra de los días feriados y el pago extra de las horas extra no se pagan juntos en la misma semana. Por cada hora extra, se paga una hora menos de pago extra de día feriado.
 
 ## ¿Los cuidadores de CDPAP tienen licencia por enfermedad pagada?
 
@@ -63,14 +63,14 @@ Sí. Los PA ganan 1 hora de licencia por enfermedad pagada por cada 30 horas tra
 
 - Una parte de la cantidad de paridad salarial de cada hora paga la licencia por enfermedad.
 - Después de que un PA gana 56 horas en un año, ese dinero va a su cuenta de jubilación 401(a).
-- Toda la licencia por enfermedad sin usar pasa a 2027. Desde 2027, pasan hasta 56 horas.
+- Toda la licencia por enfermedad sin usar se guarda para 2027. Desde 2027, se guardan hasta 56 horas para el año siguiente.
 - Cuando un PA se va, la licencia por enfermedad sin usar ganada el 1 de mayo de 2026 o después va a su 401(a).
 
-**Otros condados:** la licencia por enfermedad sin usar pasa al año siguiente. No se paga cuando un PA se va.
+**Otros condados:** la licencia por enfermedad sin usar se guarda para el año siguiente. No se paga cuando un PA se va.
 
 ### Tiempo por enfermedad sin pago (solo NYC)
 
-Desde el 22 de febrero de 2026, los PA que trabajan en la Ciudad de Nueva York también tienen 32 horas de tiempo por enfermedad **sin pago** cada año. No pasa al año siguiente. Vuelve a empezar el 1 de enero.
+Desde el 22 de febrero de 2026, los PA que trabajan en la Ciudad de Nueva York también tienen 32 horas de tiempo por enfermedad **sin pago** cada año. No se guarda para el año siguiente. Vuelve a empezar el 1 de enero.
 
 ## ¿PPL ofrece seguro médico?
 
@@ -86,7 +86,7 @@ Sí, a los PA de tiempo completo.
 
 Sí. Todos los PA pueden ahorrar en un 401(k), y algunos PA de la zona sur del estado reciben un 401(a).
 
-- Todos los PA pueden poner dinero en un **401(k)**. PPL no pone una cantidad igual.
+- Todos los PA pueden poner dinero en un **401(k)**. PPL no pone dinero igual al que pone el PA.
 - **Los PA de la zona sur del estado** (NYC, Nassau, Suffolk y Westchester) que no están en un plan de salud de PPL reciben dinero de paridad salarial en una cuenta **401(a)**. Esto incluye a todos los PA de medio tiempo de la zona sur del estado. PPL pone dinero en ella cada período de pago, según las horas regulares.
 - Una compañía llamada Empower maneja los dos planes.
 

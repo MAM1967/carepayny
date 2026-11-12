@@ -56,7 +56,7 @@ La gobernadora ha propuesto otro aumento el 1 de marzo de 2027. Necesita la apro
 
 ## ¿Qué es la paridad salarial?
 
-En la Ciudad de Nueva York, Nassau, Suffolk y Westchester, una ley del estado llamada **Ley de Paridad Salarial** (Wage Parity Law) agrega una cantidad al mínimo. Cubre el cuidado en el hogar pagado por Medicaid, incluso CDPAP. La cantidad extra se queda igual en 2027. El total sube porque el mínimo sube.
+En la Ciudad de Nueva York, Nassau, Suffolk y Westchester, una ley del estado llamada **Ley de Paridad Salarial** (Wage Parity Law) agrega una cantidad al mínimo. Cubre el cuidado en el hogar pagado por Medicaid, y eso incluye CDPAP. La cantidad extra se queda igual en 2027. El total sube porque el mínimo sube.
 
 | Área | Cantidad extra de paridad salarial | Total por hora, 2026 | Total por hora, 2027 |
 | --- | --- | --- | --- |

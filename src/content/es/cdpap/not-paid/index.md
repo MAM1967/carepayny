@@ -21,7 +21,7 @@ Cada una tiene su propia página:
 2. [Falta el I-9](/cdpap/not-paid/missing-i9/)
 3. [No hay horas aprobadas registradas (sin autorización)](/cdpap/not-paid/no-authorization/)
 4. [La hoja de horas llegó tarde o no se aprobó](/cdpap/not-paid/late-timesheet/)
-5. [Le pagaron menos que las horas enviadas](/cdpap/not-paid/paid-less/)
+5. [Me pagaron menos que mis horas](/cdpap/not-paid/paid-less/)
 
 ## La lista completa de PPL, en palabras sencillas
 

@@ -66,7 +66,7 @@ El PA baja la aplicación Time4Care y entra con el nombre de usuario y la contra
 
 ## Paso 5: La fecha de inicio
 
-Cuando todo está listo, PPL revisa al consumidor y al PA. Luego PPL le envía al PA una fecha de inicio.
+Cuando todo está listo, PPL revisa los datos del consumidor y del PA. Luego PPL le envía al PA una fecha de inicio.
 
 ## ¿Cuáles son las formas de inscribirse con PPL?
 

@@ -14,7 +14,7 @@ sources:
 ---
 
 **401(a)**
-Una cuenta de jubilación. PPL pone dinero de paridad salarial en ella para algunos PA de la zona sur del estado.
+Una cuenta de jubilación. PPL pone dinero de paridad salarial en ella para algunos PA de la zona sur del estado (Ciudad de Nueva York, Nassau, Suffolk y Westchester).
 
 **Autorización (autorización de servicios)**
 La aprobación del cuidado del consumidor. Dice cuántas horas están aprobadas, qué códigos de servicio se pueden usar y las fechas. Viene del plan de salud o de la oficina local de servicios sociales. PPL paga solo las horas que están dentro de ella.

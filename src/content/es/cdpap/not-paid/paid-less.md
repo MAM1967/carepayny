@@ -33,9 +33,9 @@ Si dos registros de tiempo cubren el mismo tiempo, PPL retiene uno. Esto puede p
 Los días de servicio interno se pagan como {{livein.hours}} horas fijas. Solo un PA por día recibe ese pago. PPL rechaza las otras hojas de horas del mismo día.
 
 **6. El pago por días feriados fue menor de lo esperado.**
-El pago extra por días feriados y el pago extra por horas extra no se pagan juntos en la misma semana. Las horas extra bajan el pago extra por día feriado, hora por hora. Más sobre esto: [Horas extra, días feriados, licencia por enfermedad y beneficios](/cdpap/overtime-holidays-sick-leave/).
+El pago extra de los días feriados y el pago extra de las horas extra no se pagan juntos en la misma semana. Por cada hora extra, se paga una hora menos de pago extra de día feriado. Más sobre esto: [Horas extra, días feriados, licencia por enfermedad y beneficios](/cdpap/overtime-holidays-sick-leave/).
 
-**7. La tarifa de pago misma.**
+**7. La tarifa de pago.**
 PPL publica una tarifa base de pago para cada área. La tarifa también está en la carta de oferta del PA. Más sobre esto: [Su tarifa de pago en CDPAP](/cdpap/pay-rate/).
 
 ## Dónde están los registros

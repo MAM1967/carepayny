@@ -21,7 +21,7 @@ sources:
 
 **10 de noviembre de 2026:** Un juez federal le dio la **aprobación final** al acuerdo (un arreglo que termina un caso en la corte con un pago), según amNewYork Law (un medio de noticias). PPL aceptó el acuerdo, pero niega haber hecho algo malo.
 
-Actualizamos esta página cuando el sitio web del acuerdo publica noticias, incluso las fechas de pago.
+Actualizamos esta página cuando el sitio web del acuerdo publica noticias, como las fechas de pago.
 
 ## ¿De qué se trataba el caso?
 
@@ -41,10 +41,10 @@ $162 millones en total:
 
 | Parte | Cantidad |
 | --- | --- |
-| Daños generales | $40.5 millones |
+| Pago general por los daños reclamados | $40.5 millones |
 | Dinero de paridad salarial que había ido al plan de salud MEC de PPL | $25 millones |
 | Tiempo libre pagado (PTO) que los PA habían ganado | $92 millones |
-| Fondo de reserva | $4.5 millones |
+| Fondo de reserva (dinero que se guarda aparte) | $4.5 millones |
 
 La parte de cada persona depende de:
 
@@ -53,11 +53,11 @@ La parte de cada persona depende de:
 3. Cuánto de su pago fue al plan de salud MEC
 4. Su tiempo libre pagado
 
-Primero se descuentan los honorarios de los abogados, los costos y los pagos a los cuatro cuidadores que demandaron. **Los pagos del acuerdo son ingresos que pagan impuestos.**
+Primero se descuenta el pago a los abogados, los costos y los pagos a los cuatro cuidadores que demandaron. **Los pagos del acuerdo son dinero que se cuenta como ingreso para los impuestos.**
 
 ## ¿Cómo se van a enviar los pagos?
 
-- Los miembros del grupo no necesitan llenar un formulario de reclamo.
+- Los miembros del grupo (las personas cubiertas por el acuerdo) no necesitan llenar un formulario de reclamo.
 - Cada miembro del grupo recibe por lo menos un pago.
 - El pago se envía por **depósito directo** a la cuenta de banco más reciente que PPL tiene registrada.
 - Si no hay una cuenta de banco registrada, se envía un cheque a la última dirección de correo que tiene PPL.

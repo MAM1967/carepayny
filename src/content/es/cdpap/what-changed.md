@@ -30,8 +30,8 @@ Del más nuevo al más viejo. Cada cambio tiene su fuente al final de esta pági
 | Fecha | Qué cambió |
 | --- | --- |
 | 1 de enero de 2027 (próximamente) | El mínimo del estado para asistentes de cuidado en el hogar sube a {{2027.min.nyc}} en la Ciudad de Nueva York, Long Island y Westchester, y a {{2027.min.rest}} en el resto del estado. El salario mínimo general no cambia. Más: [Su tarifa de pago en CDPAP](/cdpap/pay-rate/). |
-| 10 de noviembre de 2026 | Un juez federal le dio la aprobación final al acuerdo de $162 millones con PPL para los PA (asistentes personales) de la zona sur del estado. Más: [El acuerdo legal con PPL](/cdpap/ppl-settlement/). |
-| 22 de julio de 2026 | El Departamento de Salud publicó la Política MLTC 26.02. PPL les va a enviar a los planes de salud un reporte cada dos semanas sobre los PA que trabajan muchísimas horas. |
+| 10 de noviembre de 2026 | Un juez federal le dio la aprobación final al acuerdo de $162 millones con PPL para los PA (asistentes personales) de la zona sur del estado (Ciudad de Nueva York, Nassau, Suffolk y Westchester). Más: [El acuerdo legal con PPL](/cdpap/ppl-settlement/). |
+| 22 de julio de 2026 | El Departamento de Salud publicó la Política MLTC 26.02. PPL les va a enviar a los planes de salud un reporte cada dos semanas sobre los PA que trabajan horas muy largas. |
 | 21 de julio de 2026 | Se enviaron avisos del acuerdo a los PA de la zona sur del estado por correo electrónico y mensaje de texto. |
 | 1 de julio de 2026 | Un juez federal le dio la aprobación temprana (preliminar) al acuerdo con PPL. |
 | 27 de mayo de 2026 | Algunos PA nuevos empezaron a hacerse el examen de salud con The IMA Group en lugar de Mobile Health. |

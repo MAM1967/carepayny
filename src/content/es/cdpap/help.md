@@ -47,7 +47,7 @@ El plan de salud del consumidor (la persona que recibe el cuidado), que muchas v
 - Si el consumidor califica para CDPAP
 - Cuántas horas de cuidado se aprueban
 
-Su número de teléfono está en la tarjeta de miembro y en los avisos del consumidor. Cuando un plan reduce o niega horas, tiene que enviar un aviso por escrito que explique la decisión y cómo apelar.
+El número de teléfono del plan de salud o de la oficina está en la tarjeta de miembro y en los avisos del consumidor. Cuando un plan reduce o niega horas, tiene que enviar un aviso por escrito que explique la decisión y cómo apelar.
 
 ## Medicaid del Estado de Nueva York
 
@@ -56,15 +56,15 @@ Su número de teléfono está en la tarjeta de miembro y en los avisos del consu
 
 ## Departamento de Trabajo del Estado de Nueva York (salarios)
 
-El [Departamento de Trabajo del Estado de Nueva York](https://dol.ny.gov/) hace cumplir las leyes de salarios del estado, incluso el salario mínimo para asistentes de cuidado en el hogar. Recibe reclamos de salarios. Presentar un reclamo de salarios es gratis.
+El [Departamento de Trabajo del Estado de Nueva York](https://dol.ny.gov/) hace cumplir las leyes de salarios del estado, entre ellas el salario mínimo para asistentes de cuidado en el hogar. Recibe reclamos de salarios. Presentar un reclamo de salarios es gratis.
 
 ## The Legal Aid Society (ayuda legal gratis en NYC)
 
-The Legal Aid Society da ayuda legal gratis a los neoyorquinos que califican, incluso con el cuidado en el hogar de Medicaid y los salarios no pagados. Teléfono: 212-577-3300.
+The Legal Aid Society da ayuda legal gratis a los neoyorquinos que califican. Esto incluye ayuda con el cuidado en el hogar de Medicaid y los salarios no pagados. Teléfono: 212-577-3300.
 
 ## El administrador del acuerdo con PPL
 
-Atticus Administration maneja el acuerdo de $162 millones con PPL para los PA (asistentes personales) de la zona sur del estado: 1-800-314-2601, o PublicPartnershipsSettlement@AtticusAdmin.com. Más información en la página [El acuerdo legal con PPL](/cdpap/ppl-settlement/).
+Atticus Administration maneja el acuerdo de $162 millones con PPL para los PA (asistentes personales) de la zona sur del estado (Ciudad de Nueva York, Nassau, Suffolk y Westchester): 1-800-314-2601, o PublicPartnershipsSettlement@AtticusAdmin.com. Más información en la página [El acuerdo legal con PPL](/cdpap/ppl-settlement/).
 
 ## NY State of Health (seguro médico)
 

@@ -28,7 +28,7 @@ Un PA puede hacer las tareas que haría un asistente de cuidado personal, un asi
 
 ## ¿Quién puede ser PA?
 
-La mayoría de los adultos pueden ser PA, incluso muchos familiares. Unas pocas personas no pueden:
+La mayoría de los adultos pueden ser PA, entre ellos muchos familiares. Unas pocas personas no pueden:
 
 - El cónyuge del consumidor (esposo o esposa)
 - El **representante designado** del consumidor (la persona que toma las decisiones de CDPAP por el consumidor)
@@ -51,7 +51,7 @@ Desde el 1 de abril de 2025, PPL es la única compañía que puede pagarles a lo
 El estado pone estas reglas. El consumidor tiene que:
 
 - Tener Medicaid de Nueva York
-- Tener una condición médica estable
+- Tener un estado de salud estable
 - Necesitar cuidado en el hogar, según una evaluación aprobada por el estado (una revisión de sus necesidades)
 - Poder dirigir su propio cuidado, o tener un representante designado que pueda hacerlo
 - Cumplir con los **Requisitos Mínimos de Necesidad** (Minimum Needs Requirements), si tiene 21 años o más

@@ -51,8 +51,8 @@ PPL dice que, una vez que se arregla la autorización, el tiempo se paga en la s
 
 ## Quién se encarga de cada parte
 
-- **El plan de salud o la oficina local de servicios sociales:** crea la autorización y se la envía a PPL. Su número de teléfono está en la tarjeta de miembro o en los avisos del consumidor.
-- **El consumidor o el representante designado:** es el miembro del plan de salud, y puede preguntarle al plan sobre esto
+- **El plan de salud o la oficina local de servicios sociales:** crea la autorización y se la envía a PPL. El número de teléfono del plan de salud o de la oficina está en la tarjeta de miembro o en los avisos del consumidor.
+- **El consumidor o el representante designado:** el consumidor es el miembro del plan de salud. El consumidor o el representante designado puede preguntarle al plan sobre esto.
 - **PPL:** carga la autorización y paga las horas. La línea telefónica de PPL es 1-833-247-5346.
 
-Relacionado: [Le pagaron menos que las horas enviadas](/cdpap/not-paid/paid-less/)
+Relacionado: [Me pagaron menos que mis horas](/cdpap/not-paid/paid-less/)
