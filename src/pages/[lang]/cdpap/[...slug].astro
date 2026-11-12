@@ -1,0 +1,21 @@
+---
+// Translated guide pages: /es/cdpap/…, /zh/cdpap/…, /ru/cdpap/… — only for complete languages.
+import { getCollection, render } from "astro:content";
+import Guide from "../../../layouts/Guide.astro";
+import { parseGuideId, publishedLocales } from "../../../i18n/index.js";
+
+export async function getStaticPaths() {
+  const live = (await publishedLocales()).filter((l) => l !== "en");
+  const pages = (await getCollection("guide")).filter((p) => live.includes(parseGuideId(p.id).lang));
+  return pages.map((page) => {
+    const { lang, slug } = parseGuideId(page.id);
+    return { params: { lang, slug: slug === "index" ? undefined : slug.replace(/\/index$/, "") }, props: { page } };
+  });
+}
+const { page } = Astro.props;
+const { Content } = await render(page);
+const { lang, slug } = parseGuideId(page.id);
+---
+<Guide lang={lang} slug={slug} data={page.data}>
+  <Content />
+</Guide>

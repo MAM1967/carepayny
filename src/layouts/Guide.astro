@@ -1,18 +1,22 @@
 ---
 import Base from "./Base.astro";
 import { getCollection } from "astro:content";
-import { isoDate, SITE_URL, guideHref } from "../lib/seo.js";
+import { isoDate, SITE_URL } from "../lib/seo.js";
+import { t as tFor, parseGuideId, guidePath } from "../i18n/index.js";
+import { LOCALES, localizePath } from "../i18n/locales.js";
 
 interface Props {
-  title: string;
-  description: string;
-  lastChecked: string;
-  sources: { label: string; url: string }[];
+  lang: string;
   slug: string;
+  data: { title: string; description: string; lastChecked: string; sources: { label: string; url: string }[] };
 }
-const { title, description, lastChecked, sources, slug } = Astro.props;
+const { lang, slug, data } = Astro.props;
+const { title, description, lastChecked, sources } = data;
+const t = tFor(lang);
+// lastChecked is always written in English ("November 11, 2026") so it parses in every language.
 const modified = isoDate(lastChecked);
-const url = `${SITE_URL}${guideHref(slug)}`;
+const shownDate = new Intl.DateTimeFormat(LOCALES[lang].intl, { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" }).format(new Date(modified + "T12:00:00Z"));
+const url = `${SITE_URL}${guidePath(lang, slug)}`;
 const jsonLd = [
   {
     "@type": "Article",
@@ -21,7 +25,7 @@ const jsonLd = [
     description,
     url,
     mainEntityOfPage: url,
-    inLanguage: "en-US",
+    inLanguage: LOCALES[lang].hreflang,
     dateModified: modified,
     author: { "@id": `${SITE_URL}/#org` },
     publisher: { "@id": `${SITE_URL}/#org` },
@@ -33,41 +37,44 @@ const jsonLd = [
   {
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "CarePayNY", item: `${SITE_URL}/` },
-      { "@type": "ListItem", position: 2, name: "CDPAP guide", item: `${SITE_URL}/cdpap/` },
+      { "@type": "ListItem", position: 1, name: "CarePayNY", item: `${SITE_URL}${localizePath(lang, "/")}` },
+      { "@type": "ListItem", position: 2, name: t("guide.name"), item: `${SITE_URL}${guidePath(lang, "index")}` },
       ...(slug === "index" ? [] : [{ "@type": "ListItem", position: 3, name: title, item: url }])
     ]
   }
 ];
-const pages = (await getCollection("guide")).sort((a, b) => a.data.order - b.data.order);
-const href = guideHref;
-const top = pages.filter((p) => !p.id.startsWith("not-paid/") || p.id === "not-paid/index" || p.id === "not-paid");
-const notPaid = pages.filter((p) => p.id.startsWith("not-paid/") && p.id !== "not-paid/index");
+const pages = (await getCollection("guide"))
+  .map((p) => ({ ...parseGuideId(p.id), data: p.data }))
+  .filter((p) => p.lang === lang)
+  .sort((a, b) => a.data.order - b.data.order);
+const isHub = (s: string) => s === "not-paid/index" || s === "not-paid";
+const top = pages.filter((p) => !p.slug.startsWith("not-paid/") || isHub(p.slug));
+const notPaid = pages.filter((p) => p.slug.startsWith("not-paid/") && !isHub(p.slug));
 ---
-<Base title={title} description={description} ogType="article" modified={modified} jsonLd={jsonLd}>
+<Base lang={lang} title={title} description={description} ogType="article" modified={modified} jsonLd={jsonLd}>
   <div class="wrap guide">
-    <nav class="crumbs" aria-label="Breadcrumb">
-      <a href="/cdpap/">CDPAP guide</a>{slug !== "index" && <> › <span>{title}</span></>}
+    <nav class="crumbs" aria-label={t("guide.breadcrumb")}>
+      <a href={guidePath(lang, "index")}>{t("guide.name")}</a>{slug !== "index" && <> › <span>{title}</span></>}
     </nav>
     <article class="prose">
       <h1>{title}</h1>
-      <p class="checked">Last checked: <time datetime={modified}>{lastChecked}</time></p>
+      <p class="checked">{t("guide.lastChecked")} <time datetime={modified}>{shownDate}</time></p>
       <slot />
-      <h2>Sources</h2>
+      <h2>{t("guide.sources")}</h2>
       <ul class="sources">
         {sources.map((s) => <li><a href={s.url}>{s.label}</a></li>)}
       </ul>
-      <p class="small">CarePayNY is independent. We are not part of PPL, the New York State Department of Health, the Department of Labor or Medicaid. This page gives general information, not legal advice.</p>
+      <p class="small">{t("guide.independent")}</p>
     </article>
-    <nav class="guide-nav card" aria-label="CDPAP guide pages">
-      <h2>CDPAP guide</h2>
+    <nav class="guide-nav card" aria-label={t("guide.pages")}>
+      <h2>{t("guide.name")}</h2>
       <ol>
         {top.map((p) => (
           <li>
-            <a href={href(p.id)} aria-current={p.id === slug ? "page" : undefined}>{p.data.nav}</a>
-            {(p.id === "not-paid/index" || p.id === "not-paid") && (
+            <a href={guidePath(lang, p.slug)} aria-current={p.slug === slug ? "page" : undefined}>{p.data.nav}</a>
+            {isHub(p.slug) && (
               <ul>
-                {notPaid.map((c) => <li><a href={href(c.id)} aria-current={c.id === slug ? "page" : undefined}>{c.data.nav}</a></li>)}
+                {notPaid.map((c) => <li><a href={guidePath(lang, c.slug)} aria-current={c.slug === slug ? "page" : undefined}>{c.data.nav}</a></li>)}
               </ul>
             )}
           </li>

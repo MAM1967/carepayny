@@ -1,17 +1,19 @@
 ---
 import { getCollection, render } from "astro:content";
 import Guide from "../../layouts/Guide.astro";
+import { parseGuideId } from "../../i18n/index.js";
 
 export async function getStaticPaths() {
-  const pages = await getCollection("guide");
-  return pages.map((page) => ({
-    params: { slug: page.id === "index" ? undefined : page.id.replace(/\/index$/, "") },
-    props: { page }
-  }));
+  const pages = (await getCollection("guide")).filter((p) => parseGuideId(p.id).lang === "en");
+  return pages.map((page) => {
+    const { slug } = parseGuideId(page.id);
+    return { params: { slug: slug === "index" ? undefined : slug.replace(/\/index$/, "") }, props: { page } };
+  });
 }
 const { page } = Astro.props;
 const { Content } = await render(page);
+const { lang, slug } = parseGuideId(page.id);
 ---
-<Guide title={page.data.title} description={page.data.description} lastChecked={page.data.lastChecked} sources={page.data.sources} slug={page.id}>
+<Guide lang={lang} slug={slug} data={page.data}>
   <Content />
 </Guide>

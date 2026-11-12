@@ -8,23 +8,35 @@ import bodyFont400 from "@fontsource/atkinson-hyperlegible/files/atkinson-hyperl
 import bodyFont700 from "@fontsource/atkinson-hyperlegible/files/atkinson-hyperlegible-latin-700-normal.woff2?url";
 import { RULES } from "../data/rules.js";
 import { LAUNCHED } from "../data/site.js";
-import { ORGANIZATION, WEBSITE, SITE_NAME } from "../lib/seo.js";
+import { ORGANIZATION, WEBSITE, SITE_NAME, SITE_URL } from "../lib/seo.js";
+import { CONTACT_EMAIL } from "../data/site.js";
+import { LOCALES, DEFAULT_LOCALE, stripLocale, localizePath } from "../i18n/locales.js";
+import { t as tFor, UI, alternatesFor, dateFor } from "../i18n/index.js";
+import { fmt } from "../i18n/format.js";
 
 interface Props {
   title: string;
   description: string;
+  lang?: string;
   ogType?: "website" | "article";
   modified?: string;          // ISO date, for articles
   jsonLd?: object[];          // extra structured data for this page
 }
-const { title, description, ogType = "website", modified, jsonLd = [] } = Astro.props;
+const { title, description, lang = DEFAULT_LOCALE, ogType = "website", modified, jsonLd = [] } = Astro.props;
+const t = tFor(lang);
+const L = LOCALES[lang];
+const html = (key: string, vars = {}) => fmt(UI[lang]?.[key] ?? UI[DEFAULT_LOCALE][key], vars);
+const basePath = stripLocale(Astro.url.pathname);
+// The About page is English only; every other page may have translations.
+const alternates = basePath.startsWith("/about") ? [] : await alternatesFor(basePath);
+const englishUrl = localizePath(DEFAULT_LOCALE, basePath);
 const fullTitle = title === "CarePayNY" ? title : `${title} | CarePayNY`;
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
 const ogImage = new URL("/og.png", Astro.site).href;
 const graph = { "@context": "https://schema.org", "@graph": [ORGANIZATION, WEBSITE, ...jsonLd] };
 ---
 <!DOCTYPE html>
-<html lang="en">
+<html lang={L.htmlLang}>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -36,6 +48,8 @@ const graph = { "@context": "https://schema.org", "@graph": [ORGANIZATION, WEBSI
   <link rel="preload" href={bodyFont700} as="font" type="font/woff2" crossorigin>
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="sitemap" href="/sitemap.xml">
+  {alternates.length > 1 && alternates.map((a) => <link rel="alternate" hreflang={LOCALES[a.lang].hreflang} href={new URL(a.href, SITE_URL).href}>)}
+  {alternates.length > 1 && <link rel="alternate" hreflang="x-default" href={new URL(englishUrl, SITE_URL).href}>}
   <meta property="og:site_name" content={SITE_NAME}>
   <meta property="og:type" content={ogType}>
   <meta property="og:title" content={title}>
@@ -44,35 +58,45 @@ const graph = { "@context": "https://schema.org", "@graph": [ORGANIZATION, WEBSI
   <meta property="og:image" content={ogImage}>
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="CarePayNY: Am I being paid right? Free pay check and CDPAP guide for home care workers in New York.">
-  <meta property="og:locale" content="en_US">
+  <meta property="og:image:alt" content={t("meta.ogAlt")}>
+  <meta property="og:locale" content={L.og}>
   {modified && <meta property="article:modified_time" content={modified}>}
   <meta name="twitter:card" content="summary_large_image">
   <meta name="theme-color" content="#1d4ed8">
   <script type="application/ld+json" set:html={JSON.stringify(graph)} />
 </head>
 <body>
-  <a class="skip" href="#main">Skip to content</a>
+  <a class="skip" href="#main">{t("nav.skip")}</a>
   <header class="site-header">
     <div class="inner">
-      <a class="brand" href="/" aria-label="CarePayNY home">
+      <a class="brand" href={localizePath(lang, "/")} aria-label={t("nav.home")}>
         <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><rect width="64" height="64" rx="16"/><path class="heart" d="M32 51C32 51 12 39.5 12 25.5C12 18.5 17.5 14 23.5 14C27.3 14 30.4 16 32 19C33.6 16 36.7 14 40.5 14C46.5 14 52 18.5 52 25.5C52 39.5 32 51 32 51Z"/><path class="check" d="M23.5 31L29.5 37L41 25"/></svg>
         <span class="brand-name">CarePay<span>NY</span></span>
       </a>
-      <nav class="site-nav" aria-label="Main">
-        <a href="/">Pay check</a>
-        <a href="/cdpap/">CDPAP guide</a>
-        <a href="/about/">About</a>
+      <nav class="site-nav" aria-label={t("nav.main")}>
+        <a href={localizePath(lang, "/")}>{t("nav.payCheck")}</a>
+        <a href={localizePath(lang, "/cdpap/")}>{t("nav.guide")}</a>
+        <a href="/about/" lang="en">{t("nav.about")}</a>
       </nav>
+      {alternates.length > 1 && (
+        <nav class="lang-switch" aria-label={t("nav.languages")}>
+          {alternates.map((a) => (
+            <a href={a.href} hreflang={LOCALES[a.lang].hreflang} lang={LOCALES[a.lang].htmlLang} aria-current={a.lang === lang ? "true" : undefined}>{LOCALES[a.lang].name}</a>
+          ))}
+        </nav>
+      )}
     </div>
   </header>
   <main id="main">
+    {lang !== DEFAULT_LOCALE && (
+      <div class="wrap"><p class="translated-notice" set:html={html("notice.translated.html", { englishUrl, email: CONTACT_EMAIL })} /></div>
+    )}
     <slot />
   </main>
   <footer class="wrap">
     <div class="disclaimer">
-      <p><strong>Estimates, not legal advice.</strong> CarePayNY explains New York's home care pay rules as of {RULES.lastReviewed} and can't account for every situation. Union contracts (such as 1199SEIU), shift differentials, holiday pay, paid time off and other benefits can change what you're owed. The New York State Department of Labor enforces the state's wage laws.</p>
-      <p>We're independent and not affiliated with the New York State Department of Health, the Department of Labor, PPL or Medicaid. Rules version {RULES.version}.</p>
+      <p set:html={html("footer.disclaimer.html", { date: dateFor(lang, RULES.lastReviewed) })} />
+      <p>{t("footer.independent", { version: RULES.version })}</p>
     </div>
   </footer>
 </body>

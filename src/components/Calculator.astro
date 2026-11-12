@@ -1,0 +1,245 @@
+---
+// The pay calculator, in any site language. All text comes from src/i18n/ui/<lang>.json.
+import { RULES } from "../data/rules.js";
+import { UI, t as tFor, guidePath, dateFor } from "../i18n/index.js";
+import { LOCALES, DEFAULT_LOCALE } from "../i18n/locales.js";
+import { fmt } from "../i18n/format.js";
+
+interface Props { lang: string }
+const { lang } = Astro.props;
+const t = tFor(lang);
+const strings = { ...UI[DEFAULT_LOCALE], ...UI[lang] };
+const pageData = { lang, intl: LOCALES[lang].intl, strings };
+const year = RULES.effective.slice(-4);
+const html = (key: string, vars = {}) => fmt(strings[key], vars);
+---
+<div class="wrap">
+<header>
+    <span class="badge" id="rulesBadge">{t("calc.badge", { date: dateFor(lang, RULES.effective) })}</span>
+    <h1>{t("calc.h1")}</h1>
+    <p>{t("calc.intro")}</p>
+  </header>
+
+  <div class="grid">
+    <form class="card" id="f" novalidate>
+      <fieldset>
+        <legend>{t("calc.q1.legend")}</legend>
+        <div class="choices" role="radiogroup" aria-label={t("calc.q1.aria")}>
+          <input type="radio" name="region" id="r-nyc" value="nyc" checked><label for="r-nyc">{t("region.nyc")}</label>
+          <input type="radio" name="region" id="r-liw" value="liw"><label for="r-liw">{t("region.liw")}</label>
+          <input type="radio" name="region" id="r-rest" value="rest"><label for="r-rest">{t("region.rest")}</label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>{t("calc.q2.legend")}</legend>
+        <div class="choices" role="radiogroup" aria-label={t("calc.q2.aria")}>
+          <input type="radio" name="employer" id="e-agency" value="agency" checked><label for="e-agency">{t("employer.agency")}</label>
+          <input type="radio" name="employer" id="e-cdpap" value="cdpap"><label for="e-cdpap">{t("employer.cdpap")}</label>
+          <input type="radio" name="employer" id="e-private" value="private"><label for="e-private">{t("employer.private")}</label>
+        </div>
+        <div id="medicaidBox" class="field">
+          <label class="q" id="medicaidLabel">{t("calc.medicaid.q")}</label>
+          <div class="choices" role="radiogroup" aria-labelledby="medicaidLabel">
+            <input type="radio" name="medicaid" id="m-yes" value="yes" checked><label for="m-yes">{t("medicaid.yes")}</label>
+            <input type="radio" name="medicaid" id="m-no" value="no"><label for="m-no">{t("medicaid.no")}</label>
+            <input type="radio" name="medicaid" id="m-unsure" value="unsure"><label for="m-unsure">{t("medicaid.unsure")}</label>
+          </div>
+          <p class="hint">{t("calc.medicaid.hint")}</p>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>{t("calc.q3.legend")}</legend>
+        <div class="row">
+          <div class="field">
+            <label class="q" for="rate">{t("calc.rate")}</label>
+            <div class="money"><span>$</span><input type="number" id="rate" inputmode="decimal" min="0" step="0.01" value="20.00"></div>
+          </div>
+          <div class="field">
+            <label class="q" for="regularHours">{t("calc.regularHours")}</label>
+            <input type="number" id="regularHours" inputmode="decimal" min="0" step="0.25" value="40">
+            <p class="hint">{t("calc.regularHours.hint")}</p>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>{t("calc.q4.legend")}</legend>
+        <div class="field">
+          <label class="q" for="shifts24">{t("calc.shifts24")}</label>
+          <input type="number" id="shifts24" inputmode="numeric" min="0" max="7" step="1" value="0">
+        </div>
+        <div id="liveInBox" class="row hidden">
+          <div class="field">
+            <label class="q" for="sleepMissed">{t("calc.sleepMissed")}</label>
+            <input type="number" id="sleepMissed" inputmode="numeric" min="0" max="7" step="1" value="0">
+          </div>
+          <div class="field">
+            <label class="q" for="mealsMissed">{t("calc.mealsMissed")}</label>
+            <input type="number" id="mealsMissed" inputmode="numeric" min="0" max="7" step="1" value="0">
+          </div>
+        </div>
+        <div class="check" id="livesInBox">
+          <input type="checkbox" id="livesIn"><label for="livesIn">{t("calc.livesIn")}</label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>{t("calc.q5.legend")}</legend>
+        <div class="field">
+          <label class="q" for="stubGross">{t("calc.stub")}</label>
+          <div class="money"><span>$</span><input type="number" id="stubGross" inputmode="decimal" min="0" step="0.01" placeholder={t("calc.stub.placeholder")}></div>
+          <p class="hint">{t("calc.stub.hint")}</p>
+        </div>
+      </fieldset>
+    </form>
+
+    <aside class="card stub" id="results" aria-live="polite">
+      <h2>{t("calc.results.h2")}</h2>
+      <div id="status" class="status"></div>
+      <table id="lines"></table>
+      <ul class="flags" id="flags"></ul>
+      <div class="actions">
+        <button type="button" id="copyBtn">{t("calc.copy")}</button>
+        <button type="button" class="ghost" id="resetBtn">{t("calc.reset")}</button>
+      </div>
+      <p class="small" id="copyMsg" role="status"></p>
+    </aside>
+  </div>
+
+  <section class="info">
+    <div class="card">
+      <h3>{t("calc.info.h3")}</h3>
+      <ul>
+        <li>{t("calc.info.1")}</li>
+        <li set:html={html("calc.info.2.html", { guideNotPaid: guidePath(lang, "not-paid/index") })} />
+        <li set:html={html("calc.info.3.html")} />
+        <li set:html={html("calc.info.4.html")} />
+      </ul>
+    </div>
+    <div class="card">
+      <h3>{t("calc.rules.h3", { year })}</h3>
+      <ul id="rulesList"></ul>
+      <p class="small">{t("calc.rules.note")}</p>
+    </div>
+  </section>
+  <section class="card">
+    <h3>{t("calc.sources.h3")}</h3>
+    <ul>
+      {RULES.sources.map((s) => <li><a href={s.url}>{s.label}</a></li>)}
+    </ul>
+  </section>
+</div>
+<div class="result-bar" id="resultBar" data-status="ok">
+  <div class="result-bar-text">
+    <strong id="barHeadline">{t("status.ok")}</strong>
+    <span id="barAmount"></span>
+  </div>
+  <a class="result-bar-link" href="#results">{t("calc.bar.details")}</a>
+</div>
+<script type="application/json" id="calcI18n" set:html={JSON.stringify(pageData)} />
+
+<script>
+import { computeWeek } from "../lib/calc.js";
+import { RULES } from "../data/rules.js";
+import { makeT, localDate } from "../i18n/format.js";
+
+const $ = (id) => document.getElementById(id);
+const { strings, intl } = JSON.parse($("calcI18n").textContent);
+const t = makeT(strings);
+const money = (n) => "$" + n.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+const hrs = (n) => t("row.hoursValue", { n: n.toLocaleString(intl) });
+const val = (name) => document.querySelector(`input[name="${name}"]:checked`).value;
+const num = (id) => { const v = parseFloat($(id).value); return isNaN(v) ? 0 : v; };
+const flagText = (f) => {
+  const p = { ...f.params };
+  if (p.region) p.region = t("region." + p.region);
+  if (p.date) p.date = localDate(p.date, intl);
+  return t("flag." + f.code, p);
+};
+let lastSummary = "";
+
+function render() {
+  const employer = val("employer");
+  $("medicaidBox").classList.toggle("hidden", employer !== "agency");
+  const shifts = Math.max(0, Math.floor(num("shifts24")));
+  $("liveInBox").classList.toggle("hidden", shifts === 0);
+  const stubRaw = $("stubGross").value.trim();
+
+  const r = computeWeek({
+    region: val("region"), employer, medicaid: val("medicaid"),
+    rate: num("rate"), regularHours: num("regularHours"),
+    shifts24: shifts, sleepMissed: Math.floor(num("sleepMissed")), mealsMissed: Math.floor(num("mealsMissed")),
+    livesIn: $("livesIn").checked, stubGross: stubRaw === "" ? null : parseFloat(stubRaw)
+  });
+
+  const st = $("status");
+  st.className = "status " + r.status;
+  const headline = t("status." + r.status);
+  st.innerHTML = `<strong>${headline}</strong><span>${t("status." + r.status + ".sub")}</span>`;
+  $("resultBar").dataset.status = r.status;
+  $("barHeadline").textContent = headline;
+  $("barAmount").textContent = t("calc.bar.amount", { amount: money(r.expectedGross) });
+
+  const rows = [
+    [t("row.minRate"), money(r.minRate)],
+    ...(r.pplRate != null ? [[t("row.ppl"), money(r.pplRate)]] : []),
+    [t("row.hours"), hrs(r.totalHours)],
+  ];
+  if (r.liveInHours) rows.push([t("row.liveIn"), hrs(r.liveInHours)]);
+  rows.push([t("row.ot", { threshold: r.threshold }), hrs(r.otHours)]);
+  if (r.wp) {
+    rows.push([t(r.wp.applies === "maybe" ? "row.wpTotalMaybe" : "row.wpTotal"), money(r.wp.total)]);
+    rows.push([t("row.wpGap"), r.wp.coveredInCash ? t("row.wpCovered") : t("row.wpGapValue", { perHour: money(r.wp.gapPerHour), week: money(r.wp.gapWeek) })]);
+  }
+  if (r.stub) rows.push([t("row.stub"), money(r.stub.entered)]);
+  rows.push([t("row.gross"), money(r.expectedGross)]);
+  $("lines").innerHTML = rows.map((x, i) => `<tr class="${i === rows.length - 1 ? "total" : ""}"><td>${x[0]}</td><td class="v">${x[1]}</td></tr>`).join("");
+
+  const flags = r.flags.map((f) => ({ level: f.level, text: flagText(f) }));
+  if (r.wp && !r.wp.coveredInCash) {
+    flags.push({ level: "warn", text: t(r.wp.applies === "yes" ? "flag.wageParity.yes" : "flag.wageParity.maybe", { region: t("region." + r.region), total: money(r.wp.total), gap: money(r.wp.gapPerHour) }) });
+  }
+  $("flags").innerHTML = flags.map((f) => `<li class="${f.level}">${f.text}</li>`).join("");
+
+  lastSummary = [
+    t("summary.title", { version: RULES.version }),
+    t("summary.status", { status: headline }),
+    ...rows.map((x) => `${x[0]}: ${x[1]}`),
+    ...flags.map((f) => "- " + f.text),
+    t("summary.footer")
+  ].join("\n");
+}
+
+function initStatic() {
+  $("rulesBadge").textContent = t("calc.badge", { date: localDate(RULES.effective, intl) });
+  const R = RULES.regions;
+  $("rulesList").innerHTML = [
+    t("calc.rules.minimum", { nyc: money(R.nyc.hcaMin), rest: money(R.rest.hcaMin) }),
+    t("calc.rules.wageParity", { nycTotal: money(R.nyc.wpTotal), nycBenefit: money(R.nyc.wpBenefit), liwTotal: money(R.liw.wpTotal), liwBenefit: money(R.liw.wpBenefit) }),
+    t("calc.rules.shifts"),
+    t("calc.rules.overtime")
+  ].map((x) => `<li>${x}</li>`).join("");
+}
+
+$("f").addEventListener("input", render);
+$("f").addEventListener("change", render);
+$("f").addEventListener("submit", (e) => e.preventDefault());
+$("copyBtn").addEventListener("click", async () => {
+  try { await navigator.clipboard.writeText(lastSummary); $("copyMsg").textContent = t("calc.copied"); }
+  catch { $("copyMsg").textContent = t("calc.copyBlocked"); }
+});
+$("resetBtn").addEventListener("click", () => { $("f").reset(); $("copyMsg").textContent = ""; render(); });
+
+initStatic();
+
+// Phones: hide the pinned result bar while the full results are on screen.
+const bar = $("resultBar");
+if ("IntersectionObserver" in window) {
+  new IntersectionObserver(([entry]) => {
+    bar.classList.toggle("is-hidden", entry.isIntersecting);
+  }, { threshold: 0.15 }).observe($("results"));
+}
+render();
+</script>

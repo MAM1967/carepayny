@@ -1,0 +1,16 @@
+---
+// Translated calculator pages: /es/, /zh/, /ru/ — only for complete languages.
+import Base from "../../layouts/Base.astro";
+import Calculator from "../../components/Calculator.astro";
+import { calculatorMeta } from "../../lib/calculator-meta.js";
+import { publishedLocales } from "../../i18n/index.js";
+
+export async function getStaticPaths() {
+  return (await publishedLocales()).filter((l) => l !== "en").map((lang) => ({ params: { lang } }));
+}
+const { lang } = Astro.params;
+const meta = calculatorMeta(lang);
+---
+<Base lang={lang} title={meta.title} description={meta.description} jsonLd={meta.jsonLd}>
+  <Calculator lang={lang} />
+</Base>

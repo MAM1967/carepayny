@@ -1,10 +1,11 @@
 import { getCollection } from "astro:content";
-import { SITE_URL, guideHref } from "../lib/seo.js";
+import { SITE_URL } from "../lib/seo.js";
+import { parseGuideId, guidePath } from "../i18n/index.js";
 import { RULES } from "../data/rules.js";
 
 // llms.txt: a plain-text map of the site for AI answer tools (llmstxt.org format).
 export async function GET() {
-  const guide = (await getCollection("guide")).sort((a, b) => a.data.order - b.data.order);
+  const guide = (await getCollection("guide")).filter((p) => parseGuideId(p.id).lang === "en").sort((a, b) => a.data.order - b.data.order);
   const body = `# CarePayNY
 
 > Free, independent website for home care workers in New York State. It explains the state's home care pay rules (home care aide minimum wage, wage parity, overtime, 24-hour shifts) and the CDPAP program run through PPL, in plain English. Every page links to its official sources and shows a "last checked" date. CarePayNY is not part of PPL, the NYS Department of Health, the Department of Labor or Medicaid, and does not give legal advice.
@@ -17,7 +18,7 @@ Pay rules in use: version ${RULES.version}, in effect since ${RULES.effective}, 
 
 ## CDPAP guide
 
-${guide.map((p) => `- [${p.data.title}](${SITE_URL}${guideHref(p.id)}): ${p.data.description}`).join("\n")}
+${guide.map((p) => `- [${p.data.title}](${SITE_URL}${guidePath("en", parseGuideId(p.id).slug)}): ${p.data.description}`).join("\n")}
 
 ## About
 

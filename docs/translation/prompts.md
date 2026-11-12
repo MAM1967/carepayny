@@ -2,6 +2,13 @@
 
 Copy a prompt, fill in the parts in `<angle brackets>`, and paste the inputs below it. Use a strong model.
 Each page is translated as a whole file, including its front matter (the part between the `---` lines).
+The glossary for a language is `glossary.md` (English terms and meanings) plus `glossary.<lang>.md` (the approved translations).
+
+There are two kinds of text:
+- **Guide pages:** `src/content/en/cdpap/**/*.md` → `src/content/<lang>/cdpap/` with the same file names.
+- **Site text** (calculator, menus, footer): `src/i18n/ui/en.json` → `src/i18n/ui/<lang>.json`. Translate the values only. Keep every key, every `{placeholder}`, and every HTML tag and `href` exactly. Skip keys that start with `_`.
+
+A language goes live only when all its guide pages and all its site text are done (the build checks this). `npm test` checks tokens, links, placeholders and tags.
 
 ## 1. First translation
 
