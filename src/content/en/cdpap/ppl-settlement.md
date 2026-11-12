@@ -17,25 +17,25 @@ sources:
     url: "https://www.amny.com/law/federal-judge-finalizes-home-aides-settlement/"
 ---
 
-## The latest news
+## What is the latest news on the PPL settlement?
 
 **November 10, 2026:** A federal judge gave **final approval** to the settlement, according to amNewYork Law. PPL settled but denies doing anything wrong.
 
 We update this page when the settlement website posts news, including payment dates.
 
-## What the case was about
+## What was the case about?
 
 Four CDPAP caregivers sued PPL in April 2025 in federal court (the Eastern District of New York). The case is called *Calderon v. Public Partnerships, LLC*. The caregivers said PPL did not pay PAs correctly or on time. They also said PPL's benefits did not follow New York's Wage Parity Law.
 
 The Legal Aid Society and the law firm Katz Banks Kumin represent the caregivers.
 
-## Who is in the settlement
+## Who is in the settlement?
 
 PAs who were paid through PPL for CDPAP work in **New York City, Nassau, Suffolk or Westchester** at any time from **March 1, 2025 to April 30, 2026.** That is about 200,000 people.
 
 PAs in other counties are not part of this settlement.
 
-## How much money
+## How much money is in the settlement?
 
 $162 million in total:
 
@@ -55,7 +55,7 @@ Each person's share depends on:
 
 Lawyer fees, costs and awards to the four caregivers who sued come out first. **Settlement payments are taxable income.**
 
-## How payments are sent
+## How will payments be sent?
 
 - Class members do not need to fill out a claim form.
 - Every class member gets at least one payment.
@@ -63,7 +63,7 @@ Lawyer fees, costs and awards to the four caregivers who sued come out first. **
 - If there is no bank account on file, a check goes to the last mailing address PPL has.
 - The court notice does not give a payment date.
 
-## Updating an address or bank account
+## Who handles address and bank account changes?
 
 The settlement administrator is a company called Atticus Administration. It handles addresses and payment details for the settlement:
 
@@ -72,15 +72,15 @@ The settlement administrator is a company called Atticus Administration. It hand
 - Mail: Public Partnerships Settlement, c/o Atticus Administration, PO Box 64053, St. Paul, MN 55164
 - Website: PublicPartnershipsSettlement.com
 
-## What class members give up
+## What do class members give up?
 
 Class members who did not opt out by September 19, 2026 give up their right to sue PPL separately over the claims in this case. This includes wage and hour claims from March 1, 2025 to June 23, 2026, under federal law, New York labor law and the Wage Parity Law.
 
-## After the ruling
+## What happens after the ruling?
 
 amNewYork Law reports that, after final approval, PPL can ask workers to agree to **arbitration** for future wage claims. Arbitration means a private process instead of a court case. The article says workers can opt out of that agreement. The court had blocked this request while the settlement was being approved.
 
-## Timeline
+## What is the timeline of the case?
 
 | Date | What happened |
 | --- | --- |

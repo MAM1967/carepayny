@@ -68,7 +68,7 @@ The PA downloads the Time4Care app and logs in with the PPL@Home username and pa
 
 When everything is done, PPL checks the consumer and PA. Then PPL sends the PA a start date.
 
-## Ways to sign up
+## What are the ways to sign up with PPL?
 
 PPL lists these options:
 
