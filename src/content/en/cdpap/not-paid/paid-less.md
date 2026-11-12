@@ -21,7 +21,7 @@ The pay is there, but it is for fewer hours than the PA sent in. Or the amount i
 PPL pays only for hours inside the consumer's **service authorization**. The approved hours reset every Sunday at 12:00 a.m. Hours past the limit show the message "Time Entry's Units exceed remaining on Authorization."
 
 **2. Rounding.**
-PPL rounds each shift. On hourly service codes, up to 29 minutes past the hour rounds down. Example: 5 hours 19 minutes is paid as 5 hours. On 15-minute codes, up to 7 minutes past a quarter hour rounds down.
+PPL rounds each shift. On hourly service codes, up to 29 minutes past the hour rounds down. Example: 5 hours 25 minutes is paid as 5 hours. On 15-minute codes, up to 7 minutes past a quarter hour rounds down.
 
 **3. The consumer was in the hospital.**
 PPL does not pay for time when the consumer is in a hospital or other health care facility. The day they go in and the day they come home are the exceptions.

@@ -52,7 +52,7 @@ PPL says that once the authorization is fixed, the time is paid in the next payr
 ## Who handles each part
 
 - **The health plan or local social services office:** creates the authorization and sends it to PPL. Their phone number is on the consumer's member card or notices.
-- **The consumer or designated representative:** is the health plan's member, and can ask the plan about it
+- **The consumer or designated representative:** the consumer is the health plan's member. The consumer or the designated representative can ask the plan about it.
 - **PPL:** loads the authorization and pays the hours. PPL's phone line is 1-833-247-5346.
 
 Related: [Paid less than the hours sent in](/cdpap/not-paid/paid-less/)
