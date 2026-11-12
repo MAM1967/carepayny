@@ -1,7 +1,7 @@
 # Translation glossary
 
 Use these terms exactly in every translation. Update this file **before** translating a page with a new term.
-The 3 language columns get filled in once the owner picks the languages (PRD, "Decisions for the owner").
+Languages: Spanish (`es`), Chinese, Simplified (`zh-Hans`), Russian (`ru`). Fill in each column before the first page in that language.
 
 ## Never translate
 
@@ -13,7 +13,7 @@ On first use on a page, a short explanation in the target language can follow th
 
 ## Approved translations
 
-| English | Meaning (for the translator) | Language 1 | Language 2 | Language 3 |
+| English | Meaning (for the translator) | Español | 中文（简体） | Русский |
 | --- | --- | --- | --- | --- |
 | home care worker | General term for aides and caregivers | | | |
 | home care aide | Legal term for the job covered by the home care minimum wage | | | |

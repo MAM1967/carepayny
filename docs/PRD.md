@@ -159,7 +159,8 @@ The site launches with about 30 pages, each answering one question a caregiver a
 **Scope**
 
 - English pages about pay only: rates, timesheets, payment methods, pay schedules, sign-up, payroll problems, benefits and the PPL settlement. This is the pay calculator and the CDPAP guide.
-- 4 languages in total: English (the source) plus 3 others. **Which 3 is an owner decision** (see the end of this document). The candidates are Spanish, Chinese (Simplified), Russian, Haitian Creole and Bengali.
+- 4 languages in total, and no more: English (the source), **Spanish (`es`), Chinese, Simplified (`zh-Hans`) and Russian (`ru`)**.
+- Why these 3: they are the 3 largest groups of New Yorkers with limited English (Spanish about 1.2 million, Chinese about 378,000, Russian about 124,000; American Community Survey 2018–2022, as cited in New York State language access plans). They are also the 3 languages, besides Korean, in which the state has approved home care aide training. Haitian Creole is the next candidate if traffic data shows demand.
 - No clinical or care procedures.
 - One maintainer. No paid translators.
 
@@ -222,7 +223,7 @@ Every translated page says, in its own language: "This page was translated from 
 
 **Web addresses and search engines (SEO and AEO)**
 
-- Each language has its own address: `/` for English, then `/es/`, `/zh/`, `/ru/`, `/ht/` or `/bn/`. Language codes follow the BCP 47 standard.
+- Each language has its own address: `/` for English, `/es/` for Spanish, `/zh/` for Chinese and `/ru/` for Russian. In `hreflang` tags, Chinese is `zh-Hans`. Language codes follow the BCP 47 standard.
 - Each page lists all its language versions with `hreflang` tags, plus an `x-default` tag pointing to English.
 - Page titles, descriptions and the sitemap are translated too.
 - Translations keep English link addresses. When the site builds, it adds the language folder to links between our own pages, so a Spanish page links to other Spanish pages.
@@ -440,6 +441,6 @@ The site launches publicly at week 8 after a lawyer signs off, and makes no mone
 
 - [x] Name: CarePayNY. carepayny.com and carepayny.org bought November 9, 2026.
 - [ ] Day-90 targets: confirm or change the numbers in the gate.
-- [ ] Which 3 languages to translate into (candidates: Spanish, Chinese (Simplified), Russian, Haitian Creole, Bengali).
+- [x] Languages (November 12, 2026): English, Spanish, Chinese (Simplified) and Russian. Four in total, no more.
 - [x] Translation tooling (November 12, 2026): AI-only process, no Weblate for now. The Weblate setup guide for the dedicated MacBook stays in `docs/weblate-mac-setup.md` if it is needed later.
 - [ ] Budget for lawyer review and insurance.
