@@ -17,9 +17,9 @@ sources:
     url: "https://www.health.ny.gov/health_care/medicaid/redesign/mrt90/mltc_policy/2026/26-02.htm"
 ---
 
-## Overtime
+## Does CDPAP pay overtime?
 
-Hours over {{ot.hours}} in a week are paid at {{ot.times}}.
+Yes. Hours over {{ot.hours}} in a week are paid at {{ot.times}}.
 
 PPL's rules on overtime:
 
@@ -32,7 +32,9 @@ PPL's rules on overtime:
 
 A PA who works all seven days in a week (Sunday to Saturday) for a consumer who is **not a relative** can be paid {{ot.times}} for the seventh day, even under {{ot.hours}} hours. Work only for a relative does not count.
 
-## Holiday pay
+## Does PPL pay extra on holidays?
+
+Yes, for full-time PAs.
 
 **Full-time PAs** (more than 130 hours a month) get time and a half for the first 8 hours worked on these 7 holidays:
 
@@ -48,11 +50,11 @@ Hours past 8 on a holiday are paid at the regular rate.
 
 Holiday premium pay and overtime premium pay are not paid together in the same week. Each overtime hour lowers the holiday premium by one hour.
 
-## Paid sick leave
+## Do CDPAP caregivers get paid sick leave?
 
-PPL calls this **Safe and Sick Leave (SSL)**.
+Yes. PAs earn 1 hour of paid sick leave for every 30 hours worked. PPL calls this **Safe and Sick Leave (SSL)**.
 
-- PAs earn 1 hour for every 30 hours worked.
+
 - The most a PA can earn is 56 hours a year.
 - It can be used in 15-minute blocks.
 - PAs ask for it in PPL@Home: Timesheet, then "+ Submit Time Off," then "Safe and Sick Leave." Requests can cover the past 14 days and up to 90 days ahead.
@@ -70,7 +72,9 @@ PPL calls this **Safe and Sick Leave (SSL)**.
 
 Since February 22, 2026, PAs who work in New York City also get 32 hours of **unpaid** sick time each year. It does not carry over. It resets on January 1.
 
-## Health insurance
+## Does PPL offer health insurance?
+
+Yes, for full-time PAs.
 
 - **Full-time PAs** (more than 130 hours a month) can choose a PPL health plan: SecureHealth or SecureHealth Plus. Anthem provides the coverage.
 - Coverage starts the month after the PA first works 130 hours in a month.
@@ -78,19 +82,21 @@ Since February 22, 2026, PAs who work in New York City also get 32 hours of **un
 - PPL's health plans are for full-time PAs. For part-time PAs, PPL lists NY State of Health (1-855-355-5777), the state's health insurance marketplace.
 - PPL's older MEC (BasicWellness) plan and Flex Card plan ended on April 30, 2026.
 
-## Retirement
+## Does PPL offer retirement benefits?
+
+Yes. Every PA can save in a 401(k), and some downstate PAs get a 401(a).
 
 - Every PA can put money into a **401(k)**. PPL does not match it.
 - **Downstate PAs** (NYC, Nassau, Suffolk and Westchester) who are not in a PPL health plan get wage parity money in a **401(a)** account. This includes all downstate part-time PAs. PPL adds to it each pay period, based on regular hours.
 - A company called Empower runs both plans.
 
-## Other benefits
+## What other benefits does PPL offer?
 
 - Optional insurance from Chubb: accident, critical illness and life insurance. The PA pays for these.
 - A NYC Transit Plan, for wage parity employees only.
 - Paid training time.
 
-## Phone numbers PPL lists
+## What are PPL's phone numbers for benefits?
 
 - PPL HR line: 1-833-746-8283
 - Benefits help (GSA National): 1-888-250-8303

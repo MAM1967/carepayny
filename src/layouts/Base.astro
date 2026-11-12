@@ -3,15 +3,25 @@ import "@fontsource/atkinson-hyperlegible/400.css";
 import "@fontsource/atkinson-hyperlegible/700.css";
 import "@fontsource-variable/bricolage-grotesque/opsz.css";
 import "../styles/global.css";
+// Preload the body font so text doesn't jump when it loads (layout shift).
+import bodyFont400 from "@fontsource/atkinson-hyperlegible/files/atkinson-hyperlegible-latin-400-normal.woff2?url";
+import bodyFont700 from "@fontsource/atkinson-hyperlegible/files/atkinson-hyperlegible-latin-700-normal.woff2?url";
 import { RULES } from "../data/rules.js";
 import { LAUNCHED } from "../data/site.js";
+import { ORGANIZATION, WEBSITE, SITE_NAME } from "../lib/seo.js";
 
 interface Props {
   title: string;
   description: string;
+  ogType?: "website" | "article";
+  modified?: string;          // ISO date, for articles
+  jsonLd?: object[];          // extra structured data for this page
 }
-const { title, description } = Astro.props;
+const { title, description, ogType = "website", modified, jsonLd = [] } = Astro.props;
 const fullTitle = title === "CarePayNY" ? title : `${title} | CarePayNY`;
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
+const ogImage = new URL("/og.png", Astro.site).href;
+const graph = { "@context": "https://schema.org", "@graph": [ORGANIZATION, WEBSITE, ...jsonLd] };
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -21,8 +31,25 @@ const fullTitle = title === "CarePayNY" ? title : `${title} | CarePayNY`;
   <title>{fullTitle}</title>
   <meta name="description" content={description}>
   {!LAUNCHED && <meta name="robots" content="noindex, nofollow">}
-  <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site)}>
+  <link rel="canonical" href={canonical}>
+  <link rel="preload" href={bodyFont400} as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href={bodyFont700} as="font" type="font/woff2" crossorigin>
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="sitemap" href="/sitemap.xml">
+  <meta property="og:site_name" content={SITE_NAME}>
+  <meta property="og:type" content={ogType}>
+  <meta property="og:title" content={title}>
+  <meta property="og:description" content={description}>
+  <meta property="og:url" content={canonical}>
+  <meta property="og:image" content={ogImage}>
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="CarePayNY: Am I being paid right? Free pay check and CDPAP guide for home care workers in New York.">
+  <meta property="og:locale" content="en_US">
+  {modified && <meta property="article:modified_time" content={modified}>}
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#1d4ed8">
+  <script type="application/ld+json" set:html={JSON.stringify(graph)} />
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>

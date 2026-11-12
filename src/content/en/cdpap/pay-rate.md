@@ -19,7 +19,9 @@ sources:
     url: "https://pplfirst.com/wp-content/uploads/2026/05/SSL-Policy-Downstate.pdf"
 ---
 
-## Two numbers: the law and PPL's rate
+## What is the CDPAP pay rate in New York?
+
+In 2026, PPL's base pay for CDPAP is {{2026.ppl.nyc}} an hour in New York City, {{2026.ppl.liw}} in Nassau, Suffolk and Westchester, and {{2026.ppl.rest}} in other counties. Two numbers matter:
 
 - The **state minimum** is the lowest pay the law allows for home care aides. CDPAP caregivers are covered by it. The state sets it.
 - **PPL's base pay** is the rate PPL says it pays CDPAP caregivers. In New York City, Nassau, Suffolk and Westchester, it is higher than the state minimum.
@@ -34,9 +36,9 @@ PPL's rate depends on where the **consumer** lives, not where the PA lives. PPL 
 | Nassau, Suffolk or Westchester | {{2026.min.liw}} an hour | {{2026.ppl.liw}} an hour |
 | Any other county | {{2026.min.rest}} an hour | {{2026.ppl.rest}} an hour |
 
-## 2027 rates (starting January 1, 2027)
+## What changes in 2027?
 
-The state minimum for home care aides goes up on January 1, 2027.
+On January 1, 2027, the state minimum for home care aides goes up to {{2027.min.nyc}} an hour in New York City, Long Island and Westchester, and {{2027.min.rest}} in the rest of the state.
 
 | Where the consumer lives | State minimum (the law) | PPL's base pay for CDPAP |
 | --- | --- | --- |
@@ -52,7 +54,7 @@ The general minimum wage for most other jobs does not change on January 1, 2027.
 
 The governor has proposed another raise on March 1, 2027. It needs the state legislature's approval. If it passes, we will update this page.
 
-## Wage parity (NYC, Long Island and Westchester)
+## What is wage parity?
 
 In New York City, Nassau, Suffolk and Westchester, a state law called the **Wage Parity Law** adds to the minimum. It covers Medicaid-paid home care, including CDPAP. The extra amount stays the same in 2027. The total goes up because the minimum goes up.
 
@@ -70,14 +72,14 @@ More on benefits: [Overtime, holidays, sick leave and benefits](/cdpap/overtime-
 
 Wage parity does not apply in the rest of the state.
 
-## Overtime
+## Does CDPAP pay overtime?
 
-Hours over {{ot.hours}} in a week are paid at {{ot.times}}. PPL has extra rules on overtime and holiday pay. They are on [Overtime, holidays, sick leave and benefits](/cdpap/overtime-holidays-sick-leave/).
+Yes. Hours over {{ot.hours}} in a week are paid at {{ot.times}}. PPL has extra rules on overtime and holiday pay. They are on [Overtime, holidays, sick leave and benefits](/cdpap/overtime-holidays-sick-leave/).
 
-## Live-in days
+## How are live-in days paid?
 
 For live-in (per-diem) service codes, PPL pays a flat {{livein.hours}} hours per day. Only one PA per day gets that payment.
 
-## The pay calculator
+## Is there a way to check one week of pay?
 
 The [pay calculator](/) compares one week of pay with the state minimum, wage parity and PPL's base pay. It uses the rules for the current year. It switches to the 2027 rules on January 1, 2027. It runs on your phone and saves nothing.

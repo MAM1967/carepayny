@@ -34,7 +34,9 @@ Most adults can be a PA, including many family members. A few people cannot:
 - The consumer's **designated representative** (the person who makes CDPAP decisions for the consumer)
 - The parent of a consumer who is under 21
 
-## Who does what
+## Who does what in CDPAP?
+
+The consumer directs the care, the health plan approves the hours, and PPL runs payroll.
 
 | Who | What they do |
 | --- | --- |
@@ -56,11 +58,11 @@ The state lists these rules. The consumer must:
 
 The Minimum Needs Requirements started on September 1, 2025. The consumer must need at least some hands-on help with more than two daily activities, like bathing or dressing. A consumer with dementia or Alzheimer's must need at least supervision with more than one daily activity.
 
-## CDPAP and agency home care are different
+## How is CDPAP different from agency home care?
 
-Personal Care Services (PCS) is another Medicaid home care program. In PCS, a licensed home care agency sends the aide. In CDPAP, the consumer chooses the PA. Moving from one program to the other takes a new approval from the health plan.
+In CDPAP, the consumer chooses the PA. In agency home care, called Personal Care Services (PCS), a licensed home care agency sends the aide. PCS is another Medicaid home care program. Moving from one program to the other takes a new approval from the health plan.
 
-## More in this guide
+## What else is in this guide?
 
 - [How PPL pays you](/cdpap/how-ppl-pays/)
 - [Signing up with PPL](/cdpap/signing-up/)
