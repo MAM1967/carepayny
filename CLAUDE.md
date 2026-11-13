@@ -13,7 +13,7 @@ CarePayNY (carepayny.com) is a free, static website that helps New York home car
 7. **Translations:** follow `docs/translation/` and the PRD "Translation plan." Write English first. Use the glossary in every prompt. Never type a pay number into a translation; keep every `{{token}}`, link and Markdown mark as is. Run the back-translation check before opening a pull request. Every translated page carries the "translated with the help of AI; the English page is correct" notice. The English version controls.
 8. **Independence:** never imply government backing or affiliation with NYS DOH, DOL, PPL or Medicaid. No "official" or "guaranteed" wording.
 9. **Monetization limits:** no fees per placed worker, per trainee hired or per enrollment; no lawyer referral fees; no agency ads near content that rates agencies. See PRD "Monetization" and "Legal".
-10. **Pre-launch:** `LAUNCHED` in `src/data/site.js` stays `false` (noindex + robots block) until the owner confirms lawyer sign-off.
+10. **Launch:** the site launched on November 13, 2026, by the owner's decision, without a paid lawyer review (see PRD "Launch gate"). `LAUNCHED` in `src/data/site.js` is `true`. Setting it to `false` hides the site from search engines again (noindex + robots block). Rules 2, 4 and 8 are the main legal safeguards, so treat them as strict.
 
 ## Layout
 
