@@ -311,6 +311,7 @@ No New York State or NYC law bans pay calculators. The site must still stay clea
 - **CDPAP guide:** independent and not affiliated with the NYS Department of Health, PPL or Medicaid. Information as of a stated date, with links to official sources.
 - **Job listings:** provided by third parties and may be filled or expired. We don't employ anyone or endorse employers. Never pay to apply for a job.
 - **Site-wide:** terms of use with a limitation of liability, a privacy policy, a note that the English version controls, and an affiliate disclosure if affiliate links are added.
+- **Terms and privacy (done November 13, 2026):** `/terms/` and `/privacy/`, in English only, linked from every page footer with an "(in English)" label in the other languages. Who runs the site comes from `OPERATOR` in `src/data/site.js`; change it to the LLC's legal name once the LLC exists. Change `LEGAL_UPDATED` with every edit. The privacy policy must be updated before any new data is collected (email list, inquiry form, analytics).
 
 **Business setup**
 

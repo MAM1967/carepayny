@@ -1,0 +1,51 @@
+---
+import Base from "../layouts/Base.astro";
+import { CONTACT_EMAIL, OPERATOR, LEGAL_UPDATED } from "../data/site.js";
+---
+<Base title="Privacy Policy" description="What CarePayNY collects (almost nothing), what our web host logs, and how to reach us about your privacy.">
+  <div class="wrap prose">
+    <h1>Privacy Policy</h1>
+    <p class="small">Last updated: {LEGAL_UPDATED}</p>
+    <p>This page explains what information CarePayNY (carepayny.com) collects and what we do with it. "We" and "us" mean {OPERATOR}, the owner of this website.</p>
+
+    <h2>The short version</h2>
+    <ul>
+      <li>The pay calculator runs on your own phone or computer. What you type never leaves your device.</li>
+      <li>We don't ask you to sign up. There are no accounts.</li>
+      <li>We don't use cookies, ads, tracking tools or analytics.</li>
+      <li>We don't sell or share personal information.</li>
+    </ul>
+
+    <h2>The pay calculator</h2>
+    <p>The calculator does all of its math inside your web browser. We don't receive, save or see your hours, pay or other answers. The calculator doesn't save them on your device either. When you close or reload the page, they are gone.</p>
+    <p>If you use the "Copy summary" button, the summary goes to your device's clipboard. Only you decide where it goes after that.</p>
+
+    <h2>What our web host records</h2>
+    <p>Our website is hosted by Cloudflare. Like most web hosts, Cloudflare automatically records some technical information when any device visits a website. This can include:</p>
+    <ul>
+      <li>your IP address (a number that identifies your internet connection),</li>
+      <li>the type of browser and device you use,</li>
+      <li>the page you asked for and the time you asked for it.</li>
+    </ul>
+    <p>Cloudflare uses this information to deliver pages and to protect the site from attacks. We don't use it to find out who you are, and we don't combine it with other information. You can read <a href="https://www.cloudflare.com/privacypolicy/">Cloudflare's privacy policy</a> on its website.</p>
+
+    <h2>If you email us</h2>
+    <p>If you write to <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>, we receive your email address and whatever you put in your message. Our email is forwarded through Cloudflare and stored by our email provider. We use your message only to answer you or to fix a mistake on the site. We don't add you to a mailing list.</p>
+    <p>Please don't send us private details you don't need to share, such as your Social Security number, your Medicaid number or health information.</p>
+
+    <h2>Fonts and outside links</h2>
+    <p>Our fonts are stored on our own site, so loading a page doesn't contact a font company. Some pages link to other websites, such as government agencies. Those sites have their own privacy rules. We don't control them.</p>
+
+    <h2>Children</h2>
+    <p>This site is for adult workers and families. It isn't made for children under 13, and we don't knowingly collect information from them.</p>
+
+    <h2>Your choices</h2>
+    <p>Because we don't keep personal information about visitors, there is usually nothing for us to look up, change or delete. If you have emailed us and want us to delete your messages, write to <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a> and we will delete them.</p>
+
+    <h2>Changes to this policy</h2>
+    <p>If we change this policy, we will post the new version on this page and change the "last updated" date at the top. If we ever start collecting more information, we will say so here first.</p>
+
+    <h2>Contact</h2>
+    <p>Questions about this policy: <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.</p>
+  </div>
+</Base>

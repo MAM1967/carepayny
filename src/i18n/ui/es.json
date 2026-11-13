@@ -16,6 +16,7 @@
 
   "footer.disclaimer.html": "<strong>Son cálculos aproximados, no asesoría legal.</strong> CarePayNY explica las reglas de pago de cuidado en el hogar de Nueva York vigentes al {date} y no puede cubrir todas las situaciones. Los contratos sindicales (como 1199SEIU), los diferenciales por turno, el pago por días feriados, el tiempo libre pagado y otros beneficios pueden cambiar lo que le deben. El Departamento de Trabajo del Estado de Nueva York hace cumplir las leyes de salarios del estado.",
   "footer.independent": "Somos independientes. No estamos afiliados al Departamento de Salud del Estado de Nueva York, al Departamento de Trabajo, a PPL ni a Medicaid. Versión de las reglas: {version}.",
+  "footer.legal.html": "<a href=\"/terms/\">Términos de uso</a> · <a href=\"/privacy/\">Política de privacidad</a> (en inglés)",
 
   "notice.translated.html": "Esta página se tradujo del inglés con ayuda de inteligencia artificial (IA). Si hay diferencias, <a href=\"{englishUrl}\">la página en inglés</a> es la correcta. Para reportar un error, escriba a <a href=\"mailto:{email}\">{email}</a>.",
 

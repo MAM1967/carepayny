@@ -1,0 +1,55 @@
+---
+import Base from "../layouts/Base.astro";
+import { CONTACT_EMAIL, OPERATOR, LEGAL_UPDATED } from "../data/site.js";
+---
+<Base title="Terms of Use" description="The rules for using CarePayNY: general information only, estimates only, no legal advice, and the English version controls.">
+  <div class="wrap prose">
+    <h1>Terms of Use</h1>
+    <p class="small">Last updated: {LEGAL_UPDATED}</p>
+    <p>These terms are the rules for using CarePayNY (carepayny.com). "We" and "us" mean {OPERATOR}, the owner of this website. By using the site, you agree to these terms. If you don't agree, please don't use the site.</p>
+
+    <h2>1. General information only</h2>
+    <p>CarePayNY gives general information about New York home care pay rules. It is not legal advice. Legal advice means advice about your own situation from a lawyer. Using this site does not make us your lawyer, and nothing on the site creates a lawyer-client relationship. We are not a law firm, a government agency or an employment agency.</p>
+
+    <h2>2. The calculator gives estimates</h2>
+    <p>The pay calculator does math using the rules we publish on this site and the numbers you type in. Its results are estimates. They can be wrong or incomplete. For example, they may not include:</p>
+    <ul>
+      <li>union contracts, such as 1199SEIU contracts,</li>
+      <li>shift differentials (extra pay for some shifts), holiday pay, paid time off or other benefits,</li>
+      <li>rules that changed after our "last checked" date,</li>
+      <li>facts about your job that the calculator doesn't ask about.</li>
+    </ul>
+    <p>Results depend on what you type. If a number you enter is wrong, the result will be wrong too.</p>
+
+    <h2>3. What you do with the information is your choice</h2>
+    <p>We describe rules, numbers and options. We don't tell anyone what to do. Any decision you make using information from this site is your own.</p>
+
+    <h2>4. We try to be accurate, but we make no promises</h2>
+    <p>We take our pay figures from published government sources and list those sources. Even so, rules change and mistakes happen. The site is provided "as is." To the extent the law allows, we make no promise (no "warranty") that the site is correct, complete, up to date or always available.</p>
+    <p>If you find a mistake, please tell us at <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>. We fix confirmed errors and list corrections on the site.</p>
+
+    <h2>5. Translations</h2>
+    <p>Some pages are translated from English with the help of AI. Translations can contain mistakes. If a translated page and the English page say different things, the English page is correct. These terms and our privacy policy are in English only.</p>
+
+    <h2>6. We are independent</h2>
+    <p>CarePayNY is not part of, approved by or connected to the New York State Department of Health, the New York State Department of Labor, Medicaid, PPL (Public Partnerships LLC), any union or any home care agency. Names of agencies and companies are used only to describe them.</p>
+
+    <h2>7. Links to other websites</h2>
+    <p>The site links to other websites, such as government pages. We don't control those sites and are not responsible for what they say or do.</p>
+
+    <h2>8. Using the site fairly</h2>
+    <p>You may use the site for your own information and share links to it. Please don't try to break, overload or copy the whole site, and don't present our content as your own or as official government information. The text, design and code of the site belong to us, except for government material and other content we quote with credit.</p>
+
+    <h2>9. Limits on our responsibility</h2>
+    <p>The site is free. To the extent the law allows, we are not responsible for any loss or damage that comes from using the site or relying on it. This includes lost wages, missed deadlines and other money losses. If the law does make us responsible for something, the most we will owe is $100.</p>
+
+    <h2>10. New York law</h2>
+    <p>New York State law governs these terms. Any dispute about the site or these terms will be handled in the state or federal courts located in New York State.</p>
+
+    <h2>11. Changes to these terms</h2>
+    <p>We may change these terms. When we do, we will post the new version here and change the "last updated" date at the top. If you keep using the site after a change, the new terms apply.</p>
+
+    <h2>12. Contact</h2>
+    <p>Questions about these terms: <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.</p>
+  </div>
+</Base>

@@ -27,8 +27,9 @@ const t = tFor(lang);
 const L = LOCALES[lang];
 const html = (key: string, vars = {}) => fmt(UI[lang]?.[key] ?? UI[DEFAULT_LOCALE][key], vars);
 const basePath = stripLocale(Astro.url.pathname);
-// The About page is English only; every other page may have translations.
-const alternates = basePath.startsWith("/about") ? [] : await alternatesFor(basePath);
+// About, Terms and Privacy are English only; every other page may have translations.
+const ENGLISH_ONLY = ["/about", "/terms", "/privacy"];
+const alternates = ENGLISH_ONLY.some((p) => basePath.startsWith(p)) ? [] : await alternatesFor(basePath);
 const englishUrl = localizePath(DEFAULT_LOCALE, basePath);
 const fullTitle = title === "CarePayNY" ? title : `${title} | CarePayNY`;
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
@@ -97,6 +98,7 @@ const graph = { "@context": "https://schema.org", "@graph": [ORGANIZATION, WEBSI
     <div class="disclaimer">
       <p set:html={html("footer.disclaimer.html", { date: dateFor(lang, RULES.lastReviewed) })} />
       <p>{t("footer.independent", { version: RULES.version })}</p>
+      <p set:html={html("footer.legal.html")} />
     </div>
   </footer>
 </body>

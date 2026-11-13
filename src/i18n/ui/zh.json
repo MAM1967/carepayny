@@ -16,6 +16,7 @@
 
   "footer.disclaimer.html": "<strong>这是估算，不是法律建议。</strong>CarePayNY 说明截至 {date} 的纽约居家护理工资规定，无法顾及每一种情况。工会合同（例如 1199SEIU）、某些班次的额外工资、假日工资、带薪休假和其他福利，都可能改变您应得的金额。纽约州劳工厅负责执行州的工资法律。",
   "footer.independent": "我们是独立网站，与纽约州卫生厅、劳工厅、PPL 或 Medicaid（医疗补助，常称“白卡”）没有关系。规定版本 {version}。",
+  "footer.legal.html": "<a href=\"/terms/\">使用条款</a> · <a href=\"/privacy/\">隐私政策</a>（英文）",
 
   "notice.translated.html": "本页在 AI 的帮助下由英文翻译而成。如果内容不一致，以<a href=\"{englishUrl}\">英文页面</a>为准。发现错误可以发电邮到 <a href=\"mailto:{email}\">{email}</a>。",
 
