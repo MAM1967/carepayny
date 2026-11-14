@@ -97,7 +97,7 @@
   "row.stub": "Your pay stub shows",
   "row.gross": "Gross pay you should get this week",
 
-  "flag.privateFloor": "If a family hires you directly, the general minimum wage ({general}) is the floor we use. The higher home care aide minimum ({hca}) clearly covers agencies and CDPAP. The rules are less clear for direct hires. The Department of Labor answers questions about this.",
+  "flag.privateFloor": "If a family hires you directly, we use the home care aide minimum ({hca}). New York's law sets this minimum for any worker whose main job is helping a person at home with daily activities, such as bathing, dressing or eating. It doesn't cover someone who works only now and then (\"on a casual basis\"). For that kind of work, the general minimum wage ({general}) applies.",
   "flag.shiftsMissed": "On {count} of your 24-hour shifts you didn't get the required breaks, so you must be paid for more than 13 hours on those shifts (up to all 24). We counted {hours} paid hours for your 24-hour shifts.",
   "flag.shiftsOk": "24-hour shifts can be paid as 13 hours only if you actually got 8 hours for sleep (5 of them uninterrupted) and 3 hours of meal breaks. If you were woken up or worked through meals, change the answers above.",
   "flag.rateShort": "Your hourly rate ({rate}) is below the minimum of {min} that applies to you by {short} an hour.",

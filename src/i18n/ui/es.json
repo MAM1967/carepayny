@@ -97,7 +97,7 @@
   "row.stub": "Su talón de pago muestra",
   "row.gross": "Pago bruto que le deben esta semana",
 
-  "flag.privateFloor": "Si una familia lo contrata directamente, usamos el salario mínimo general ({general}) como el pago más bajo permitido. El salario mínimo más alto para asistentes de cuidado en el hogar ({hca}) cubre claramente a las agencias y a CDPAP. Las reglas son menos claras para las contrataciones directas. El Departamento de Trabajo contesta preguntas sobre esto.",
+  "flag.privateFloor": "Si una familia lo contrata directamente, usamos el salario mínimo para asistentes de cuidado en el hogar ({hca}). La ley de Nueva York fija este mínimo para cualquier trabajador cuyo trabajo principal es ayudar a una persona en su casa con actividades diarias, como bañarse, vestirse o comer. No cubre a quien trabaja solo de vez en cuando (\"de manera ocasional\"). Para ese tipo de trabajo, se aplica el salario mínimo general ({general}).",
   "flag.shiftsMissed": "En {count} de sus turnos de 24 horas no tuvo los descansos que exige la ley. Por eso le deben pagar más de 13 horas en esos turnos (hasta las 24). Contamos {hours} horas pagadas por sus turnos de 24 horas.",
   "flag.shiftsOk": "Los turnos de 24 horas se pueden pagar como 13 horas solo si de verdad tuvo 8 horas para dormir (5 de ellas sin interrupción) y 3 horas de descanso para comer. Si lo despertaron o trabajó durante las comidas, cambie las respuestas de arriba.",
   "flag.rateShort": "Su tarifa por hora ({rate}) está {short} por hora por debajo del mínimo de {min} que le corresponde.",

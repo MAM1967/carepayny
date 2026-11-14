@@ -28,10 +28,13 @@ export function computeWeek(i, R = RULES) {
   const medicaid = employer === "cdpap" ? "yes" : employer === "private" ? "no" : (i.medicaid || "unsure");
 
   // 1. Which minimum applies
+  // The home care aide minimum covers every employer type, including families who
+  // hire directly (PHL § 3614-c(1)(d) defines the job by the work). isHCA marks
+  // agency and CDPAP work, which wage parity can also cover.
   const isHCA = employer === "agency" || employer === "cdpap";
-  const minRate = isHCA ? reg.hcaMin : reg.generalMin;
+  const minRate = reg.hcaMin;
   if (employer === "private") {
-    flags.push({ level: "info", code: "privateFloor", params: { general: money(reg.generalMin), hca: money(reg.hcaMin) }, text: `If a family hires you directly, the general minimum wage (${money(reg.generalMin)}) is the floor we use. The higher home care aide minimum (${money(reg.hcaMin)}) clearly covers agencies and CDPAP. The rules are less clear for direct hires. The Department of Labor answers questions about this.` });
+    flags.push({ level: "info", code: "privateFloor", params: { general: money(reg.generalMin), hca: money(reg.hcaMin) }, text: `If a family hires you directly, we use the home care aide minimum (${money(reg.hcaMin)}). New York's law sets this minimum for any worker whose main job is helping a person at home with daily activities, such as bathing, dressing or eating. It doesn't cover someone who works only now and then ("on a casual basis"). For that kind of work, the general minimum wage (${money(reg.generalMin)}) applies.` });
   }
 
   // 2. Hours that must be paid
