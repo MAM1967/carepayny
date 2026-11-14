@@ -15,6 +15,8 @@ Pay rules in use: version ${RULES.version}, in effect since ${RULES.effective}, 
 ## Pay check
 
 - [Pay check calculator](${SITE_URL}/): checks one week of pay against New York's home care pay rules and PPL's posted CDPAP rate. Runs in the browser; nothing entered is saved.
+- [NY home care pay rates table](${SITE_URL}/rates/): every rate the calculator uses (home care aide minimum, general minimum wage, wage parity benefit and total, PPL's CDPAP base pay) by region for each year in the rules, with a source for each row.
+- [Pay rates as CSV](${SITE_URL}/rates.csv): the same data as a CSV file (year, region, rate_type, value_usd, effective_date, source_url).
 
 ## CDPAP guide
 

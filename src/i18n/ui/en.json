@@ -17,6 +17,7 @@
   "footer.disclaimer.html": "<strong>Estimates, not legal advice.</strong> CarePayNY explains New York's home care pay rules as of {date} and can't account for every situation. Union contracts (such as 1199SEIU), shift differentials, holiday pay, paid time off and other benefits can change what you're owed. The New York State Department of Labor enforces the state's wage laws.",
   "footer.independent": "We're independent and not affiliated with the New York State Department of Health, the Department of Labor, PPL or Medicaid. Rules version {version}.",
   "footer.legal.html": "<a href=\"/terms/\">Terms of Use</a> · <a href=\"/privacy/\">Privacy Policy</a>",
+  "footer.rates.html": "<a href=\"{ratesUrl}\">NY home care pay rates table</a> (with CSV download)",
 
   "notice.translated.html": "This page was translated from English with the help of AI. If they are different, <a href=\"{englishUrl}\">the English page</a> is correct. To report a mistake, email <a href=\"mailto:{email}\">{email}</a>.",
 
@@ -29,6 +30,30 @@
 
   "token.ot.times": "time and a half (1.5 times your rate)",
   "token.notPosted": "not posted",
+
+  "meta.rates.description": "New York home care pay rates for {y1} and {y2} in one table: home care aide minimum wage, general minimum wage, wage parity and PPL's CDPAP base pay, by region. With sources and a CSV download.",
+  "rates.h1": "New York home care pay rates, {y1} and {y2}",
+  "rates.lead": "In {y1}, the home care aide minimum wage in New York is {nyc1} an hour in New York City, Nassau, Suffolk and Westchester, and {rest1} in the rest of the state. From {date2}, it is {nyc2} and {rest2}.",
+  "rates.note.html": "These are minimum rates. Union contracts and agencies may pay more. The <a href=\"{calcUrl}\">pay calculator</a> checks one week of pay against these rules.",
+  "rates.caption": "Hourly rates by year and region",
+  "rates.col.rate": "Rate",
+  "rates.col.year": "Year",
+  "rates.col.source": "Source",
+  "rates.from": "In effect from {date}",
+  "rates.row.hcaMin": "Home care aide minimum wage",
+  "rates.row.generalMin": "General minimum wage",
+  "rates.row.wpBenefit": "Wage parity: benefit portion",
+  "rates.row.wpTotal": "Wage parity: total pay and benefits",
+  "rates.row.pplBase": "PPL's CDPAP base pay",
+  "rates.doesNotApply": "Does not apply",
+  "rates.pplCarried": "PPL has not posted {year} rates yet. This is the latest rate PPL has posted.",
+  "rates.csv.html": "<a href=\"{csvUrl}\">Download this table as a CSV file</a> (for spreadsheets). It has one line for each year, region and rate, with the date it took effect and its source. Rates that are not posted or do not apply are left out.",
+  "rates.version": "Rules version {v1} ({y1}) and {v2} ({y2}), last reviewed {date}.",
+  "rates.defs.h2": "What each rate means",
+  "rates.def.hcaMin": "Home care aide minimum wage: the lowest hourly pay New York law allows for home care aides. It covers agency aides, CDPAP personal assistants and workers hired directly by a family.",
+  "rates.def.generalMin": "General minimum wage: the minimum for most other jobs. For home care, it applies only to work done now and then (\"on a casual basis\").",
+  "rates.def.wp": "Wage parity: a state law for Medicaid-paid home care in New York City, Nassau, Suffolk and Westchester. The employer must give at least the total amount each hour, as pay, benefits or both. The benefit portion is the part above the minimum wage. Wage parity does not apply in the rest of the state.",
+  "rates.def.ppl": "PPL's CDPAP base pay: the rate PPL says it pays CDPAP personal assistants. It depends on where the consumer (the person who gets care) lives.",
 
   "region.nyc": "New York City",
   "region.liw": "Nassau, Suffolk or Westchester",

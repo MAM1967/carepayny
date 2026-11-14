@@ -1,0 +1,11 @@
+---
+// /es/rates/, /zh/rates/, /ru/rates/: the rates table, only for complete languages.
+import RatesPage from "../../components/RatesPage.astro";
+import { publishedLocales } from "../../i18n/index.js";
+
+export async function getStaticPaths() {
+  return (await publishedLocales()).filter((l) => l !== "en").map((lang) => ({ params: { lang } }));
+}
+const { lang } = Astro.params;
+---
+<RatesPage lang={lang} />

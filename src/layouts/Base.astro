@@ -99,6 +99,7 @@ const graph = { "@context": "https://schema.org", "@graph": [ORGANIZATION, WEBSI
       <p set:html={html("footer.disclaimer.html", { date: dateFor(lang, RULES.lastReviewed) })} />
       <p>{t("footer.independent", { version: RULES.version })}</p>
       <p set:html={html("footer.legal.html")} />
+      <p set:html={html("footer.rates.html", { ratesUrl: localizePath(lang, "/rates/") })} />
     </div>
   </footer>
 </body>

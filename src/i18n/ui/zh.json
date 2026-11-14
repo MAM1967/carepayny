@@ -17,6 +17,7 @@
   "footer.disclaimer.html": "<strong>这是估算，不是法律建议。</strong>CarePayNY 说明截至 {date} 的纽约居家护理工资规定，无法顾及每一种情况。工会合同（例如 1199SEIU）、某些班次的额外工资、假日工资、带薪休假和其他福利，都可能改变您应得的金额。纽约州劳工厅负责执行州的工资法律。",
   "footer.independent": "我们是独立网站，与纽约州卫生厅、劳工厅、PPL 或 Medicaid（医疗补助，常称“白卡”）没有关系。规定版本 {version}。",
   "footer.legal.html": "<a href=\"/terms/\">使用条款</a> · <a href=\"/privacy/\">隐私政策</a>（英文）",
+  "footer.rates.html": "<a href=\"{ratesUrl}\">纽约居家护理工资标准一览表</a>（可下载 CSV）",
 
   "notice.translated.html": "本页在 AI 的帮助下由英文翻译而成。如果内容不一致，以<a href=\"{englishUrl}\">英文页面</a>为准。发现错误可以发电邮到 <a href=\"mailto:{email}\">{email}</a>。",
 
@@ -29,6 +30,30 @@
 
   "token.ot.times": "1.5倍工资（您时薪的 1.5 倍）",
   "token.notPosted": "未公布",
+
+  "meta.rates.description": "{y1}年和{y2}年纽约居家护理工资标准一览表：居家护理员最低工资、一般最低工资、工资平价和 PPL 的 CDPAP 基本工资，按地区列出。附资料来源和 CSV 下载。",
+  "rates.h1": "纽约居家护理工资标准（{y1}年和{y2}年）",
+  "rates.lead": "{y1}年，纽约居家护理员的最低工资在纽约市、拿骚县、萨福克县和威彻斯特县是每小时 {nyc1}，州内其他地区是 {rest1}。从{date2}起，分别是 {nyc2} 和 {rest2}。",
+  "rates.note.html": "这些是最低标准。工会合同和护理机构可能付得更多。<a href=\"{calcUrl}\">工资计算器</a>按这些规定核对一周的工资。",
+  "rates.caption": "按年份和地区列出的时薪",
+  "rates.col.rate": "项目",
+  "rates.col.year": "年份",
+  "rates.col.source": "资料来源",
+  "rates.from": "{date}起生效",
+  "rates.row.hcaMin": "居家护理员最低工资",
+  "rates.row.generalMin": "一般最低工资",
+  "rates.row.wpBenefit": "工资平价：福利部分",
+  "rates.row.wpTotal": "工资平价：工资加福利总额",
+  "rates.row.pplBase": "PPL 的 CDPAP 基本工资",
+  "rates.doesNotApply": "不适用",
+  "rates.pplCarried": "PPL 还没有公布{year}年的工资标准。这是 PPL 最近公布的标准。",
+  "rates.csv.html": "<a href=\"{csvUrl}\">下载本表的 CSV 文件</a>（可用电子表格打开）。每个年份、地区和项目一行，并列出生效日期和资料来源。没有公布或不适用的标准不列入。",
+  "rates.version": "规定版本 {v1}（{y1}年）和 {v2}（{y2}年），最近核对日期：{date}。",
+  "rates.defs.h2": "每个项目是什么意思",
+  "rates.def.hcaMin": "居家护理员最低工资：纽约州法律允许给居家护理员的最低时薪。它适用于护理机构的护理员、CDPAP 的 PA（个人助理），以及由家庭直接雇用的人员。",
+  "rates.def.generalMin": "一般最低工资：大多数其他工作的最低工资。在居家护理中，它只适用于偶尔做的工作（“on a casual basis”）。",
+  "rates.def.wp": "工资平价（Wage Parity）：纽约州的一项法律，适用于纽约市、拿骚县、萨福克县和威彻斯特县由 Medicaid（医疗补助，常称“白卡”）付费的居家护理。雇主每小时至少要给出总额，可以是工资、福利或两者都有。福利部分是超过最低工资的那一部分。州内其他地区不适用工资平价。",
+  "rates.def.ppl": "PPL 的 CDPAP 基本工资：PPL 说它付给 CDPAP 的 PA（个人助理）的时薪。它取决于受照顾者（CDPAP 中称为“消费者”，即接受照顾的人）住在哪里。",
 
   "region.nyc": "纽约市",
   "region.liw": "拿骚县、萨福克县或威彻斯特县",
