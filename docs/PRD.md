@@ -140,7 +140,7 @@ The site launches with about 30 pages, each answering one question a caregiver a
 | Pay check | Calculator; 2026 NY home care pay rules; wage parity explained; 24-hour shifts and the 13-hour rule; overtime |
 | CDPAP | Main guide; one page per payment problem; overtime and holidays; what changed |
 | Get help | Legal Aid and Department of Labor wage claims; your rights to pay notices |
-| About | Who we are; how we check the rules; corrections log; terms; privacy |
+| About | Who we are; how we check the rules (7 steps); link to the corrections log at `/corrections/` (entries in `src/data/corrections.js`); terms; privacy |
 
 **Content standards**
 

@@ -25,6 +25,7 @@ ${guide.map((p) => `- [${p.data.title}](${SITE_URL}${guidePath("en", parseGuideI
 - [About CarePayNY](${SITE_URL}/about/): who runs the site, how the rules are checked, and how to report a mistake.
 - [Terms of Use](${SITE_URL}/terms/): general information only, estimates only, English version controls.
 - [Privacy Policy](${SITE_URL}/privacy/): the calculator stores and sends nothing; no cookies, ads or analytics.
+- [Corrections](${SITE_URL}/corrections/): every error fixed since launch, with dates and sources.
 `;
   return new Response(body, { headers: { "Content-Type": "text/plain; charset=utf-8" } });
 }

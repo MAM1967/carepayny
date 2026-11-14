@@ -1,0 +1,23 @@
+---
+import Base from "../layouts/Base.astro";
+import { CORRECTIONS } from "../data/corrections.js";
+import { CONTACT_EMAIL } from "../data/site.js";
+---
+<Base title="Corrections" description="Every mistake we have found and fixed on CarePayNY since launch, with the date, what changed and the source.">
+  <div class="wrap prose">
+    <h1>Corrections</h1>
+    <p>This page lists every mistake we have found and fixed on CarePayNY since the site launched on November 13, 2026. Newest corrections are first. Small fixes to spelling or wording that don't change any facts are not listed.</p>
+
+    {CORRECTIONS.map((c) => (
+      <section>
+        <h2>{c.date}: {c.page}</h2>
+        <p><strong>What was wrong:</strong> {c.was}</p>
+        <p><strong>What it says now:</strong> {c.now}</p>
+        <p class="small">Source: <a href={c.source.url}>{c.source.label}</a>. Page: <a href={c.href}>{c.page}</a>.</p>
+      </section>
+    ))}
+
+    <h2>Report a mistake</h2>
+    <p>If you think something on this site is wrong, email <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>. Please include the page and what you think is wrong. We check every report against the law or agency page it involves. We fix confirmed errors within 48 hours and add them to this page.</p>
+  </div>
+</Base>

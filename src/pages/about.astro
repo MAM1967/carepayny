@@ -1,15 +1,29 @@
 ---
 import Base from "../layouts/Base.astro";
 import { RULES } from "../data/rules.js";
-import { CONTACT_EMAIL } from "../data/site.js";
+import { CONTACT_EMAIL, OPERATOR } from "../data/site.js";
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
+// Count the worked examples at build time so the number never goes stale.
+const EXAMPLES = (readFileSync(join(process.cwd(), "tests/calc.test.js"), "utf8").match(/^test\(/gm) || []).length;
 ---
 <Base title="About CarePayNY" description="Who runs CarePayNY, how we check New York's home care pay rules, and how to report a mistake.">
   <div class="wrap prose">
     <h1>About CarePayNY</h1>
-    <p>CarePayNY is a free, independent website for home care aides, home health aides and CDPAP caregivers in New York. It explains the state's pay rules in plain language and lets you check one week of pay against them.</p>
+    <p>CarePayNY is a free, independent website for home care aides, home health aides and CDPAP caregivers in New York. It explains the state's pay rules in plain language and lets you check one week of pay against them. CarePayNY is owned and run by {OPERATOR}.</p>
 
     <h2>How we check the rules</h2>
-    <p>Every number in the calculator comes from a published source: New York State law, the Department of Labor, or the Department of Health. Each figure has an effective date, and the whole rule set is reviewed before every change in rates. The rules in use now are version {RULES.version}, in effect since {RULES.effective} and last reviewed on {RULES.lastReviewed}.</p>
+    <p>Every pay number on this site comes from a public source we can link to. We check each number against that source before it goes on the site. Here is how.</p>
+    <ol>
+      <li><strong>Only government sources and PPL.</strong> Pay numbers come from New York State law, the New York State Department of Labor, the New York State Department of Health or the U.S. Department of Labor. PPL's own posted pay rates are used only for PPL's rates. We don't use numbers from news stories or other websites.</li>
+      <li><strong>One place for every number.</strong> All rates are kept in one rules file. Each number is stored with its source and the date it takes effect. Guide pages and the calculator read the numbers from that file, so a number is never typed twice.</li>
+      <li><strong>Worked examples before every change.</strong> We keep {EXAMPLES} worked examples: sample work weeks where we have done the math by hand. Every time the rules change, the calculator must get all of them right before the change goes live.</li>
+      <li><strong>New rates loaded early.</strong> When the state sets a new rate, we load it before its start date. The calculator switches to the new rate on that day.</li>
+      <li><strong>Dates on every page.</strong> Each guide page shows the date we last checked it and lists its sources at the bottom.</li>
+      <li><strong>Translations checked against English.</strong> Pages in Spanish, Chinese and Russian are translated with the help of AI, using a fixed word list. We translate them back into English to check the meaning. Pay numbers are never typed into a translation. If a translation and the English page differ, the English page is correct.</li>
+      <li><strong>Mistakes fixed in the open.</strong> We fix confirmed errors within 48 hours and list each one on our <a href="/corrections/">corrections page</a>.</li>
+    </ol>
+    <p>The rules in use now are version {RULES.version}, in effect since {RULES.effective} and last reviewed on {RULES.lastReviewed}.</p>
 
     <h2>What we don't do</h2>
     <ul>
@@ -19,6 +33,6 @@ import { CONTACT_EMAIL } from "../data/site.js";
     </ul>
 
     <h2>Found a mistake?</h2>
-    <p>Tell us at <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a> ({CONTACT_EMAIL}). We fix confirmed errors within 48 hours and list every correction on this site.</p>
+    <p>Tell us at <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a> ({CONTACT_EMAIL}). We fix confirmed errors within 48 hours and list every correction on our <a href="/corrections/">corrections page</a>.</p>
   </div>
 </Base>
