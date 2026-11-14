@@ -17,6 +17,7 @@
   "footer.disclaimer.html": "<strong>Son cálculos aproximados, no asesoría legal.</strong> CarePayNY explica las reglas de pago de cuidado en el hogar de Nueva York vigentes al {date} y no puede cubrir todas las situaciones. Los contratos sindicales (como 1199SEIU), los diferenciales por turno, el pago por días feriados, el tiempo libre pagado y otros beneficios pueden cambiar lo que le deben. El Departamento de Trabajo del Estado de Nueva York hace cumplir las leyes de salarios del estado.",
   "footer.independent": "Somos independientes. No estamos afiliados al Departamento de Salud del Estado de Nueva York, al Departamento de Trabajo, a PPL ni a Medicaid. Versión de las reglas: {version}.",
   "footer.legal.html": "<a href=\"/terms/\">Términos de uso</a> · <a href=\"/privacy/\">Política de privacidad</a> (en inglés)",
+  "footer.rates.html": "<a href=\"{ratesUrl}\">Tabla de tarifas de pago del cuidado en el hogar en NY</a> (con descarga en CSV)",
 
   "notice.translated.html": "Esta página se tradujo del inglés con ayuda de inteligencia artificial (IA). Si hay diferencias, <a href=\"{englishUrl}\">la página en inglés</a> es la correcta. Para reportar un error, escriba a <a href=\"mailto:{email}\">{email}</a>.",
 
@@ -29,6 +30,30 @@
 
   "token.ot.times": "tiempo y medio (1.5 veces su tarifa)",
   "token.notPosted": "no publicada",
+
+  "meta.rates.description": "Las tarifas de pago del cuidado en el hogar en Nueva York para {y1} y {y2} en una tabla: salario mínimo para asistentes de cuidado en el hogar, salario mínimo general, paridad salarial y pago base de PPL para CDPAP, por región. Con fuentes y descarga en CSV.",
+  "rates.h1": "Tarifas de pago del cuidado en el hogar en Nueva York, {y1} y {y2}",
+  "rates.lead": "En {y1}, el salario mínimo para asistentes de cuidado en el hogar en Nueva York es {nyc1} por hora en la Ciudad de Nueva York, Nassau, Suffolk y Westchester, y {rest1} en el resto del estado. Desde el {date2}, es {nyc2} y {rest2}.",
+  "rates.note.html": "Estas son tarifas mínimas. Los contratos sindicales y las agencias pueden pagar más. La <a href=\"{calcUrl}\">calculadora de pago</a> revisa una semana de pago según estas reglas.",
+  "rates.caption": "Tarifas por hora, por año y región",
+  "rates.col.rate": "Tarifa",
+  "rates.col.year": "Año",
+  "rates.col.source": "Fuente",
+  "rates.from": "Vigente desde el {date}",
+  "rates.row.hcaMin": "Salario mínimo para asistentes de cuidado en el hogar",
+  "rates.row.generalMin": "Salario mínimo general",
+  "rates.row.wpBenefit": "Paridad salarial: parte de beneficios",
+  "rates.row.wpTotal": "Paridad salarial: total de pago y beneficios",
+  "rates.row.pplBase": "Pago base de PPL para CDPAP",
+  "rates.doesNotApply": "No se aplica",
+  "rates.pplCarried": "PPL todavía no ha publicado las tarifas de {year}. Esta es la última tarifa que PPL ha publicado.",
+  "rates.csv.html": "<a href=\"{csvUrl}\">Descargar esta tabla como archivo CSV</a> (para hojas de cálculo). Tiene una línea por cada año, región y tarifa, con la fecha en que empezó a regir y su fuente. Las tarifas que no están publicadas o que no se aplican no aparecen.",
+  "rates.version": "Reglas versión {v1} ({y1}) y {v2} ({y2}), revisadas por última vez el {date}.",
+  "rates.defs.h2": "Qué significa cada tarifa",
+  "rates.def.hcaMin": "Salario mínimo para asistentes de cuidado en el hogar: el pago por hora más bajo que la ley de Nueva York permite para los asistentes de cuidado en el hogar. Cubre a los asistentes de agencias, a los asistentes personales de CDPAP y a los trabajadores que una familia contrata directamente.",
+  "rates.def.generalMin": "Salario mínimo general: el mínimo para la mayoría de los otros trabajos. En el cuidado en el hogar, se aplica solo al trabajo que se hace de vez en cuando (\"on a casual basis\").",
+  "rates.def.wp": "Paridad salarial: una ley del estado para el cuidado en el hogar pagado por Medicaid en la Ciudad de Nueva York, Nassau, Suffolk y Westchester. El empleador tiene que dar por lo menos el total por hora, como pago, beneficios o ambos. La parte de beneficios es la parte por encima del salario mínimo. La paridad salarial no se aplica en el resto del estado.",
+  "rates.def.ppl": "Pago base de PPL para CDPAP: la tarifa que PPL dice que les paga a los asistentes personales de CDPAP. Depende de dónde vive el consumidor (la persona que recibe el cuidado).",
 
   "region.nyc": "Ciudad de Nueva York",
   "region.liw": "Nassau, Suffolk o Westchester",

@@ -3,7 +3,7 @@ title: "PPL 没付我工资：缺少 I-9"
 description: "I-9 表格是什么，为什么 PPL 在付工资给 CDPAP 照顾者之前需要它，以及这份表格接受哪些证件。"
 nav: "缺少 I-9"
 order: 6
-lastChecked: "November 11, 2026"
+lastChecked: "November 14, 2026"
 sources:
   - label: "PPL：给个人助理的 CDPAP 资料（注册表格）"
     url: "https://pplfirst.com/cdpap-resources-personal-assistants/"
@@ -12,6 +12,8 @@ sources:
   - label: "USCIS（美国移民局）：I-9 表格和可接受的证件"
     url: "https://www.uscis.gov/i-9-central/form-i-9-acceptable-documents"
 ---
+
+PPL 必须先收到 CDPAP 的 PA（个人助理）填好的 I-9 表格和证件，才能给 PA 发工资。I-9 是美国政府的表格，证明工作人员是谁，以及他们可以在美国工作。
 
 ## 您看到的情况
 

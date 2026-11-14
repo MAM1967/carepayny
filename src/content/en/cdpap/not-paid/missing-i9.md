@@ -3,7 +3,7 @@ title: "PPL didn't pay me: missing I-9"
 description: "What the I-9 form is, why PPL needs it before paying a CDPAP caregiver, and the kinds of documents the form accepts."
 nav: "Missing I-9"
 order: 6
-lastChecked: "November 11, 2026"
+lastChecked: "November 14, 2026"
 sources:
   - label: "PPL: CDPAP resources for personal assistants (registration forms)"
     url: "https://pplfirst.com/cdpap-resources-personal-assistants/"
@@ -12,6 +12,8 @@ sources:
   - label: "USCIS: Form I-9 and acceptable documents"
     url: "https://www.uscis.gov/i-9-central/form-i-9-acceptable-documents"
 ---
+
+PPL cannot pay a CDPAP personal assistant (PA) until it has the PA's completed Form I-9, with documents. The I-9 is a U.S. government form that shows who a worker is and that they are allowed to work in the U.S.
 
 ## What you see
 

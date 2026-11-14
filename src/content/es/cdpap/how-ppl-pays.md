@@ -3,7 +3,7 @@ title: "Cómo les paga PPL a los cuidadores de CDPAP"
 description: "Cuándo les paga PPL a los asistentes personales de CDPAP, la fecha límite semanal de la hoja de horas, cómo el consumidor aprueba las horas, y el depósito directo o el cheque en papel."
 nav: "Cómo le paga PPL"
 order: 2
-lastChecked: "November 11, 2026"
+lastChecked: "November 14, 2026"
 sources:
   - label: "PPL: recursos de CDPAP para asistentes personales"
     url: "https://pplfirst.com/cdpap-resources-personal-assistants/"
@@ -13,11 +13,11 @@ sources:
 
 ## ¿Cuándo les paga PPL a los cuidadores de CDPAP?
 
-PPL les paga a los PA una vez por semana, el jueves. El dinero llega por depósito directo a una cuenta de banco o por cheque en papel. El PA escoge la forma de pago en el Formulario de Método de Pago (Payment Method Form) de PPL.
+PPL les paga a los asistentes personales (PA) de CDPAP una vez por semana, el jueves. El dinero llega por depósito directo a una cuenta de banco o por cheque en papel. El PA escoge la forma de pago en el Formulario de Método de Pago (Payment Method Form) de PPL.
 
 ## ¿Cuáles son las fechas límite de PPL para la hoja de horas?
 
-Las horas se entregan a más tardar el sábado a las 11:59 p.m. El consumidor (la persona que recibe el cuidado) las aprueba a más tardar el domingo a mediodía. PPL las paga el jueves de la semana siguiente.
+Un PA tiene que entregarle a PPL las horas de la semana a más tardar el sábado a las 11:59 p.m. El consumidor (la persona que recibe el cuidado) las aprueba a más tardar el domingo a mediodía. PPL las paga el jueves de la semana siguiente.
 
 | Qué | Fecha límite (hora de Nueva York) |
 | --- | --- |
@@ -52,7 +52,7 @@ Cuando PPL redondea un turno hacia arriba, ese turno usa más de las horas aprob
 
 ## ¿Cuánto tarda en empezar el depósito directo?
 
-Los datos de banco nuevos o cambiados pueden tardar de 1 a 2 períodos de pago en empezar a funcionar. Mientras tanto, PPL envía por correo un cheque en papel a la dirección que tiene registrada.
+Los datos de banco nuevos o cambiados para el depósito directo de PPL pueden tardar de 1 a 2 períodos de pago en empezar a funcionar. Mientras tanto, PPL envía por correo un cheque en papel a la dirección que tiene registrada.
 
 ## ¿PPL paga todas las horas trabajadas?
 

@@ -3,13 +3,15 @@ title: "PPL 没付我工资：注册没有完成"
 description: "“Provider is not Paperwork Complete”和其他相关的 PPL 信息对 CDPAP 照顾者是什么意思，以及 PPL 在付工资之前需要什么。"
 nav: "注册没有完成"
 order: 5
-lastChecked: "November 11, 2026"
+lastChecked: "November 14, 2026"
 sources:
   - label: "PPL：给个人助理的 CDPAP 资料（Pended 付款原因）"
     url: "https://pplfirst.com/cdpap-resources-personal-assistants/"
   - label: "PPL：纽约 CDPAP 常见问题"
     url: "https://pplfirst.com/new-york-cdpap-frequently-asked-questions/"
 ---
+
+PA（个人助理）和受照顾者（CDPAP 中称为“消费者”，即接受照顾的人）都在 PPL 完成注册以前，PPL 不会给这位 CDPAP 的 PA 发工资。在那之前，PPL@Home（PPL 的网站）会把 PA 的工时表显示为“Pended”（付款暂时扣住）。
 
 ## 您看到的情况
 

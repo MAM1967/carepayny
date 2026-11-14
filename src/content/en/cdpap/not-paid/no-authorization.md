@@ -3,7 +3,7 @@ title: "PPL didn't pay me: no authorization on file"
 description: "What a service authorization is, why PPL can't pay CDPAP hours without one, and what PPL's 'no authorization' messages mean."
 nav: "No approved hours on file"
 order: 7
-lastChecked: "November 11, 2026"
+lastChecked: "November 14, 2026"
 sources:
   - label: "PPL: CDPAP resources for personal assistants (Pended payment reasons)"
     url: "https://pplfirst.com/cdpap-resources-personal-assistants/"
@@ -14,6 +14,8 @@ sources:
   - label: "NYS Department of Health: CDPAP agreement between the consumer and the health plan"
     url: "https://www.health.ny.gov/health_care/medicaid/redesign/mrt90/2025/cdpap_agreement_rep-hp_att1.htm"
 ---
+
+PPL can pay CDPAP hours only when they are inside the consumer's **service authorization** (approved hours) from the health plan or local social services office. When the authorization is missing, PPL holds the pay. PPL says the time is paid in the next payroll after the authorization is fixed.
 
 ## What you see
 
@@ -35,7 +37,7 @@ The health plan or social services office sends it to PPL. PPL can pay only for 
 
 ## Why it can be missing
 
-Some ways this can happen:
+Some ways a service authorization can be missing:
 
 - The consumer changed health plans, and the new plan has not sent an authorization yet.
 - The old authorization ended, and the new one has not reached PPL.

@@ -3,7 +3,7 @@ title: "1.62亿美元的 PPL 和解（Calderon v. PPL）"
 description: "Calderon v. Public Partnerships 和解包括哪些纽约市、拿骚县、萨福克县和威彻斯特县的 CDPAP 照顾者，赔多少钱，怎样付款，以及最新的法院消息。"
 nav: "PPL 诉讼和解"
 order: 12
-lastChecked: "November 11, 2026"
+lastChecked: "November 14, 2026"
 sources:
   - label: "和解官方网站：Calderon v. Public Partnerships, LLC"
     url: "https://www.publicpartnershipssettlement.com/"
@@ -16,6 +16,8 @@ sources:
   - label: "amNewYork Law：法官给予最终批准（2026年11月10日）"
     url: "https://www.amny.com/law/federal-judge-finalizes-home-aides-settlement/"
 ---
+
+PPL 和解（*Calderon v. Public Partnerships, LLC*）是一项1.62亿美元（$162 million）的和解。它适用于在2025年3月1日到2026年4月30日之间任何时间，通过 PPL 领工资、在纽约市、拿骚县、萨福克县或威彻斯特县做 CDPAP 工作的 PA（个人助理）。**和解**是以付款结束诉讼的协议。一位联邦法官在2026年11月10日给予最终批准。
 
 ## PPL 和解的最新消息是什么？
 

@@ -3,13 +3,15 @@ title: "PPL мне не заплатила: регистрация не зако
 description: "Что значат сообщения PPL «Provider is not Paperwork Complete» и похожие для работников CDPAP и что нужно PPL, прежде чем она сможет платить."
 nav: "Регистрация не закончена"
 order: 5
-lastChecked: "November 11, 2026"
+lastChecked: "November 14, 2026"
 sources:
   - label: "PPL: материалы CDPAP для личных помощников (причины статуса «Pended»)"
     url: "https://pplfirst.com/cdpap-resources-personal-assistants/"
   - label: "PPL: частые вопросы о CDPAP в Нью-Йорке"
     url: "https://pplfirst.com/new-york-cdpap-frequently-asked-questions/"
 ---
+
+PPL не платит PA (личному помощнику) в CDPAP, пока и PA, и получатель ухода не закончат регистрацию в PPL. До этого PPL@Home показывает табели PA со статусом «Pended» (выплата задержана).
 
 ## Что вы видите
 

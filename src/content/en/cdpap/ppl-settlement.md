@@ -3,7 +3,7 @@ title: "The $162 million PPL settlement (Calderon v. PPL)"
 description: "Who is in the Calderon v. Public Partnerships settlement for downstate CDPAP caregivers, what it pays, how payments are sent, and the latest court news."
 nav: "The PPL court settlement"
 order: 12
-lastChecked: "November 11, 2026"
+lastChecked: "November 14, 2026"
 sources:
   - label: "Official settlement website: Calderon v. Public Partnerships, LLC"
     url: "https://www.publicpartnershipssettlement.com/"
@@ -16,6 +16,8 @@ sources:
   - label: "amNewYork Law: judge gives final approval (November 10, 2026)"
     url: "https://www.amny.com/law/federal-judge-finalizes-home-aides-settlement/"
 ---
+
+The PPL settlement, *Calderon v. Public Partnerships, LLC*, is a $162 million settlement for CDPAP personal assistants (PAs) paid through PPL in New York City, Nassau, Suffolk or Westchester at any time from March 1, 2025 to April 30, 2026. A **settlement** is an agreement that ends a court case with a payment. A federal judge gave final approval on November 10, 2026.
 
 ## What is the latest news on the PPL settlement?
 

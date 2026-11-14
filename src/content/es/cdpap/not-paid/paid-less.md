@@ -3,13 +3,15 @@ title: "PPL me pagó menos que mis horas"
 description: "Razones por las que el pago de PPL a un cuidador de CDPAP puede ser menor que las horas enviadas: límites de horas aprobadas, redondeo, días de hospital, tiempos cruzados y reglas de servicio interno."
 nav: "Me pagaron menos que mis horas"
 order: 9
-lastChecked: "November 11, 2026"
+lastChecked: "November 14, 2026"
 sources:
   - label: "PPL: preguntas frecuentes sobre CDPAP en Nueva York"
     url: "https://pplfirst.com/new-york-cdpap-frequently-asked-questions/"
   - label: "PPL: recursos de CDPAP para asistentes personales (razones de pagos \"Pended\", regla de pago por día)"
     url: "https://pplfirst.com/cdpap-resources-personal-assistants/"
 ---
+
+PPL puede pagarle a un asistente personal (PA) de CDPAP por menos horas de las que envió. Entre las razones que da PPL están: horas que pasan de las horas aprobadas, el redondeo del tiempo, los días en el hospital, el tiempo que se superpone y los días de servicio interno (por día).
 
 ## Lo que usted ve
 

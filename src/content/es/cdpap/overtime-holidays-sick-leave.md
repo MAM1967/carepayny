@@ -3,7 +3,7 @@ title: "CDPAP: horas extra, pago por días feriados, licencia por enfermedad y b
 description: "Las reglas de PPL para cuidadores de CDPAP sobre horas extra, horas extra del séptimo día, pago por días feriados, licencia por enfermedad pagada, tiempo por enfermedad sin pago en NYC, seguro médico y jubilación."
 nav: "Horas extra, feriados, licencia por enfermedad, beneficios"
 order: 11
-lastChecked: "November 11, 2026"
+lastChecked: "November 14, 2026"
 sources:
   - label: "PPL: preguntas frecuentes sobre CDPAP en Nueva York"
     url: "https://pplfirst.com/new-york-cdpap-frequently-asked-questions/"
@@ -16,6 +16,8 @@ sources:
   - label: "Departamento de Salud del Estado de Nueva York: Política MLTC 26.02 (horas excesivas)"
     url: "https://www.health.ny.gov/health_care/medicaid/redesign/mrt90/mltc_policy/2026/26-02.htm"
 ---
+
+En CDPAP, PPL paga a los asistentes personales (PA) las horas de más de {{ot.hours}} en una semana a {{ot.times}}. Todos los PA ganan licencia por enfermedad pagada. Los PA de tiempo completo (más de 130 horas al mes) también reciben pago por días feriados y pueden escoger un plan de salud de PPL.
 
 ## ¿CDPAP paga horas extra?
 
@@ -70,7 +72,7 @@ Sí. Los PA ganan 1 hora de licencia por enfermedad pagada por cada 30 horas tra
 
 ### Tiempo por enfermedad sin pago (solo NYC)
 
-Desde el 22 de febrero de 2026, los PA que trabajan en la Ciudad de Nueva York también tienen 32 horas de tiempo por enfermedad **sin pago** cada año. No se guarda para el año siguiente. Vuelve a empezar el 1 de enero.
+Desde el 22 de febrero de 2026, los PA de CDPAP que trabajan en la Ciudad de Nueva York también tienen 32 horas de tiempo por enfermedad **sin pago** cada año. No se guarda para el año siguiente. Vuelve a empezar el 1 de enero.
 
 ## ¿PPL ofrece seguro médico?
 
@@ -91,6 +93,8 @@ Sí. Todos los PA pueden ahorrar en un 401(k), y algunos PA de la zona sur del e
 - Una compañía llamada Empower maneja los dos planes.
 
 ## ¿Qué otros beneficios ofrece PPL?
+
+PPL menciona estos otros beneficios para los PA de CDPAP:
 
 - Seguros opcionales de Chubb: seguro de accidentes, de enfermedades graves y de vida. El PA los paga.
 - Un Plan de Transporte de NYC (NYC Transit Plan), solo para empleados con paridad salarial.

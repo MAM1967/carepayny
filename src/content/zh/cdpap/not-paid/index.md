@@ -3,13 +3,15 @@ title: "我没拿到 PPL 的工资：常见原因"
 description: "根据 PPL 自己列出的“Pended”付款信息，用浅白的话说明 PPL 暂时扣住 CDPAP 照顾者工资的原因。"
 nav: "我没拿到工资"
 order: 4
-lastChecked: "November 11, 2026"
+lastChecked: "November 14, 2026"
 sources:
   - label: "PPL：给个人助理的 CDPAP 资料（Pended 付款原因）"
     url: "https://pplfirst.com/cdpap-resources-personal-assistants/"
   - label: "PPL：纽约 CDPAP 常见问题"
     url: "https://pplfirst.com/new-york-cdpap-frequently-asked-questions/"
 ---
+
+PPL 没有给 CDPAP 的 PA（个人助理）发工资时，PPL@Home（PPL 的网站）会显示原因。最常见的五个问题是：注册没有完成、缺少 I-9、没有批准的时数记录、工时表交晚了或没有被批准，以及工资的时数比提交的少。
 
 PPL 暂时扣住一笔付款时，PPL@Home（PPL 的网站）会把工时表显示为“**Pended**”（付款暂时扣住）。点击“Pended”这个词，就会显示原因。这些原因来自 PPL 自己的列表。
 
@@ -24,6 +26,8 @@ PPL 暂时扣住一笔付款时，PPL@Home（PPL 的网站）会把工时表显�
 5. [付的工资比提交的时数少](/cdpap/not-paid/paid-less/)
 
 ## PPL 的完整列表，用浅白的话说明
+
+下表列出 PPL@Home 对 CDPAP 工时表显示“Pended”时可能给出的每个原因，以及它的意思。
 
 | PPL@Home 上写的 | 意思 |
 | --- | --- |
