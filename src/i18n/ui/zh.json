@@ -10,6 +10,7 @@
   "nav.home": "CarePayNY 首页",
   "nav.main": "主菜单",
   "nav.payCheck": "工资核对",
+  "nav.payGuide": "工资规定",
   "nav.guide": "CDPAP 指南",
   "nav.about": "关于我们",
   "nav.languages": "语言",
@@ -24,6 +25,8 @@
   "guide.name": "CDPAP 指南",
   "guide.breadcrumb": "页面路径",
   "guide.pages": "CDPAP 指南页面",
+  "guide.pay.name": "居家护理工资指南",
+  "guide.pay.pages": "居家护理工资指南页面",
   "guide.lastChecked": "最后核对：",
   "guide.sources": "资料来源",
   "guide.independent": "CarePayNY 是独立网站。我们不属于 PPL、纽约州卫生厅、劳工厅或 Medicaid。本页提供一般信息，不是法律建议。",
@@ -130,6 +133,12 @@
   "flag.stubShort": "您的工资单显示 {entered}，比我们按这些工时预计的金额少大约 {diff}。",
   "flag.wageParity.yes": "因为您的工作由 Medicaid 支付，地点在{region}，您的雇主必须给您每小时至少 {total} 的工资和福利总额。按您的时薪计算，就是每小时 {gap} 的福利（例如医疗保险或带薪休假）或额外现金。雇主给您的工资平价（Wage Parity）通知会说明他们如何达到这个标准。",
   "flag.wageParity.maybe": "因为您的工作可能由 Medicaid 支付，地点在{region}，您的雇主必须给您每小时至少 {total} 的工资和福利总额。按您的时薪计算，就是每小时 {gap} 的福利（例如医疗保险或带薪休假）或额外现金。雇主给您的工资平价（Wage Parity）通知会说明他们如何达到这个标准。",
+  "flagLink.shifts": "24小时班怎样算工资",
+  "flagLink.wageParity": "工资平价怎样计算",
+  "flagLink.directHire": "家庭直接雇用护理人员时的工资规定",
+  "flagLink.minimum": "2027年居家护理最低工资",
+  "flagLink.overtime": "加班费怎样计算",
+  "flagLink.ppl": "CDPAP 工资标准",
 
   "summary.title": "居家护理工资核对（纽约规定 {version}）",
   "summary.status": "结果：{status}",
@@ -147,5 +156,6 @@
   "calc.rules.shifts": "24小时班：只有在有8小时睡眠时间（其中5小时不被打扰）和3小时用餐时间时，才可以按13小时付工资。否则，这些时间都必须付工资。",
   "calc.rules.overtime": "加班费：每周超过40小时后，按您时薪的 1.5× 计算（如果是家庭直接雇用您，而且您住在他们家里，则是超过44小时后）。",
   "calc.rules.note": "有些州政府网页仍然显示旧的工资平价福利金额：$4.09（纽约市）和 $3.22（长岛和威彻斯特县）。2023年的州预算把这两个金额从2024年起降到 $2.54 和 $1.67。同一时间，基本工资提高了，所以每小时的总工资还是增加了。本工具使用目前的金额。",
-  "calc.sources.h3": "资料来源"
+  "calc.sources.h3": "资料来源",
+  "home.popular.h2": "常见问题"
 }

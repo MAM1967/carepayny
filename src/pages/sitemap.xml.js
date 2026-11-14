@@ -18,7 +18,7 @@ export async function GET() {
     { loc: "/terms/", lastmod: isoDate(LEGAL_UPDATED) },
     { loc: "/privacy/", lastmod: isoDate(LEGAL_UPDATED) },
     { loc: "/corrections/", lastmod: isoDate(CORRECTIONS[0]?.date ?? LEGAL_UPDATED) },
-    ...guide.map((p) => { const { lang, slug } = parseGuideId(p.id); return { loc: guidePath(lang, slug), lastmod: isoDate(p.data.lastChecked) }; })
+    ...guide.map((p) => { const { lang, section, slug } = parseGuideId(p.id); return { loc: guidePath(lang, slug, section), lastmod: isoDate(p.data.lastChecked) }; })
   ];
   const body = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">

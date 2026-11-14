@@ -52,6 +52,12 @@ CarePayNY · PPL · PPL@Home · CDPAP · Time4Care · I-9 · W-4 · IT-2104-I ·
 | Department of Labor | 劳工厅 | 全称“纽约州劳工厅” |
 | Department of Health | 卫生厅 | 全称“纽约州卫生厅” |
 | Medicaid | Medicaid（医疗补助，常称“白卡”） | 保留英文 Medicaid；每页第一次出现时写“Medicaid（医疗补助，常称“白卡”）”，之后只写“Medicaid”。不要用“联邦” |
+| domestic worker | 家务工作者 | 纽约劳工法用语，指家庭雇来在家里工作的人 |
+| casual basis | 临时性（工作） | 偶尔才做、不是固定的工作 |
+| benefit portion | 福利部分 | 工资平价中可以用福利或现金支付的部分 |
+| 13-hour rule | 13小时规定 | |
+| exemption | 豁免 | 某项法律不适用的规定 |
+| third-party employer | 第三方雇主 | 家庭以外的雇主，例如护理机构 |
 
 ## 其他常用词
 

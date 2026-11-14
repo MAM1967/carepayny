@@ -104,3 +104,5 @@ PPL menciona estos otros beneficios para los PA de CDPAP:
 
 - Línea de recursos humanos (HR) de PPL: 1-833-746-8283
 - Ayuda con los beneficios (GSA National): 1-888-250-8303
+
+Relacionado: [Horas extra para asistentes de cuidado en el hogar](/pay/overtime/) · [Turnos de 24 horas y la regla de las 13 horas](/pay/24-hour-shifts/)

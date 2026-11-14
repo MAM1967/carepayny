@@ -10,6 +10,7 @@
   "nav.home": "CarePayNY home",
   "nav.main": "Main",
   "nav.payCheck": "Pay check",
+  "nav.payGuide": "Pay rules",
   "nav.guide": "CDPAP guide",
   "nav.about": "About",
   "nav.languages": "Language",
@@ -24,6 +25,8 @@
   "guide.name": "CDPAP guide",
   "guide.breadcrumb": "Breadcrumb",
   "guide.pages": "CDPAP guide pages",
+  "guide.pay.name": "Home care pay guide",
+  "guide.pay.pages": "Home care pay guide pages",
   "guide.lastChecked": "Last checked:",
   "guide.sources": "Sources",
   "guide.independent": "CarePayNY is independent. We are not part of PPL, the New York State Department of Health, the Department of Labor or Medicaid. This page gives general information, not legal advice.",
@@ -130,6 +133,12 @@
   "flag.stubShort": "Your pay stub shows {entered}, about {diff} less than we'd expect for these hours.",
   "flag.wageParity.yes": "Because your work is Medicaid-funded in {region}, your employer must give you at least {total} an hour in total pay and benefits. With your rate, that's {gap} an hour in benefits (like health insurance or paid time off) or extra cash. The Wage Parity notice from your employer shows how they meet it.",
   "flag.wageParity.maybe": "Because your work may be Medicaid-funded in {region}, your employer must give you at least {total} an hour in total pay and benefits. With your rate, that's {gap} an hour in benefits (like health insurance or paid time off) or extra cash. The Wage Parity notice from your employer shows how they meet it.",
+  "flagLink.shifts": "How 24-hour shifts are paid",
+  "flagLink.wageParity": "How wage parity works",
+  "flagLink.directHire": "Pay rules when a family hires a worker",
+  "flagLink.minimum": "Home care minimum wage for 2027",
+  "flagLink.overtime": "How overtime works",
+  "flagLink.ppl": "CDPAP pay rates",
 
   "summary.title": "Home care pay check (NY rules {version})",
   "summary.status": "Status: {status}",
@@ -147,5 +156,6 @@
   "calc.rules.shifts": "24-hour shifts: may be paid as 13 hours only with 8 hours for sleep (5 uninterrupted) and 3 hours for meals. Otherwise those hours must be paid.",
   "calc.rules.overtime": "Overtime: 1.5× your rate after 40 hours a week (44 if a family employs you directly and you live in their home).",
   "calc.rules.note": "Some state pages still show the older wage parity benefit of $4.09 (NYC) and $3.22 (Long Island and Westchester). The 2023 state budget lowered those to $2.54 and $1.67 from 2024 as the base wage rose, so total pay per hour went up. This tool uses the current amounts.",
-  "calc.sources.h3": "Sources"
+  "calc.sources.h3": "Sources",
+  "home.popular.h2": "Popular questions"
 }

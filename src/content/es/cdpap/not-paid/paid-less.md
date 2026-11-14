@@ -53,3 +53,5 @@ PPL publica una tarifa base de pago para cada área. La tarifa también está en
 - **PPL:** la nómina y los talones de pago. La línea telefónica de PPL es 1-833-247-5346.
 
 La [calculadora de pago](/) compara una semana de pago con las reglas de Nueva York y la tarifa publicada por PPL.
+
+Relacionado: [Salario mínimo del cuidado en el hogar en Nueva York para 2027](/pay/minimum-wage-2027/) · [Horas extra para asistentes de cuidado en el hogar](/pay/overtime/)

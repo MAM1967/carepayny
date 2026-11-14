@@ -1,10 +1,12 @@
 ---
 import Base from "../layouts/Base.astro";
 import Calculator from "../components/Calculator.astro";
+import PopularQuestions from "../components/PopularQuestions.astro";
 import { calculatorMeta } from "../lib/calculator-meta.js";
 const lang = "en";
 const meta = calculatorMeta(lang);
 ---
 <Base lang={lang} title={meta.title} description={meta.description} jsonLd={meta.jsonLd}>
   <Calculator lang={lang} />
+  <PopularQuestions lang={lang} />
 </Base>

@@ -48,3 +48,9 @@ Also kept as is: 1199SEIU, pplfirst.com, "$" amounts, "1.5×", and the names of 
 | Department of Labor | Departamento de Trabajo | Full: Departamento de Trabajo del Estado de Nueva York. |
 | Department of Health | Departamento de Salud | Full: Departamento de Salud del Estado de Nueva York. |
 | Medicaid | Medicaid | Keep the word Medicaid. |
+| domestic worker | trabajador doméstico | |
+| casual basis | de manera ocasional | "trabajo ocasional" for casual work. |
+| benefit portion | parte de beneficios | Part of wage parity. |
+| 13-hour rule | regla de las 13 horas | |
+| exemption | exención | |
+| third-party employer | empleador tercero | |

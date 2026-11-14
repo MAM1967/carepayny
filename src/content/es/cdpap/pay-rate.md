@@ -83,3 +83,5 @@ Para los códigos de servicio interno (por día), PPL paga {{livein.hours}} hora
 ## ¿Hay una forma de revisar una semana de pago?
 
 La [calculadora de pago](/) compara una semana de pago con el mínimo del estado, la paridad salarial y el pago base de PPL. Usa las reglas del año actual. Cambia a las reglas de 2027 el 1 de enero de 2027. Funciona en su teléfono y no guarda nada.
+
+Relacionado: [Salario mínimo del cuidado en el hogar en Nueva York para 2027](/pay/minimum-wage-2027/) · [Paridad salarial en NYC, Long Island y Westchester](/pay/wage-parity/)

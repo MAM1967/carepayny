@@ -3,6 +3,10 @@
 One line per English change that translations must follow. Newest first.
 Format: `YYYY-MM-DD · page file · what changed · languages updated (es, zh, …) or "pending"`
 
+- 2026-11-14 · pay/index.md, pay/minimum-wage-2027.md, pay/24-hour-shifts.md, pay/wage-parity.md, pay/overtime.md, pay/hired-by-a-family.md · new "Home care pay guide" section (first translation, back-translation checked) · es, zh, ru
+- 2026-11-14 · cdpap/pay-rate.md, cdpap/overtime-holidays-sick-leave.md, cdpap/index.md, cdpap/not-paid/paid-less.md · "Related" line added at the end, linking to the new pay guide pages · es, zh, ru
+- 2026-11-14 · ui nav.payGuide, guide.pay.name, guide.pay.pages, flagLink.* (6 keys), home.popular.h2 · new UI text for the pay guide, calculator result links and the home page "Popular questions" block · es, zh, ru
+- 2026-11-14 · glossary · added domestic worker, casual basis, benefit portion, 13-hour rule, exemption, third-party employer · es, zh, ru
 - 2026-11-14 · ui footer.rates.html, meta.rates.*, rates.* · new keys for the pay rates table page (/rates/) and its footer link · es, zh, ru
 - 2026-11-14 · what-changed.md · answer-first opening (next change: Jan 1, 2027 minimum); new Nov 14 entry for the calculator's direct-hire change, linked to /corrections/; added PHL § 3614-c source · es, zh, ru
 - 2026-11-14 · pay-rate.md · opening adds the Jan 1, 2027 state minimum (tokens only) · es, zh, ru

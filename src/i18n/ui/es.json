@@ -10,6 +10,7 @@
   "nav.home": "Inicio de CarePayNY",
   "nav.main": "Principal",
   "nav.payCheck": "Revisar pago",
+  "nav.payGuide": "Reglas de pago",
   "nav.guide": "Guía de CDPAP",
   "nav.about": "Acerca de",
   "nav.languages": "Idioma",
@@ -24,6 +25,8 @@
   "guide.name": "Guía de CDPAP",
   "guide.breadcrumb": "Ruta de navegación",
   "guide.pages": "Páginas de la guía de CDPAP",
+  "guide.pay.name": "Guía de pago del cuidado en el hogar",
+  "guide.pay.pages": "Páginas de la guía de pago del cuidado en el hogar",
   "guide.lastChecked": "Última revisión:",
   "guide.sources": "Fuentes",
   "guide.independent": "CarePayNY es independiente. No somos parte de PPL, del Departamento de Salud del Estado de Nueva York, del Departamento de Trabajo ni de Medicaid. Esta página da información general, no asesoría legal.",
@@ -130,6 +133,12 @@
   "flag.stubShort": "Su talón de pago muestra {entered}, unos {diff} menos de lo que esperaríamos por estas horas.",
   "flag.wageParity.yes": "Como su trabajo lo paga Medicaid en {region}, su empleador debe darle al menos {total} por hora en pago total y beneficios. Con su tarifa, eso es {gap} por hora en beneficios (como seguro médico o tiempo libre pagado) o en dinero extra. El aviso de Paridad Salarial (Wage Parity) de su empleador muestra cómo lo cumple.",
   "flag.wageParity.maybe": "Como es posible que su trabajo lo pague Medicaid en {region}, su empleador debe darle al menos {total} por hora en pago total y beneficios. Con su tarifa, eso es {gap} por hora en beneficios (como seguro médico o tiempo libre pagado) o en dinero extra. El aviso de Paridad Salarial (Wage Parity) de su empleador muestra cómo lo cumple.",
+  "flagLink.shifts": "Cómo se pagan los turnos de 24 horas",
+  "flagLink.wageParity": "Cómo funciona la paridad salarial",
+  "flagLink.directHire": "Reglas de pago cuando una familia contrata a un trabajador",
+  "flagLink.minimum": "Salario mínimo del cuidado en el hogar para 2027",
+  "flagLink.overtime": "Cómo funcionan las horas extra",
+  "flagLink.ppl": "Tarifas de pago de CDPAP",
 
   "summary.title": "Revisión de pago de cuidado en el hogar (reglas de NY {version})",
   "summary.status": "Estado: {status}",
@@ -147,5 +156,6 @@
   "calc.rules.shifts": "Turnos de 24 horas: se pueden pagar como 13 horas solo si hay 8 horas para dormir (5 sin interrupción) y 3 horas para comer. Si no, esas horas se tienen que pagar.",
   "calc.rules.overtime": "Horas extra: 1.5× su tarifa después de 40 horas por semana (44 si una familia lo emplea directamente y usted vive en su casa).",
   "calc.rules.note": "Algunas páginas del estado todavía muestran el beneficio de paridad salarial anterior de $4.09 (NYC) y $3.22 (Long Island y Westchester). El presupuesto del estado de 2023 los bajó a $2.54 y $1.67 desde 2024. Al mismo tiempo, subió el salario base. Por eso, el pago total por hora subió. Esta herramienta usa las cantidades actuales.",
-  "calc.sources.h3": "Fuentes"
+  "calc.sources.h3": "Fuentes",
+  "home.popular.h2": "Preguntas frecuentes"
 }

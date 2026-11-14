@@ -11,14 +11,30 @@ export const UI = Object.fromEntries(
 export const t = (lang) => makeT(UI[lang] ?? {}, lang === DEFAULT_LOCALE ? {} : UI[DEFAULT_LOCALE]);
 export const dateFor = (lang, englishDate) => localDate(englishDate, LOCALES[lang].intl);
 
-// Guide collection ids look like "es/cdpap/not-paid/missing-i9".
+// Guide sections: one folder each under src/content/<lang>/, served at /<section>/.
+// "cdpap" is the CDPAP guide; "pay" is general NY home care pay (agency, CDPAP, family hires).
+export const GUIDE_SECTIONS = ["pay", "cdpap"];
+
+// Guide collection ids look like "es/cdpap/not-paid/missing-i9" or "en/pay/overtime".
 export function parseGuideId(id) {
-  const [lang, , ...rest] = id.split("/");
+  const [lang, section, ...rest] = id.split("/");
   const slug = rest.join("/") || "index";
-  return { lang, slug };
+  return { lang, section, slug };
 }
-export const guidePath = (lang, slug) =>
-  localizePath(lang, slug === "index" ? "/cdpap/" : `/cdpap/${slug.replace(/\/index$/, "")}/`);
+export const guidePath = (lang, slug, section = "cdpap") =>
+  localizePath(lang, slug === "index" || slug === "" ? `/${section}/` : `/${section}/${slug.replace(/\/index$/, "")}/`);
+
+// Route params for one section's pages (used by src/pages/<section>/[...slug].astro).
+export async function guideStaticPaths(section, langs) {
+  const pages = (await getCollection("guide")).filter((p) => {
+    const g = parseGuideId(p.id);
+    return g.section === section && langs.includes(g.lang);
+  });
+  return pages.map((page) => {
+    const { lang, slug } = parseGuideId(page.id);
+    return { params: { lang, slug: slug === "index" ? undefined : slug.replace(/\/index$/, "") }, props: { page } };
+  });
+}
 
 // A language goes live only when it is complete: every UI string and every
 // English guide page has a translation. No half-translated sites (PRD).
@@ -26,7 +42,7 @@ let cache;
 export async function publishedLocales() {
   if (cache) return cache;
   const pages = await getCollection("guide");
-  const slugs = (lang) => new Set(pages.map((p) => parseGuideId(p.id)).filter((p) => p.lang === lang).map((p) => p.slug));
+  const slugs = (lang) => new Set(pages.map((p) => parseGuideId(p.id)).filter((p) => p.lang === lang).map((p) => `${p.section}/${p.slug}`));
   const enSlugs = slugs(DEFAULT_LOCALE);
   const enKeys = Object.keys(UI[DEFAULT_LOCALE]).filter((k) => !k.startsWith("_"));
   cache = Object.keys(LOCALES).filter((lang) => {

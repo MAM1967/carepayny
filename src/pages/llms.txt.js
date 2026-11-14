@@ -1,11 +1,18 @@
 import { getCollection } from "astro:content";
 import { SITE_URL } from "../lib/seo.js";
-import { parseGuideId, guidePath } from "../i18n/index.js";
+import { parseGuideId, guidePath, GUIDE_SECTIONS, UI } from "../i18n/index.js";
 import { RULES } from "../data/rules.js";
 
 // llms.txt: a plain-text map of the site for AI answer tools (llmstxt.org format).
 export async function GET() {
   const guide = (await getCollection("guide")).filter((p) => parseGuideId(p.id).lang === "en").sort((a, b) => a.data.order - b.data.order);
+  // One block per guide section, named as in the site menu.
+  const sections = GUIDE_SECTIONS.map((section) => {
+    const name = UI.en[section === "cdpap" ? "guide.name" : `guide.${section}.name`];
+    const lines = guide.filter((p) => parseGuideId(p.id).section === section)
+      .map((p) => { const { slug } = parseGuideId(p.id); return `- [${p.data.title}](${SITE_URL}${guidePath("en", slug, section)}): ${p.data.description}`; });
+    return `## ${name}\n\n${lines.join("\n")}`;
+  }).join("\n\n");
   const body = `# CarePayNY
 
 > Free, independent website for home care workers in New York State. It explains the state's home care pay rules (home care aide minimum wage, wage parity, overtime, 24-hour shifts) and the CDPAP program run through PPL, in plain English. Every page links to its official sources and shows a "last checked" date. CarePayNY is not part of PPL, the NYS Department of Health, the Department of Labor or Medicaid, and does not give legal advice.
@@ -18,9 +25,7 @@ Pay rules in use: version ${RULES.version}, in effect since ${RULES.effective}, 
 - [NY home care pay rates table](${SITE_URL}/rates/): every rate the calculator uses (home care aide minimum, general minimum wage, wage parity benefit and total, PPL's CDPAP base pay) by region for each year in the rules, with a source for each row.
 - [Pay rates as CSV](${SITE_URL}/rates.csv): the same data as a CSV file (year, region, rate_type, value_usd, effective_date, source_url).
 
-## CDPAP guide
-
-${guide.map((p) => `- [${p.data.title}](${SITE_URL}${guidePath("en", parseGuideId(p.id).slug)}): ${p.data.description}`).join("\n")}
+${sections}
 
 ## About
 

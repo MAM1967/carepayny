@@ -104,3 +104,5 @@ PPL lists these other benefits for CDPAP PAs:
 
 - PPL HR line: 1-833-746-8283
 - Benefits help (GSA National): 1-888-250-8303
+
+Related: [Overtime for home care aides](/pay/overtime/) · [24-hour shifts and the 13-hour rule](/pay/24-hour-shifts/)

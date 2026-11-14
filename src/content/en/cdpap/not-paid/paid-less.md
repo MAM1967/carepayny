@@ -53,3 +53,5 @@ PPL lists a base pay rate for each area. The rate is also in the PA's offer lett
 - **PPL:** payroll and pay stubs. PPL's phone line is 1-833-247-5346.
 
 The [pay calculator](/) compares one week of pay with New York's rules and PPL's posted rate.
+
+Related: [New York home care minimum wage for 2027](/pay/minimum-wage-2027/) · [Overtime for home care aides](/pay/overtime/)
