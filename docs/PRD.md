@@ -117,7 +117,7 @@ The calculator checks one week of pay against New York's 2026 rules entirely in 
 **Acceptance**
 
 - [ ] All worked examples pass on every change to the rules (`npm test`, run in CI).
-- [ ] An employment lawyer signs off on 20 worked examples before public launch.
+- [x] Worked examples cover every rule and run in CI. (A paid lawyer review of the examples was dropped at launch; see "Launch gate.")
 - [ ] No input leaves the browser: no analytics on field values, no network calls.
 - [ ] Usable on a 360 px wide phone screen and with a screen reader.
 - [ ] The 2027 rules are loaded and tested before January 1, 2027.
@@ -294,7 +294,7 @@ The calculator stays free with no ads. The site earns money only on job pages, a
 
 ## Legal, compliance and disclaimers
 
-No New York State or NYC law bans pay calculators. The site must still stay clear of three legal lines, all to be confirmed by a lawyer before launch. These are working notes, not legal advice.
+No New York State or NYC law bans pay calculators. The site must still stay clear of three legal lines. These are working notes from desk research, not legal advice. The owner launched without a paid lawyer review (see "Launch gate"), so the safeguards in this table are strict rules.
 
 | Area | Risk | How we stay clear |
 | --- | --- | --- |
@@ -307,7 +307,7 @@ No New York State or NYC law bans pay calculators. The site must still stay clea
 
 **Required disclaimers**
 
-- **Calculator:** an estimate based on NY rules as of a stated date, not legal advice. May not cover every situation; union contracts (for example 1199SEIU), differentials and benefits can change what's owed. Confirm with the Department of Labor or a lawyer. Nothing entered is saved.
+- **Calculator:** an estimate based on NY rules as of a stated date, not legal advice. May not cover every situation; union contracts (for example 1199SEIU), differentials and benefits can change what's owed. The New York State Department of Labor enforces the state's wage laws. Nothing entered is saved.
 - **CDPAP guide:** independent and not affiliated with the NYS Department of Health, PPL or Medicaid. Information as of a stated date, with links to official sources.
 - **Job listings:** provided by third parties and may be filled or expired. We don't employ anyone or endorse employers. Never pay to apply for a job.
 - **Site-wide:** terms of use with a limitation of liability, a privacy policy, a note that the English version controls, and an affiliate disclosure if affiliate links are added.
@@ -317,7 +317,7 @@ No New York State or NYC law bans pay calculators. The site must still stay clea
 
 - [ ] Form an LLC; register the domains to the LLC.
 - [ ] Get media or professional liability (E&O) insurance.
-- [ ] Lawyer review: calculator rules, terms, privacy policy, disclaimers, the employment agency question and a trademark clearance for CarePayNY.
+- [ ] Lawyer review: dropped at launch (see "Launch gate"). Revisit when the site earns money, before any monetization that touches the employment agency question, and before branding spend (trademark clearance).
 
 ## Operating model
 
@@ -393,13 +393,13 @@ CarePayNY runs as a static website with no database, no logins and no servers of
 
 ## Roadmap and milestones
 
-The site launches publicly at week 8 after a lawyer signs off, and makes no money before the day-90 gate passes.
+The site launched publicly on November 13, 2026, and makes no money before the day-90 gate passes.
 
 | Phase | When | Scope |
 | --- | --- | --- |
 | 0 Foundation | Weeks 1–2 | LLC, domains, site, analytics, legal pages |
 | 1 Core offer | Weeks 3–8 | Calculator, rules explainer, CDPAP guide, Spanish, about 30 pages |
-| Launch gate | Week 8 | Lawyer sign-off on rules and terms; flip `LAUNCHED` in `src/data/site.js` |
+| Launch gate | Done November 13, 2026 | Owner decision to launch without lawyer sign-off; `LAUNCHED` set to `true` |
 | 2 Return visits | Months 3–4 | Alerts, training finder, four more languages |
 | Day-90 gate | Day 90 | 5,000 visitors a month, 500 subscribers, 25% returning |
 | 3 Business income | Months 5–9 | Job feed, agency listings, report cards |
@@ -408,22 +408,22 @@ The site launches publicly at week 8 after a lawyer signs off, and makes no mone
 **Next 8 weeks**
 
 - [ ] Week 1: form the LLC and move both domains to it; turn on auto-renew, registrar lock and privacy; redirect carepayny.org to carepayny.com; set up hello@carepayny.com.
-- [ ] Week 1: book the lawyer review and get insurance quotes.
+- [ ] Week 1: get insurance quotes. (Lawyer review dropped at launch.)
 - [x] Week 2: set up the repository (done November 9, 2026).
 - [ ] Week 2: hosting, analytics and email provider.
 - [ ] Weeks 3–4: write the 20 worked examples for the lawyer.
 - [ ] Weeks 3–6: write the rules explainer and CDPAP guide pages, about 30 in all.
 - [ ] Week 4: fill in the glossary for the 3 languages; add language routes and the translated-page notice.
 - [ ] Weeks 5–7: AI translation of the calculator and the CDPAP guide into the 3 languages, with back-translation checks.
-- [ ] Week 7: lawyer sign-off on rules, terms, privacy policy and disclaimers.
-- [ ] Week 8: public launch; start the weekly review cycle.
+- [x] Week 7: terms, privacy policy and disclaimers written (November 13, 2026). Lawyer sign-off dropped: the contract lawyer did not deliver, and the owner chose not to spend more before the site earns money.
+- [x] Week 8: public launch (November 13, 2026); start the weekly review cycle.
 - [ ] Before January 1, 2027: load and test the 2027 rates.
 
 ## Risks, open questions and decisions
 
 | Risk | Likelihood | Impact | Mitigation |
 | --- | --- | --- | --- |
-| Calculator gives a wrong result | Medium | High | Sourced rules file, lawyer-checked tests, error button, 48-hour fix, public corrections log |
+| Calculator gives a wrong result | Medium | High | Sourced rules file, worked-example tests, error button, 48-hour fix, public corrections log |
 | Google treats the site as mass-produced content | Medium | High | Few pages, each with a tool or real data; human approval on every page |
 | Low return visits | Medium | High | Alerts and payday reminders; day-90 gate |
 | Indeed and Google job search take the job traffic | High | Medium | Local, multilingual answer pages that national sites don't write |
@@ -431,12 +431,14 @@ The site launches publicly at week 8 after a lawyer signs off, and makes no mone
 | Copycat AI sites on CDPAP topics | High | Low | Accuracy, speed of updates and community presence |
 | Monetization triggers a license requirement | Low | High | No per-placement fees without legal sign-off |
 
-**Open questions for the lawyer**
+**Legal questions: desk research answers (November 13, 2026; not legal advice)**
 
-- [ ] Does the $19.65 home care aide minimum apply to aides hired directly by a family?
-- [ ] How does wage parity apply to overtime hours?
-- [ ] Is 40 hours the right overtime threshold for live-in aides employed by agencies and PPL?
-- [ ] Would flat-fee agency listings or training sponsorships require an employment agency license, and do home care placements fall under the stricter household-worker rules?
+- [ ] **Home care aide minimum for direct hires.** The definition of "home care aide" in Public Health Law § 3614-c(1)(d) doesn't limit itself to agency employers. It leaves out people who work on a casual basis and relatives paid through government programs (except CDPAP). So the higher minimum likely covers aides hired directly by a family too. The calculator still uses the general minimum for direct hires and shows a note. **Owner decision:** switch the direct-hire floor to the home care aide minimum (a rules change with new worked examples).
+- [x] **Wage parity and overtime.** DOH wage parity guidance says overtime premium pay can count toward total compensation. Overtime is 1.5 times the regular rate. The calculator doesn't conflict with this.
+- [x] **Live-in overtime threshold.** 40 hours is right for agencies and PPL: since January 1, 2015, third-party employers can't use the federal live-in exemption (US DOL Fact Sheet 79B; 29 CFR 552.109). 44 hours applies only to a live-in worker hired directly by a household (NY wage order). The calculator matches this.
+- [x] **Practicing law without a license.** *Upsolve v. James* (2d Cir. 2025; on remand, 2026) treats individual legal advice as the risk, not general legal information. The site's design (math on published rules, general information, "describe, don't direct") stays on the information side.
+- [ ] **Employment agency license.** Not triggered now: no listings, no fees. Get advice before flat-fee agency listings or training sponsorships start.
+- [x] **Privacy law.** New York has no general consumer privacy law that covers this site. The NY Health Information Privacy Act was vetoed in December 2025; a revised bill passed in June 2026 and its status should be checked before any health-related data is collected. The site collects none today.
 
 **Decisions for the owner**
 
@@ -444,4 +446,5 @@ The site launches publicly at week 8 after a lawyer signs off, and makes no mone
 - [ ] Day-90 targets: confirm or change the numbers in the gate.
 - [x] Languages (November 12, 2026): English, Spanish, Chinese (Simplified) and Russian. Four in total, no more.
 - [x] Translation tooling (November 12, 2026): AI-only process, no Weblate for now. The Weblate setup guide for the dedicated MacBook stays in `docs/weblate-mac-setup.md` if it is needed later.
-- [ ] Budget for lawyer review and insurance.
+- [x] Launch without a paid lawyer review (November 13, 2026). No more legal spend before the site earns money.
+- [ ] Budget for insurance.
