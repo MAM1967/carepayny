@@ -3,13 +3,15 @@ title: "PPL paid me less than my hours"
 description: "Reasons a CDPAP caregiver's PPL pay can be lower than the hours sent in: approved-hour limits, rounding, hospital days, overlaps and live-in rules."
 nav: "Paid less than my hours"
 order: 9
-lastChecked: "November 11, 2026"
+lastChecked: "November 14, 2026"
 sources:
   - label: "PPL: New York CDPAP frequently asked questions"
     url: "https://pplfirst.com/new-york-cdpap-frequently-asked-questions/"
   - label: "PPL: CDPAP resources for personal assistants (Pended payment reasons, per-diem rule)"
     url: "https://pplfirst.com/cdpap-resources-personal-assistants/"
 ---
+
+PPL can pay a CDPAP personal assistant (PA) for fewer hours than they sent in. The reasons PPL lists include hours past the approved hours, rounding, hospital days, overlapping time and live-in (per-diem) days.
 
 ## What you see
 

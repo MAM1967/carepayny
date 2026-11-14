@@ -3,7 +3,7 @@ title: "PPL мне не заплатила: нет формы I-9"
 description: "Что такое форма I-9, почему PPL нужна эта форма, прежде чем платить работнику CDPAP, и какие документы для неё подходят."
 nav: "Нет формы I-9"
 order: 6
-lastChecked: "November 11, 2026"
+lastChecked: "November 14, 2026"
 sources:
   - label: "PPL: материалы CDPAP для личных помощников (формы для регистрации)"
     url: "https://pplfirst.com/cdpap-resources-personal-assistants/"
@@ -12,6 +12,8 @@ sources:
   - label: "USCIS: форма I-9 и подходящие документы"
     url: "https://www.uscis.gov/i-9-central/form-i-9-acceptable-documents"
 ---
+
+PPL не может платить PA (личному помощнику) в CDPAP, пока у неё нет заполненной формы I-9 этого PA с документами. I-9 — это форма правительства США. Она подтверждает, кто этот работник и что ему разрешено работать в США.
 
 ## Что вы видите
 

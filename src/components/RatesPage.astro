@@ -1,0 +1,119 @@
+---
+// The NY home care pay rates table, in any language. All numbers come from src/data/rules.js
+// (through src/lib/rates.js). No scripts.
+import Base from "../layouts/Base.astro";
+import { RULES_BY_YEAR } from "../data/rules.js";
+import { rateRows, REGIONS, YEARS, lastReviewed, money, CSV_PATH, CSV_URL } from "../lib/rates.js";
+import { isoDate, SITE_URL } from "../lib/seo.js";
+import { t as tFor, UI, dateFor } from "../i18n/index.js";
+import { DEFAULT_LOCALE, LOCALES, localizePath } from "../i18n/locales.js";
+import { fmt } from "../i18n/format.js";
+
+interface Props { lang: string }
+const { lang } = Astro.props;
+const t = tFor(lang);
+const html = (key: string, vars = {}) => fmt(UI[lang]?.[key] ?? UI[DEFAULT_LOCALE][key], vars);
+
+const [y1, y2] = YEARS;
+const R1 = RULES_BY_YEAR[y1], R2 = RULES_BY_YEAR[y2];
+// The lead sentence names New York City, Nassau, Suffolk and Westchester together.
+// If those ever get different minimums, this stops the build so the sentence gets fixed.
+for (const R of [R1, R2]) {
+  if (R.regions.nyc.hcaMin !== R.regions.liw.hcaMin) throw new Error("rates: NYC and Long Island/Westchester minimums differ; update rates.lead");
+}
+const reviewed = lastReviewed();
+const modified = isoDate(reviewed);
+const rows = rateRows();
+const url = `${SITE_URL}${localizePath(lang, "/rates/")}`;
+const title = t("rates.h1", { y1, y2 });
+const description = t("meta.rates.description", { y1, y2 });
+
+const cell = (row, k) => {
+  const v = row.values[k];
+  if (v != null) return money(v);
+  return row.type.ppl ? t("token.notPosted") : t("rates.doesNotApply");
+};
+
+const jsonLd = [{
+  "@type": "Dataset",
+  "@id": `${SITE_URL}/rates/#dataset`,
+  name: `New York home care pay rates, ${y1} and ${y2}`,
+  description: `Hourly pay rates for home care workers in New York State, by region (New York City; Nassau, Suffolk and Westchester; rest of state) for ${y1} and ${y2}: the home care aide minimum wage, the general minimum wage, the wage parity benefit portion and minimum total compensation, and PPL's posted CDPAP base pay. Each figure links to its public source. Compiled by CarePayNY, an independent website; general information, not legal advice.`,
+  url: `${SITE_URL}/rates/`,
+  inLanguage: "en-US",
+  creator: { "@id": `${SITE_URL}/#org` },
+  publisher: { "@id": `${SITE_URL}/#org` },
+  dateModified: modified,
+  version: `${R1.version} / ${R2.version}`,
+  isAccessibleForFree: true,
+  usageInfo: `${SITE_URL}/terms/`,
+  temporalCoverage: `${y1}/${y2}`,
+  spatialCoverage: { "@type": "Place", name: "New York State, United States" },
+  variableMeasured: ["Home care aide minimum wage", "General minimum wage", "Wage parity benefit portion", "Wage parity minimum total compensation", "PPL CDPAP base pay"],
+  isBasedOn: [...new Set(rows.flatMap((r) => r.sources.map((s) => s.url)))],
+  distribution: [{ "@type": "DataDownload", encodingFormat: "text/csv", contentUrl: CSV_URL }]
+}];
+---
+<Base lang={lang} title={title} description={description} ogType="article" modified={modified} jsonLd={jsonLd}>
+  <div class="wrap">
+    <article class="prose rates">
+      <h1>{title}</h1>
+      <p class="checked">{t("guide.lastChecked")} <time datetime={modified}>{dateFor(lang, reviewed)}</time></p>
+      <p>{t("rates.lead", {
+        y1, nyc1: money(R1.regions.nyc.hcaMin), rest1: money(R1.regions.rest.hcaMin),
+        date2: dateFor(lang, R2.effective), nyc2: money(R2.regions.nyc.hcaMin), rest2: money(R2.regions.rest.hcaMin)
+      })}</p>
+      <p set:html={html("rates.note.html", { calcUrl: localizePath(lang, "/") })} />
+
+      <div class="table-scroll">
+        <table>
+          <caption>{t("rates.caption")}</caption>
+          <thead>
+            <tr>
+              <th scope="col">{t("rates.col.rate")}</th>
+              <th scope="col">{t("rates.col.year")}</th>
+              {REGIONS.map((k) => <th scope="col">{t(`region.${k}`)}</th>)}
+              <th scope="col">{t("rates.col.source")}</th>
+            </tr>
+          </thead>
+          <tbody>
+            {rows.map((row, i) => (
+              <tr>
+                {(i === 0 || rows[i - 1].type !== row.type) && (
+                  <th scope="rowgroup" rowspan={rows.filter((r) => r.type === row.type).length}>{t(row.type.key)}</th>
+                )}
+                <td>{row.year}<br /><span class="small">{t("rates.from", { date: dateFor(lang, row.effective) })}</span></td>
+                {REGIONS.map((k) => <td class="num">{cell(row, k)}</td>)}
+                <td class="src">
+                  {row.sources.map((s) => <a href={s.url} lang="en">{s.label}</a>)}
+                  {row.note && <span class="small">{t("rates.pplCarried", { year: row.year })}</span>}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <p set:html={html("rates.csv.html", { csvUrl: CSV_PATH })} />
+      <p class="small">{t("rates.version", { v1: R1.version, y1, v2: R2.version, y2, date: dateFor(lang, reviewed) })}</p>
+
+      <h2>{t("rates.defs.h2")}</h2>
+      <ul>
+        <li>{t("rates.def.hcaMin")}</li>
+        <li>{t("rates.def.generalMin")}</li>
+        <li>{t("rates.def.wp")}</li>
+        <li>{t("rates.def.ppl")}</li>
+      </ul>
+      <p class="small">{t("guide.independent")}</p>
+    </article>
+  </div>
+</Base>
+
+<style>
+  .table-scroll { overflow-x: auto; }
+  .rates table { min-width: 640px; }
+  .rates caption { text-align: left; font-weight: 700; padding-bottom: 6px; }
+  .rates th[scope="rowgroup"] { font-weight: 700; }
+  .rates td.num { white-space: nowrap; font-weight: 700; }
+  .rates td.src a, .rates td.src span { display: block; margin-bottom: 4px; }
+</style>

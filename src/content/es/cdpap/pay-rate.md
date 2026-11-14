@@ -3,7 +3,7 @@ title: "Tarifas de pago de CDPAP en Nueva York (2026 y 2027)"
 description: "El pago de CDPAP en Nueva York en 2026 y 2027: el pago base de PPL, el mínimo del estado para asistentes de cuidado en el hogar y la paridad salarial en NYC, Long Island y Westchester."
 nav: "Su tarifa de pago"
 order: 10
-lastChecked: "November 11, 2026"
+lastChecked: "November 14, 2026"
 sources:
   - label: "PPL: preguntas frecuentes sobre CDPAP en Nueva York (salarios de los PA)"
     url: "https://pplfirst.com/new-york-cdpap-frequently-asked-questions/"
@@ -21,7 +21,7 @@ sources:
 
 ## ¿Cuál es la tarifa de pago de CDPAP en Nueva York?
 
-En 2026, el pago base de PPL para CDPAP es {{2026.ppl.nyc}} por hora en la Ciudad de Nueva York, {{2026.ppl.liw}} en Nassau, Suffolk y Westchester, y {{2026.ppl.rest}} en los otros condados. Hay dos números importantes:
+En 2026, el pago base de PPL para CDPAP es {{2026.ppl.nyc}} por hora en la Ciudad de Nueva York, {{2026.ppl.liw}} en Nassau, Suffolk y Westchester, y {{2026.ppl.rest}} en los otros condados. El 1 de enero de 2027, el mínimo del estado para asistentes de cuidado en el hogar sube a {{2027.min.nyc}} por hora en la Ciudad de Nueva York, Long Island y Westchester, y a {{2027.min.rest}} en el resto del estado. Hay dos números importantes:
 
 - El **mínimo del estado** es el pago más bajo que la ley permite para los asistentes de cuidado en el hogar. Los cuidadores de CDPAP están cubiertos por él. El estado lo fija.
 - El **pago base de PPL** es la tarifa que PPL dice que les paga a los cuidadores de CDPAP. En la Ciudad de Nueva York, Nassau, Suffolk y Westchester, es más alto que el mínimo del estado.

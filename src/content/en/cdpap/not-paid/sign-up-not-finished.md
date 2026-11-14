@@ -3,13 +3,15 @@ title: "PPL didn't pay me: sign-up not finished"
 description: "What 'Provider is not Paperwork Complete' and related PPL messages mean for CDPAP caregivers, and what PPL needs before it can pay."
 nav: "Sign-up not finished"
 order: 5
-lastChecked: "November 11, 2026"
+lastChecked: "November 14, 2026"
 sources:
   - label: "PPL: CDPAP resources for personal assistants (Pended payment reasons)"
     url: "https://pplfirst.com/cdpap-resources-personal-assistants/"
   - label: "PPL: New York CDPAP frequently asked questions"
     url: "https://pplfirst.com/new-york-cdpap-frequently-asked-questions/"
 ---
+
+PPL does not pay a CDPAP personal assistant (PA) until both the PA and the consumer have finished signing up with PPL. Until then, PPL@Home shows the PA's timesheets as "Pended" (payment on hold).
 
 ## What you see
 

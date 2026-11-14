@@ -3,13 +3,15 @@ title: "PPL 付的工资比我的工时少"
 description: "PPL 付给 CDPAP 照顾者的工资可能少于提交时数的原因：批准时数的限制、时间计算方法、住院的日子、时间重叠和同住规定。"
 nav: "工资比工时少"
 order: 9
-lastChecked: "November 11, 2026"
+lastChecked: "November 14, 2026"
 sources:
   - label: "PPL：纽约 CDPAP 常见问题"
     url: "https://pplfirst.com/new-york-cdpap-frequently-asked-questions/"
   - label: "PPL：给个人助理的 CDPAP 资料（Pended 付款原因、按日计酬规定）"
     url: "https://pplfirst.com/cdpap-resources-personal-assistants/"
 ---
+
+PPL 付给 CDPAP 的 PA（个人助理）的时数，可能比 PA 提交的少。PPL 列出的原因包括：超过批准的时数、工时按整刻钟或整点计算、受照顾者住院的日子、时间重叠，以及同住（live-in，按日计酬）的日子。
 
 ## 您看到的情况
 

@@ -3,13 +3,15 @@ title: "I wasn't paid by PPL: common reasons"
 description: "The reasons PPL holds a CDPAP caregiver's pay, in plain English, from PPL's own list of 'Pended' payment messages."
 nav: "I wasn't paid"
 order: 4
-lastChecked: "November 11, 2026"
+lastChecked: "November 14, 2026"
 sources:
   - label: "PPL: CDPAP resources for personal assistants (Pended payment reasons)"
     url: "https://pplfirst.com/cdpap-resources-personal-assistants/"
   - label: "PPL: New York CDPAP frequently asked questions"
     url: "https://pplfirst.com/new-york-cdpap-frequently-asked-questions/"
 ---
+
+When PPL does not pay a CDPAP personal assistant (PA), PPL@Home shows the reason. The five most common problems are: sign-up is not finished, the I-9 is missing, no approved hours are on file, the timesheet was late or not approved, and pay for fewer hours than were sent in.
 
 When PPL holds a payment, PPL@Home shows the timesheet as **"Pended."** Clicking the word "Pended" shows the reason. The reasons come from PPL's own list.
 
@@ -24,6 +26,8 @@ Each has its own page:
 5. [Paid less than the hours sent in](/cdpap/not-paid/paid-less/)
 
 ## PPL's full list, in plain English
+
+This table lists each reason PPL@Home can show for a "Pended" CDPAP timesheet, and what it means.
 
 | What PPL@Home says | What it means |
 | --- | --- |

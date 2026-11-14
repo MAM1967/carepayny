@@ -3,7 +3,7 @@ title: "纽约 CDPAP 工资标准（2026年和2027年）"
 description: "纽约2026年和2027年的 CDPAP 工资：PPL 的基本工资、州政府给居家护理员定的最低工资，以及纽约市、长岛和威彻斯特县的工资平价。"
 nav: "您的工资标准"
 order: 10
-lastChecked: "November 11, 2026"
+lastChecked: "November 14, 2026"
 sources:
   - label: "PPL：纽约 CDPAP 常见问题（PA 工资）"
     url: "https://pplfirst.com/new-york-cdpap-frequently-asked-questions/"
@@ -21,7 +21,7 @@ sources:
 
 ## 纽约的 CDPAP 工资标准是多少？
 
-2026年，PPL 的 CDPAP 基本工资在纽约市是每小时 {{2026.ppl.nyc}}，在拿骚县、萨福克县和威彻斯特县是 {{2026.ppl.liw}}，在其他县是 {{2026.ppl.rest}}。有两个数字很重要：
+2026年，PPL 的 CDPAP 基本工资在纽约市是每小时 {{2026.ppl.nyc}}，在拿骚县、萨福克县和威彻斯特县是 {{2026.ppl.liw}}，在其他县是 {{2026.ppl.rest}}。2027年1月1日，居家护理员的州最低工资提高：纽约市、长岛和威彻斯特县是每小时 {{2027.min.nyc}}，州内其他地区是 {{2027.min.rest}}。有两个数字很重要：
 
 - **州最低工资**是法律允许给居家护理员的最低工资。CDPAP 照顾者也受它保障。由州政府制定。
 - **PPL 的基本工资**是 PPL 说它付给 CDPAP 照顾者的工资标准。在纽约市、拿骚县、萨福克县和威彻斯特县，它比州最低工资高。

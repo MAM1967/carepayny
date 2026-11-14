@@ -3,7 +3,7 @@ title: "CDPAP help: who handles what"
 description: "Phone numbers and what each office handles for CDPAP caregivers in New York: PPL, health plans, Medicaid, the Department of Labor, Legal Aid and the settlement administrator."
 nav: "Where to get help"
 order: 13
-lastChecked: "November 11, 2026"
+lastChecked: "November 14, 2026"
 sources:
   - label: "PPL: New York CDPAP frequently asked questions (contacts)"
     url: "https://pplfirst.com/new-york-cdpap-frequently-asked-questions/"
@@ -19,7 +19,7 @@ sources:
     url: "https://www.publicpartnershipssettlement.com/"
 ---
 
-Each office handles a different part of CDPAP. This page lists what each one does.
+For CDPAP, PPL handles pay, sign-up and timesheets (1-833-247-5346). The consumer's health plan or local social services office decides how many hours are approved. The New York State Department of Labor takes wage claims, and The Legal Aid Society gives free legal help to New Yorkers who qualify (212-577-3300). Each section below covers one office.
 
 ## PPL (payroll, sign-up, timesheets)
 

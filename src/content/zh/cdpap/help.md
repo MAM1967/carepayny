@@ -3,7 +3,7 @@ title: "CDPAP 帮助：谁负责什么"
 description: "纽约 CDPAP 照顾者相关的电话号码，以及各个机构负责什么：PPL、健康计划、Medicaid、劳工厅、法律援助和和解管理人。"
 nav: "到哪里获得帮助"
 order: 13
-lastChecked: "November 11, 2026"
+lastChecked: "November 14, 2026"
 sources:
   - label: "PPL：纽约 CDPAP 常见问题（联系方式）"
     url: "https://pplfirst.com/new-york-cdpap-frequently-asked-questions/"
@@ -19,7 +19,7 @@ sources:
     url: "https://www.publicpartnershipssettlement.com/"
 ---
 
-每个机构负责 CDPAP 的不同部分。本页列出每个机构做什么。
+在 CDPAP 中，PPL 负责工资、注册和工时表（1-833-247-5346）。受照顾者（CDPAP 中称为“消费者”，即接受照顾的人）的健康计划或地方社会服务办公室决定批准多少时数。纽约州劳工厅受理工资索赔；The Legal Aid Society（法律援助协会）为符合条件的纽约人提供免费法律帮助（212-577-3300）。下面每一部分介绍一个机构。
 
 ## PPL（发工资、注册、工时表）
 

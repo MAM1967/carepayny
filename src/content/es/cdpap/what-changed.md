@@ -3,8 +3,10 @@ title: "CDPAP: qué cambió (registro de noticias)"
 description: "Un registro con fechas de los cambios en el programa CDPAP de Nueva York, las reglas de PPL, el pago de los cuidadores y el acuerdo con PPL, del más nuevo al más viejo."
 nav: "Qué cambió"
 order: 14
-lastChecked: "November 11, 2026"
+lastChecked: "November 14, 2026"
 sources:
+  - label: "Ley de Salud Pública de Nueva York § 3614-c (definición de asistente de cuidado en el hogar)"
+    url: "https://www.nysenate.gov/legislation/laws/PBH/3614-C"
   - label: "Gobernadora del Estado de Nueva York: salario mínimo del Estado de Nueva York para 2027"
     url: "https://governor.ny.gov/new-york-state-minimum-wage-2027"
   - label: "amNewYork Law: el juez da la aprobación final al acuerdo con PPL"
@@ -25,11 +27,12 @@ sources:
     url: "https://www.health.ny.gov/facilities/long_term_care/reimbursement/cdpap/"
 ---
 
-Del más nuevo al más viejo. Cada cambio tiene su fuente al final de esta página.
+Este registro muestra, con fechas, los cambios en CDPAP, en las reglas de PPL y en el pago del cuidado en el hogar en Nueva York, del más nuevo al más viejo. El próximo cambio es el 1 de enero de 2027: el mínimo del estado para asistentes de cuidado en el hogar sube a {{2027.min.nyc}} por hora en la Ciudad de Nueva York, Long Island y Westchester, y a {{2027.min.rest}} en el resto del estado. Cada cambio tiene su fuente al final de esta página.
 
 | Fecha | Qué cambió |
 | --- | --- |
 | 1 de enero de 2027 (próximamente) | El mínimo del estado para asistentes de cuidado en el hogar sube a {{2027.min.nyc}} en la Ciudad de Nueva York, Long Island y Westchester, y a {{2027.min.rest}} en el resto del estado. El salario mínimo general no cambia. Más: [Su tarifa de pago en CDPAP](/cdpap/pay-rate/). |
+| 14 de noviembre de 2026 | Cambió la calculadora de pago de CarePayNY. Para los trabajadores que una familia contrata directamente, ahora usa el mínimo para asistentes de cuidado en el hogar ({{2026.min.nyc}} en la Ciudad de Nueva York, Long Island y Westchester, y {{2026.min.rest}} en el resto del estado en 2026) en vez del salario mínimo general. La Ley de Salud Pública de Nueva York, § 3614-c, define a un "asistente de cuidado en el hogar" por el trabajo que hace, no por quién es el empleador. El salario mínimo general se aplica solo al trabajo que se hace de vez en cuando ("on a casual basis"). Más: [Correcciones (en inglés)](/corrections/). |
 | 10 de noviembre de 2026 | Un juez federal le dio la aprobación final al acuerdo de $162 millones con PPL para los PA (asistentes personales) de la zona sur del estado (Ciudad de Nueva York, Nassau, Suffolk y Westchester). Más: [El acuerdo legal con PPL](/cdpap/ppl-settlement/). |
 | 22 de julio de 2026 | El Departamento de Salud publicó la Política MLTC 26.02. PPL les va a enviar a los planes de salud un reporte cada dos semanas sobre los PA que trabajan horas muy largas. |
 | 21 de julio de 2026 | Se enviaron avisos del acuerdo a los PA de la zona sur del estado por correo electrónico y mensaje de texto. |

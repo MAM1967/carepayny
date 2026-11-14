@@ -3,7 +3,7 @@ title: "El acuerdo de $162 millones con PPL (Calderon v. PPL)"
 description: "Quién está en el acuerdo del caso Calderon v. Public Partnerships para los cuidadores de CDPAP de la zona sur del estado, cuánto paga, cómo se envían los pagos y las últimas noticias de la corte."
 nav: "El acuerdo legal con PPL"
 order: 12
-lastChecked: "November 11, 2026"
+lastChecked: "November 14, 2026"
 sources:
   - label: "Sitio web oficial del acuerdo: Calderon v. Public Partnerships, LLC"
     url: "https://www.publicpartnershipssettlement.com/"
@@ -16,6 +16,8 @@ sources:
   - label: "amNewYork Law: el juez da la aprobación final (10 de noviembre de 2026)"
     url: "https://www.amny.com/law/federal-judge-finalizes-home-aides-settlement/"
 ---
+
+El acuerdo con PPL, *Calderon v. Public Partnerships, LLC*, es un acuerdo de $162 millones para los asistentes personales (PA) de CDPAP a quienes PPL les pagó en la Ciudad de Nueva York, Nassau, Suffolk o Westchester en cualquier momento del 1 de marzo de 2025 al 30 de abril de 2026. Un **acuerdo** es un arreglo que termina un caso en la corte con un pago. Un juez federal le dio la aprobación final el 10 de noviembre de 2026.
 
 ## ¿Cuáles son las últimas noticias sobre el acuerdo con PPL?
 

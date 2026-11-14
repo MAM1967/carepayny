@@ -13,6 +13,7 @@ export async function GET() {
   const rulesDay = isoDate(RULES.lastReviewed);
   const urls = [
     ...live.map((lang) => ({ loc: localizePath(lang, "/"), lastmod: rulesDay })),
+    ...live.map((lang) => ({ loc: localizePath(lang, "/rates/"), lastmod: rulesDay })),
     { loc: "/about/", lastmod: rulesDay },
     { loc: "/terms/", lastmod: isoDate(LEGAL_UPDATED) },
     { loc: "/privacy/", lastmod: isoDate(LEGAL_UPDATED) },

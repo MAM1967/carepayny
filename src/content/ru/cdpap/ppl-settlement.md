@@ -3,7 +3,7 @@ title: "Мировое соглашение с PPL на $162 млн (Calderon v.
 description: "Кто входит в мировое соглашение по делу Calderon v. Public Partnerships для работников CDPAP на юге штата, что оно выплачивает, как отправляют деньги и последние новости суда."
 nav: "Мировое соглашение по суду с PPL"
 order: 12
-lastChecked: "November 11, 2026"
+lastChecked: "November 14, 2026"
 sources:
   - label: "Официальный сайт мирового соглашения: Calderon v. Public Partnerships, LLC"
     url: "https://www.publicpartnershipssettlement.com/"
@@ -16,6 +16,8 @@ sources:
   - label: "amNewYork Law: судья окончательно утвердил соглашение (10 ноября 2026 г.)"
     url: "https://www.amny.com/law/federal-judge-finalizes-home-aides-settlement/"
 ---
+
+Мировое соглашение с PPL (*Calderon v. Public Partnerships, LLC*) — это соглашение на $162 млн для PA (личных помощников) в CDPAP, которым PPL платила за работу в городе Нью-Йорке, Нассау, Саффолке или Уэстчестере в любое время с 1 марта 2025 г. по 30 апреля 2026 г. **Мировое соглашение** — это договор, который завершает судебное дело выплатой денег. Федеральный судья окончательно утвердил его 10 ноября 2026 г.
 
 ## Какие последние новости о мировом соглашении с PPL?
 

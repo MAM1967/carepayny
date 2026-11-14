@@ -3,13 +3,15 @@ title: "PPL no me pagó: hoja de horas tarde o no aprobada"
 description: "Las fechas límite semanales de PPL para la hoja de horas de CDPAP, la fecha límite de aprobación del consumidor y qué pasa con las horas enviadas tarde o no aprobadas."
 nav: "Hoja de horas tarde o no aprobada"
 order: 8
-lastChecked: "November 11, 2026"
+lastChecked: "November 14, 2026"
 sources:
   - label: "PPL: recursos de CDPAP para asistentes personales (reglas del calendario de pagos)"
     url: "https://pplfirst.com/cdpap-resources-personal-assistants/"
   - label: "PPL: preguntas frecuentes sobre CDPAP en Nueva York"
     url: "https://pplfirst.com/new-york-cdpap-frequently-asked-questions/"
 ---
+
+PPL le paga a un asistente personal (PA) de CDPAP el jueves por las horas que envió a más tardar el sábado a las 11:59 p.m. y que el consumidor (la persona que recibe el cuidado) aprobó a más tardar el domingo a las 12:00 del mediodía. Las horas enviadas después de la fecha límite del sábado no están en el pago de ese jueves. Las horas que el consumidor no aprueba no se pagan.
 
 ## Lo que usted ve
 

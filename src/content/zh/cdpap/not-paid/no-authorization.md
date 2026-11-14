@@ -3,7 +3,7 @@ title: "PPL 没付我工资：没有服务授权记录"
 description: "服务授权是什么，为什么没有服务授权时 PPL 不能付 CDPAP 工时的工资，以及 PPL 的“no authorization”信息是什么意思。"
 nav: "没有批准的时数记录"
 order: 7
-lastChecked: "November 11, 2026"
+lastChecked: "November 14, 2026"
 sources:
   - label: "PPL：给个人助理的 CDPAP 资料（Pended 付款原因）"
     url: "https://pplfirst.com/cdpap-resources-personal-assistants/"
@@ -14,6 +14,8 @@ sources:
   - label: "纽约州卫生厅：受照顾者与健康计划之间的 CDPAP 协议"
     url: "https://www.health.ny.gov/health_care/medicaid/redesign/mrt90/2025/cdpap_agreement_rep-hp_att1.htm"
 ---
+
+只有在受照顾者（CDPAP 中称为“消费者”，即接受照顾的人）的**服务授权**（批准的时数）范围内的 CDPAP 工时，PPL 才能付工资。服务授权由健康计划或地方社会服务办公室发出。没有服务授权时，PPL 会暂时扣住工资。PPL 说，服务授权的问题解决后，这些工时会在下一次发薪时付。
 
 ## 您看到的情况
 
@@ -35,7 +37,7 @@ PPL@Home（PPL 的网站）把工时表显示为“Pended”（付款暂时扣�
 
 ## 为什么会没有服务授权
 
-可能的原因包括：
+服务授权可能没有的原因包括：
 
 - 受照顾者换了健康计划，新计划还没有发出服务授权。
 - 旧的服务授权结束了，新的还没有送到 PPL。
