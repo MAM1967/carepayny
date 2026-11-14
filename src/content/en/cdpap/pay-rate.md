@@ -83,3 +83,5 @@ For live-in (per-diem) service codes, PPL pays a flat {{livein.hours}} hours per
 ## Is there a way to check one week of pay?
 
 The [pay calculator](/) compares one week of pay with the state minimum, wage parity and PPL's base pay. It uses the rules for the current year. It switches to the 2027 rules on January 1, 2027. It runs on your phone and saves nothing.
+
+Related: [New York home care minimum wage for 2027](/pay/minimum-wage-2027/) · [Wage parity in NYC, Long Island and Westchester](/pay/wage-parity/)

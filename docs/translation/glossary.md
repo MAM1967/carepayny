@@ -51,3 +51,9 @@ On first use on a page, a short explanation in the target language can follow th
 | Department of Labor | New York State Department of Labor |
 | Department of Health | New York State Department of Health |
 | Medicaid | Government health coverage (keep the word Medicaid) |
+| domestic worker | A worker a family hires to work in its home (NY Labor Law § 2) |
+| casual basis | Work done only now and then, not as a regular job |
+| benefit portion | The part of wage parity that can be paid as benefits or cash |
+| 13-hour rule | Rule for paying a 24-hour shift as 13 hours |
+| exemption | A rule that says a law does not apply |
+| third-party employer | An employer other than the family, such as an agency |

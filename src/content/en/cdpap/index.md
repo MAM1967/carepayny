@@ -73,3 +73,5 @@ In CDPAP, the consumer chooses the PA. In agency home care, called Personal Care
 - [Where to get help](/cdpap/help/)
 - [What changed](/cdpap/what-changed/)
 - [Word list](/cdpap/words/)
+
+Related: [Home care pay rules for agency aides and family hires](/pay/)

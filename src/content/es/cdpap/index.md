@@ -73,3 +73,5 @@ En CDPAP, el consumidor escoge al PA. En el cuidado en el hogar por agencia, lla
 - [Dónde encontrar ayuda](/cdpap/help/)
 - [Qué cambió](/cdpap/what-changed/)
 - [Lista de palabras](/cdpap/words/)
+
+Relacionado: [Reglas de pago del cuidado en el hogar para asistentes de agencia y contratados por una familia](/pay/)

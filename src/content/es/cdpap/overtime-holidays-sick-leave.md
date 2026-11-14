@@ -100,3 +100,5 @@ Sí. Todos los PA pueden ahorrar en un 401(k), y algunos PA de la zona sur del e
 
 - Línea de recursos humanos (HR) de PPL: 1-833-746-8283
 - Ayuda con los beneficios (GSA National): 1-888-250-8303
+
+Relacionado: [Horas extra para asistentes de cuidado en el hogar](/pay/overtime/) · [Turnos de 24 horas y la regla de las 13 horas](/pay/24-hour-shifts/)
