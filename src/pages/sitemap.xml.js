@@ -4,6 +4,7 @@ import { parseGuideId, guidePath, publishedLocales } from "../i18n/index.js";
 import { localizePath } from "../i18n/locales.js";
 import { RULES } from "../data/rules.js";
 import { LEGAL_UPDATED } from "../data/site.js";
+import { CORRECTIONS } from "../data/corrections.js";
 
 // One entry per public page. Guide pages use their "last checked" date.
 export async function GET() {
@@ -15,6 +16,7 @@ export async function GET() {
     { loc: "/about/", lastmod: rulesDay },
     { loc: "/terms/", lastmod: isoDate(LEGAL_UPDATED) },
     { loc: "/privacy/", lastmod: isoDate(LEGAL_UPDATED) },
+    { loc: "/corrections/", lastmod: isoDate(CORRECTIONS[0]?.date ?? LEGAL_UPDATED) },
     ...guide.map((p) => { const { lang, slug } = parseGuideId(p.id); return { loc: guidePath(lang, slug), lastmod: isoDate(p.data.lastChecked) }; })
   ];
   const body = `<?xml version="1.0" encoding="UTF-8"?>
