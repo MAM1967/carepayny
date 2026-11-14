@@ -31,7 +31,7 @@ ${sections}
 
 - [About CarePayNY](${SITE_URL}/about/): who runs the site, how the rules are checked, and how to report a mistake.
 - [Terms of Use](${SITE_URL}/terms/): general information only, estimates only, English version controls.
-- [Privacy Policy](${SITE_URL}/privacy/): the calculator stores and sends nothing and loads no outside scripts; no cookies or ads; cookieless visit counts on other pages.
+- [Privacy Policy](${SITE_URL}/privacy/): typed numbers never leave the device; no cookies or ads; anonymous, cookieless counts of visits and calculator results by general category.
 - [Corrections](${SITE_URL}/corrections/): every error fixed since launch, with dates and sources.
 `;
   return new Response(body, { headers: { "Content-Type": "text/plain; charset=utf-8" } });

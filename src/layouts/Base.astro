@@ -15,7 +15,7 @@ import { t as tFor, UI, alternatesFor, dateFor } from "../i18n/index.js";
 import { fmt } from "../i18n/format.js";
 
 interface Props {
-  /** false on calculator pages: no analytics beacon there (site rule 5). */
+  /** Set false to turn off visit counting on a page. */
   analytics?: boolean;
   title: string;
   description: string;
@@ -69,7 +69,7 @@ const graph = { "@context": "https://schema.org", "@graph": [ORGANIZATION, WEBSI
   <meta name="theme-color" content="#1d4ed8">
   <script type="application/ld+json" set:html={JSON.stringify(graph)} />
 </head>
-<body>
+<body data-count={beacon ? "1" : undefined}>
   <a class="skip" href="#main">{t("nav.skip")}</a>
   <header class="site-header">
     <div class="inner">
@@ -107,5 +107,13 @@ const graph = { "@context": "https://schema.org", "@graph": [ORGANIZATION, WEBSI
     </div>
   </footer>
   {beacon && <script is:inline type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon={beacon}></script>}
+  <script>
+    // Anonymous page view with a yes/no "visited before" marker (src/lib/events.js).
+    // Runs only when <body data-count="1"> (site launched and counting on for this page).
+    import { sanitize, send, returningFlag } from "../lib/events.js";
+    if (document.body.dataset.count === "1") {
+      send(sanitize({ e: "view", lang: (document.documentElement.lang || "en").slice(0, 2), page: location.pathname, returning: returningFlag() }));
+    }
+  </script>
 </body>
 </html>

@@ -47,20 +47,28 @@ If the gate is missed, cut scope back to the calculator and CDPAP guide, or stop
 
 **How we measure traffic (decided November 14, 2026)**
 
-The owner chose cookieless counting everywhere except the calculator pages. The calculator keeps its promise to store and send nothing (rule 5).
+This is a business, so we measure as much as possible without collecting anything that identifies a person or the exact numbers they type. The owner chose to count calculator results by general category (option B).
 
-| Source | What it counts | Where | Bots filtered? |
-| --- | --- | --- | --- |
-| Cloudflare Web Analytics | Visits and page views, top pages, referrers, countries, devices. Runs on every page except the calculator pages. | Cloudflare dashboard → Web Analytics | Yes (JavaScript beacon; crawlers mostly don't run it) |
-| Cloudflare server traffic | All requests, including the calculator pages (`/`, `/es/`, `/zh/`, `/ru/`). | Cloudflare dashboard → Analytics → Traffic, or the GraphQL API | No. Counts include crawlers, so treat them as an upper bound |
-| Google Search Console | Search impressions, clicks, queries, indexed pages | search.google.com/search-console | Yes |
-| Bing Webmaster Tools | Bing search plus Copilot AI citations and grounding queries | bing.com/webmasters | Yes |
+| Source | What it counts | Where to see it |
+| --- | --- | --- |
+| Cloudflare Web Analytics (all pages) | Visits, page views, top pages, referrers, countries, devices. Cookieless; bots mostly excluded | Cloudflare dashboard, Web Analytics |
+| Our event counter (`/api/e` to Analytics Engine dataset `carepayny_events`) | `view` (page, language, returning y/n); `calc` (region, employer, Medicaid answer, live-in, 24-hour shift range, hours range, overtime, status, rate-gap range, wage-parity-gap range, stub range, flag codes, rules year, language, returning, country); `copy`; `guide` (which guide link from a result) | Analytics Engine SQL API (Claude can run the monthly report) |
+| Cloudflare server traffic | All requests, including crawlers. Use as a ceiling only | Cloudflare dashboard, Analytics, Traffic |
+| Google Search Console | Search impressions, clicks, queries, indexed pages | Search Console |
+| Bing Webmaster Tools | Bing search, Copilot citations, grounding queries | Bing Webmaster Tools |
 
-What this means for the day-90 gate:
+Day-90 gate, measured:
 
-- **Monthly visitors:** measured. Use Web Analytics visits plus calculator-page requests from server traffic, and report the two separately.
-- **Calculator completions:** not measurable without tracking the calculator, which rule 5 forbids. Use calculator-page views (server traffic) and Search Console clicks to the home pages as the proxy.
-- **Returning-visitor share:** not measurable without cookies. Use subscribers (once that feature exists) and branded searches ("carepayny") in Search Console as the proxy.
+- **Monthly visitors:** Web Analytics visits.
+- **Calculator completions:** `calc` events. One event per distinct result, sent 4 seconds after typing stops, at most 10 per page load.
+- **Returning-visitor share:** the share of `view` events with returning = y. It's a per-browser marker, so it undercounts people who clear storage or switch devices.
+- **Subscribers:** once that feature exists.
+
+Products of the data, which also support monetization and outreach:
+- Monthly "What caregivers found" totals: the share of calculator results below the minimum, by region and employer type. These are publishable statistics that unions and reporters can cite and link to.
+- Which calculator notes send people to which guide pages, to decide what content to write next.
+- An audience profile (region, employer type, language) for advertisers and job-ad networks. Only totals are ever shared.
+
 - **Phase checks:** weekly for the first 4 weeks after launch, then monthly. Compare against the first full week after launch (November 16 to 22, 2026) as the baseline.
 
 ## Users and personas
