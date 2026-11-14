@@ -25,7 +25,11 @@ export const TOKENS = {
   "wp.liw.total": money(reg.liw.wpTotal),
   "ot.hours": String(RULES.overtime.standard),
   "ot.times": RULES.overtime.multiplier === 1.5 ? "time and a half (1.5 times your rate)" : `${RULES.overtime.multiplier} times your rate`,
-  "livein.hours": String(RULES.liveIn.paidHours)
+  "ot.liveIn": String(RULES.overtime.residentialDirectHire),
+  "ot.multiplier": String(RULES.overtime.multiplier),
+  "livein.hours": String(RULES.liveIn.paidHours),
+  "livein.sleep": String(RULES.liveIn.sleepHours),
+  "livein.meals": String(RULES.liveIn.mealHours)
 };
 
 // Year-specific figures, e.g. {{2027.min.nyc}}, for pages that show more than one year.
@@ -72,7 +76,7 @@ export function fillTokens(text, file = "") {
 }
 
 // Remark plugin: replaces tokens in text, link text and table cells. In translated
-// pages it also points links between our own pages (/ and /cdpap/…) to the same language.
+// pages it also points links between our own pages (/, /cdpap/… and /pay/…) to the same language.
 export function remarkTokens() {
   return (tree, file) => {
     const lang = langOfFile(file?.path);
@@ -80,7 +84,7 @@ export function remarkTokens() {
       if ((node.type === "text" || node.type === "inlineCode") && typeof node.value === "string") {
         node.value = fillTokens(node.value, file?.path);
       }
-      if (lang !== "en" && node.type === "link" && typeof node.url === "string" && (node.url === "/" || node.url.startsWith("/cdpap"))) {
+      if (lang !== "en" && node.type === "link" && typeof node.url === "string" && (node.url === "/" || node.url.startsWith("/cdpap") || node.url.startsWith("/pay/"))) {
         node.url = `/${lang}${node.url}`;
       }
       if (node.children) node.children.forEach(walk);

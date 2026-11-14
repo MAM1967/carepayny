@@ -1,0 +1,17 @@
+---
+// Translated guide pages: /es/pay/…, /zh/pay/…, /ru/pay/… — only for complete languages.
+import { render } from "astro:content";
+import Guide from "../../../layouts/Guide.astro";
+import { parseGuideId, publishedLocales, guideStaticPaths } from "../../../i18n/index.js";
+
+export async function getStaticPaths() {
+  const live = (await publishedLocales()).filter((l) => l !== "en");
+  return guideStaticPaths("pay", live);
+}
+const { page } = Astro.props;
+const { Content } = await render(page);
+const { lang, section, slug } = parseGuideId(page.id);
+---
+<Guide lang={lang} section={section} slug={slug} data={page.data}>
+  <Content />
+</Guide>

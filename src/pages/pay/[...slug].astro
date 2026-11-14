@@ -1,0 +1,15 @@
+---
+import { render } from "astro:content";
+import Guide from "../../layouts/Guide.astro";
+import { parseGuideId, guideStaticPaths } from "../../i18n/index.js";
+
+export async function getStaticPaths() {
+  return (await guideStaticPaths("pay", ["en"])).map(({ params, props }) => ({ params: { slug: params.slug }, props }));
+}
+const { page } = Astro.props;
+const { Content } = await render(page);
+const { lang, section, slug } = parseGuideId(page.id);
+---
+<Guide lang={lang} section={section} slug={slug} data={page.data}>
+  <Content />
+</Guide>

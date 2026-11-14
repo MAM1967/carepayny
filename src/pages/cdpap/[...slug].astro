@@ -1,19 +1,15 @@
 ---
-import { getCollection, render } from "astro:content";
+import { render } from "astro:content";
 import Guide from "../../layouts/Guide.astro";
-import { parseGuideId } from "../../i18n/index.js";
+import { parseGuideId, guideStaticPaths } from "../../i18n/index.js";
 
 export async function getStaticPaths() {
-  const pages = (await getCollection("guide")).filter((p) => parseGuideId(p.id).lang === "en");
-  return pages.map((page) => {
-    const { slug } = parseGuideId(page.id);
-    return { params: { slug: slug === "index" ? undefined : slug.replace(/\/index$/, "") }, props: { page } };
-  });
+  return (await guideStaticPaths("cdpap", ["en"])).map(({ params, props }) => ({ params: { slug: params.slug }, props }));
 }
 const { page } = Astro.props;
 const { Content } = await render(page);
-const { lang, slug } = parseGuideId(page.id);
+const { lang, section, slug } = parseGuideId(page.id);
 ---
-<Guide lang={lang} slug={slug} data={page.data}>
+<Guide lang={lang} section={section} slug={slug} data={page.data}>
   <Content />
 </Guide>
