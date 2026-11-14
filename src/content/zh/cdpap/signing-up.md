@@ -3,7 +3,7 @@ title: "以 CDPAP 照顾者身份在 PPL 注册"
 description: "新的 CDPAP 个人助理要经过的步骤和表格：与受照顾者关联、PPL@Home 表格、I-9、健康检查和培训。"
 nav: "在 PPL 注册"
 order: 3
-lastChecked: "November 11, 2026"
+lastChecked: "November 14, 2026"
 sources:
   - label: "PPL：给个人助理的 CDPAP 资料"
     url: "https://pplfirst.com/cdpap-resources-personal-assistants/"
@@ -13,7 +13,7 @@ sources:
     url: "https://pplfirst.com/programs/new-york/ny-consumer-directed-personal-assistance-program-cdpap/"
 ---
 
-PA（个人助理）必须先在 PPL 完成注册，PPL 才能付工资给他们。PPL 把这叫做“**Paperwork Complete**”（所有文件已完成）。
+CDPAP 的 PA（个人助理）必须先在 PPL 完成注册，PPL 才能付工资给他们。PPL 把这叫做“**Paperwork Complete**”（所有文件已完成）。注册有五个步骤：受照顾者的部分、在 PPL@Home 填表、健康检查、Time4Care 和培训，以及开始工作的日期。
 
 ## 第1步：受照顾者先注册
 
@@ -66,7 +66,7 @@ PA 下载 Time4Care 应用程序，用 PPL@Home 的用户名和密码登录。
 
 ## 第5步：开始工作的日期
 
-所有事情都完成后，PPL 会核查受照顾者和 PA。然后 PPL 会把开始工作的日期发给 PA。
+PA 的注册完成后，PPL 会核查受照顾者和 PA。然后 PPL 会把开始工作的日期发给 PA。
 
 ## 在 PPL 注册有哪些方式？
 

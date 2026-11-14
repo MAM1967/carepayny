@@ -3,7 +3,7 @@ title: "CDPAP 加班费、假日工资、病假和福利"
 description: "PPL 对 CDPAP 照顾者的规定：加班费、第七天加班费、假日工资、带薪病假、纽约市无薪病假、医疗保险和退休金。"
 nav: "加班费、节假日、病假、福利"
 order: 11
-lastChecked: "November 11, 2026"
+lastChecked: "November 14, 2026"
 sources:
   - label: "PPL：纽约 CDPAP 常见问题"
     url: "https://pplfirst.com/new-york-cdpap-frequently-asked-questions/"
@@ -16,6 +16,8 @@ sources:
   - label: "纽约州卫生厅：MLTC 政策 26.02（工时过长）"
     url: "https://www.health.ny.gov/health_care/medicaid/redesign/mrt90/mltc_policy/2026/26-02.htm"
 ---
+
+在 CDPAP 中，一周内超过 {{ot.hours}} 小时的部分，PPL 按{{ot.times}}付给 PA（个人助理）。所有 PA 都可以累积带薪病假。全职 PA（每月超过130小时）还有假日工资，并且可以选择 PPL 的健康计划。
 
 ## CDPAP 有加班费吗？
 
@@ -70,7 +72,7 @@ PA 如果为**不是亲属**的受照顾者一周七天都工作（星期日到�
 
 ### 无薪病假（只限纽约市）
 
-从2026年2月22日起，在纽约市工作的 PA 每年还有32小时的**无薪**病假。没用完的不会转到下一年，每年1月1日重新开始计算。
+从2026年2月22日起，在纽约市工作的 CDPAP PA 每年还有32小时的**无薪**病假。没用完的不会转到下一年，每年1月1日重新开始计算。
 
 ## PPL 提供医疗保险吗？
 
@@ -91,6 +93,8 @@ PA 如果为**不是亲属**的受照顾者一周七天都工作（星期日到�
 - 两个计划都由一家叫 Empower 的公司管理。
 
 ## PPL 还提供哪些福利？
+
+PPL 为 CDPAP 的 PA 列出的其他福利：
 
 - Chubb 提供的自选保险：意外险、重大疾病险和人寿险。保费由 PA 自己付。
 - 纽约市交通计划（NYC Transit Plan），只适用于工资平价规定涵盖的员工。

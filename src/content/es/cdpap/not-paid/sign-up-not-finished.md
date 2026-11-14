@@ -3,13 +3,15 @@ title: "PPL no me pagó: la inscripción no está terminada"
 description: "Qué significan \"Provider is not Paperwork Complete\" y otros mensajes parecidos de PPL para los cuidadores de CDPAP, y qué necesita PPL antes de poder pagar."
 nav: "Inscripción no terminada"
 order: 5
-lastChecked: "November 11, 2026"
+lastChecked: "November 14, 2026"
 sources:
   - label: "PPL: recursos de CDPAP para asistentes personales (razones de pagos \"Pended\")"
     url: "https://pplfirst.com/cdpap-resources-personal-assistants/"
   - label: "PPL: preguntas frecuentes sobre CDPAP en Nueva York"
     url: "https://pplfirst.com/new-york-cdpap-frequently-asked-questions/"
 ---
+
+PPL no le paga a un asistente personal (PA) de CDPAP hasta que el PA y el consumidor (la persona que recibe el cuidado) terminan su inscripción con PPL. Hasta entonces, PPL@Home muestra las hojas de horas del PA como "Pended" (el pago está retenido).
 
 ## Lo que usted ve
 

@@ -3,13 +3,15 @@ title: "PPL 没付我工资：工时表迟交或没有被批准"
 description: "PPL 每周的 CDPAP 工时表截止时间、受照顾者批准的截止时间，以及迟交或没有被批准的工时会怎样。"
 nav: "工时表迟交或没有被批准"
 order: 8
-lastChecked: "November 11, 2026"
+lastChecked: "November 14, 2026"
 sources:
   - label: "PPL：给个人助理的 CDPAP 资料（发薪时间规定）"
     url: "https://pplfirst.com/cdpap-resources-personal-assistants/"
   - label: "PPL：纽约 CDPAP 常见问题"
     url: "https://pplfirst.com/new-york-cdpap-frequently-asked-questions/"
 ---
+
+PA（个人助理）在星期六晚上11:59之前提交、受照顾者（CDPAP 中称为“消费者”，即接受照顾的人）在星期日中午12:00之前批准的 CDPAP 工时，PPL 会在星期四付工资。星期六截止时间以后才提交的工时，不在那个星期四的工资里。受照顾者没有批准的工时不付工资。
 
 ## 您看到的情况
 

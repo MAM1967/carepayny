@@ -3,7 +3,7 @@ title: "PPL 怎样给 CDPAP 照顾者发工资"
 description: "PPL 什么时候给 CDPAP 个人助理发工资，每周工时表的截止时间，受照顾者怎样批准工时，以及直接存款或纸质支票。"
 nav: "PPL 怎样发工资"
 order: 2
-lastChecked: "November 11, 2026"
+lastChecked: "November 14, 2026"
 sources:
   - label: "PPL：给个人助理的 CDPAP 资料"
     url: "https://pplfirst.com/cdpap-resources-personal-assistants/"
@@ -13,11 +13,11 @@ sources:
 
 ## PPL 什么时候给 CDPAP 照顾者发工资？
 
-PPL 每周给 PA（个人助理）发一次工资，在星期四。钱通过直接存款存入银行账户，或者用纸质支票寄出。PA 在 PPL 的付款方式表（Payment Method Form）上选择方式。
+PPL 每周给 CDPAP 的 PA（个人助理）发一次工资，在星期四。钱通过直接存款存入银行账户，或者用纸质支票寄出。PA 在 PPL 的付款方式表（Payment Method Form）上选择方式。
 
 ## PPL 的工时表截止时间是什么时候？
 
-工时要在星期六晚上11:59之前交。受照顾者（CDPAP 中称为“消费者”，即接受照顾的人）要在星期日中午之前批准。PPL 在下一周的星期四付这些工时的工资。
+PA 一周的工时要在星期六晚上11:59之前交给 PPL。受照顾者（CDPAP 中称为“消费者”，即接受照顾的人）要在星期日中午之前批准。PPL 在下一周的星期四付这些工时的工资。
 
 | 事项 | 截止时间（纽约时间） |
 | --- | --- |
@@ -52,7 +52,7 @@ Time4Care 和电话都使用 **EVV**（Electronic Visit Verification，电子探
 
 ## 直接存款要多久才开始？
 
-新的或更改过的银行资料，可能要1到2个发薪周期才生效。在这之前，PPL 会把纸质支票寄到记录上的地址。
+用于 PPL 直接存款的新的或更改过的银行资料，可能要1到2个发薪周期才生效。在这之前，PPL 会把纸质支票寄到记录上的地址。
 
 ## PPL 会为每个工作小时付工资吗？
 

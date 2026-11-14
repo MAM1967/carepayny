@@ -3,7 +3,7 @@ title: "CDPAP overtime, holiday pay, sick leave and benefits"
 description: "PPL's rules for CDPAP caregivers on overtime, seventh-day overtime, holiday pay, paid sick leave, NYC unpaid sick time, health insurance and retirement."
 nav: "Overtime, holidays, sick leave, benefits"
 order: 11
-lastChecked: "November 11, 2026"
+lastChecked: "November 14, 2026"
 sources:
   - label: "PPL: New York CDPAP frequently asked questions"
     url: "https://pplfirst.com/new-york-cdpap-frequently-asked-questions/"
@@ -16,6 +16,8 @@ sources:
   - label: "NYS Department of Health: MLTC Policy 26.02 (excessive hours)"
     url: "https://www.health.ny.gov/health_care/medicaid/redesign/mrt90/mltc_policy/2026/26-02.htm"
 ---
+
+PPL pays CDPAP personal assistants (PAs) {{ot.times}} for hours over {{ot.hours}} in a week. All PAs earn paid sick leave. Full-time PAs (more than 130 hours a month) also get holiday pay and can choose a PPL health plan.
 
 ## Does CDPAP pay overtime?
 
@@ -70,7 +72,7 @@ Yes. PAs earn 1 hour of paid sick leave for every 30 hours worked. PPL calls thi
 
 ### Unpaid sick time (NYC only)
 
-Since February 22, 2026, PAs who work in New York City also get 32 hours of **unpaid** sick time each year. It does not carry over. It resets on January 1.
+Since February 22, 2026, CDPAP PAs who work in New York City also get 32 hours of **unpaid** sick time each year. It does not carry over. It resets on January 1.
 
 ## Does PPL offer health insurance?
 
@@ -91,6 +93,8 @@ Yes. Every PA can save in a 401(k), and some downstate PAs get a 401(a).
 - A company called Empower runs both plans.
 
 ## What other benefits does PPL offer?
+
+PPL lists these other benefits for CDPAP PAs:
 
 - Optional insurance from Chubb: accident, critical illness and life insurance. The PA pays for these.
 - A NYC Transit Plan, for wage parity employees only.

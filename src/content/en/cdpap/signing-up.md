@@ -3,7 +3,7 @@ title: "Signing up with PPL as a CDPAP caregiver"
 description: "The steps and forms for a new CDPAP personal assistant: linking to the consumer, PPL@Home forms, the I-9, the health check and training."
 nav: "Signing up with PPL"
 order: 3
-lastChecked: "November 11, 2026"
+lastChecked: "November 14, 2026"
 sources:
   - label: "PPL: CDPAP resources for personal assistants"
     url: "https://pplfirst.com/cdpap-resources-personal-assistants/"
@@ -13,7 +13,7 @@ sources:
     url: "https://pplfirst.com/programs/new-york/ny-consumer-directed-personal-assistance-program-cdpap/"
 ---
 
-A PA must finish signing up with PPL before PPL can pay them. PPL calls this being **"Paperwork Complete."**
+A CDPAP personal assistant (PA) must finish signing up with PPL before PPL can pay them. PPL calls this being **"Paperwork Complete."** Sign-up has five steps: the consumer's part, forms in PPL@Home, a health check, Time4Care and training, and a start date.
 
 ## Step 1: The consumer comes first
 
@@ -66,7 +66,7 @@ The PA downloads the Time4Care app and logs in with the PPL@Home username and pa
 
 ## Step 5: The start date
 
-When everything is done, PPL checks the consumer and PA. Then PPL sends the PA a start date.
+When the PA's sign-up is done, PPL checks the consumer and the PA. Then PPL sends the PA a start date.
 
 ## What are the ways to sign up with PPL?
 

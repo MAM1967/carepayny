@@ -3,13 +3,15 @@ title: "PPL no me pagó: razones comunes"
 description: "Las razones por las que PPL retiene el pago de un cuidador de CDPAP, en palabras sencillas, según la propia lista de mensajes de pago \"Pended\" de PPL."
 nav: "No me pagaron"
 order: 4
-lastChecked: "November 11, 2026"
+lastChecked: "November 14, 2026"
 sources:
   - label: "PPL: recursos de CDPAP para asistentes personales (razones de pagos \"Pended\")"
     url: "https://pplfirst.com/cdpap-resources-personal-assistants/"
   - label: "PPL: preguntas frecuentes sobre CDPAP en Nueva York"
     url: "https://pplfirst.com/new-york-cdpap-frequently-asked-questions/"
 ---
+
+Cuando PPL no le paga a un asistente personal (PA) de CDPAP, PPL@Home muestra la razón. Los cinco problemas más comunes son: la inscripción no está terminada, falta el I-9, no hay horas aprobadas registradas, la hoja de horas llegó tarde o no se aprobó, y el pago es por menos horas de las que se enviaron.
 
 Cuando PPL retiene un pago, PPL@Home muestra la hoja de horas como **"Pended"** (el pago está retenido). Al hacer clic en la palabra "Pended", aparece la razón. Las razones vienen de la propia lista de PPL.
 
@@ -24,6 +26,8 @@ Cada una tiene su propia página:
 5. [Me pagaron menos que mis horas](/cdpap/not-paid/paid-less/)
 
 ## La lista completa de PPL, en palabras sencillas
+
+Esta tabla muestra cada razón que PPL@Home puede dar para una hoja de horas de CDPAP en "Pended", y lo que significa.
 
 | Lo que dice PPL@Home | Lo que significa |
 | --- | --- |

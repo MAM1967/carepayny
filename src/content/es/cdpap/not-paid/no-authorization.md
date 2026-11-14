@@ -3,7 +3,7 @@ title: "PPL no me pagó: no hay autorización registrada"
 description: "Qué es una autorización de servicios, por qué PPL no puede pagar horas de CDPAP sin una y qué significan los mensajes de PPL sobre \"no authorization\" (sin autorización)."
 nav: "No hay horas aprobadas registradas"
 order: 7
-lastChecked: "November 11, 2026"
+lastChecked: "November 14, 2026"
 sources:
   - label: "PPL: recursos de CDPAP para asistentes personales (razones de pagos \"Pended\")"
     url: "https://pplfirst.com/cdpap-resources-personal-assistants/"
@@ -14,6 +14,8 @@ sources:
   - label: "Departamento de Salud del Estado de Nueva York: acuerdo de CDPAP entre el consumidor y el plan de salud"
     url: "https://www.health.ny.gov/health_care/medicaid/redesign/mrt90/2025/cdpap_agreement_rep-hp_att1.htm"
 ---
+
+PPL puede pagar horas de CDPAP solo si están dentro de la **autorización de servicios** (horas aprobadas) del consumidor (la persona que recibe el cuidado), que da el plan de salud o la oficina local de servicios sociales. Cuando falta la autorización, PPL retiene el pago. PPL dice que el tiempo se paga en la siguiente nómina después de que se arregla la autorización.
 
 ## Lo que usted ve
 
@@ -35,7 +37,7 @@ El plan de salud o la oficina de servicios sociales se la envía a PPL. PPL pued
 
 ## Por qué puede faltar
 
-Algunas formas en que esto puede pasar:
+Algunas formas en que puede faltar una autorización de servicios:
 
 - El consumidor cambió de plan de salud, y el plan nuevo todavía no ha enviado una autorización.
 - La autorización anterior terminó, y la nueva no le ha llegado a PPL.

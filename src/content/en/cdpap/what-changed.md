@@ -3,8 +3,10 @@ title: "CDPAP: what changed (news log)"
 description: "A dated log of changes to New York's CDPAP program, PPL rules, caregiver pay and the PPL settlement, newest first."
 nav: "What changed"
 order: 14
-lastChecked: "November 11, 2026"
+lastChecked: "November 14, 2026"
 sources:
+  - label: "NY Public Health Law § 3614-c (definition of home care aide)"
+    url: "https://www.nysenate.gov/legislation/laws/PBH/3614-C"
   - label: "NYS Governor: New York State Minimum Wage for 2027"
     url: "https://governor.ny.gov/new-york-state-minimum-wage-2027"
   - label: "amNewYork Law: judge gives final approval to PPL settlement"
@@ -25,11 +27,12 @@ sources:
     url: "https://www.health.ny.gov/facilities/long_term_care/reimbursement/cdpap/"
 ---
 
-Newest first. Each entry links to its source at the bottom of this page.
+This log lists dated changes to CDPAP, PPL's rules and home care pay in New York, newest first. The next change is on January 1, 2027, when the state minimum for home care aides goes up to {{2027.min.nyc}} an hour in New York City, Long Island and Westchester, and {{2027.min.rest}} in the rest of the state. Each entry links to its source at the bottom of this page.
 
 | Date | What changed |
 | --- | --- |
 | January 1, 2027 (coming) | The state minimum for home care aides goes up to {{2027.min.nyc}} in New York City, Long Island and Westchester, and {{2027.min.rest}} in the rest of the state. The general minimum wage does not change. More: [Your pay rate in CDPAP](/cdpap/pay-rate/). |
+| November 14, 2026 | CarePayNY's pay calculator changed. For workers hired directly by a family, it now uses the home care aide minimum ({{2026.min.nyc}} in New York City, Long Island and Westchester, and {{2026.min.rest}} in the rest of the state in 2026) instead of the general minimum wage. New York's Public Health Law § 3614-c defines a "home care aide" by the work, not by who the employer is. The general minimum wage applies only to work done now and then ("on a casual basis"). More: [Corrections](/corrections/). |
 | November 10, 2026 | A federal judge gave final approval to the $162 million PPL settlement for downstate PAs. More: [The PPL court settlement](/cdpap/ppl-settlement/). |
 | July 22, 2026 | The Department of Health issued MLTC Policy 26.02. PPL will send health plans a report every two weeks on PAs who work very long hours. |
 | July 21, 2026 | Settlement notices were sent to downstate PAs by email and text. |

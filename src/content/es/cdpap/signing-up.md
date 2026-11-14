@@ -3,7 +3,7 @@ title: "Inscribirse con PPL como cuidador de CDPAP"
 description: "Los pasos y formularios para un nuevo asistente personal de CDPAP: la conexión con el consumidor, los formularios de PPL@Home, el I-9, el examen de salud y el entrenamiento."
 nav: "Inscribirse con PPL"
 order: 3
-lastChecked: "November 11, 2026"
+lastChecked: "November 14, 2026"
 sources:
   - label: "PPL: recursos de CDPAP para asistentes personales"
     url: "https://pplfirst.com/cdpap-resources-personal-assistants/"
@@ -13,7 +13,7 @@ sources:
     url: "https://pplfirst.com/programs/new-york/ny-consumer-directed-personal-assistance-program-cdpap/"
 ---
 
-Un PA (asistente personal) tiene que terminar su inscripción con PPL antes de que PPL le pueda pagar. PPL llama a esto estar **"Paperwork Complete"** (todos los formularios están completos).
+Un asistente personal (PA) de CDPAP tiene que terminar su inscripción con PPL antes de que PPL le pueda pagar. PPL llama a esto estar **"Paperwork Complete"** (todos los formularios están completos). La inscripción tiene cinco pasos: la parte del consumidor, los formularios en PPL@Home, un examen de salud, Time4Care y el entrenamiento, y una fecha de inicio.
 
 ## Paso 1: Primero el consumidor
 
@@ -66,7 +66,7 @@ El PA baja la aplicación Time4Care y entra con el nombre de usuario y la contra
 
 ## Paso 5: La fecha de inicio
 
-Cuando todo está listo, PPL revisa los datos del consumidor y del PA. Luego PPL le envía al PA una fecha de inicio.
+Cuando la inscripción del PA está lista, PPL revisa los datos del consumidor y del PA. Luego PPL le envía al PA una fecha de inicio.
 
 ## ¿Cuáles son las formas de inscribirse con PPL?
 

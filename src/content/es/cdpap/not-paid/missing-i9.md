@@ -3,7 +3,7 @@ title: "PPL no me pagó: falta el I-9"
 description: "Qué es el formulario I-9, por qué PPL lo necesita antes de pagarle a un cuidador de CDPAP y qué tipos de documentos acepta el formulario."
 nav: "Falta el I-9"
 order: 6
-lastChecked: "November 11, 2026"
+lastChecked: "November 14, 2026"
 sources:
   - label: "PPL: recursos de CDPAP para asistentes personales (formularios de registro)"
     url: "https://pplfirst.com/cdpap-resources-personal-assistants/"
@@ -12,6 +12,8 @@ sources:
   - label: "USCIS: Formulario I-9 y documentos aceptables"
     url: "https://www.uscis.gov/i-9-central/form-i-9-acceptable-documents"
 ---
+
+PPL no puede pagarle a un asistente personal (PA) de CDPAP hasta que tenga el Formulario I-9 del PA completo, con los documentos. El I-9 es un formulario del gobierno de EE. UU. que muestra quién es el trabajador y que tiene permiso para trabajar en EE. UU.
 
 ## Lo que usted ve
 

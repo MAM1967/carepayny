@@ -3,7 +3,7 @@ title: "How PPL pays CDPAP caregivers"
 description: "When PPL pays CDPAP personal assistants, the weekly timesheet deadline, how the consumer approves hours, and direct deposit or paper check."
 nav: "How PPL pays you"
 order: 2
-lastChecked: "November 11, 2026"
+lastChecked: "November 14, 2026"
 sources:
   - label: "PPL: CDPAP resources for personal assistants"
     url: "https://pplfirst.com/cdpap-resources-personal-assistants/"
@@ -13,11 +13,11 @@ sources:
 
 ## When does PPL pay CDPAP caregivers?
 
-PPL pays PAs once a week, on Thursday. The money comes by direct deposit to a bank account or by paper check. The PA picks the method on PPL's Payment Method Form.
+PPL pays CDPAP personal assistants (PAs) once a week, on Thursday. The money comes by direct deposit to a bank account or by paper check. The PA picks the method on PPL's Payment Method Form.
 
 ## What are PPL's timesheet deadlines?
 
-Hours are due Saturday at 11:59 p.m. The consumer approves them by Sunday at noon. PPL pays them on Thursday of the next week.
+A PA's hours for the week are due to PPL by Saturday at 11:59 p.m. The consumer approves them by Sunday at noon. PPL pays them on Thursday of the next week.
 
 | What | Deadline (New York time) |
 | --- | --- |
@@ -52,7 +52,7 @@ When time rounds up, it uses more of the consumer's approved hours.
 
 ## How long does direct deposit take to start?
 
-New or changed bank details can take 1 to 2 pay periods to start working. Until then, PPL mails a paper check to the address on file.
+New or changed bank details for PPL direct deposit can take 1 to 2 pay periods to start working. Until then, PPL mails a paper check to the address on file.
 
 ## Does PPL pay for every hour worked?
 

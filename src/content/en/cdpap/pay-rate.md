@@ -3,7 +3,7 @@ title: "CDPAP pay rates in New York (2026 and 2027)"
 description: "2026 and 2027 CDPAP pay in New York: PPL's base pay, the state minimum for home care aides, and wage parity in NYC, Long Island and Westchester."
 nav: "Your pay rate"
 order: 10
-lastChecked: "November 11, 2026"
+lastChecked: "November 14, 2026"
 sources:
   - label: "PPL: New York CDPAP frequently asked questions (PA wages)"
     url: "https://pplfirst.com/new-york-cdpap-frequently-asked-questions/"
@@ -21,7 +21,7 @@ sources:
 
 ## What is the CDPAP pay rate in New York?
 
-In 2026, PPL's base pay for CDPAP is {{2026.ppl.nyc}} an hour in New York City, {{2026.ppl.liw}} in Nassau, Suffolk and Westchester, and {{2026.ppl.rest}} in other counties. Two numbers matter:
+In 2026, PPL's base pay for CDPAP is {{2026.ppl.nyc}} an hour in New York City, {{2026.ppl.liw}} in Nassau, Suffolk and Westchester, and {{2026.ppl.rest}} in other counties. On January 1, 2027, the state minimum for home care aides goes up to {{2027.min.nyc}} an hour in New York City, Long Island and Westchester, and {{2027.min.rest}} in the rest of the state. Two numbers matter:
 
 - The **state minimum** is the lowest pay the law allows for home care aides. CDPAP caregivers are covered by it. The state sets it.
 - **PPL's base pay** is the rate PPL says it pays CDPAP caregivers. In New York City, Nassau, Suffolk and Westchester, it is higher than the state minimum.

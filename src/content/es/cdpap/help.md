@@ -3,7 +3,7 @@ title: "Ayuda con CDPAP: quién se encarga de qué"
 description: "Números de teléfono y de qué se encarga cada oficina para los cuidadores de CDPAP en Nueva York: PPL, los planes de salud, Medicaid, el Departamento de Trabajo, Legal Aid y el administrador del acuerdo."
 nav: "Dónde encontrar ayuda"
 order: 13
-lastChecked: "November 11, 2026"
+lastChecked: "November 14, 2026"
 sources:
   - label: "PPL: preguntas frecuentes sobre CDPAP en Nueva York (contactos)"
     url: "https://pplfirst.com/new-york-cdpap-frequently-asked-questions/"
@@ -19,7 +19,7 @@ sources:
     url: "https://www.publicpartnershipssettlement.com/"
 ---
 
-Cada oficina se encarga de una parte diferente de CDPAP. Esta página muestra lo que hace cada una.
+En CDPAP, PPL se encarga del pago, la inscripción y las hojas de horas (1-833-247-5346). El plan de salud o la oficina local de servicios sociales del consumidor (la persona que recibe el cuidado) decide cuántas horas se aprueban. El Departamento de Trabajo del Estado de Nueva York recibe reclamos de salarios, y The Legal Aid Society da ayuda legal gratis a los neoyorquinos que califican (212-577-3300). Cada sección de abajo trata de una oficina.
 
 ## PPL (nómina, inscripción, hojas de horas)
 
