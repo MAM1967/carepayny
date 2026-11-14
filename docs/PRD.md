@@ -45,6 +45,24 @@ The first 90 days test one thing: do NYC caregivers use the calculator and come 
 
 If the gate is missed, cut scope back to the calculator and CDPAP guide, or stop. Do not add monetization to a site nobody returns to.
 
+**How we measure traffic (decided November 14, 2026)**
+
+The owner chose cookieless counting everywhere except the calculator pages. The calculator keeps its promise to store and send nothing (rule 5).
+
+| Source | What it counts | Where | Bots filtered? |
+| --- | --- | --- | --- |
+| Cloudflare Web Analytics | Visits and page views, top pages, referrers, countries, devices. Runs on every page except the calculator pages. | Cloudflare dashboard → Web Analytics | Yes (JavaScript beacon; crawlers mostly don't run it) |
+| Cloudflare server traffic | All requests, including the calculator pages (`/`, `/es/`, `/zh/`, `/ru/`). | Cloudflare dashboard → Analytics → Traffic, or the GraphQL API | No. Counts include crawlers, so treat them as an upper bound |
+| Google Search Console | Search impressions, clicks, queries, indexed pages | search.google.com/search-console | Yes |
+| Bing Webmaster Tools | Bing search plus Copilot AI citations and grounding queries | bing.com/webmasters | Yes |
+
+What this means for the day-90 gate:
+
+- **Monthly visitors:** measured. Use Web Analytics visits plus calculator-page requests from server traffic, and report the two separately.
+- **Calculator completions:** not measurable without tracking the calculator, which rule 5 forbids. Use calculator-page views (server traffic) and Search Console clicks to the home pages as the proxy.
+- **Returning-visitor share:** not measurable without cookies. Use subscribers (once that feature exists) and branded searches ("carepayny") in Search Console as the proxy.
+- **Phase checks:** weekly for the first 4 weeks after launch, then monthly. Compare against the first full week after launch (November 16 to 22, 2026) as the baseline.
+
 ## Users and personas
 
 The primary user is a home care worker in the NYC metro area on a phone, often with limited English and limited time. Design for a small screen, plain words and one task per page.
@@ -413,7 +431,7 @@ The site launched publicly on November 13, 2026, and makes no money before the d
 - [ ] Week 1: form the LLC and move both domains to it; turn on auto-renew, registrar lock and privacy; redirect carepayny.org to carepayny.com; set up hello@carepayny.com.
 - [ ] Week 1: get insurance quotes. (Lawyer review dropped at launch.)
 - [x] Week 2: set up the repository (done November 9, 2026).
-- [ ] Week 2: hosting, analytics and email provider.
+- [x] Week 2: hosting, analytics and email provider. Analytics: cookieless Cloudflare Web Analytics on all pages except the calculator (November 14, 2026).
 - [ ] Weeks 3–4: write the 20 worked examples for the lawyer.
 - [ ] Weeks 3–6: write the rules explainer and CDPAP guide pages, about 30 in all.
 - [ ] Week 4: fill in the glossary for the 3 languages; add language routes and the translated-page notice.

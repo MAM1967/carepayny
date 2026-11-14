@@ -12,7 +12,7 @@ export async function getStaticPaths() {
 const { lang } = Astro.params;
 const meta = calculatorMeta(lang);
 ---
-<Base lang={lang} title={meta.title} description={meta.description} jsonLd={meta.jsonLd}>
+<Base lang={lang} title={meta.title} description={meta.description} jsonLd={meta.jsonLd} analytics={false}>
   <Calculator lang={lang} />
   <PopularQuestions lang={lang} />
 </Base>
