@@ -108,12 +108,39 @@ test("upstate agency work: $18.65 minimum and no wage parity", () => {
   assert.equal(r.status, "ok");
 });
 
-test("direct hire who lives in: general minimum and 44-hour overtime threshold", () => {
-  const r = computeWeek({ region: "nyc", employer: "private", livesIn: true, rate: 18, regularHours: 50 }, R26);
-  assert.equal(r.minRate, 17);
+test("direct hire who lives in: home care aide minimum and 44-hour overtime threshold", () => {
+  // PHL § 3614-c(1)(d): the home care aide minimum covers direct (family) hires too.
+  // 44 straight hours at $19.65 = $864.60; 6 overtime hours at $29.475 = $176.85.
+  const r = computeWeek({ region: "nyc", employer: "private", livesIn: true, rate: 19.65, regularHours: 50 }, R26);
+  assert.equal(r.minRate, 19.65);
   assert.equal(r.threshold, 44);
   assert.equal(r.otHours, 6);
+  assert.equal(r.expectedGross, 1041.45);
   assert.equal(r.wp, null);
+  assert.equal(r.status, "ok");
+  assert.ok(r.flags.some((f) => f.code === "privateFloor"));
+});
+
+test("direct hire paid the general minimum ($17) is $2.65 an hour short in NYC", () => {
+  const r = computeWeek({ region: "nyc", employer: "private", rate: 17, regularHours: 40 }, R26);
+  assert.equal(r.minRate, 19.65);
+  assert.equal(r.rateShort, 2.65);
+  assert.equal(r.expectedGross, 786);
+  assert.equal(r.status, "bad");
+});
+
+test("direct hire upstate: $18.65 home care aide minimum, 40 hours = $746", () => {
+  const r = computeWeek({ region: "rest", employer: "private", rate: 18.65, regularHours: 40 }, R26);
+  assert.equal(r.minRate, 18.65);
+  assert.equal(r.expectedGross, 746);
+  assert.equal(r.status, "ok");
+});
+
+test("direct hire in 2027: $20.00 home care aide minimum on Long Island", () => {
+  const r = computeWeek({ region: "liw", employer: "private", rate: 19.65, regularHours: 30 }, R27);
+  assert.equal(r.minRate, 20);
+  assert.equal(r.rateShort, 0.35);
+  assert.equal(r.expectedGross, 600);
 });
 
 test("agency live-in aide still gets overtime after 40 hours", () => {

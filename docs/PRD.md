@@ -316,7 +316,7 @@ No New York State or NYC law bans pay calculators. The site must still stay clea
 **Business setup**
 
 - [x] Form an LLC: MAM Growth Strategies LLC (named on the Terms and Privacy pages, November 14, 2026).
-- [ ] Register both domains to the LLC.
+- [x] Both domains are in the LLC's Namecheap account.
 - [ ] Get media or professional liability (E&O) insurance.
 - [ ] Lawyer review: dropped at launch (see "Launch gate"). Revisit when the site earns money, before any monetization that touches the employment agency question, and before branding spend (trademark clearance).
 
@@ -434,7 +434,7 @@ The site launched publicly on November 13, 2026, and makes no money before the d
 
 **Legal questions: desk research answers (November 13, 2026; not legal advice)**
 
-- [ ] **Home care aide minimum for direct hires.** The definition of "home care aide" in Public Health Law § 3614-c(1)(d) doesn't limit itself to agency employers. It leaves out people who work on a casual basis and relatives paid through government programs (except CDPAP). So the higher minimum likely covers aides hired directly by a family too. The calculator still uses the general minimum for direct hires and shows a note. **Owner decision:** switch the direct-hire floor to the home care aide minimum (a rules change with new worked examples).
+- [x] **Home care aide minimum for direct hires.** The definition of "home care aide" in Public Health Law § 3614-c(1)(d) doesn't limit itself to agency employers. It leaves out people who work on a casual basis and relatives paid through government programs (except CDPAP). So the higher minimum covers aides hired directly by a family too. Done November 14, 2026 (rules 2026.3 and 2027.2): the calculator uses the home care aide minimum for direct hires and notes that casual-basis work falls under the general minimum.
 - [x] **Wage parity and overtime.** DOH wage parity guidance says overtime premium pay can count toward total compensation. Overtime is 1.5 times the regular rate. The calculator doesn't conflict with this.
 - [x] **Live-in overtime threshold.** 40 hours is right for agencies and PPL: since January 1, 2015, third-party employers can't use the federal live-in exemption (US DOL Fact Sheet 79B; 29 CFR 552.109). 44 hours applies only to a live-in worker hired directly by a household (NY wage order). The calculator matches this.
 - [x] **Practicing law without a license.** *Upsolve v. James* (2d Cir. 2025; on remand, 2026) treats individual legal advice as the risk, not general legal information. The site's design (math on published rules, general information, "describe, don't direct") stays on the information side.

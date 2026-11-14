@@ -10,15 +10,17 @@
 
 const R2026 = {
   startsOn: "2026-01-01",
-  version: "2026.2",
+  version: "2026.3",
   effective: "January 1, 2026",
-  lastReviewed: "November 11, 2026",
+  lastReviewed: "November 14, 2026",
 
   regions: {
     nyc: {
       label: "New York City (5 boroughs)",
-      hcaMin: 19.65,     // Home care aide minimum wage, PHL § 3614-f
-      generalMin: 17.00, // General minimum wage, NYC / Long Island / Westchester
+      hcaMin: 19.65,     // Home care aide minimum wage, PHL § 3614-f. Covers agency, CDPAP and direct (family) hires:
+                         // PHL § 3614-c(1)(d) defines "home care aide" by the work, not the employer. It leaves out only
+                         // casual-basis workers and relatives paid through a government program other than CDPAP.
+      generalMin: 17.00, // General minimum wage, NYC / Long Island / Westchester (shown for casual-basis work only)
       wpBenefit: 2.54,   // Wage parity benefit portion, PHL § 3614-c (2024–2026 schedule)
       wpTotal: 22.19,    // Wage parity minimum total compensation = 19.65 + 2.54
       pplBase: 20.65     // PPL's published 2026 minimum base wage for CDPAP PAs (consumer lives in Bronx, New York, Kings, Queens or Richmond)
@@ -54,6 +56,8 @@ const R2026 = {
   ppl: { effective: "January 1, 2026" },
 
   sources: [
+    { label: "NY Public Health Law § 3614-c (definition of home care aide)", url: "https://www.nysenate.gov/legislation/laws/PBH/3614-C" },
+    { label: "NY Public Health Law § 3614-f (home care aide minimum wage)", url: "https://www.nysenate.gov/legislation/laws/PBH/3614-F" },
     { label: "PPL: New York CDPAP FAQ (PA wages, effective January 1, 2026)", url: "https://pplfirst.com/new-york-cdpap-frequently-asked-questions/" },
     { label: "NYS DOL: Minimum Wage for Home Care Aides", url: "https://dol.ny.gov/minimum-wage-home-care-aides-fare-grant" },
     { label: "NYS DOL: Home Health Care Aides and Wage Parity", url: "https://dol.ny.gov/home-health-care-aides-and-wage-parity" },
@@ -71,9 +75,9 @@ const R2026 = {
 const R2027 = {
   ...R2026,
   startsOn: "2027-01-01",
-  version: "2027.1",
+  version: "2027.2",
   effective: "January 1, 2027",
-  lastReviewed: "November 11, 2026",
+  lastReviewed: "November 14, 2026",
   regions: {
     nyc:  { ...R2026.regions.nyc,  hcaMin: 20.00, generalMin: 17.00, wpBenefit: 2.54, wpTotal: 22.54, pplBase: 20.65 },
     liw:  { ...R2026.regions.liw,  hcaMin: 20.00, generalMin: 17.00, wpBenefit: 1.67, wpTotal: 21.67, pplBase: 20.05 },
