@@ -141,6 +141,8 @@ The site launches with about 30 pages, each answering one question a caregiver a
 | CDPAP | Main guide; one page per payment problem; overtime and holidays; what changed |
 | Get help | Legal Aid and Department of Labor wage claims; your rights to pay notices |
 | About | Who we are; how we check the rules (7 steps); link to the corrections log at `/corrections/` (entries in `src/data/corrections.js`); terms; privacy |
+| Home care pay guide (`/pay/`) | Added November 14, 2026: 2027 minimum wage, 24-hour shifts and the 13-hour rule, wage parity, overtime, hired by a family; 4 languages |
+| Pay rates table (`/rates/`, `/rates.csv`) | Added November 14, 2026: every rate in `rules.js` by region and year, with sources; 4 languages |
 
 **Content standards**
 

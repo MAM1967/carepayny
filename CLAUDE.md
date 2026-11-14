@@ -26,6 +26,9 @@ CarePayNY (carepayny.com) is a free, static website that helps New York home car
 | `src/pages/index.astro`, `src/pages/[lang]/` | English and translated page routes |
 | `src/i18n/` | Languages (`locales.js`), site text per language (`ui/<lang>.json`) |
 | `src/content/<lang>/cdpap/` | CDPAP guide pages, one folder per language |
+| `src/content/<lang>/pay/` | Home care pay guide (minimum wage, wage parity, overtime, 24-hour shifts, family hires), one folder per language |
+| `src/pages/rates.astro`, `src/pages/rates.csv.js` | Pay rates table and CSV, read from `rules.js` |
+| `src/pages/corrections.astro`, `src/data/corrections.js` | Public corrections log (English only) |
 | `src/pages/about.astro` | About, method, corrections contact |
 | `src/layouts/Base.astro` | Header, footer disclaimer, meta |
 | `tests/calc.test.js` | Worked examples; CI runs them on every PR |
