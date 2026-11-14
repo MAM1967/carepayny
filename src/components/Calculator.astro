@@ -9,7 +9,16 @@ interface Props { lang: string }
 const { lang } = Astro.props;
 const t = tFor(lang);
 const strings = { ...UI[DEFAULT_LOCALE], ...UI[lang] };
-const pageData = { lang, intl: LOCALES[lang].intl, strings };
+// Guide pages that explain each result (same language, plain links; no extra requests).
+const links = {
+  shifts: guidePath(lang, "24-hour-shifts", "pay"),
+  wageParity: guidePath(lang, "wage-parity", "pay"),
+  directHire: guidePath(lang, "hired-by-a-family", "pay"),
+  minimum: guidePath(lang, "minimum-wage-2027", "pay"),
+  overtime: guidePath(lang, "overtime", "pay"),
+  ppl: guidePath(lang, "pay-rate")
+};
+const pageData = { lang, intl: LOCALES[lang].intl, strings, links };
 const year = RULES.effective.slice(-4);
 const html = (key: string, vars = {}) => fmt(strings[key], vars);
 ---
@@ -146,7 +155,7 @@ import { RULES } from "../data/rules.js";
 import { makeT, localDate } from "../i18n/format.js";
 
 const $ = (id) => document.getElementById(id);
-const { strings, intl } = JSON.parse($("calcI18n").textContent);
+const { strings, intl, links } = JSON.parse($("calcI18n").textContent);
 const t = makeT(strings);
 const money = (n) => "$" + n.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 const hrs = (n) => t("row.hoursValue", { n: n.toLocaleString(intl) });
@@ -158,6 +167,9 @@ const flagText = (f) => {
   if (p.date) p.date = localDate(p.date, intl);
   return t("flag." + f.code, p);
 };
+// Each flag links to the guide page that explains it.
+const FLAG_LINK = { privateFloor: "directHire", shiftsMissed: "shifts", shiftsOk: "shifts", rateShort: "minimum", pplShort: "ppl" };
+const linkHtml = (key) => (key && links[key] ? ` <a href="${links[key]}">${t("flagLink." + key)}</a>` : "");
 let lastSummary = "";
 
 function render() {
@@ -188,20 +200,20 @@ function render() {
     [t("row.hours"), hrs(r.totalHours)],
   ];
   if (r.liveInHours) rows.push([t("row.liveIn"), hrs(r.liveInHours)]);
-  rows.push([t("row.ot", { threshold: r.threshold }), hrs(r.otHours)]);
+  rows.push([t("row.ot", { threshold: r.threshold }), hrs(r.otHours), "overtime"]);
   if (r.wp) {
-    rows.push([t(r.wp.applies === "maybe" ? "row.wpTotalMaybe" : "row.wpTotal"), money(r.wp.total)]);
+    rows.push([t(r.wp.applies === "maybe" ? "row.wpTotalMaybe" : "row.wpTotal"), money(r.wp.total), "wageParity"]);
     rows.push([t("row.wpGap"), r.wp.coveredInCash ? t("row.wpCovered") : t("row.wpGapValue", { perHour: money(r.wp.gapPerHour), week: money(r.wp.gapWeek) })]);
   }
   if (r.stub) rows.push([t("row.stub"), money(r.stub.entered)]);
   rows.push([t("row.gross"), money(r.expectedGross)]);
-  $("lines").innerHTML = rows.map((x, i) => `<tr class="${i === rows.length - 1 ? "total" : ""}"><td>${x[0]}</td><td class="v">${x[1]}</td></tr>`).join("");
+  $("lines").innerHTML = rows.map((x, i) => `<tr class="${i === rows.length - 1 ? "total" : ""}"><td>${x[0]}${x[2] ? `<br><span class="small">${linkHtml(x[2])}</span>` : ""}</td><td class="v">${x[1]}</td></tr>`).join("");
 
-  const flags = r.flags.map((f) => ({ level: f.level, text: flagText(f) }));
+  const flags = r.flags.map((f) => ({ level: f.level, text: flagText(f), link: FLAG_LINK[f.code] }));
   if (r.wp && !r.wp.coveredInCash) {
-    flags.push({ level: "warn", text: t(r.wp.applies === "yes" ? "flag.wageParity.yes" : "flag.wageParity.maybe", { region: t("region." + r.region), total: money(r.wp.total), gap: money(r.wp.gapPerHour) }) });
+    flags.push({ level: "warn", text: t(r.wp.applies === "yes" ? "flag.wageParity.yes" : "flag.wageParity.maybe", { region: t("region." + r.region), total: money(r.wp.total), gap: money(r.wp.gapPerHour) }), link: "wageParity" });
   }
-  $("flags").innerHTML = flags.map((f) => `<li class="${f.level}">${f.text}</li>`).join("");
+  $("flags").innerHTML = flags.map((f) => `<li class="${f.level}">${f.text}${linkHtml(f.link)}</li>`).join("");
 
   lastSummary = [
     t("summary.title", { version: RULES.version }),
