@@ -3,6 +3,7 @@
 One line per English change that translations must follow. Newest first.
 Format: `YYYY-MM-DD · page file · what changed · languages updated (es, zh, …) or "pending"`
 
+- 2026-11-14 · ui footer.rates.html, meta.rates.*, rates.* · new keys for the pay rates table page (/rates/) and its footer link · es, zh, ru
 - 2026-11-14 · what-changed.md · answer-first opening (next change: Jan 1, 2027 minimum); new Nov 14 entry for the calculator's direct-hire change, linked to /corrections/; added PHL § 3614-c source · es, zh, ru
 - 2026-11-14 · pay-rate.md · opening adds the Jan 1, 2027 state minimum (tokens only) · es, zh, ru
 - 2026-11-14 · how-ppl-pays.md, signing-up.md, overtime-holidays-sick-leave.md, ppl-settlement.md, help.md · answer-first opening sentence or short lead; section openings name CDPAP/PPL so each section stands alone (no new facts) · es, zh, ru
