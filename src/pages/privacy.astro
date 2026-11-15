@@ -10,14 +10,15 @@ import { CONTACT_EMAIL, OPERATOR, LEGAL_UPDATED } from "../data/site.js";
 
     <h2>The short version</h2>
     <ul>
-      <li>The pay calculator runs on your own phone or computer. What you type never leaves your device.</li>
+      <li>The pay calculator runs on your own phone or computer. The numbers you type (your pay rate, hours and pay) never leave your device.</li>
       <li>We don't ask you to sign up. There are no accounts.</li>
-      <li>We don't use cookies, ads, tracking tools or analytics.</li>
+      <li>We don't use cookies or ads, and we don't track you across other websites.</li>
+      <li>We count visits and calculator use without cookies and without knowing who you are. We count only general groups, like your region and whether the result showed pay below the minimum (details below).</li>
       <li>We don't sell or share personal information.</li>
     </ul>
 
     <h2>The pay calculator</h2>
-    <p>The calculator does all of its math inside your web browser. We don't receive, save or see your hours, pay or other answers. The calculator doesn't save them on your device either. When you close or reload the page, they are gone.</p>
+    <p>The calculator does all of its math inside your web browser. We never receive the numbers you type: your pay rate, your hours or the amount on your pay stub. The calculator doesn't save them on your device either. When you close or reload the page, they are gone.</p>
     <p>If you use the "Copy summary" button, the summary goes to your device's clipboard. Only you decide where it goes after that.</p>
 
     <h2>What our web host records</h2>
@@ -28,6 +29,29 @@ import { CONTACT_EMAIL, OPERATOR, LEGAL_UPDATED } from "../data/site.js";
       <li>the page you asked for and the time you asked for it.</li>
     </ul>
     <p>Cloudflare uses this information to deliver pages and to protect the site from attacks. We don't use it to find out who you are, and we don't combine it with other information. You can read <a href="https://www.cloudflare.com/privacypolicy/">Cloudflare's privacy policy</a> on its website.</p>
+
+    <h2>How we count visits and calculator use</h2>
+    <p>We count how people use the site so we can see which pages help and what problems caregivers run into. We use two tools. Neither one uses cookies or knows who you are.</p>
+    <p><strong>1. Cloudflare Web Analytics.</strong> Every page loads a small script from Cloudflare. It counts page views and tells us the website that sent you, your country, and your type of device and browser. It doesn't follow you to other websites.</p>
+    <p><strong>2. Our own anonymous counter.</strong> Our site sends short notes to our own server (carepayny.com) when:</p>
+    <ul>
+      <li>a page is viewed,</li>
+      <li>the calculator shows a result,</li>
+      <li>someone uses the "Copy summary" button, or</li>
+      <li>someone opens a guide page from a calculator result.</li>
+    </ul>
+    <p>For a calculator result, the note has only general groups, never the exact numbers:</p>
+    <ul>
+      <li>the language and region (New York City; Nassau, Suffolk or Westchester; or the rest of the state),</li>
+      <li>the kind of employer (agency, CDPAP or a family) and the Medicaid answer,</li>
+      <li>whether the worker lives in, and a range of 24-hour shifts (for example, "1 to 2"),</li>
+      <li>a range of weekly hours (for example, "41 to 50") and whether there was overtime,</li>
+      <li>whether the result was OK, worth checking or below the minimum, with ranges for any gap (for example, "$1 to $2 an hour short"),</li>
+      <li>whether a pay stub amount was entered, and a range for the difference (for example, "$50 to $200 short"),</li>
+      <li>which notes the calculator showed, and the rules year used.</li>
+    </ul>
+    <p>Each note also says whether this browser has visited before. To know that, the site keeps a simple "visited before: yes" marker in your browser's storage. It is not a cookie and holds no ID. You can clear it by clearing your browser's site data. Our server adds your country from Cloudflare. It doesn't store your IP address.</p>
+    <p>We look at these counts only as totals, such as "how many calculator results in New York City showed pay below the minimum." We may publish totals like that. We never publish or sell anything about one person, and we can't tell who sent a note.</p>
 
     <h2>If you email us</h2>
     <p>If you write to <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>, we receive your email address and whatever you put in your message. Our email is forwarded through Cloudflare and stored by our email provider. We use your message only to answer you or to fix a mistake on the site. We don't add you to a mailing list.</p>

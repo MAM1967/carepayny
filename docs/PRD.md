@@ -45,6 +45,32 @@ The first 90 days test one thing: do NYC caregivers use the calculator and come 
 
 If the gate is missed, cut scope back to the calculator and CDPAP guide, or stop. Do not add monetization to a site nobody returns to.
 
+**How we measure traffic (decided November 14, 2026)**
+
+This is a business, so we measure as much as possible without collecting anything that identifies a person or the exact numbers they type. The owner chose to count calculator results by general category (option B).
+
+| Source | What it counts | Where to see it |
+| --- | --- | --- |
+| Cloudflare Web Analytics (all pages) | Visits, page views, top pages, referrers, countries, devices. Cookieless; bots mostly excluded | Cloudflare dashboard, Web Analytics |
+| Our event counter (`/api/e` to Analytics Engine dataset `carepayny_events`) | `view` (page, language, returning y/n); `calc` (region, employer, Medicaid answer, live-in, 24-hour shift range, hours range, overtime, status, rate-gap range, wage-parity-gap range, stub range, flag codes, rules year, language, returning, country); `copy`; `guide` (which guide link from a result) | Analytics Engine SQL API (Claude can run the monthly report) |
+| Cloudflare server traffic | All requests, including crawlers. Use as a ceiling only | Cloudflare dashboard, Analytics, Traffic |
+| Google Search Console | Search impressions, clicks, queries, indexed pages | Search Console |
+| Bing Webmaster Tools | Bing search, Copilot citations, grounding queries | Bing Webmaster Tools |
+
+Day-90 gate, measured:
+
+- **Monthly visitors:** Web Analytics visits.
+- **Calculator completions:** `calc` events. One event per distinct result, sent 4 seconds after typing stops, at most 10 per page load.
+- **Returning-visitor share:** the share of `view` events with returning = y. It's a per-browser marker, so it undercounts people who clear storage or switch devices.
+- **Subscribers:** once that feature exists.
+
+Products of the data, which also support monetization and outreach:
+- Monthly "What caregivers found" totals: the share of calculator results below the minimum, by region and employer type. These are publishable statistics that unions and reporters can cite and link to.
+- Which calculator notes send people to which guide pages, to decide what content to write next.
+- An audience profile (region, employer type, language) for advertisers and job-ad networks. Only totals are ever shared.
+
+- **Phase checks:** weekly for the first 4 weeks after launch, then monthly. Compare against the first full week after launch (November 16 to 22, 2026) as the baseline.
+
 ## Users and personas
 
 The primary user is a home care worker in the NYC metro area on a phone, often with limited English and limited time. Design for a small screen, plain words and one task per page.
@@ -413,7 +439,7 @@ The site launched publicly on November 13, 2026, and makes no money before the d
 - [ ] Week 1: form the LLC and move both domains to it; turn on auto-renew, registrar lock and privacy; redirect carepayny.org to carepayny.com; set up hello@carepayny.com.
 - [ ] Week 1: get insurance quotes. (Lawyer review dropped at launch.)
 - [x] Week 2: set up the repository (done November 9, 2026).
-- [ ] Week 2: hosting, analytics and email provider.
+- [x] Week 2: hosting, analytics and email provider. Analytics: cookieless Cloudflare Web Analytics on all pages except the calculator (November 14, 2026).
 - [ ] Weeks 3–4: write the 20 worked examples for the lawyer.
 - [ ] Weeks 3–6: write the rules explainer and CDPAP guide pages, about 30 in all.
 - [ ] Week 4: fill in the glossary for the 3 languages; add language routes and the translated-page notice.

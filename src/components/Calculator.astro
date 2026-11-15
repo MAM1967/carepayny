@@ -153,6 +153,7 @@ const html = (key: string, vars = {}) => fmt(strings[key], vars);
 import { computeWeek } from "../lib/calc.js";
 import { RULES } from "../data/rules.js";
 import { makeT, localDate } from "../i18n/format.js";
+import { calcEvent, sanitize, send, returningFlag } from "../lib/events.js";
 
 const $ = (id) => document.getElementById(id);
 const { strings, intl, links } = JSON.parse($("calcI18n").textContent);
@@ -169,8 +170,24 @@ const flagText = (f) => {
 };
 // Each flag links to the guide page that explains it.
 const FLAG_LINK = { privateFloor: "directHire", shiftsMissed: "shifts", shiftsOk: "shifts", rateShort: "minimum", pplShort: "ppl" };
-const linkHtml = (key) => (key && links[key] ? ` <a href="${links[key]}">${t("flagLink." + key)}</a>` : "");
+const linkHtml = (key) => (key && links[key] ? ` <a href="${links[key]}" data-g="${key}">${t("flagLink." + key)}</a>` : "");
 let lastSummary = "";
+
+// Anonymous counting (src/lib/events.js): only coarse categories are sent, never the numbers typed.
+const LANG = (document.documentElement.lang || "en").slice(0, 2);
+const YEAR = RULES.version.slice(0, 4);
+let lastStatus = "ok", lastEventKey = "", sentCount = 0, eventTimer = 0;
+function queueCalcEvent(r, input) {
+  clearTimeout(eventTimer);
+  if (!(input.rate > 0) || !(r.totalHours > 0)) return; // nothing entered yet
+  eventTimer = setTimeout(() => {
+    const ev = calcEvent(r, input, { lang: LANG, returning: returningFlag(), year: YEAR });
+    const key = JSON.stringify(ev);
+    if (!ev || key === lastEventKey || sentCount >= 10) return;
+    lastEventKey = key; sentCount++;
+    send(ev);
+  }, 4000);
+}
 
 function render() {
   const employer = val("employer");
@@ -179,12 +196,15 @@ function render() {
   $("liveInBox").classList.toggle("hidden", shifts === 0);
   const stubRaw = $("stubGross").value.trim();
 
-  const r = computeWeek({
+  const input = {
     region: val("region"), employer, medicaid: val("medicaid"),
     rate: num("rate"), regularHours: num("regularHours"),
     shifts24: shifts, sleepMissed: Math.floor(num("sleepMissed")), mealsMissed: Math.floor(num("mealsMissed")),
     livesIn: $("livesIn").checked, stubGross: stubRaw === "" ? null : parseFloat(stubRaw)
-  });
+  };
+  const r = computeWeek(input);
+  lastStatus = r.status;
+  queueCalcEvent(r, input);
 
   const st = $("status");
   st.className = "status " + r.status;
@@ -239,12 +259,17 @@ $("f").addEventListener("input", render);
 $("f").addEventListener("change", render);
 $("f").addEventListener("submit", (e) => e.preventDefault());
 $("copyBtn").addEventListener("click", async () => {
+  send(sanitize({ e: "copy", lang: LANG, status: lastStatus }));
   try { await navigator.clipboard.writeText(lastSummary); $("copyMsg").textContent = t("calc.copied"); }
   catch { $("copyMsg").textContent = t("calc.copyBlocked"); }
 });
 $("resetBtn").addEventListener("click", () => { $("f").reset(); $("copyMsg").textContent = ""; render(); });
 
 initStatic();
+$("results").addEventListener("click", (e) => {
+  const a = e.target.closest && e.target.closest("a[data-g]");
+  if (a) send(sanitize({ e: "guide", lang: LANG, target: a.dataset.g }));
+});
 
 // Phones: hide the pinned result bar while the full results are on screen.
 const bar = $("resultBar");
