@@ -177,8 +177,12 @@ let lastSummary = "";
 const LANG = (document.documentElement.lang || "en").slice(0, 2);
 const YEAR = RULES.version.slice(0, 4);
 let lastStatus = "ok", lastEventKey = "", sentCount = 0, eventTimer = 0;
+// The form opens with sample answers and shows a result right away. Count a result
+// only after the person changes an answer, so a page load alone is never a "calc".
+let edited = false;
 function queueCalcEvent(r, input) {
   clearTimeout(eventTimer);
+  if (!edited) return; // only the sample answers so far
   if (!(input.rate > 0) || !(r.totalHours > 0)) return; // nothing entered yet
   eventTimer = setTimeout(() => {
     const ev = calcEvent(r, input, { lang: LANG, returning: returningFlag(), year: YEAR });
@@ -255,15 +259,16 @@ function initStatic() {
   ].map((x) => `<li>${x}</li>`).join("");
 }
 
-$("f").addEventListener("input", render);
-$("f").addEventListener("change", render);
+const onEdit = (e) => { if (e.isTrusted) edited = true; render(); };
+$("f").addEventListener("input", onEdit);
+$("f").addEventListener("change", onEdit);
 $("f").addEventListener("submit", (e) => e.preventDefault());
 $("copyBtn").addEventListener("click", async () => {
   send(sanitize({ e: "copy", lang: LANG, status: lastStatus }));
   try { await navigator.clipboard.writeText(lastSummary); $("copyMsg").textContent = t("calc.copied"); }
   catch { $("copyMsg").textContent = t("calc.copyBlocked"); }
 });
-$("resetBtn").addEventListener("click", () => { $("f").reset(); $("copyMsg").textContent = ""; render(); });
+$("resetBtn").addEventListener("click", () => { $("f").reset(); edited = false; $("copyMsg").textContent = ""; render(); });
 
 initStatic();
 $("results").addEventListener("click", (e) => {

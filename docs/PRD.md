@@ -60,7 +60,7 @@ This is a business, so we measure as much as possible without collecting anythin
 Day-90 gate, measured:
 
 - **Monthly visitors:** Web Analytics visits.
-- **Calculator completions:** `calc` events. One event per distinct result, sent 4 seconds after typing stops, at most 10 per page load.
+- **Calculator completions:** `calc` events. One event per distinct result, sent 4 seconds after typing stops, at most 10 per page load. Nothing is sent until the person changes at least one answer, so the sample answers the form opens with never count (fixed November 16, 2026; `calc` counts before then include page loads with no input).
 - **Returning-visitor share:** the share of `view` events with returning = y. It's a per-browser marker, so it undercounts people who clear storage or switch devices.
 - **Subscribers:** once that feature exists.
 
