@@ -9,4 +9,4 @@ export const CONTACT_EMAIL = "hello@carepayny.com";
 export const OPERATOR = "MAM Growth Strategies LLC";
 
 // Date the Terms and Privacy pages last changed. Update it with every edit.
-export const LEGAL_UPDATED = "November 14, 2026";
+export const LEGAL_UPDATED = "November 16, 2026";
