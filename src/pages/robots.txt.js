@@ -16,8 +16,9 @@ export function GET() {
     ? [
         "User-agent: *",
         "Allow: /",
+        "Disallow: /go/",   // outbound link counter (functions/go/[id].js), not pages
         "",
-        ...AI_CRAWLERS.flatMap((ua) => [`User-agent: ${ua}`, "Allow: /", ""]),
+        ...AI_CRAWLERS.flatMap((ua) => [`User-agent: ${ua}`, "Allow: /", "Disallow: /go/", ""]),
         "Sitemap: https://carepayny.com/sitemap.xml",
         ""
       ].join("\n")

@@ -62,6 +62,8 @@ La nota para aprobar es 80%.
 - Un programa de asistente de salud en el hogar aprobado por el Departamento de Salud puede cobrar a la persona en capacitación hasta $100, por cosas que la persona se queda. Un programa que cobra más debe estar aprobado por el Departamento de Educación.
 - Un programa de asistente de cuidado personal aprobado por el Departamento de Salud no puede cobrar ninguna tarifa ni matrícula.
 
+Más información: [Programas de capacitación aprobados, por distrito y condado](/training/programs/) (de la lista del Departamento de Salud; la página está en inglés).
+
 **Capacitación en otros idiomas.** Los programas aprobados pueden enseñar en un idioma que no sea inglés. El instructor de enfermería debe hablar bien el inglés y ese idioma. Cada clase se da en un solo idioma, sin intérprete.
 
 ## ¿Qué es el Registro de Cuidado en el Hogar?

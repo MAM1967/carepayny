@@ -294,9 +294,10 @@ The site will explain step by step what it takes to work as a home care aide in 
 
 **Training directory requirements**
 
-- [ ] List only Department of Health-approved programs, each with the date its approval was last checked.
-- [ ] Filters for borough, language, cost (free or paid) and next start date.
-- [ ] Disclose when a "free" course requires working for the agency that runs it.
+- [x] List only Department of Health-approved programs, each with the date its approval was last checked. **Live at `/training/programs/` (English only), November 16, 2026:** all 754 places on the DOH list dated November 2, 2026 (1,490 rows), statewide, grouped by the 10 Empire State Development regions, then county. Data: `src/data/training-programs.js`, rebuilt from the DOH PDF with `scripts/training-programs.py`.
+- [~] Filters for borough, language, cost (free or paid) and next start date. Done: region, county or borough, HHA or PCA, language (per training type), part online. Not possible from the DOH list: per-program cost and start dates.
+- [~] Disclose when a "free" course requires working for the agency that runs it. Done as a general note on the page; per-program facts need each program's own information.
+- [x] Outbound clicks counted per program (phone, map, website) with the anonymous "out" event. Map and website links go through `/go/<id>` (`functions/go/[id].js`), which adds `utm_source=carepayny` tags to program websites. No websites yet: the DOH list has none, and each must be checked before it is added.
 - [ ] Never promise a job; schools' placement claims shown only with a source.
 - [ ] Label every paid placement "Sponsored."
 - [ ] An inquiry form sends a person's contact details to a school only with their explicit consent. This is the first personal data beyond the email list, so the privacy policy must cover it.

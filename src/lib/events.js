@@ -6,7 +6,9 @@
 // them), and tests/events.test.js checks it. Anything not listed is dropped.
 //
 // Used by: src/components/Calculator.astro, src/layouts/Base.astro (page views),
-// functions/api/e.js (the endpoint that writes to Cloudflare Analytics Engine).
+// src/pages/training/programs.astro (phone taps), functions/go/[id].js (map and
+// website links) and functions/api/e.js (the endpoint that writes to Cloudflare
+// Analytics Engine).
 
 export const EVENT_URL = "/api/e";
 
@@ -43,6 +45,13 @@ export const SCHEMA = {
   guide: {
     lang: LANGS,
     target: ONE_OF("directHire", "shifts", "minimum", "ppl", "overtime", "wageParity")
+  },
+  // A tap on a training program's phone, map or website link (/training/programs/).
+  // prog is the program's public id from src/data/training-programs.js. Nothing about the person.
+  out: {
+    lang: LANGS,
+    prog: (x) => (typeof x === "string" && /^[a-z0-9-]{1,64}$/.test(x) ? x : undefined),
+    kind: ONE_OF("tel", "map", "web")
   }
 };
 

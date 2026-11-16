@@ -62,6 +62,8 @@ The passing score is 80%.
 - A home health aide program approved by the Department of Health may charge a trainee up to $100, for things the trainee keeps. A program that charges more must be approved by the Education Department instead.
 - A personal care aide program approved by the Department of Health may not charge any fee or tuition.
 
+More: [Approved training programs, by borough and county](/training/programs/) (from the Department of Health's list).
+
 **Training in other languages.** Approved programs can teach in a language other than English. The nurse instructor must speak both English and that language well. Each class is taught in one language, without an interpreter.
 
 ## What is the Home Care Registry?

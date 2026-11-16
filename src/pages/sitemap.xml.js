@@ -5,6 +5,9 @@ import { localizePath } from "../i18n/locales.js";
 import { RULES } from "../data/rules.js";
 import { LEGAL_UPDATED, EMAIL_SIGNUP_OPEN } from "../data/site.js";
 import { CORRECTIONS } from "../data/corrections.js";
+import TRAINING_LIST from "../data/training-programs.js";
+// Keep in step with LAST_CHECKED in src/pages/training/programs.astro.
+const TRAINING_CHECKED = "November 16, 2026";
 
 // One entry per public page. Guide pages use their "last checked" date.
 export async function GET() {
@@ -19,6 +22,7 @@ export async function GET() {
     { loc: "/about/", lastmod: rulesDay },
     { loc: "/terms/", lastmod: isoDate(LEGAL_UPDATED) },
     { loc: "/privacy/", lastmod: isoDate(LEGAL_UPDATED) },
+    { loc: "/training/programs/", lastmod: TRAINING_LIST.reportDate > isoDate(TRAINING_CHECKED) ? TRAINING_LIST.reportDate : isoDate(TRAINING_CHECKED) },
     { loc: "/corrections/", lastmod: isoDate(CORRECTIONS[0]?.date ?? LEGAL_UPDATED) },
     ...guide.map((p) => { const { lang, section, slug } = parseGuideId(p.id); return { loc: guidePath(lang, slug, section), lastmod: isoDate(p.data.lastChecked) }; })
   ];

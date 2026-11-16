@@ -3,6 +3,8 @@
 One line per English change that translations must follow. Newest first.
 Format: `YYYY-MM-DD · page file · what changed · languages updated (es, zh, …) or "pending"`
 
+- 2026-11-16 · training/index.md · one line added under "Who gives the training" linking to the new English-only list of approved programs (/training/programs/); translations say the page is in English (back-translation checked) · es, zh, ru
+
 - 2026-11-16 · ui footer.updates.html, guide.updates.html, updates.* (27 keys) and src/i18n/email.js (confirmation email) · new email updates sign-up pages and confirmation email (back-translation checked) · es, zh, ru
 
 - 2026-11-16 · training/index.md · new "Training and requirements" section and page at /training/ (first translation, back-translation checked) · es, zh, ru
