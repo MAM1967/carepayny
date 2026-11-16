@@ -3,6 +3,10 @@
 One line per English change that translations must follow. Newest first.
 Format: `YYYY-MM-DD · page file · what changed · languages updated (es, zh, …) or "pending"`
 
+- 2026-11-16 · training/index.md · new "Training and requirements" section and page at /training/ (first translation, back-translation checked) · es, zh, ru
+- 2026-11-16 · ui nav.training, guide.training.name, guide.training.pages · header link and section name for the new training section · es, zh, ru
+- 2026-11-16 · glossary · added home health aide (HHA), personal care aide (PCA), training program, supervised practical training, competency evaluation, certificate, Home Care Registry, criminal history record check, in-service training, nurse instructor, State Education Department, tuberculosis (TB) · es, zh, ru
+
 - 2026-11-14 · pay/index.md, pay/minimum-wage-2027.md, pay/24-hour-shifts.md, pay/wage-parity.md, pay/overtime.md, pay/hired-by-a-family.md · new "Home care pay guide" section (first translation, back-translation checked) · es, zh, ru
 - 2026-11-14 · cdpap/pay-rate.md, cdpap/overtime-holidays-sick-leave.md, cdpap/index.md, cdpap/not-paid/paid-less.md · "Related" line added at the end, linking to the new pay guide pages · es, zh, ru
 - 2026-11-14 · ui nav.payGuide, guide.pay.name, guide.pay.pages, flagLink.* (6 keys), home.popular.h2 · new UI text for the pay guide, calculator result links and the home page "Popular questions" block · es, zh, ru

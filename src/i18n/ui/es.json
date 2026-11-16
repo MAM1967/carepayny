@@ -12,6 +12,7 @@
   "nav.payCheck": "Revisar pago",
   "nav.payGuide": "Reglas de pago",
   "nav.guide": "Guía de CDPAP",
+  "nav.training": "Capacitación",
   "nav.about": "Acerca de",
   "nav.languages": "Idioma",
 
@@ -27,6 +28,8 @@
   "guide.pages": "Páginas de la guía de CDPAP",
   "guide.pay.name": "Guía de pago del cuidado en el hogar",
   "guide.pay.pages": "Páginas de la guía de pago del cuidado en el hogar",
+  "guide.training.name": "Capacitación y requisitos",
+  "guide.training.pages": "Páginas de capacitación y requisitos",
   "guide.lastChecked": "Última revisión:",
   "guide.sources": "Fuentes",
   "guide.independent": "CarePayNY es independiente. No somos parte de PPL, del Departamento de Salud del Estado de Nueva York, del Departamento de Trabajo ni de Medicaid. Esta página da información general, no asesoría legal.",

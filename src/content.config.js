@@ -4,7 +4,7 @@ import { z } from "astro/zod";
 
 // Guide pages: one Markdown file per page per language (docs/PRD.md, "Translation plan").
 const guide = defineCollection({
-  loader: glob({ pattern: "*/{cdpap,pay}/**/*.md", base: "./src/content" }),   // ids: "<lang>/<section>/<slug>"
+  loader: glob({ pattern: "*/{cdpap,pay,training}/**/*.md", base: "./src/content" }),   // ids: "<lang>/<section>/<slug>"
   schema: z.object({
     title: z.string(),
     description: z.string(),

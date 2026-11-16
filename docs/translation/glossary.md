@@ -57,3 +57,15 @@ On first use on a page, a short explanation in the target language can follow th
 | 13-hour rule | Rule for paying a 24-hour shift as 13 hours |
 | exemption | A rule that says a law does not apply |
 | third-party employer | An employer other than the family, such as an agency |
+| home health aide (HHA) | Aide with the 75-hour state certificate |
+| personal care aide (PCA) | Aide with the 40-hour state certificate |
+| training program | A state-approved aide course |
+| supervised practical training | Hands-on practice while a nurse instructor watches |
+| competency evaluation (skills test) | The test at the end of aide training |
+| certificate | Proof of finishing aide training |
+| Home Care Registry | The Department of Health's list of trained aides |
+| criminal history record check | The fingerprint-based background check for home care |
+| in-service training | Training given while a person works |
+| nurse instructor | The nurse who teaches and tests aide trainees |
+| State Education Department | New York State Education Department |
+| tuberculosis (TB) | A lung disease; the TB test is part of the health check |

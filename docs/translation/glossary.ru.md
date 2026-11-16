@@ -56,6 +56,18 @@ CarePayNY · PPL · PPL@Home · CDPAP · Time4Care · I-9 · W-4 · IT-2104-I ·
 | 13-hour rule | правило 13 часов | |
 | exemption | исключение | Правило, по которому закон не применяется |
 | third-party employer | работодатель — третья сторона | Работодатель, который не является семьёй, например агентство |
+| home health aide (HHA) | помощник по домашнему медицинскому уходу (home health aide, HHA) | Aide with the 75-hour state certificate |
+| personal care aide (PCA) | помощник по личному уходу (personal care aide, PCA) | Aide with the 40-hour state certificate |
+| training program | программа обучения | A state-approved aide course |
+| supervised practical training | практика под наблюдением | Hands-on practice while a nurse instructor watches |
+| competency evaluation (skills test) | проверка навыков (competency evaluation) | The test at the end of aide training |
+| certificate | сертификат | Proof of finishing aide training |
+| Home Care Registry | Реестр работников по уходу на дому (Home Care Registry) | The Department of Health's list of trained aides |
+| criminal history record check | проверка на судимость (criminal history record check) | The fingerprint-based background check for home care |
+| in-service training | обучение во время работы (in-service) | Training given while a person works |
+| nurse instructor | медсестра-инструктор | The nurse who teaches and tests aide trainees |
+| State Education Department | Департамент образования штата Нью-Йорк | New York State Education Department |
+| tuberculosis (TB) | туберкулёз (TB) | A lung disease; the TB test is part of the health check |
 
 ## Другие решения
 

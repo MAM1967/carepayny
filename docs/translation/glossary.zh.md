@@ -58,13 +58,25 @@ CarePayNY · PPL · PPL@Home · CDPAP · Time4Care · I-9 · W-4 · IT-2104-I ·
 | 13-hour rule | 13小时规定 | |
 | exemption | 豁免 | 某项法律不适用的规定 |
 | third-party employer | 第三方雇主 | 家庭以外的雇主，例如护理机构 |
+| home health aide (HHA) | 居家保健助理（HHA） | Aide with the 75-hour state certificate |
+| personal care aide (PCA) | 个人护理员（PCA） | Aide with the 40-hour state certificate |
+| training program | 培训课程 | A state-approved aide course |
+| supervised practical training | 有人监督的实际操作培训 | Hands-on practice while a nurse instructor watches |
+| competency evaluation (skills test) | 能力评估（技能考试） | The test at the end of aide training |
+| certificate | 证书 | Proof of finishing aide training |
+| Home Care Registry | 居家护理登记册（Home Care Registry） | The Department of Health's list of trained aides |
+| criminal history record check | 犯罪记录核查 | The fingerprint-based background check for home care |
+| in-service training | 在职培训 | Training given while a person works |
+| nurse instructor | 护士讲师 | The nurse who teaches and tests aide trainees |
+| State Education Department | 纽约州教育厅 | New York State Education Department |
+| tuberculosis (TB) | 结核病（TB） | A lung disease; the TB test is part of the health check |
 
 ## 其他常用词
 
 | English | 中文（简体） | Notes |
 | --- | --- | --- |
-| home health aide | 居家保健助理 | |
-| personal care aide | 个人护理员 | |
+| home health aide | 居家保健助理 | 见上表“home health aide (HHA)” |
+| personal care aide | 个人护理员 | 见上表“personal care aide (PCA)” |
 | service code | 服务代码 | |
 | New York City | 纽约市 | |
 | Nassau, Suffolk, Westchester | 拿骚县、萨福克县、威彻斯特县 | |
