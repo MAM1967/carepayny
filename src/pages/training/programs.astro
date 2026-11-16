@@ -8,7 +8,8 @@ import Base from "../../layouts/Base.astro";
 import DATA from "../../data/training-programs.js";
 import { SITE_URL, isoDate } from "../../lib/seo.js";
 
-const LAST_CHECKED = "November 16, 2026";
+// Set by scripts/training-programs.py each time the list is rebuilt from DOH's file.
+const LAST_CHECKED = DATA.lastChecked;
 const modified = isoDate(LAST_CHECKED);
 const reportDate = new Date(DATA.reportDate + "T12:00:00Z");
 const fmtDate = (d: Date) => new Intl.DateTimeFormat("en-US", { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" }).format(d);
