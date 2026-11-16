@@ -54,3 +54,15 @@ Also kept as is: 1199SEIU, pplfirst.com, "$" amounts, "1.5×", and the names of 
 | 13-hour rule | regla de las 13 horas | |
 | exemption | exención | |
 | third-party employer | empleador tercero | |
+| home health aide (HHA) | asistente de salud en el hogar (HHA) | |
+| personal care aide (PCA) | asistente de cuidado personal (PCA) | |
+| training program | programa de capacitación | |
+| supervised practical training | práctica supervisada | |
+| competency evaluation (skills test) | evaluación de competencia (examen de habilidades) | |
+| certificate | certificado | |
+| Home Care Registry | Registro de Cuidado en el Hogar (Home Care Registry) | |
+| criminal history record check | verificación de antecedentes penales | |
+| in-service training | capacitación en el trabajo (in-service) | |
+| nurse instructor | instructor de enfermería | |
+| State Education Department | Departamento de Educación del Estado de Nueva York | |
+| tuberculosis (TB) | tuberculosis (TB) | |

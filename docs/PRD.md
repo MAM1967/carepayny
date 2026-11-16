@@ -285,12 +285,12 @@ The site will explain step by step what it takes to work as a home care aide in 
 
 **Content pages**
 
-- How to become a home health aide in New York, step by step.
+- How to become a home health aide in New York, step by step. **Live November 16, 2026, at `/training/` in all four languages** (training hours, skills test, Home Care Registry, background check, health check, yearly training, HHA lapse, what differs in CDPAP). The CDPAP certification question is answered there from 18 NYCRR § 505.28: the rules do not require an HHA or PCA certificate.
 - Home health aide vs personal care aide vs CNA: training, pay and where each can work.
 - Free vs paid training: agency programs, CUNY and community colleges, nonprofits.
 - What to expect from the background check, linking to legal help for people with records.
 - My certification lapsed: how to get back on the registry.
-- Whether CDPAP caregivers need certification (to be confirmed before publishing).
+- Whether CDPAP caregivers need certification. Answered on `/training/` (no HHA or PCA certificate is required; the consumer trains the PA; 18 NYCRR § 505.28).
 
 **Training directory requirements**
 

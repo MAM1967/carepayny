@@ -12,6 +12,7 @@
   "nav.payCheck": "工资核对",
   "nav.payGuide": "工资规定",
   "nav.guide": "CDPAP 指南",
+  "nav.training": "培训",
   "nav.about": "关于我们",
   "nav.languages": "语言",
 
@@ -27,6 +28,8 @@
   "guide.pages": "CDPAP 指南页面",
   "guide.pay.name": "居家护理工资指南",
   "guide.pay.pages": "居家护理工资指南页面",
+  "guide.training.name": "培训和要求",
+  "guide.training.pages": "培训和要求页面",
   "guide.lastChecked": "最后核对：",
   "guide.sources": "资料来源",
   "guide.independent": "CarePayNY 是独立网站。我们不属于 PPL、纽约州卫生厅、劳工厅或 Medicaid。本页提供一般信息，不是法律建议。",

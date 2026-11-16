@@ -12,6 +12,7 @@
   "nav.payCheck": "Pay check",
   "nav.payGuide": "Pay rules",
   "nav.guide": "CDPAP guide",
+  "nav.training": "Training",
   "nav.about": "About",
   "nav.languages": "Language",
 
@@ -27,6 +28,8 @@
   "guide.pages": "CDPAP guide pages",
   "guide.pay.name": "Home care pay guide",
   "guide.pay.pages": "Home care pay guide pages",
+  "guide.training.name": "Training and requirements",
+  "guide.training.pages": "Training and requirements pages",
   "guide.lastChecked": "Last checked:",
   "guide.sources": "Sources",
   "guide.independent": "CarePayNY is independent. We are not part of PPL, the New York State Department of Health, the Department of Labor or Medicaid. This page gives general information, not legal advice.",

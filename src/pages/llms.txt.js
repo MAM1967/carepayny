@@ -15,7 +15,7 @@ export async function GET() {
   }).join("\n\n");
   const body = `# CarePayNY
 
-> Free, independent website for home care workers in New York State. It explains the state's home care pay rules (home care aide minimum wage, wage parity, overtime, 24-hour shifts) and the CDPAP program run through PPL, in plain English. Every page links to its official sources and shows a "last checked" date. CarePayNY is not part of PPL, the NYS Department of Health, the Department of Labor or Medicaid, and does not give legal advice.
+> Free, independent website for home care workers in New York State. It explains the state's home care pay rules (home care aide minimum wage, wage parity, overtime, 24-hour shifts) the CDPAP program run through PPL, and the training and checks needed to work as a home care aide, in plain English. Every page links to its official sources and shows a "last checked" date. CarePayNY is not part of PPL, the NYS Department of Health, the Department of Labor or Medicaid, and does not give legal advice.
 
 Pay rules in use: version ${RULES.version}, in effect since ${RULES.effective}, last reviewed ${RULES.lastReviewed}.
 

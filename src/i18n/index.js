@@ -12,8 +12,9 @@ export const t = (lang) => makeT(UI[lang] ?? {}, lang === DEFAULT_LOCALE ? {} : 
 export const dateFor = (lang, englishDate) => localDate(englishDate, LOCALES[lang].intl);
 
 // Guide sections: one folder each under src/content/<lang>/, served at /<section>/.
-// "cdpap" is the CDPAP guide; "pay" is general NY home care pay (agency, CDPAP, family hires).
-export const GUIDE_SECTIONS = ["pay", "cdpap"];
+// "cdpap" is the CDPAP guide; "pay" is general NY home care pay (agency, CDPAP, family hires);
+// "training" is what it takes to work as a home care aide (training, registry, checks).
+export const GUIDE_SECTIONS = ["pay", "cdpap", "training"];
 
 // Guide collection ids look like "es/cdpap/not-paid/missing-i9" or "en/pay/overtime".
 export function parseGuideId(id) {
