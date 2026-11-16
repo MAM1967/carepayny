@@ -7,7 +7,7 @@ import "../styles/global.css";
 import bodyFont400 from "@fontsource/atkinson-hyperlegible/files/atkinson-hyperlegible-latin-400-normal.woff2?url";
 import bodyFont700 from "@fontsource/atkinson-hyperlegible/files/atkinson-hyperlegible-latin-700-normal.woff2?url";
 import { RULES } from "../data/rules.js";
-import { LAUNCHED, CF_ANALYTICS_TOKEN } from "../data/site.js";
+import { LAUNCHED, CF_ANALYTICS_TOKEN, EMAIL_SIGNUP_OPEN } from "../data/site.js";
 import { ORGANIZATION, WEBSITE, SITE_NAME, SITE_URL } from "../lib/seo.js";
 import { CONTACT_EMAIL } from "../data/site.js";
 import { LOCALES, DEFAULT_LOCALE, stripLocale, localizePath } from "../i18n/locales.js";
@@ -23,8 +23,9 @@ interface Props {
   ogType?: "website" | "article";
   modified?: string;          // ISO date, for articles
   jsonLd?: object[];          // extra structured data for this page
+  noindex?: boolean;          // keep this page out of search results
 }
-const { title, description, lang = DEFAULT_LOCALE, ogType = "website", modified, jsonLd = [], analytics = true } = Astro.props;
+const { title, description, lang = DEFAULT_LOCALE, ogType = "website", modified, jsonLd = [], analytics = true, noindex = false } = Astro.props;
 const beacon = LAUNCHED && analytics && CF_ANALYTICS_TOKEN ? JSON.stringify({ token: CF_ANALYTICS_TOKEN }) : null;
 const t = tFor(lang);
 const L = LOCALES[lang];
@@ -46,7 +47,7 @@ const graph = { "@context": "https://schema.org", "@graph": [ORGANIZATION, WEBSI
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{fullTitle}</title>
   <meta name="description" content={description}>
-  {!LAUNCHED && <meta name="robots" content="noindex, nofollow">}
+  {(!LAUNCHED || noindex) && <meta name="robots" content="noindex, nofollow">}
   <link rel="canonical" href={canonical}>
   <link rel="preload" href={bodyFont400} as="font" type="font/woff2" crossorigin>
   <link rel="preload" href={bodyFont700} as="font" type="font/woff2" crossorigin>
@@ -105,6 +106,7 @@ const graph = { "@context": "https://schema.org", "@graph": [ORGANIZATION, WEBSI
       <p>{t("footer.independent", { version: RULES.version })}</p>
       <p set:html={html("footer.legal.html")} />
       <p set:html={html("footer.rates.html", { ratesUrl: localizePath(lang, "/rates/") })} />
+      {EMAIL_SIGNUP_OPEN && <p set:html={html("footer.updates.html", { updatesUrl: localizePath(lang, "/updates/") })} />}
     </div>
   </footer>
   {beacon && <script is:inline type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon={beacon}></script>}

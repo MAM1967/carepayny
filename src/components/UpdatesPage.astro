@@ -1,0 +1,96 @@
+---
+// Email updates (test version): the sign-up page and its three steps, in any language.
+//   step "form"    /updates/          sign-up form (or "not open yet")
+//   step "check"   /updates/check/    "check your email"
+//   step "confirm" /updates/confirm/#t=…  button that posts the signed token to /api/confirm
+//   step "done"    /updates/done/     "you're signed up"
+// The form takes only an email address. It is never placed on or near the calculator,
+// and it never carries calculator numbers (functions/api/subscribe.js rejects extra fields).
+import Base from "../layouts/Base.astro";
+import { t as tFor, UI } from "../i18n/index.js";
+import { DEFAULT_LOCALE, localizePath } from "../i18n/locales.js";
+import { fmt } from "../i18n/format.js";
+import { EMAIL_SIGNUP_OPEN } from "../data/site.js";
+
+interface Props { lang: string; step: "form" | "check" | "confirm" | "done" }
+const { lang, step } = Astro.props;
+const t = tFor(lang);
+const html = (key: string, vars = {}) => fmt(UI[lang]?.[key] ?? UI[DEFAULT_LOCALE][key], vars);
+const title = { form: t("updates.title"), check: t("updates.check.title"), confirm: t("updates.confirm.title"), done: t("updates.done.title") }[step];
+// Only the open sign-up page is indexed. The steps, and the page while closed, are not.
+const noindex = step !== "form" || !EMAIL_SIGNUP_OPEN;
+const homeUrl = localizePath(lang, "/");
+---
+<Base lang={lang} title={title} description={t("updates.description")} noindex={noindex} analytics={step === "form"}>
+  <div class="wrap prose">
+    <h1>{title}</h1>
+
+    {step === "form" && (
+      <>
+        <p>{t("updates.lead")}</p>
+        <h2>{t("updates.what.h2")}</h2>
+        <ul>
+          <li>{t("updates.what.1")}</li>
+          <li>{t("updates.what.2")}</li>
+          <li>{t("updates.what.3")}</li>
+        </ul>
+        <p>{t("updates.lang")}</p>
+        <h2 id="signup">{t("updates.form.h2")}</h2>
+        {EMAIL_SIGNUP_OPEN ? (
+          <>
+            <p class="form-error hidden" id="err-email" role="alert">{t("updates.error.email")}</p>
+            <p class="form-error hidden" id="err-expired" role="alert">{t("updates.error.expired")}</p>
+            <p class="form-error hidden" id="err-generic" role="alert">{t("updates.error.generic")}</p>
+            <form class="updates-form" method="post" action="/api/subscribe">
+              <input type="hidden" name="lang" value={lang} />
+              <div class="hp" aria-hidden="true">
+                <label for="website">Website</label>
+                <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" />
+              </div>
+              <div class="field">
+                <label for="email"><strong>{t("updates.form.email")}</strong></label>
+                <input type="email" id="email" name="email" required maxlength="254" autocomplete="email" inputmode="email" />
+              </div>
+              <p class="small" set:html={html("updates.form.consent.html")} />
+              <div><button type="submit">{t("updates.form.button")}</button></div>
+            </form>
+            <script is:inline>
+              // Show the error named in ?error= (set by /api/subscribe or /api/confirm).
+              (function () {
+                var e = new URLSearchParams(location.search).get("error");
+                var el = e && /^(email|expired|generic)$/.test(e) && document.getElementById("err-" + e);
+                if (el) el.classList.remove("hidden");
+              })();
+            </script>
+          </>
+        ) : (
+          <p class="card">{t("updates.closed")}</p>
+        )}
+      </>
+    )}
+
+    {step === "check" && <p>{t("updates.check.body")}</p>}
+
+    {step === "confirm" && (
+      <>
+        <p>{t("updates.confirm.body")}</p>
+        <form class="updates-form" method="post" action="/api/confirm" id="confirm-form">
+          <input type="hidden" name="lang" value={lang} />
+          <input type="hidden" name="t" id="token" value="" />
+          <div><button type="submit">{t("updates.confirm.button")}</button></div>
+        </form>
+        <noscript><p class="form-error">{t("updates.confirm.nojs")}</p></noscript>
+        <script is:inline>
+          // Copy the signed token from the link (#t=…) into the form, then clear it from the address bar.
+          // It is sent only when the person clicks the button.
+          document.getElementById("token").value = new URLSearchParams(location.hash.slice(1)).get("t") || "";
+          if (location.hash) history.replaceState(null, "", location.pathname);
+        </script>
+      </>
+    )}
+
+    {step === "done" && <p>{t("updates.done.body")}</p>}
+
+    <p set:html={html("updates.back.html", { homeUrl })} />
+  </div>
+</Base>

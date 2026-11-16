@@ -1,6 +1,6 @@
 ---
 import Base from "../layouts/Base.astro";
-import { CONTACT_EMAIL, OPERATOR, LEGAL_UPDATED } from "../data/site.js";
+import { CONTACT_EMAIL, OPERATOR, LEGAL_UPDATED, EMAIL_SIGNUP_OPEN, EMAIL_PROVIDER } from "../data/site.js";
 ---
 <Base title="Privacy Policy" description="What CarePayNY collects (almost nothing), what our web host logs, how future email updates will work, and how to reach us about your privacy.">
   <div class="wrap prose">
@@ -11,7 +11,7 @@ import { CONTACT_EMAIL, OPERATOR, LEGAL_UPDATED } from "../data/site.js";
     <h2>The short version</h2>
     <ul>
       <li>The pay calculator runs on your own phone or computer. The numbers you type (your pay rate, hours and pay) never leave your device.</li>
-      <li>You don't need to sign up to use the site. There are no accounts. Soon you will be able to choose to get email updates. That is the only time we will ask for your email address (details below).</li>
+      <li>You don't need to sign up to use the site. There are no accounts. You can choose to get email updates. That is the only time we ask for your email address (details below).</li>
       <li>We don't use cookies or ads, and we don't track you across other websites.</li>
       <li>We count visits and calculator use without cookies and without knowing who you are. We count only general groups, like your region and whether the result showed pay below the minimum (details below).</li>
       <li>We don't sell or share personal information.</li>
@@ -54,20 +54,19 @@ import { CONTACT_EMAIL, OPERATOR, LEGAL_UPDATED } from "../data/site.js";
     <p>We look at these counts only as totals, such as "how many calculator results in New York City showed pay below the minimum." We may publish totals like that. We never publish or sell anything about one person, and we can't tell who sent a note.</p>
 
     <h2>Email updates</h2>
-    <p>We plan to send free email updates about changes to home care pay rules, CDPAP and training. <strong>Sign-up is not open yet.</strong> This section explains how it will work, so the rules are clear before we collect anything.</p>
-    <p><strong>What we will collect.</strong> When you sign up, we will keep only:</p>
+    <p>You can choose to get free email updates about changes to home care pay rules, CDPAP and training.{!EMAIL_SIGNUP_OPEN && <> <strong>Sign-up is not open yet.</strong></>}</p>
+    <p><strong>What we keep.</strong> If you sign up, we keep only:</p>
     <ul>
       <li>your email address,</li>
-      <li>the language you want the emails in,</li>
-      <li>which topics you picked, and</li>
+      <li>the language of the page where you signed up, and</li>
       <li>the date and time you signed up and confirmed, as a record that you asked for the emails.</li>
     </ul>
-    <p>The sign-up form will never include the numbers you typed into the calculator. Signing up is not connected to the calculator in any way.</p>
-    <p><strong>Confirming.</strong> After you sign up, we will send one email with a link. You get updates only after you click that link. If you don't click it, we won't email you again.</p>
-    <p><strong>Who stores your address.</strong> We will use an email service company to keep the list and send the emails. We will name the company and link to its privacy policy here before sign-up opens. The sign-up form will send your address through our website, which Cloudflare hosts. We won't keep your address anywhere else.</p>
-    <p><strong>No tracking in our emails.</strong> We will turn off the features that report whether you opened an email or clicked a link.</p>
+    <p>The sign-up form asks only for your email address. It never includes the numbers you typed into the calculator. Signing up is not connected to the calculator in any way.</p>
+    <p><strong>Confirming.</strong> After you sign up, we send one email with a link. You get updates only after you open that link and press "Confirm." If you don't, we don't add you and won't email you again. Until you confirm, we don't store your address anywhere. The link itself holds the details, protected by a digital signature.</p>
+    <p><strong>Who stores your address.</strong> We use {EMAIL_PROVIDER.name}, an email service company, to keep the list and send the emails. You can read <a href={EMAIL_PROVIDER.privacyUrl}>{EMAIL_PROVIDER.name}'s privacy policy</a> on its website. Your address goes from our website (hosted by Cloudflare) to {EMAIL_PROVIDER.name}. We don't keep it anywhere else.</p>
+    <p><strong>No tracking in our emails.</strong> We keep the features that report whether you opened an email or clicked a link turned off.</p>
     <p><strong>We don't sell or share your address.</strong> We won't sell or rent it. We won't give it to employers, home care agencies, training schools, lawyers or advertisers.</p>
-    <p><strong>Stopping the emails.</strong> Every email will have an unsubscribe link. One click stops the emails. To have your address deleted from our list, write to <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>. We will delete it within 30 days. The email service may keep a short "do not email" record so that you are not added again by mistake.</p>
+    <p><strong>Stopping the emails.</strong> Every email has an unsubscribe link. One click stops the emails. To have your address deleted from our list, write to <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>. We will delete it within 30 days. The email service may keep a short "do not email" record so that you are not added again by mistake.</p>
 
     <h2>If you email us</h2>
     <p>If you write to <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>, we receive your email address and whatever you put in your message. Our email is forwarded through Cloudflare and stored by our email provider. We use your message only to answer you or to fix a mistake on the site. We don't add you to a mailing list.</p>

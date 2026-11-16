@@ -3,7 +3,7 @@ import { SITE_URL, isoDate } from "../lib/seo.js";
 import { parseGuideId, guidePath, publishedLocales } from "../i18n/index.js";
 import { localizePath } from "../i18n/locales.js";
 import { RULES } from "../data/rules.js";
-import { LEGAL_UPDATED } from "../data/site.js";
+import { LEGAL_UPDATED, EMAIL_SIGNUP_OPEN } from "../data/site.js";
 import { CORRECTIONS } from "../data/corrections.js";
 
 // One entry per public page. Guide pages use their "last checked" date.
@@ -14,6 +14,8 @@ export async function GET() {
   const urls = [
     ...live.map((lang) => ({ loc: localizePath(lang, "/"), lastmod: rulesDay })),
     ...live.map((lang) => ({ loc: localizePath(lang, "/rates/"), lastmod: rulesDay })),
+    // The sign-up page, only once sign-up is open. Its check/confirm/done steps are never listed.
+    ...(EMAIL_SIGNUP_OPEN ? live.map((lang) => ({ loc: localizePath(lang, "/updates/"), lastmod: isoDate(LEGAL_UPDATED) })) : []),
     { loc: "/about/", lastmod: rulesDay },
     { loc: "/terms/", lastmod: isoDate(LEGAL_UPDATED) },
     { loc: "/privacy/", lastmod: isoDate(LEGAL_UPDATED) },
