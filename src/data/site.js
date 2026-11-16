@@ -5,6 +5,14 @@ export const LAUNCHED = true;
 export const CF_ANALYTICS_TOKEN = "f82f0497d0be452293e1c8b49ceb8072";
 export const CONTACT_EMAIL = "hello@carepayny.com";
 
+// Email updates (test version). Off until the owner sets PUBLIC_EMAIL_SIGNUP_OPEN = "true"
+// in Cloudflare Pages (Preview first, then Production) after the Resend setup is done.
+// While off: no sign-up form, no links to /updates/, and /updates/ pages are noindex.
+// Read safely so Node tests (no import.meta.env) see "off".
+export const EMAIL_SIGNUP_OPEN = (import.meta.env?.PUBLIC_EMAIL_SIGNUP_OPEN ?? "") === "true";
+// The email service named on the Privacy page.
+export const EMAIL_PROVIDER = { name: "Resend", privacyUrl: "https://resend.com/legal/privacy-policy" };
+
 // Who runs the site, as named on the Terms and Privacy pages.
 export const OPERATOR = "MAM Growth Strategies LLC";
 

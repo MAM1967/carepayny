@@ -3,6 +3,8 @@
 One line per English change that translations must follow. Newest first.
 Format: `YYYY-MM-DD · page file · what changed · languages updated (es, zh, …) or "pending"`
 
+- 2026-11-16 · ui footer.updates.html, guide.updates.html, updates.* (27 keys) and src/i18n/email.js (confirmation email) · new email updates sign-up pages and confirmation email (back-translation checked) · es, zh, ru
+
 - 2026-11-16 · training/index.md · new "Training and requirements" section and page at /training/ (first translation, back-translation checked) · es, zh, ru
 - 2026-11-16 · ui nav.training, guide.training.name, guide.training.pages · header link and section name for the new training section · es, zh, ru
 - 2026-11-16 · glossary · added home health aide (HHA), personal care aide (PCA), training program, supervised practical training, competency evaluation, certificate, Home Care Registry, criminal history record check, in-service training, nurse instructor, State Education Department, tuberculosis (TB) · es, zh, ru

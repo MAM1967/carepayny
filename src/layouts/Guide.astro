@@ -2,7 +2,9 @@
 import Base from "./Base.astro";
 import { getCollection } from "astro:content";
 import { isoDate, SITE_URL } from "../lib/seo.js";
-import { t as tFor, parseGuideId, guidePath } from "../i18n/index.js";
+import { t as tFor, parseGuideId, guidePath, UI } from "../i18n/index.js";
+import { EMAIL_SIGNUP_OPEN } from "../data/site.js";
+import { fmt } from "../i18n/format.js";
 import { LOCALES, localizePath } from "../i18n/locales.js";
 
 interface Props {
@@ -72,6 +74,7 @@ const notPaid = pages.filter((p) => p.slug.startsWith("not-paid/") && !isHub(p.s
       <ul class="sources">
         {sources.map((s) => <li><a href={s.url}>{s.label}</a></li>)}
       </ul>
+      {EMAIL_SIGNUP_OPEN && <p class="updates-cta" set:html={fmt(UI[lang]?.["guide.updates.html"] ?? UI.en["guide.updates.html"], { updatesUrl: localizePath(lang, "/updates/") })} />}
       <p class="small">{t("guide.independent")}</p>
     </article>
     <nav class="guide-nav card" aria-label={sectionPages}>

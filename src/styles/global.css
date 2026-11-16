@@ -53,6 +53,12 @@ label.q { font-weight: 700; display: block; }
 .field { display: grid; gap: 4px; }
 input[type=number] { font: inherit; font-variant-numeric: tabular-nums; width: 100%; padding: 10px 12px; border: 1.5px solid var(--line); border-radius: 10px; background: var(--paper); color: var(--ink); }
 input[type=number]:focus-visible { outline: 3px solid var(--accent); outline-offset: 1px; border-color: var(--accent); }
+input[type=email] { font: inherit; width: 100%; padding: 10px 12px; border: 1.5px solid var(--line); border-radius: 10px; background: var(--paper); color: var(--ink); }
+input[type=email]:focus-visible { outline: 3px solid var(--accent); outline-offset: 1px; border-color: var(--accent); }
+.updates-form { display: grid; gap: 12px; max-width: 420px; }
+.updates-form .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.form-error { border-left: 6px solid var(--bad, #b91c1c); background: var(--card); padding: 10px 14px; border-radius: 10px; }
+.updates-cta { background: var(--accent-soft); border-radius: 10px; padding: 10px 14px; }
 .money { position: relative; }
 .money span { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: var(--muted); }
 .money input { padding-left: 26px; }

@@ -1,0 +1,11 @@
+---
+// Email updates, step "form" (/es/, /zh/, /ru/), only for complete languages.
+import UpdatesPage from "../../../components/UpdatesPage.astro";
+import { publishedLocales } from "../../../i18n/index.js";
+
+export async function getStaticPaths() {
+  return (await publishedLocales()).filter((l) => l !== "en").map((lang) => ({ params: { lang } }));
+}
+const { lang } = Astro.params;
+---
+<UpdatesPage lang={lang} step="form" />
