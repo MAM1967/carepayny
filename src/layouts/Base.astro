@@ -31,8 +31,8 @@ const t = tFor(lang);
 const L = LOCALES[lang];
 const html = (key: string, vars = {}) => fmt(UI[lang]?.[key] ?? UI[DEFAULT_LOCALE][key], vars);
 const basePath = stripLocale(Astro.url.pathname);
-// About, Terms and Privacy are English only; every other page may have translations.
-const ENGLISH_ONLY = ["/about", "/terms", "/privacy", "/corrections"];
+// About, Terms, Privacy and the training program list are English only; every other page may have translations.
+const ENGLISH_ONLY = ["/about", "/terms", "/privacy", "/corrections", "/training/programs"];
 const alternates = ENGLISH_ONLY.some((p) => basePath.startsWith(p)) ? [] : await alternatesFor(basePath);
 const englishUrl = localizePath(DEFAULT_LOCALE, basePath);
 const fullTitle = title === "CarePayNY" ? title : `${title} | CarePayNY`;
