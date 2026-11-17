@@ -9,6 +9,7 @@ const P = DATA.programs;
 
 test("every listing is complete and comes from the DOH list", () => {
   assert.match(DATA.reportDate, /^\d{4}-\d{2}-\d{2}$/);
+  assert.match(DATA.lastChecked, /^[A-Z][a-z]+ \d{1,2}, \d{4}$/);
   assert.match(DATA.source, /^https:\/\/www\.health\.ny\.gov\//);
   assert.ok(P.length > 100, "list looks too short");
   const ids = new Set();

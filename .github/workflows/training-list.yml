@@ -1,0 +1,117 @@
+name: DOH training list refresh
+
+# Monthly cron job for /training/programs/.
+# DOH updates its list of approved PCA and HHA training programs at least monthly
+# (NY Public Health Law §3613(4)), dated the first business day of the month.
+# Owner's rule: use a new list only after 3 New York business days have passed
+# since its report date (scripts/doh-list-check.py). The 8th of the month always
+# clears that wait. This job never pushes to main: it opens a pull request.
+on:
+  schedule:
+    - cron: "17 18 8 * *"   # 18:17 UTC on the 8th = 1:17 pm New York (EST) / 2:17 pm (EDT)
+  workflow_dispatch:         # "Run workflow" button in the Actions tab
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: training-list
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install pdfplumber==0.11.4
+
+      - name: Download the DOH list
+        run: |
+          for url in \
+            https://www.health.ny.gov/facilities/home_care/docs/training_program_list.pdf \
+            https://healthweb-back.health.ny.gov/facilities/home_care/docs/training_program_list.pdf; do
+            if curl -fsSL --retry 2 -o /tmp/list.pdf "$url" && file /tmp/list.pdf | grep -q PDF; then
+              echo "Downloaded $url"; exit 0
+            fi
+          done
+          echo "::error::Could not download the DOH list as a PDF from either address."
+          exit 1
+
+      - name: Is there a new list, and has the 3-business-day wait passed?
+        id: check
+        run: |
+          python3 scripts/doh-list-check.py --self-test
+          python3 scripts/doh-list-check.py /tmp/list.pdf
+
+      - name: Nothing to do
+        if: steps.check.outputs.status != 'new'
+        run: |
+          case "${{ steps.check.outputs.status }}" in
+            same)  msg="No new DOH list. The site already uses the list dated ${{ steps.check.outputs.report_date }}." ;;
+            wait)  msg="New DOH list dated ${{ steps.check.outputs.report_date }}, but the 3-business-day wait ends ${{ steps.check.outputs.eligible }}. Run this workflow again on or after that day." ;;
+            older) msg="The DOH file (${{ steps.check.outputs.report_date }}) is older than the one the site uses. Nothing changed." ;;
+          esac
+          echo "$msg"; echo "$msg" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Skip if a pull request for this list is already open
+        id: branch
+        if: steps.check.outputs.status == 'new'
+        run: |
+          b="training-list-${{ steps.check.outputs.report_date }}"
+          echo "name=$b" >> "$GITHUB_OUTPUT"
+          if git ls-remote --exit-code --heads origin "$b" >/dev/null; then
+            echo "exists=true" >> "$GITHUB_OUTPUT"
+            echo "Branch $b already exists; its pull request is waiting for review." | tee -a "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Rebuild the list and check it
+        if: steps.check.outputs.status == 'new' && steps.branch.outputs.exists != 'true'
+        run: |
+          cp src/data/training-programs.js /tmp/old.mjs
+          python3 scripts/training-programs.py /tmp/list.pdf
+          cp src/data/training-programs.js /tmp/new.mjs
+          node scripts/training-list-diff.mjs /tmp/old.mjs /tmp/new.mjs > /tmp/pr-body.md || {
+            cat /tmp/pr-body.md >> "$GITHUB_STEP_SUMMARY"
+            echo "::error::Safety check failed. No pull request opened. See the job summary."
+            exit 1
+          }
+          cat /tmp/pr-body.md >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Test and build
+        if: steps.check.outputs.status == 'new' && steps.branch.outputs.exists != 'true'
+        run: |
+          npm ci
+          npm test
+          npm run build
+
+      - name: Open a pull request
+        if: steps.check.outputs.status == 'new' && steps.branch.outputs.exists != 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          b="${{ steps.branch.outputs.name }}"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -b "$b"
+          git add src/data/training-programs.js
+          git commit -m "Training list: DOH list dated ${{ steps.check.outputs.report_date }}"
+          git push -u origin "$b"
+          {
+            cat /tmp/pr-body.md
+            echo
+            echo "Opened by the monthly cron job (.github/workflows/training-list.yml). Tests and build passed in that run. Merge to publish."
+          } > /tmp/pr-full.md
+          gh pr create --base main --head "$b" \
+            --title "Training list: DOH list dated ${{ steps.check.outputs.report_date }}" \
+            --body-file /tmp/pr-full.md

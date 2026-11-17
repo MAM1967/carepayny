@@ -93,6 +93,11 @@ def street_key(addr):
     return f"{num.group(1) if num else ''}-{first[:5]}"
 
 
+def most_common(values):
+    """Most frequent value; ties go to the one DOH lists first. Deterministic, so ids stay stable."""
+    return max(dict.fromkeys(values), key=values.count)
+
+
 def slug(s):
     return re.sub(r"-+", "-", re.sub(r"[^a-z0-9]+", "-", s.lower())).strip("-")
 
@@ -120,7 +125,7 @@ def main(pdf_path):
 
     groups = {}
     for name, addr, city, zipc, phone, county, cert, lang in rows:
-        key = (norm_name(name), street_key(addr), city.lower())
+        key = (norm_name(name), street_key(addr), CITY_FIX.get(title_case(city), title_case(city)).lower())
         g = groups.setdefault(key, {"names": [], "addrs": [], "cities": [], "zips": [], "phones": [], "county": county, "types": set(), "langs": {"HHA": set(), "PCA": set()}})
         g["names"].append(name); g["addrs"].append(addr); g["cities"].append(city)
         g["zips"].append(zipc); g["phones"].append(phone)
@@ -133,22 +138,49 @@ def main(pdf_path):
             sys.exit(f"Unknown language: {lang!r}")
         g["langs"][kind].add(LANGS[lang])
 
+    # Keep each program's id from the last run, so click counts stay with the same place
+    # month to month. A place is "the same" if its name, street, city and zip match.
+    def same_place(name, address, city, zipc):
+        return (norm_name(name), street_key(address), city.lower(), zipc)
+    old_exact, old_ids, old_loose = {}, {}, {}
+    if OUT.exists():
+        try:
+            old = json.loads(OUT.read_text().split("export default ", 1)[1].rstrip().rstrip(";"))
+            old_exact = {(p["name"], p["address"], p["city"], p["zip"]): p["id"] for p in old["programs"]}
+            old_ids = {same_place(p["name"], p["address"], p["city"], p["zip"]): p["id"] for p in old["programs"]}
+            # Fallback without the zip (DOH sometimes lists one place under two zips).
+            loose = {}
+            for p in old["programs"]:
+                loose.setdefault(same_place(p["name"], p["address"], p["city"], "")[:3], []).append(p["id"])
+            old_loose = {k: v[0] for k, v in loose.items() if len(v) == 1}
+        except (IndexError, ValueError, KeyError):
+            print("Could not read the old data file; making new ids.")
+    used = set()
     programs, seen = [], {}
     for g in groups.values():
         name = best(g["names"])
         county = g["county"]
-        zipc = max(set(g["zips"]), key=g["zips"].count)
-        base = slug(f"{name}-{zipc}")[:60].strip("-")
-        seen[base] = seen.get(base, 0) + 1
-        pid = base if seen[base] == 1 else f"{base[:57]}-{seen[base]}"
+        zipc = most_common(g["zips"])
+        city = CITY_FIX.get(best(g["cities"]), best(g["cities"]))
+        address = best(g["addrs"])
+        key = same_place(name, address, city, zipc)
+        # Exact match first, then looser ones. An id already taken this run is never reused.
+        pid = next((c for c in (old_exact.get((name, address, city, zipc)), old_ids.get(key), old_loose.get(key[:3])) if c and c not in used), None)
+        if not pid:
+            base = slug(f"{name}-{zipc}")[:60].strip("-")
+            pid, n = base, 1
+            while pid in used or pid in old_ids.values():
+                n += 1
+                pid = f"{base[:57]}-{n}"
+        used.add(pid)
         types = g["types"]
         programs.append({
             "id": pid,
             "name": name,
-            "address": best(g["addrs"]),
-            "city": CITY_FIX.get(best(g["cities"]), best(g["cities"])),
+            "address": address,
+            "city": city,
             "zip": zipc,
-            "phone": max(set(g["phones"]), key=g["phones"].count),
+            "phone": most_common(g["phones"]),
             "county": county,
             "area": BOROUGH.get(county, county),
             "region": REGION_OF.get(county) or sys.exit(f"County not in any region: {county!r}"),
@@ -162,7 +194,10 @@ def main(pdf_path):
         })
 
     programs.sort(key=lambda p: (p["county"], p["name"].lower(), p["address"]))
+    today = date.today()
     data = {
+        # The day the list was last rebuilt from DOH's file (shown on the page as "Last checked").
+        "lastChecked": f"{today:%B} {today.day}, {today.year}",
         "source": SOURCE_URL,
         "regions": list(REGIONS),
         "reportDate": report_date,

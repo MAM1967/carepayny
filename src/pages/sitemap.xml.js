@@ -6,8 +6,7 @@ import { RULES } from "../data/rules.js";
 import { LEGAL_UPDATED, EMAIL_SIGNUP_OPEN } from "../data/site.js";
 import { CORRECTIONS } from "../data/corrections.js";
 import TRAINING_LIST from "../data/training-programs.js";
-// Keep in step with LAST_CHECKED in src/pages/training/programs.astro.
-const TRAINING_CHECKED = "November 16, 2026";
+const TRAINING_CHECKED = TRAINING_LIST.lastChecked;
 
 // One entry per public page. Guide pages use their "last checked" date.
 export async function GET() {
