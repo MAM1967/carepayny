@@ -3,7 +3,7 @@ title: "The $162 million PPL settlement (Calderon v. PPL)"
 description: "Who is in the Calderon v. Public Partnerships settlement for downstate CDPAP caregivers, what it pays, how payments are sent, and the latest court news."
 nav: "The PPL court settlement"
 order: 12
-lastChecked: "November 14, 2026"
+lastChecked: "November 18, 2026"
 sources:
   - label: "Official settlement website: Calderon v. Public Partnerships, LLC"
     url: "https://www.publicpartnershipssettlement.com/"
@@ -81,6 +81,8 @@ Class members who did not opt out by September 19, 2026 give up their right to s
 ## What happens after the ruling?
 
 amNewYork Law reports that, after final approval, PPL can ask workers to agree to **arbitration** for future wage claims. Arbitration means a private process instead of a court case. The article says workers can opt out of that agreement. The court had blocked this request while the settlement was being approved.
+
+PPL started sending the agreement in November 2026. The 30-day opt-out and how it works: [PPL arbitration agreement](/cdpap/ppl-arbitration/).
 
 ## What is the timeline of the case?
 

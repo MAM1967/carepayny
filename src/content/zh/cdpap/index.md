@@ -3,7 +3,7 @@ title: "纽约的 CDPAP：基本知识"
 description: "CDPAP 是什么，谁可以做领工资的照顾者，以及受照顾者、健康计划和 PPL 各自负责什么。用浅白的话说明，并已对照州政府和 PPL 的资料核对。"
 nav: "CDPAP：基本知识"
 order: 1
-lastChecked: "November 11, 2026"
+lastChecked: "November 18, 2026"
 sources:
   - label: "纽约州卫生厅：CDPAP"
     url: "https://www.health.ny.gov/health_care/medicaid/program/longterm/cdpap/"
@@ -14,6 +14,8 @@ sources:
   - label: "PPL：纽约 CDPAP 项目页面"
     url: "https://pplfirst.com/programs/new-york/ny-consumer-directed-personal-assistance-program-cdpap/"
 ---
+
+**最新消息（2026年11月）：**PPL 在 Time4Care 里要求 PA 接受一份仲裁协议，PA 有30天可以退出。请看 [PPL 仲裁协议](/cdpap/ppl-arbitration/)。1.62亿美元的 [PPL 和解](/cdpap/ppl-settlement/)在2026年11月10日得到最终批准。
 
 ## CDPAP 是什么？
 

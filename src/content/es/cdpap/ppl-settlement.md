@@ -3,7 +3,7 @@ title: "El acuerdo de $162 millones con PPL (Calderon v. PPL)"
 description: "Quién está en el acuerdo del caso Calderon v. Public Partnerships para los cuidadores de CDPAP de la zona sur del estado, cuánto paga, cómo se envían los pagos y las últimas noticias de la corte."
 nav: "El acuerdo legal con PPL"
 order: 12
-lastChecked: "November 14, 2026"
+lastChecked: "November 18, 2026"
 sources:
   - label: "Sitio web oficial del acuerdo: Calderon v. Public Partnerships, LLC"
     url: "https://www.publicpartnershipssettlement.com/"
@@ -81,6 +81,8 @@ Los miembros del grupo que no pidieron salirse del acuerdo a más tardar el 19 d
 ## ¿Qué pasa después de la decisión?
 
 amNewYork Law informa que, después de la aprobación final, PPL puede pedirles a los trabajadores que acepten el **arbitraje** para futuros reclamos de salarios. Arbitraje significa un proceso privado en lugar de un caso en la corte. El artículo dice que los trabajadores pueden salirse de ese acuerdo. La corte había bloqueado esta petición mientras se aprobaba el acuerdo.
+
+PPL empezó a enviar el acuerdo en noviembre de 2026. El plazo de 30 días para salirse y cómo funciona: [Acuerdo de arbitraje de PPL](/cdpap/ppl-arbitration/).
 
 ## ¿Cuál es la cronología del caso?
 

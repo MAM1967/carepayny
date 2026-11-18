@@ -3,7 +3,7 @@ title: "CDPAP en Nueva York: lo básico"
 description: "Qué es CDPAP, quién puede ser cuidador pagado y quién hace qué: el consumidor, el plan de salud y PPL. En palabras sencillas, revisado con fuentes del estado y de PPL."
 nav: "CDPAP: lo básico"
 order: 1
-lastChecked: "November 11, 2026"
+lastChecked: "November 18, 2026"
 sources:
   - label: "Departamento de Salud del Estado de Nueva York: CDPAP"
     url: "https://www.health.ny.gov/health_care/medicaid/program/longterm/cdpap/"
@@ -14,6 +14,8 @@ sources:
   - label: "PPL: página del programa CDPAP de Nueva York"
     url: "https://pplfirst.com/programs/new-york/ny-consumer-directed-personal-assistance-program-cdpap/"
 ---
+
+**Lo más reciente (noviembre de 2026):** PPL pide a los PA aceptar un acuerdo de arbitraje en Time4Care, con 30 días para salirse. Vea [Acuerdo de arbitraje de PPL](/cdpap/ppl-arbitration/). El [acuerdo de PPL](/cdpap/ppl-settlement/) de 162 millones de dólares recibió la aprobación final el 10 de noviembre de 2026.
 
 ## ¿Qué es CDPAP?
 
