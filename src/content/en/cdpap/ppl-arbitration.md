@@ -44,11 +44,11 @@ PPL has not given PAs an opt-out form. NY Health Access reports these steps:
 
 1. **Write a short notice** saying the PA declines the Dispute Resolution Agreement and declines arbitration for any disputes.
 2. **Include:** full name, address, PPL ID number, date of birth and the last 4 digits of the Social Security number.
-3. **Send it** by email to **nycdap_dra@pplfirst.com**, or by mail to PPL, 17 Plaza Drive, Suite 300, Latham, NY 12110.
+3. **Send it** by email to **nycdpap_dra@pplfirst.com**, or by mail to PPL, 17 Plaza Drive, Suite 300, Latham, NY 12110.
 4. **Send it within 30 days** of acknowledging. The date it is sent is what counts.
 5. **Keep proof.** For email, a delivery receipt. For mail, certified mail with a return receipt.
 
-The opt-out email address starts with "nycdap_dra." It is different from PPL's customer service address (nycdpap@pplfirst.com). The agreement shown in the pop-up also explains how to opt out.
+The opt-out address has "_dra" in it. It is not PPL's customer service address (nycdpap@pplfirst.com). The agreement shown in the pop-up also explains how to opt out.
 
 ## What are the two choices?
 

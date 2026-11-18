@@ -44,11 +44,11 @@ PPL no les ha dado a los PA un formulario para salirse. NY Health Access informa
 
 1. **Escribir un aviso corto** que diga que el PA rechaza el Dispute Resolution Agreement y rechaza el arbitraje para cualquier disputa.
 2. **Incluir:** nombre completo, dirección, número de identificación de PPL (PPL ID), fecha de nacimiento y los últimos 4 números del Seguro Social.
-3. **Enviarlo** por correo electrónico a **nycdap_dra@pplfirst.com**, o por correo postal a PPL, 17 Plaza Drive, Suite 300, Latham, NY 12110.
+3. **Enviarlo** por correo electrónico a **nycdpap_dra@pplfirst.com**, o por correo postal a PPL, 17 Plaza Drive, Suite 300, Latham, NY 12110.
 4. **Enviarlo dentro de los 30 días** después de confirmar. Lo que cuenta es la fecha de envío.
 5. **Guardar prueba.** Para el correo electrónico, un recibo de entrega. Para el correo postal, correo certificado con acuse de recibo.
 
-La dirección de correo para salirse empieza con "nycdap_dra". Es distinta de la dirección de servicio al cliente de PPL (nycdpap@pplfirst.com). El acuerdo que aparece en el aviso también explica cómo salirse.
+La dirección para salirse lleva "_dra". No es la dirección de servicio al cliente de PPL (nycdpap@pplfirst.com). El acuerdo que aparece en el aviso también explica cómo salirse.
 
 ## ¿Cuáles son las dos opciones?
 

@@ -44,11 +44,11 @@ PPL 没有给 PA 退出表格。NY Health Access 列出以下步骤：
 
 1. **写一份简短的通知**，说明 PA 拒绝 Dispute Resolution Agreement，并拒绝用仲裁解决任何纠纷。
 2. **写上：**全名、地址、PPL ID 号码、出生日期，以及社会安全号码的最后4位数字。
-3. **寄出：**用电子邮件寄到 **nycdap_dra@pplfirst.com**，或邮寄到 PPL, 17 Plaza Drive, Suite 300, Latham, NY 12110。
+3. **寄出：**用电子邮件寄到 **nycdpap_dra@pplfirst.com**，或邮寄到 PPL, 17 Plaza Drive, Suite 300, Latham, NY 12110。
 4. **在确认收到后的30天内寄出。**以寄出的日期为准。
 5. **保留证据。**电子邮件要有送达回执。邮寄要用挂号信（certified mail），并要回执。
 
-退出用的电子邮件地址开头是“nycdap_dra”，和 PPL 客户服务的地址（nycdpap@pplfirst.com）不一样。弹出窗口里的协议也说明了怎样退出。
+退出用的电子邮件地址里有“_dra”，不是 PPL 客户服务的地址（nycdpap@pplfirst.com）。弹出窗口里的协议也说明了怎样退出。
 
 ## 两种选择是什么？
 
