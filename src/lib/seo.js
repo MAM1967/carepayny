@@ -33,3 +33,26 @@ export const WEBSITE = {
 };
 
 export const guideHref = (id) => (id === "index" ? "/cdpap/" : `/cdpap/${id.replace(/\/index$/, "")}/`);
+
+// FAQ structured data from a rendered guide page: each <h2> that ends in a question mark
+// becomes a question, and the visible text up to the next <h2> becomes its answer.
+const decode = (t) => t.replace(/&nbsp;/g, " ").replace(/&amp;/g, "&").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&quot;/g, '"').replace(/&#39;|&#x27;/g, "'").replace(/&#(\d+);/g, (_, n) => String.fromCodePoint(+n)).replace(/&#x([0-9a-f]+);/gi, (_, n) => String.fromCodePoint(parseInt(n, 16)));
+export function htmlToText(html) {
+  return decode(html
+    .replace(/<(script|style)[\s\S]*?<\/\1>/gi, "")
+    .replace(/<\/(p|li|tr|h[3-6]|table|ul|ol)>/gi, "\n")
+    .replace(/<\/(td|th)>/gi, " · ")
+    .replace(/<br\s*\/?>/gi, "\n")
+    .replace(/<[^>]+>/g, ""))
+    .split("\n").map((l) => l.replace(/\s+/g, " ").replace(/^[·\s]+|[·\s]+$/g, "").trim()).filter(Boolean).join("\n");
+}
+export function faqFromHtml(html) {
+  const parts = html.split(/(<h2\b[^>]*>[\s\S]*?<\/h2>)/i);
+  const out = [];
+  for (let i = 1; i < parts.length; i += 2) {
+    const question = htmlToText(parts[i]);
+    const answer = htmlToText(parts[i + 1] || "");
+    if (/[?？]$/.test(question) && answer) out.push({ question, answer });
+  }
+  return out;
+}

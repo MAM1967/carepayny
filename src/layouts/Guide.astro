@@ -1,7 +1,7 @@
 ---
 import Base from "./Base.astro";
 import { getCollection } from "astro:content";
-import { isoDate, SITE_URL } from "../lib/seo.js";
+import { isoDate, SITE_URL, faqFromHtml } from "../lib/seo.js";
 import { t as tFor, parseGuideId, guidePath, UI } from "../i18n/index.js";
 import { EMAIL_SIGNUP_OPEN } from "../data/site.js";
 import { fmt } from "../i18n/format.js";
@@ -25,6 +25,9 @@ const sectionUrl = guidePath(lang, "index", section);
 const modified = isoDate(lastChecked);
 const shownDate = new Intl.DateTimeFormat(LOCALES[lang].intl, { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" }).format(new Date(modified + "T12:00:00Z"));
 const url = `${SITE_URL}${guidePath(lang, slug, section)}`;
+// Render the page body once: shown below, and read for question headings (FAQ structured data for answer engines).
+const bodyHtml = await Astro.slots.render("default");
+const faq = faqFromHtml(bodyHtml);
 const jsonLd = [
   {
     "@type": "Article",
@@ -51,7 +54,16 @@ const jsonLd = [
       { "@type": "ListItem", position: 2, name: sectionName, item: `${SITE_URL}${sectionUrl}` },
       ...(slug === "index" ? [] : [{ "@type": "ListItem", position: 3, name: title, item: url }])
     ]
-  }
+  },
+  // Only pages with 2 or more question headings get an FAQ block. Answers are the visible text under each heading.
+  ...(faq.length >= 2 ? [{
+    "@type": "FAQPage",
+    "@id": `${url}#faq`,
+    url,
+    inLanguage: LOCALES[lang].hreflang,
+    isPartOf: { "@id": `${SITE_URL}/#website` },
+    mainEntity: faq.map((q) => ({ "@type": "Question", name: q.question, acceptedAnswer: { "@type": "Answer", text: q.answer } }))
+  }] : [])
 ];
 const pages = (await getCollection("guide"))
   .map((p) => ({ ...parseGuideId(p.id), data: p.data }))
@@ -69,7 +81,7 @@ const notPaid = pages.filter((p) => p.slug.startsWith("not-paid/") && !isHub(p.s
     <article class="prose">
       <h1>{title}</h1>
       <p class="checked">{t("guide.lastChecked")} <time datetime={modified}>{shownDate}</time></p>
-      <slot />
+      <Fragment set:html={bodyHtml} />
       <h2>{t("guide.sources")}</h2>
       <ul class="sources">
         {sources.map((s) => <li><a href={s.url}>{s.label}</a></li>)}
