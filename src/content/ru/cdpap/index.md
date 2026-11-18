@@ -3,7 +3,7 @@ title: "CDPAP в Нью-Йорке: основное"
 description: "Что такое CDPAP, кто может быть оплачиваемым помощником и кто за что отвечает: получатель ухода, медицинский план и PPL. Простым языком, по данным штата и PPL."
 nav: "CDPAP: основное"
 order: 1
-lastChecked: "November 11, 2026"
+lastChecked: "November 18, 2026"
 sources:
   - label: "Департамент здравоохранения штата Нью-Йорк: CDPAP"
     url: "https://www.health.ny.gov/health_care/medicaid/program/longterm/cdpap/"
@@ -14,6 +14,8 @@ sources:
   - label: "PPL: страница программы CDPAP в Нью-Йорке"
     url: "https://pplfirst.com/programs/new-york/ny-consumer-directed-personal-assistance-program-cdpap/"
 ---
+
+**Последние новости (ноябрь 2026 г.):** PPL просит PA принять арбитражное соглашение в Time4Care; на отказ есть 30 дней. См. [Арбитражное соглашение PPL](/cdpap/ppl-arbitration/). [Мировое соглашение с PPL](/cdpap/ppl-settlement/) на 162 млн долларов окончательно утверждено 10 ноября 2026 г.
 
 ## Что такое CDPAP?
 

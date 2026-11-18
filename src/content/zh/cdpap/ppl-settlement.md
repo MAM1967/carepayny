@@ -3,7 +3,7 @@ title: "1.62亿美元的 PPL 和解（Calderon v. PPL）"
 description: "Calderon v. Public Partnerships 和解包括哪些纽约市、拿骚县、萨福克县和威彻斯特县的 CDPAP 照顾者，赔多少钱，怎样付款，以及最新的法院消息。"
 nav: "PPL 诉讼和解"
 order: 12
-lastChecked: "November 14, 2026"
+lastChecked: "November 18, 2026"
 sources:
   - label: "和解官方网站：Calderon v. Public Partnerships, LLC"
     url: "https://www.publicpartnershipssettlement.com/"
@@ -81,6 +81,8 @@ The Legal Aid Society（法律援助协会）和 Katz Banks Kumin 律师事务�
 ## 判决之后会怎样？
 
 amNewYork Law 报道说，最终批准之后，PPL 可以请工作人员同意用**仲裁**处理以后的工资索赔。仲裁是一种私下处理的程序，不经过法院。文章说，工作人员可以选择不参加这个协议。在和解等待批准期间，法院曾经禁止 PPL 提出这个请求。
+
+PPL 在2026年11月开始发出这份协议。30天退出期限和怎样退出：[PPL 仲裁协议](/cdpap/ppl-arbitration/)。
 
 ## 这个案件的时间表是怎样的？
 

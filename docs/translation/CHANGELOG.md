@@ -3,6 +3,10 @@
 One line per English change that translations must follow. Newest first.
 Format: `YYYY-MM-DD · page file · what changed · languages updated (es, zh, …) or "pending"`
 
+- 2026-11-18 · cdpap/ppl-arbitration.md · new page on PPL's Dispute Resolution Agreement (arbitration) and the 30-day opt-out (first translation, back-translation checked) · es, zh, ru
+- 2026-11-18 · cdpap/index.md · "Latest" note added at top linking the arbitration and settlement pages · es, zh, ru
+- 2026-11-18 · cdpap/ppl-settlement.md · one line added linking to the arbitration page · es, zh, ru
+
 - 2026-11-18 · cdpap/ppl-sick-leave.md · new page on PPL Safe and Sick Leave, NYC unpaid sick time and prenatal leave (first translation, back-translation checked) · es, zh, ru
 - 2026-11-18 · cdpap/overtime-holidays-sick-leave.md · one line added under sick leave linking to the new sick leave page · es, zh, ru
 - 2026-11-18 · pay/index.md · English title now "New York home care pay rules and wages"; translated titles already cover pay and wages, no change · —

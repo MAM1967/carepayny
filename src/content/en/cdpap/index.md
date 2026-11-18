@@ -3,7 +3,7 @@ title: "CDPAP in New York: the basics"
 description: "What CDPAP is, who can be a paid caregiver, and who does what: the consumer, the health plan and PPL. Plain English, checked against state and PPL sources."
 nav: "CDPAP: the basics"
 order: 1
-lastChecked: "November 11, 2026"
+lastChecked: "November 18, 2026"
 sources:
   - label: "NYS Department of Health: CDPAP"
     url: "https://www.health.ny.gov/health_care/medicaid/program/longterm/cdpap/"
@@ -14,6 +14,8 @@ sources:
   - label: "PPL: New York CDPAP program page"
     url: "https://pplfirst.com/programs/new-york/ny-consumer-directed-personal-assistance-program-cdpap/"
 ---
+
+**Latest (November 2026):** PPL is asking PAs to accept an arbitration agreement in Time4Care, with 30 days to opt out. See [PPL arbitration agreement](/cdpap/ppl-arbitration/). The $162 million [PPL settlement](/cdpap/ppl-settlement/) got final approval on November 10, 2026.
 
 ## What is CDPAP?
 
