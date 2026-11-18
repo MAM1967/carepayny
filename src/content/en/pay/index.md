@@ -1,5 +1,5 @@
 ---
-title: "New York home care pay rules"
+title: "New York home care pay rules and wages"
 description: "Plain-English guide to New York home care pay for agency aides, CDPAP caregivers and workers hired by a family: minimum wage, wage parity, overtime and 24-hour shifts."
 nav: "Home care pay: overview"
 order: 0

@@ -3,6 +3,10 @@
 One line per English change that translations must follow. Newest first.
 Format: `YYYY-MM-DD · page file · what changed · languages updated (es, zh, …) or "pending"`
 
+- 2026-11-18 · cdpap/ppl-sick-leave.md · new page on PPL Safe and Sick Leave, NYC unpaid sick time and prenatal leave (first translation, back-translation checked) · es, zh, ru
+- 2026-11-18 · cdpap/overtime-holidays-sick-leave.md · one line added under sick leave linking to the new sick leave page · es, zh, ru
+- 2026-11-18 · pay/index.md · English title now "New York home care pay rules and wages"; translated titles already cover pay and wages, no change · —
+
 - 2026-11-16 · training/index.md · one line added under "Who gives the training" linking to the new English-only list of approved programs (/training/programs/); translations say the page is in English (back-translation checked) · es, zh, ru
 
 - 2026-11-16 · ui footer.updates.html, guide.updates.html, updates.* (27 keys) and src/i18n/email.js (confirmation email) · new email updates sign-up pages and confirmation email (back-translation checked) · es, zh, ru
