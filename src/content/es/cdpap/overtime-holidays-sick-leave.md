@@ -56,6 +56,8 @@ El pago extra de los días feriados y el pago extra de las horas extra no se pag
 
 Sí. Los PA ganan 1 hora de licencia por enfermedad pagada por cada 30 horas trabajadas. PPL llama a esto **Safe and Sick Leave (SSL)** (licencia por seguridad y enfermedad).
 
+Todos los detalles, incluso cómo pedirla: [Licencia por seguridad y enfermedad de PPL](/cdpap/ppl-sick-leave/).
+
 
 - Lo máximo que un PA puede ganar son 56 horas al año.
 - Se puede usar en bloques de 15 minutos.

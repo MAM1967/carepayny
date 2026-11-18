@@ -56,6 +56,8 @@ Holiday premium pay and overtime premium pay are not paid together in the same w
 
 Yes. PAs earn 1 hour of paid sick leave for every 30 hours worked. PPL calls this **Safe and Sick Leave (SSL)**.
 
+Full details, including how to ask for it: [PPL safe and sick leave](/cdpap/ppl-sick-leave/).
+
 
 - The most a PA can earn is 56 hours a year.
 - It can be used in 15-minute blocks.
