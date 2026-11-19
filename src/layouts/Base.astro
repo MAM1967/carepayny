@@ -8,7 +8,7 @@ import bodyFont400 from "@fontsource/atkinson-hyperlegible/files/atkinson-hyperl
 import bodyFont700 from "@fontsource/atkinson-hyperlegible/files/atkinson-hyperlegible-latin-700-normal.woff2?url";
 import { RULES } from "../data/rules.js";
 import { LAUNCHED, CF_ANALYTICS_TOKEN, EMAIL_SIGNUP_OPEN } from "../data/site.js";
-import { ORGANIZATION, WEBSITE, SITE_NAME, SITE_URL } from "../lib/seo.js";
+import { ORGANIZATION, WEBSITE, SITE_NAME, SITE_URL, pageTitle } from "../lib/seo.js";
 import { CONTACT_EMAIL } from "../data/site.js";
 import { LOCALES, DEFAULT_LOCALE, stripLocale, localizePath } from "../i18n/locales.js";
 import { t as tFor, UI, alternatesFor, dateFor } from "../i18n/index.js";
@@ -35,7 +35,7 @@ const basePath = stripLocale(Astro.url.pathname);
 const ENGLISH_ONLY = ["/about", "/terms", "/privacy", "/corrections", "/training/programs"];
 const alternates = ENGLISH_ONLY.some((p) => basePath.startsWith(p)) ? [] : await alternatesFor(basePath);
 const englishUrl = localizePath(DEFAULT_LOCALE, basePath);
-const fullTitle = title === "CarePayNY" ? title : `${title} | CarePayNY`;
+const fullTitle = pageTitle(title);
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
 const ogImage = new URL("/og.png", Astro.site).href;
 const graph = { "@context": "https://schema.org", "@graph": [ORGANIZATION, WEBSITE, ...jsonLd] };

@@ -15,6 +15,8 @@ CarePayNY (carepayny.com) is a free, static website that helps New York home car
 9. **Monetization limits:** no fees per placed worker, per trainee hired or per enrollment; no lawyer referral fees; no agency ads near content that rates agencies. See PRD "Monetization" and "Legal".
 10. **Launch:** the site launched on November 13, 2026, by the owner's decision, without a paid lawyer review (see PRD "Launch gate"). `LAUNCHED` in `src/data/site.js` is `true`. Setting it to `false` hides the site from search engines again (noindex + robots block). Rules 2, 4 and 8 are the main legal safeguards, so treat them as strict.
 
+11. **Page titles: 70 characters or less.** Bing and Google cut longer titles. `pageTitle()` in `src/lib/seo.js` adds " | CarePayNY" only when it fits. Keep every new English title at 70 characters or less, and aim for about 55 so translations fit too (Spanish and Russian run 20-30% longer). When translating, keep the title at 70 characters or less; if it won't fit, shorten it in English first. `tests/seo.test.js` checks English titles.
+
 ## Layout
 
 | Path | What it is |
