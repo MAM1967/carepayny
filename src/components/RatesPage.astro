@@ -47,6 +47,8 @@ const jsonLd = [{
   version: `${R1.version} / ${R2.version}`,
   isAccessibleForFree: true,
   usageInfo: `${SITE_URL}/terms/`,
+  // Google Dataset Search asks for a license. Our Terms of use are the license (owner decision, Nov 2026).
+  license: `${SITE_URL}/terms/`,
   temporalCoverage: `${y1}/${y2}`,
   spatialCoverage: { "@type": "Place", name: "New York State, United States" },
   variableMeasured: ["Home care aide minimum wage", "General minimum wage", "Wage parity benefit portion", "Wage parity minimum total compensation", "PPL CDPAP base pay"],

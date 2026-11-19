@@ -25,6 +25,14 @@ export function webUrl(p) {
   } catch { return null; }
 }
 
+// Search engines and AI tools follow these links too. Their visits are not people, so they
+// are not counted. The user agent is only checked here; it is never stored or sent.
+const CRAWLER = /bot|crawl|spider|slurp|preview|fetch|-user\b|headless|python|curl|wget|httpclient|java\//i;
+export function isCrawler(request) {
+  const ua = request.headers.get("User-Agent") || "";
+  return ua === "" || CRAWLER.test(ua);
+}
+
 const redirect = (to) => new Response(null, {
   status: 302,
   headers: { Location: to, "Cache-Control": "no-store", "X-Robots-Tag": "noindex, nofollow" }
@@ -36,6 +44,8 @@ export async function onRequestGet({ request, params, env }) {
   const kind = url.searchParams.get("to") === "web" ? "web" : "map";
   const dest = p && (kind === "web" ? webUrl(p) : mapUrl(p));
   if (!dest) return redirect(new URL(DIRECTORY, url).toString());
+
+  if (isCrawler(request)) return redirect(dest);
 
   try {
     const ev = sanitize({ e: "out", lang: url.searchParams.get("l") || "en", prog: p.id, kind });

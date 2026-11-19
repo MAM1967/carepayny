@@ -16,9 +16,12 @@ export function GET() {
     ? [
         "User-agent: *",
         "Allow: /",
-        "Disallow: /go/",   // outbound link counter (functions/go/[id].js), not pages
+        // /go/ (the outbound link counter) is NOT blocked here. A robots.txt block stops Google
+        // from seeing the "noindex" header that /go/ sends, so Google indexed those links anyway
+        // (Search Console, Nov 2026). Crawlers may fetch /go/; it is kept out of search by its
+        // X-Robots-Tag header, and functions/go/[id].js does not count crawler visits.
         "",
-        ...AI_CRAWLERS.flatMap((ua) => [`User-agent: ${ua}`, "Allow: /", "Disallow: /go/", ""]),
+        ...AI_CRAWLERS.flatMap((ua) => [`User-agent: ${ua}`, "Allow: /", ""]),
         "Sitemap: https://carepayny.com/sitemap.xml",
         ""
       ].join("\n")
