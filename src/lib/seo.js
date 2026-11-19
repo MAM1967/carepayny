@@ -56,3 +56,13 @@ export function faqFromHtml(html) {
   }
   return out;
 }
+
+// Search engines cut titles at about 70 characters (Bing warns above 70). The " | CarePayNY"
+// ending is added only when the whole title still fits. Page titles themselves should stay
+// at 70 characters or less, so translations (often 20-30% longer) fit too.
+export const TITLE_MAX = 70;
+export function pageTitle(title) {
+  if (!title || title === SITE_NAME) return SITE_NAME;
+  const withName = `${title} | ${SITE_NAME}`;
+  return withName.length <= TITLE_MAX ? withName : title;
+}
