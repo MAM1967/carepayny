@@ -1,0 +1,6 @@
+# Cloudflare Pages response headers. https://developers.cloudflare.com/pages/configuration/headers/
+# The CSV can't hold a <link rel="canonical"> tag, so it names its main address in a header.
+# Without this, Google sees www.carepayny.com/rates.csv and carepayny.com/rates.csv as
+# duplicates and picks one itself (Search Console, Nov 2026).
+/rates.csv
+  Link: <https://carepayny.com/rates.csv>; rel="canonical"
