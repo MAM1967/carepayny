@@ -3,7 +3,7 @@ title: "Acuerdo de arbitraje de PPL: la opción de salirse en 30 días para cuid
 description: "El aviso del Acuerdo de Resolución de Disputas de PPL en Time4Care: qué significa el arbitraje para los asistentes personales de CDPAP, el plazo de 30 días para salirse y cómo funciona."
 nav: "Acuerdo de arbitraje (salirse)"
 order: 1.5
-lastChecked: "November 18, 2026"
+lastChecked: "November 20, 2026"
 sources:
   - label: "NY Health Access: PPL pide a los PA firmar acuerdos de arbitraje, pero pueden salirse (página de novedades de CDPAP)"
     url: "https://nyhealthaccess.org/news/97/"
@@ -17,7 +17,7 @@ sources:
     url: "https://pplfirst.com/programs/new-york/ny-consumer-directed-personal-assistance-program-cdpap/"
 ---
 
-En noviembre de 2026, PPL empezó a pedir a los asistentes personales (PA) de CDPAP que acepten un **Dispute Resolution Agreement** (Acuerdo de Resolución de Disputas). Es un **acuerdo de arbitraje**. Un PA que lo acepta se compromete a resolver futuras disputas de salario y de trabajo con PPL en un arbitraje privado, caso por caso, y no en la corte ni en una demanda colectiva. Un PA tiene 30 días para salirse.
+En noviembre de 2026, PPL empezó a pedir a los asistentes personales (PA) de CDPAP que acepten un **Dispute Resolution Agreement** (Acuerdo de Resolución de Disputas). Es un **acuerdo de arbitraje**. Un PA que lo acepta se compromete a resolver futuras disputas de salario y de trabajo con PPL en un arbitraje privado, caso por caso, y no en la corte ni en una demanda colectiva. Un PA tiene 30 días para salirse. No hay una sola fecha límite para todos. Los 30 días de cada PA empiezan el día en que ese PA escoge "Acknowledge".
 
 ## ¿Qué es el Acuerdo de Resolución de Disputas de PPL?
 

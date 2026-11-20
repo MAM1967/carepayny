@@ -3,7 +3,7 @@ title: "PPL 仲裁协议：CDPAP 照顾者30天内可以退出"
 description: "PPL 在 Time4Care 弹出的“争议解决协议”（Dispute Resolution Agreement）：仲裁对 CDPAP 个人助理意味着什么，30天退出期限，以及怎样退出。"
 nav: "仲裁协议（退出）"
 order: 1.5
-lastChecked: "November 18, 2026"
+lastChecked: "November 20, 2026"
 sources:
   - label: "NY Health Access：PPL 要求 PA 签仲裁协议，但可以退出（CDPAP 最新消息页面）"
     url: "https://nyhealthaccess.org/news/97/"
@@ -17,7 +17,7 @@ sources:
     url: "https://pplfirst.com/programs/new-york/ny-consumer-directed-personal-assistance-program-cdpap/"
 ---
 
-2026年11月，PPL 开始要求 CDPAP 的个人助理（PA）接受一份 **Dispute Resolution Agreement（争议解决协议）**。这是一份**仲裁协议**。接受协议的 PA，同意以后和 PPL 的工资和工作纠纷，用私下、一对一的仲裁解决，不去法院，也不参加集体诉讼。PA 有30天可以退出。
+2026年11月，PPL 开始要求 CDPAP 的个人助理（PA）接受一份 **Dispute Resolution Agreement（争议解决协议）**。这是一份**仲裁协议**。接受协议的 PA，同意以后和 PPL 的工资和工作纠纷，用私下、一对一的仲裁解决，不去法院，也不参加集体诉讼。PA 有30天可以退出。没有一个对所有人都一样的截止日期。每个 PA 的30天，从这个 PA 选择“Acknowledge”（确认收到）的那一天开始计算。
 
 ## PPL 的争议解决协议是什么？
 
