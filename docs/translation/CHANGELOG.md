@@ -3,6 +3,8 @@
 One line per English change that translations must follow. Newest first.
 Format: `YYYY-MM-DD · page file · what changed · languages updated (es, zh, …) or "pending"`
 
+- 2026-11-20 · cdpap/ppl-arbitration.md · opening adds "no single deadline for everyone; each PA's 30 days start when that PA selects Acknowledge" (sources rechecked; back-translation checked) · es, zh, ru
+
 - 2026-11-18 · cdpap/ppl-arbitration.md · new page on PPL's Dispute Resolution Agreement (arbitration) and the 30-day opt-out (first translation, back-translation checked) · es, zh, ru
 - 2026-11-18 · cdpap/index.md · "Latest" note added at top linking the arbitration and settlement pages · es, zh, ru
 - 2026-11-18 · cdpap/ppl-settlement.md · one line added linking to the arbitration page · es, zh, ru
