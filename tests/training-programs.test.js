@@ -3,7 +3,7 @@ import { test } from "node:test";
 import assert from "node:assert/strict";
 import DATA from "../src/data/training-programs.js";
 import { sanitize } from "../src/lib/events.js";
-import { onRequestGet, mapUrl, webUrl, UTM, isCrawler } from "../functions/go/[id].js";
+import { onRequestGet, mapUrl, webUrl, UTM } from "../functions/go/[id].js";
 
 const P = DATA.programs;
 
@@ -54,14 +54,14 @@ function fakeEnv() { const points = []; return { points, env: { EVENTS: { writeD
 const PHONE = "Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Mobile/15E148 Safari/604.1";
 const get = (path, ua = PHONE) => new Request(`https://carepayny.com${path}`, { headers: { "User-Agent": ua } });
 
-test("/go/ counts a map tap and redirects to the map", async () => {
+test("/go/ redirects to the map without counting (taps are counted in the browser)", async () => {
   const p = P[0];
   const { points, env } = fakeEnv();
   const res = await onRequestGet({ request: get(`/go/${p.id}?to=map`), params: { id: p.id }, env });
   assert.equal(res.status, 302);
   assert.equal(res.headers.get("Location"), mapUrl(p));
-  assert.equal(points.length, 1);
-  assert.deepEqual(points[0].blobs, ["out", "en", p.id, "map", "XX"]);
+  assert.equal(res.headers.get("X-Robots-Tag"), "noindex, nofollow");
+  assert.equal(points.length, 0);
 });
 
 test("/go/ sends unknown ids and missing websites back to the list, without counting", async () => {
@@ -72,26 +72,6 @@ test("/go/ sends unknown ids and missing websites back to the list, without coun
   res = await onRequestGet({ request: get(`/go/${noWeb.id}?to=web`), params: { id: noWeb.id }, env });
   assert.equal(res.headers.get("Location"), "https://carepayny.com/training/programs/");
   assert.equal(points.length, 0);
-});
-
-test("/go/ redirects crawlers but does not count them", async () => {
-  const p = P[0];
-  const { points, env } = fakeEnv();
-  const bots = [
-    "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)",
-    "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; bingbot/2.0; +http://www.bing.com/bingbot.htm) Chrome/116.0 Safari/537.36",
-    "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ChatGPT-User/1.0; +https://openai.com/bot",
-    "curl/8.5.0",
-    ""
-  ];
-  for (const ua of bots) {
-    const res = await onRequestGet({ request: get(`/go/${p.id}?to=map`, ua), params: { id: p.id }, env });
-    assert.equal(res.status, 302);
-    assert.equal(res.headers.get("Location"), mapUrl(p));
-    assert.equal(res.headers.get("X-Robots-Tag"), "noindex, nofollow");
-  }
-  assert.equal(points.length, 0);
-  assert.equal(isCrawler(get("/", PHONE)), false);
 });
 
 test("website links get the CarePayNY tracking tags", () => {
