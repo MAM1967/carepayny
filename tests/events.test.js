@@ -4,7 +4,7 @@ import assert from "node:assert/strict";
 import { computeWeek } from "../src/lib/calc.js";
 import { RULES_BY_YEAR } from "../src/data/rules.js";
 import { sanitize, calcEvent, SCHEMA, hoursBand, gapBand, stubBand } from "../src/lib/events.js";
-import { onRequestPost } from "../functions/api/e.js";
+import { onRequestPost, usState } from "../functions/api/e.js";
 
 const R26 = RULES_BY_YEAR[2026];
 const input = { region: "nyc", employer: "agency", medicaid: "yes", rate: 18.37, regularHours: 47.5, shifts24: 1, sleepMissed: 0, mealsMissed: 0, livesIn: false, stubGross: 812.44 };
@@ -56,4 +56,26 @@ test("endpoint ignores other websites and junk", async () => {
   await onRequestPost({ request: req("not json"), env });
   await onRequestPost({ request: req("x".repeat(2000)), env });
   assert.equal(points.length, 0);
+});
+
+const withCf = (r, cf) => { Object.defineProperty(r, "cf", { value: cf }); return r; };
+
+test("endpoint adds country and U.S. state from Cloudflare, never the IP", async () => {
+  const { points, env } = fakeEnv();
+  const r = withCf(req(JSON.stringify({ e: "view", lang: "en", page: "/" })), { country: "US", regionCode: "NY", city: "Brooklyn" });
+  r.headers.set("CF-Connecting-IP", "203.0.113.7");
+  await onRequestPost({ request: r, env });
+  const blobs = points[0].blobs;
+  assert.deepEqual(blobs.slice(-2), ["US", "NY"]);
+  const all = JSON.stringify(points[0]);
+  assert.ok(!all.includes("203.0.113.7"), "no IP");
+  assert.ok(!all.includes("Brooklyn"), "no city");
+});
+
+test("state is only kept for U.S. visitors and only as a two-letter code", () => {
+  assert.equal(usState({ country: "US", regionCode: "nj" }), "NJ");
+  assert.equal(usState({ country: "CA", regionCode: "ON" }), "");
+  assert.equal(usState({ country: "US", regionCode: "New York" }), "");
+  assert.equal(usState({ country: "US" }), "");
+  assert.equal(usState(undefined), "");
 });
