@@ -19,7 +19,7 @@ export function GET() {
         // /go/ (the outbound link counter) is NOT blocked here. A robots.txt block stops Google
         // from seeing the "noindex" header that /go/ sends, so Google indexed those links anyway
         // (Search Console, Nov 2026). Crawlers may fetch /go/; it is kept out of search by its
-        // X-Robots-Tag header, and functions/go/[id].js does not count crawler visits.
+        // X-Robots-Tag header. /go/ only redirects; taps are counted in the browser.
         "",
         ...AI_CRAWLERS.flatMap((ua) => [`User-agent: ${ua}`, "Allow: /", ""]),
         "Sitemap: https://carepayny.com/sitemap.xml",

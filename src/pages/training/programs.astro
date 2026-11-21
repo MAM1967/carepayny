@@ -2,7 +2,7 @@
 // /training/programs/: every home care aide training program on the NYS Department of Health's
 // approved list, read from src/data/training-programs.js (built by scripts/training-programs.py).
 // English only for now. Order is neutral (area, then A to Z) and never depends on payment.
-// Outbound map and website links go through /go/<id> (functions/go/[id].js) so they are counted;
+// Outbound map and website links go through /go/<id> (functions/go/[id].js), which only redirects;
 // phone taps are counted with the same anonymous "out" event (src/lib/events.js).
 import Base from "../../layouts/Base.astro";
 import DATA from "../../data/training-programs.js";
@@ -233,12 +233,17 @@ const jsonLd = [
   form.addEventListener("submit", (e) => e.preventDefault());
   apply();
 
-  // Phone taps are counted here. Map and website links are counted by /go/ on the server.
-  document.addEventListener("click", (e) => {
-    const a = (e.target as Element).closest<HTMLAnchorElement>("a[data-out='tel']");
+  // Every tap on a phone, map or website link is counted here, in the browser. Scrapers read
+  // links without tapping them, so counting on tap keeps the totals to real people. (Counting
+  // on the server at /go/ counted a scraper's 293 fake "map" clicks on Nov 20-21, 2026.)
+  const counted = (e: Event) => {
+    const a = (e.target as Element).closest<HTMLAnchorElement>("a[data-out]");
     const li = a?.closest<HTMLElement>(".program");
     if (a && li && document.body.dataset.count === "1") {
-      send(sanitize({ e: "out", lang: "en", prog: li.dataset.id, kind: "tel" }));
+      send(sanitize({ e: "out", lang: "en", prog: li.dataset.id, kind: a.dataset.out }));
     }
-  });
+  };
+  document.addEventListener("click", counted);
+  // A middle click (open in a new tab) fires "auxclick", not "click".
+  document.addEventListener("auxclick", (e) => { if ((e as MouseEvent).button === 1) counted(e); });
 </script>
