@@ -33,6 +33,7 @@ CarePayNY (carepayny.com) is a free, static website that helps New York home car
 | `src/pages/corrections.astro`, `src/data/corrections.js` | Public corrections log (English only) |
 | `src/pages/about.astro` | About, method, corrections contact |
 | `src/layouts/Base.astro` | Header, footer disclaimer, meta |
+| `workers/search-stats/` | Daily Cloudflare Worker that saves Google Search Console and Bing Webmaster totals to KV `carepayny_search` (setup: `docs/search-stats.md`) |
 | `tests/calc.test.js` | Worked examples; CI runs them on every PR |
 | `docs/PRD.md` | Product requirements |
 

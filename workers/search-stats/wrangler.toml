@@ -1,0 +1,29 @@
+# carepayny-search-stats: daily Google Search Console + Bing Webmaster pull.
+# Deploy from this folder: npx wrangler deploy   (see docs/search-stats.md)
+name = "carepayny-search-stats"
+main = "index.js"
+compatibility_date = "2026-11-01"
+workers_dev = false   # no public URL; it only runs on the schedule below
+preview_urls = false
+
+[triggers]
+# Every day at 09:17 UTC (4:17 AM New York time in winter), before the Monday report.
+crons = ["17 9 * * *"]
+
+[[kv_namespaces]]
+binding = "SEARCH"
+id = "6bab8cdeddd84e60b920805e586f33cc"   # carepayny_search
+
+[vars]
+# Search Console property. A Domain property looks like "sc-domain:carepayny.com";
+# a URL-prefix property looks like "https://carepayny.com/". Use whichever you verified.
+GSC_SITE = "sc-domain:carepayny.com"
+BING_SITE = "https://carepayny.com/"
+SITEMAP_URL = "https://carepayny.com/sitemap.xml"
+# Pages checked with Google's URL Inspection API per run. 25 a day covers ~110 pages in about 5 days
+# and keeps each run under the free Workers plan's 50 outside requests.
+INSPECT_PER_RUN = "25"
+
+# Secrets (set with `npx wrangler secret put NAME`, never in this file):
+#   GSC_SERVICE_ACCOUNT_JSON  the whole JSON key file of the Google service account
+#   BING_API_KEY              the API key from Bing Webmaster Tools
