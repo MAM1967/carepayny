@@ -3,7 +3,7 @@ title: "PPL arbitration agreement: 30-day opt-out for CDPAP"
 description: "PPL's Dispute Resolution Agreement pop-up in Time4Care: what arbitration means for CDPAP personal assistants, the 30-day opt-out window, and how the opt-out works."
 nav: "Arbitration agreement (opt-out)"
 order: 1.5
-lastChecked: "November 18, 2026"
+lastChecked: "November 20, 2026"
 sources:
   - label: "NY Health Access: PPL asking PAs to sign arbitration agreements, but they can opt out (CDPAP updates page)"
     url: "https://nyhealthaccess.org/news/97/"
@@ -17,7 +17,7 @@ sources:
     url: "https://pplfirst.com/programs/new-york/ny-consumer-directed-personal-assistance-program-cdpap/"
 ---
 
-In November 2026, PPL started asking CDPAP personal assistants (PAs) to accept a **Dispute Resolution Agreement**. It is an **arbitration agreement**. A PA who accepts it agrees to settle future wage and work disputes with PPL in private, one-on-one arbitration, not in court or in a class action. A PA has 30 days to opt out.
+In November 2026, PPL started asking CDPAP personal assistants (PAs) to accept a **Dispute Resolution Agreement**. It is an **arbitration agreement**. A PA who accepts it agrees to settle future wage and work disputes with PPL in private, one-on-one arbitration, not in court or in a class action. A PA has 30 days to opt out. There is no single deadline for everyone. Each PA's 30 days start on the day that PA selects "Acknowledge."
 
 ## What is PPL's Dispute Resolution Agreement?
 
