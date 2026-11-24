@@ -3,7 +3,7 @@ title: "How to become a home care aide in New York: training and requirements"
 description: "What New York requires to work as a home health aide or personal care aide for a home care agency: training hours, the skills test, the Home Care Registry, the background check, the health check and yearly training. Also what is different in CDPAP."
 nav: "Training and requirements"
 order: 1
-lastChecked: "November 16, 2026"
+lastChecked: "November 24, 2026"
 sources:
   - label: "NYS Department of Health: Guide to operating a home health aide training program (August 2021)"
     url: "https://health.ny.gov/professionals/home_care/docs/hhatp_guide.pdf"
@@ -24,6 +24,8 @@ sources:
 ---
 
 To work as an aide for a home care agency in New York, a person needs a certificate from a state-approved training program. There are two certificates. A **home health aide** (HHA) needs at least 75 hours of training. A **personal care aide** (PCA) needs at least 40 hours. CDPAP is different: its rules do not require either certificate.
+
+More: [Home health aide vs PCA vs CNA](/training/hha-pca-cna/).
 
 ## What are the steps?
 
@@ -62,7 +64,7 @@ The passing score is 80%.
 - A home health aide program approved by the Department of Health may charge a trainee up to $100, for things the trainee keeps. A program that charges more must be approved by the Education Department instead.
 - A personal care aide program approved by the Department of Health may not charge any fee or tuition.
 
-More: [Approved training programs, by borough and county](/training/programs/) (from the Department of Health's list).
+More: [Approved training programs, by borough and county](/training/programs/) (from the Department of Health's list) · [Free vs paid training](/training/free-training/).
 
 **Training in other languages.** Approved programs can teach in a language other than English. The nurse instructor must speak both English and that language well. Each class is taught in one language, without an interpreter.
 
@@ -79,6 +81,8 @@ The **Home Care Registry** is the Department of Health's list of people who fini
 Home care agencies must run a **criminal history record check** for workers who give care to patients. That is a check of a person's criminal records. The agency asks the Department of Health to run it. The person's fingerprints are checked against New York State and FBI records.
 
 The Department of Health looks at any record it finds and decides if the person can work in home care. The New York State Comptroller looked at checks from April 2014 to December 2016. About 83% of the checks found no criminal record. In about 3.5% of the checks, the person was found not able to work in home care.
+
+More: [Home care background checks: what to expect](/training/background-check/).
 
 **Identity and permission to work.** The agency also checks each new worker's ID. Like every employer in the United States, it checks permission to work with Form I-9.
 
@@ -103,6 +107,8 @@ After that, there is a health check and a TB check every year.
 A home health aide is no longer qualified after 24 months in a row without working as a home health aide for a licensed or certified home care agency. To work as a home health aide again, the person can take the skills test again instead of the whole course. They then get a new certificate.
 
 A personal care aide certificate does not expire.
+
+More: [Lapsed home health aide certificate](/training/certification-lapsed/).
 
 ## What is different in CDPAP?
 

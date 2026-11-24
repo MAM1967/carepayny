@@ -1,0 +1,279 @@
+---
+// The list of home care aide training programs on the NYS Department of Health's approved list,
+// in any site language. Program names, addresses and place names stay as DOH wrote them (English).
+// Data: src/data/training-programs.js (built by scripts/training-programs.py). Order is neutral
+// (area, then A to Z) and never depends on payment. Map and website links go through /go/<id>
+// (functions/go/[id].js), which only redirects; taps are counted with the anonymous "out" event.
+import Base from "../layouts/Base.astro";
+import DATA from "../data/training-programs.js";
+import { SITE_URL, isoDate } from "../lib/seo.js";
+import { UI, t as tFor, dateFor } from "../i18n/index.js";
+import { LOCALES, DEFAULT_LOCALE, localizePath } from "../i18n/locales.js";
+import { fmt } from "../i18n/format.js";
+
+interface Props { lang: string }
+const { lang } = Astro.props;
+const t = tFor(lang);
+const strings = { ...UI[DEFAULT_LOCALE], ...UI[lang] };
+const html = (key: string, vars = {}) => fmt(strings[key], vars);
+
+// Set by scripts/training-programs.py each time the list is rebuilt from DOH's file.
+const modified = isoDate(DATA.lastChecked);
+const fmtDay = (iso: string) => new Intl.DateTimeFormat(LOCALES[lang].intl, { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" }).format(new Date(iso + "T12:00:00Z"));
+const shownReport = fmtDay(DATA.reportDate);
+const shownChecked = fmtDay(modified);
+
+const programs = DATA.programs;
+const BOROUGHS = ["Bronx", "Brooklyn", "Manhattan", "Queens", "Staten Island"];
+const count = (area: string) => programs.filter((p) => p.area === area).length;
+const nycCount = programs.filter((p) => p.region === "New York City").length;
+const countyCount = new Set(programs.map((p) => p.county)).size;
+// Statewide, by the state's 10 economic development regions (Empire State Development).
+// Within a region: boroughs or counties A to Z, then programs A to Z. Never ordered by payment.
+const regions = DATA.regions
+  .map((region) => {
+    const list = programs.filter((p) => p.region === region);
+    const areas = [...new Set(list.map((p) => p.area))].sort().map((area) => ({ area, list: list.filter((p) => p.area === area) }));
+    return { region, slug: region.toLowerCase().replace(/\W+/g, "-"), count: list.length, areas };
+  })
+  .filter((r) => r.count);
+
+const LANGS = ["en", "es", "zh", "ru", "ko"];
+const langName = (code: string) => t(`programs.lang.${code}`);
+const telHref = (phone: string) => "tel:+1" + phone.replace(/\D/g, "").slice(-10);
+const areaLabel = (a: string) => (BOROUGHS.includes(a) ? a : t("programs.county", { name: a }));
+const regionName = (r: string) => t(`programs.region.${r.toLowerCase().replace(/\W+/g, "-")}`);
+
+const trainingUrl = localizePath(lang, "/training/");
+const path = localizePath(lang, "/training/programs/");
+const title = t("programs.title");
+const description = t("programs.description", { n: programs.length });
+const url = `${SITE_URL}${path}`;
+const sources = [
+  { label: t("programs.source.list", { date: shownReport }), url: DATA.source },
+  { label: t("programs.source.certification"), url: "https://www.health.ny.gov/facilities/home_care/professional.htm" },
+  { label: t("programs.source.hybrid"), url: "https://www.health.ny.gov/facilities/home_care/dal/docs/20-09.pdf" },
+  { label: t("programs.source.hhaGuide"), url: "https://health.ny.gov/professionals/home_care/docs/hhatp_guide.pdf" },
+  { label: t("programs.source.pcaGuide"), url: "https://health.ny.gov/professionals/home_care/guide_to_operate_pcatp/docs/guide.pdf" }
+];
+const jsonLd = [
+  {
+    "@type": "CollectionPage",
+    "@id": `${url}#page`,
+    name: title,
+    description,
+    url,
+    inLanguage: LOCALES[lang].hreflang,
+    dateModified: modified,
+    publisher: { "@id": `${SITE_URL}/#org` },
+    isPartOf: { "@id": `${SITE_URL}/#website` },
+    citation: sources.map((s) => s.url)
+  },
+  {
+    "@type": "BreadcrumbList",
+    "@id": `${url}#breadcrumb`,
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "CarePayNY", item: `${SITE_URL}${localizePath(lang, "/")}` },
+      { "@type": "ListItem", position: 2, name: t("guide.training.name"), item: `${SITE_URL}${trainingUrl}` },
+      { "@type": "ListItem", position: 3, name: t("programs.crumb"), item: url }
+    ]
+  }
+];
+// Text the filter script needs, in this language.
+const clientText = { lang, shown: strings["programs.shown"] };
+---
+<Base lang={lang} title={title} description={description} ogType="article" modified={modified} jsonLd={jsonLd}>
+  <div class="wrap guide">
+    <nav class="crumbs" aria-label={t("guide.breadcrumb")}>
+      <a href={localizePath(lang, "/")}>CarePayNY</a> › <a href={trainingUrl}>{t("guide.training.name")}</a> › <span aria-current="page">{t("programs.crumb")}</span>
+    </nav>
+    <article class="prose programs-page">
+      <h1>{title}</h1>
+      <p class="checked">{t("guide.lastChecked")} <time datetime={modified}>{shownChecked}</time></p>
+      <p class="jump"><a href="#find-heading">{t("programs.jump")}</a></p>
+
+      <p set:html={html("programs.intro.html", { date: shownReport, n: programs.length, counties: countyCount, nyc: nycCount })} />
+      <p set:html={html("programs.approval.html", { url: DATA.source })} />
+
+      <h2>{t("programs.labels.h2")}</h2>
+      <ul>
+        <li set:html={html("programs.labels.hha.html")} />
+        <li set:html={html("programs.labels.pca.html")} />
+        <li set:html={html("programs.labels.hybrid.html")} />
+        <li set:html={html("programs.labels.langs.html")} />
+      </ul>
+      <p set:html={html("programs.more.html", { trainingUrl })} />
+
+      <h2>{t("programs.cost.h2")}</h2>
+      <ul>
+        <li>{t("programs.cost.pca")}</li>
+        <li>{t("programs.cost.hha")}</li>
+        <li>{t("programs.cost.free")}</li>
+      </ul>
+
+      <h2>{t("programs.how.h2")}</h2>
+      <p>{t("programs.how.p")}</p>
+    </article>
+
+    <section class="card programs" aria-labelledby="find-heading">
+      <h2 id="find-heading">{t("programs.find.h2")}</h2>
+      <form class="program-filters row" id="program-filters" hidden>
+        <label class="field">{t("programs.filter.area")}
+          <select id="f-area">
+            <option value="all">{t("programs.filter.allState", { n: programs.length })}</option>
+            {regions.map((r) => (
+              <optgroup label={regionName(r.region)}>
+                <option value={`r:${r.slug}`}>{t("programs.filter.allRegion", { region: regionName(r.region), n: r.count })}</option>
+                {r.areas.map(({ area }) => <option value={area}>{areaLabel(area)} ({count(area)})</option>)}
+              </optgroup>
+            ))}
+          </select>
+        </label>
+        <label class="field">{t("programs.filter.training")}
+          <select id="f-type">
+            <option value="">{t("programs.filter.either")}</option>
+            <option value="hha">{t("programs.filter.hha")}</option>
+            <option value="pca">{t("programs.filter.pca")}</option>
+          </select>
+        </label>
+        <label class="field">{t("programs.filter.language")}
+          <select id="f-lang">
+            <option value="">{t("programs.filter.anyLanguage")}</option>
+            {LANGS.map((code) => <option value={code}>{langName(code)}</option>)}
+          </select>
+        </label>
+        <label class="check"><input type="checkbox" id="f-hybrid"> <span>{t("programs.filter.hybrid")}</span></label>
+      </form>
+      <p class="small" id="program-count" aria-live="polite">{t("programs.countAll", { n: programs.length })}</p>
+      <p class="small">{t("programs.tapHint")}</p>
+
+      {regions.map((r) => (
+        <div class="program-region" data-region={r.slug}>
+          <h3 class="region-name">{regionName(r.region)}</h3>
+          {r.areas.map(({ area, list }) => (
+        <details class="program-area" data-area={area} data-region={r.slug}>
+          <summary><h4>{areaLabel(area)}</h4> <span class="area-count">({list.length})</span></summary>
+          <ul class="program-list">
+            {list.map((p) => (
+              <li class="program" data-id={p.id} data-hha={p.hha ? p.hhaLangs.join(" ") : ""} data-pca={p.pca ? p.pcaLangs.join(" ") : ""} data-hybrid={p.hybrid.join(" ")}>
+                <strong class="program-name" lang="en">{p.name}</strong>
+                <span class="program-addr" lang="en">{p.address}, {p.city}, NY {p.zip}</span>
+                {p.hha && <span class="program-tags"><span class="badge">{p.hybrid.includes("HHA") ? t("programs.tag.hhaHybrid") : t("programs.tag.hha")}</span><span class="program-langs">{p.hhaLangs.map(langName).join(", ")}</span></span>}
+                {p.pca && <span class="program-tags"><span class="badge">{p.hybrid.includes("PCA") ? t("programs.tag.pcaHybrid") : t("programs.tag.pca")}</span><span class="program-langs">{p.pcaLangs.map(langName).join(", ")}</span></span>}
+                <span class="program-links">
+                  <a href={telHref(p.phone)} data-out="tel">{p.phone}</a>
+                  <a href={`/go/${p.id}?to=map`} data-out="map" rel="nofollow noopener" target="_blank">{t("programs.link.map")}</a>
+                  {p.url && <a href={`/go/${p.id}?to=web`} data-out="web" rel="nofollow noopener" target="_blank">{t("programs.link.web")}</a>}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </details>
+          ))}
+        </div>
+      ))}
+      <p class="small" id="program-empty" hidden>{t("programs.empty")}</p>
+    </section>
+
+    <section class="prose">
+      <h2>{t("guide.sources")}</h2>
+      <ul class="sources">
+        {sources.map((s) => <li><a href={s.url}>{s.label}</a></li>)}
+      </ul>
+      <p class="small">{t("programs.independent")}</p>
+    </section>
+  </div>
+  <script type="application/json" id="programsI18n" set:html={JSON.stringify(clientText)} />
+</Base>
+
+<style is:global>
+  /* Global (not scoped) so the 740+ list items don't each get an extra attribute. */
+  .programs h2 { font: 600 1.3rem/1.3 var(--font-display); margin: 0 0 12px; }
+  .program-filters { margin-bottom: 8px; align-items: end; }
+  .program-filters select { width: 100%; font: inherit; padding: 9px 10px; border: 1.5px solid var(--line); border-radius: 10px; background: var(--paper); color: var(--ink); }
+  .program-filters .check { align-self: center; }
+  .program[hidden], .program-area[hidden], .program-region[hidden] { display: none; }
+  .program-region .region-name { font: 700 1.2rem/1.3 var(--font-display); margin: 24px 0 4px; padding-top: 12px; border-top: 1px solid var(--line); }
+  .program-area { border-bottom: 1px solid var(--line); }
+  .program-area summary { cursor: pointer; padding: 12px 2px; min-height: 44px; display: flex; align-items: baseline; gap: 6px; }
+  .program-area summary h4 { font: 600 1.05rem/1.3 var(--font-display); margin: 0; display: inline; }
+  .program-area summary .area-count { color: var(--muted); font-size: .95rem; }
+  .program-area[open] summary { padding-bottom: 8px; }
+  .program-area .program-list { padding-bottom: 14px; }
+  .jump { margin-top: -.2em; }
+  .program-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+  .program { border: 1px solid var(--line); border-radius: 10px; padding: 12px; display: grid; gap: 4px; }
+  .program .badge { margin: 0 6px 0 0; }
+  .program-addr, .program-langs { color: var(--muted); font-size: .92rem; }
+  .program-links { display: flex; gap: 14px; flex-wrap: wrap; font-weight: 700; margin-top: 4px; }
+</style>
+
+<script>
+  // Filters (the full list shows without JavaScript) and anonymous link counting.
+  import { sanitize, send } from "../lib/events.js";
+  import { fmt } from "../i18n/format.js";
+
+  const text = JSON.parse(document.getElementById("programsI18n")!.textContent || "{}");
+  const form = document.getElementById("program-filters") as HTMLFormElement;
+  const area = document.getElementById("f-area") as HTMLSelectElement;
+  const type = document.getElementById("f-type") as HTMLSelectElement;
+  const lang = document.getElementById("f-lang") as HTMLSelectElement;
+  const hybrid = document.getElementById("f-hybrid") as HTMLInputElement;
+  const countEl = document.getElementById("program-count")!;
+  const empty = document.getElementById("program-empty")!;
+  const groups = [...document.querySelectorAll<HTMLDetailsElement>(".program-area")];
+  // Wide screens show every county open; phones start with counties folded (tap to open).
+  if (window.matchMedia("(min-width: 880px)").matches) for (const g of groups) g.open = true;
+  const regionEls = [...document.querySelectorAll<HTMLElement>(".program-region")];
+
+  function apply() {
+    let shown = 0;
+    for (const g of groups) {
+      const a = area.value;
+      const inArea = a === "all" || (a.startsWith("r:") ? g.dataset.region === a.slice(2) : g.dataset.area === a);
+      let n = 0;
+      for (const li of g.querySelectorAll<HTMLElement>(".program")) {
+        // A place matches if one of its trainings (HHA or PCA) fits every choice at once.
+        const kinds = type.value ? [type.value] : ["hha", "pca"];
+        const ok = inArea && kinds.some((k) => {
+          const langs = li.dataset[k] || "";
+          if (!langs) return false;
+          if (lang.value && !langs.split(" ").includes(lang.value)) return false;
+          if (hybrid.checked && !(li.dataset.hybrid || "").split(" ").includes(k.toUpperCase())) return false;
+          return true;
+        });
+        li.hidden = !ok;
+        if (ok) n++;
+      }
+      g.hidden = n === 0;
+      const c = g.querySelector(".area-count");
+      if (c) c.textContent = `(${n})`;
+      // A single borough or county chosen: open it.
+      if (a !== "all" && !a.startsWith("r:") && n > 0) g.open = true;
+      shown += n;
+    }
+    for (const r of regionEls) r.hidden = !r.querySelector(".program-area:not([hidden])");
+    const where = area.options[area.selectedIndex].text.replace(/\s*[(（]\d+[)）]$/, ""); // "(742)" or full-width "（742）"
+    countEl.textContent = fmt(text.shown, { n: shown, where });
+    empty.hidden = shown !== 0;
+  }
+
+  form.hidden = false;
+  form.addEventListener("change", apply);
+  form.addEventListener("submit", (e) => e.preventDefault());
+  apply();
+
+  // Every tap on a phone, map or website link is counted here, in the browser. Scrapers read
+  // links without tapping them, so counting on tap keeps the totals to real people. (Counting
+  // on the server at /go/ counted a scraper's 293 fake "map" clicks on Nov 20-21, 2026.)
+  const counted = (e: Event) => {
+    const a = (e.target as Element).closest<HTMLAnchorElement>("a[data-out]");
+    const li = a?.closest<HTMLElement>(".program");
+    if (a && li && document.body.dataset.count === "1") {
+      send(sanitize({ e: "out", lang: text.lang || "en", prog: li.dataset.id, kind: a.dataset.out }));
+    }
+  };
+  document.addEventListener("click", counted);
+  // A middle click (open in a new tab) fires "auxclick", not "click".
+  document.addEventListener("auxclick", (e) => { if ((e as MouseEvent).button === 1) counted(e); });
+</script>

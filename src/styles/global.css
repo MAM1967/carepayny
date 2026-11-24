@@ -38,6 +38,8 @@ a { color: var(--accent); }
 .wrap { max-width: 1080px; margin: 0 auto; padding: 24px 16px 48px; display: grid; gap: 20px; }
 header h1 { font: 800 clamp(1.7rem, 4vw, 2.4rem)/1.1 var(--font-display); margin: 0 0 8px; text-wrap: balance; }
 header p { margin: 0; color: var(--muted); max-width: 62ch; }
+.upcoming { margin: 12px 0 0; padding: 10px 14px; border-radius: 10px; background: var(--accent-soft); border-left: 4px solid var(--accent); color: var(--ink); max-width: 62ch; }
+.upcoming strong { font-weight: 700; }
 .badge { display: inline-block; font-size: .8rem; font-weight: 700; color: var(--accent); background: var(--accent-soft); padding: 3px 10px; border-radius: 99px; margin-bottom: 10px; }
 .grid { display: grid; gap: 20px; grid-template-columns: 1fr; align-items: start; }
 @media (min-width: 880px) { .grid { grid-template-columns: 1.05fr .95fr; } .stub { position: sticky; top: 16px; } }
@@ -163,6 +165,8 @@ section.info ul { margin: 0; padding-left: 20px; display: grid; gap: 6px; }
 .crumbs { font-size: .9rem; }
 .checked { font-size: .9rem; opacity: .8; margin-top: -.4em; }
 .prose table { margin: 1em 0; }
+/* Phones: a wide guide table scrolls inside its own box instead of widening the page. */
+.prose:not(.rates) table { display: block; max-width: 100%; overflow-x: auto; }
 .prose th, .prose td { text-align: left; padding: 8px 6px; border-bottom: 1px solid var(--line, #ddd); vertical-align: top; }
 .prose li { margin: .3em 0; }
 .guide-nav { font-size: .95rem; }

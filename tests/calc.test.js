@@ -213,3 +213,35 @@ test("2027 upstate CDPAP: no PPL rate shown (old $18.65 is below the $19.00 mini
   assert.equal(r.rateShort, 0.35);
   assert.equal(r.status, "bad");
 });
+
+// --- November 24, 2026 (rules 2027.3): "new rates start soon" note and the proposed March 1, 2027 rates ---
+test("upcomingRules: the 2027 rules show as upcoming only in the month before January 1, 2027", async () => {
+  const { upcomingRules } = await import("../src/data/rules.js");
+  assert.equal(upcomingRules(new Date(2026, 10, 24)), null);                 // Nov 24: more than 31 days ahead
+  assert.equal(upcomingRules(new Date(2026, 11, 1)).startsOn, "2027-01-01"); // Dec 1
+  assert.equal(upcomingRules(new Date(2026, 11, 31)).startsOn, "2027-01-01"); // Dec 31
+  assert.equal(upcomingRules(new Date(2027, 0, 1)), null);                   // in effect, not upcoming
+});
+
+test("proposed March 1, 2027 rates are listed but never used by the calculator", async () => {
+  const { rulesFor, RULES_BY_YEAR } = await import("../src/data/rules.js");
+  const p = RULES_BY_YEAR[2027].proposed;
+  assert.equal(p.status, "proposed");
+  assert.deepEqual(p.hcaMin, { nyc: 20.30, liw: 20.30, rest: 19.30 });
+  assert.deepEqual(p.generalMin, { nyc: 17.60, liw: 17.60, rest: 16.55 });
+  // On March 2, 2027 the calculator still uses the enacted January 1, 2027 minimums.
+  const march = rulesFor(new Date(2027, 2, 2));
+  assert.equal(march.regions.nyc.hcaMin, 20.00);
+  assert.equal(march.regions.rest.hcaMin, 19.00);
+});
+
+test("2027 raise tokens: $0.35 an hour, $14.00 for a 40-hour week, in every region", async () => {
+  const { TOKENS } = await import("../src/lib/tokens.js");
+  for (const k of ["nyc", "liw", "rest"]) {
+    assert.equal(TOKENS[`2027.raise.${k}`], "$0.35");
+    assert.equal(TOKENS[`2027.raise.${k}.week40`], "$14.00");
+  }
+  assert.equal(TOKENS["2027.proposed.min.nyc"], "$20.30");
+  assert.equal(TOKENS["2027.proposed.min.rest"], "$19.30");
+  assert.equal(TOKENS["2027.wp.nyc.total"], "$22.54");
+});

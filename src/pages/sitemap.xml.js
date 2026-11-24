@@ -21,7 +21,7 @@ export async function GET() {
     { loc: "/about/", lastmod: rulesDay },
     { loc: "/terms/", lastmod: isoDate(LEGAL_UPDATED) },
     { loc: "/privacy/", lastmod: isoDate(LEGAL_UPDATED) },
-    { loc: "/training/programs/", lastmod: TRAINING_LIST.reportDate > isoDate(TRAINING_CHECKED) ? TRAINING_LIST.reportDate : isoDate(TRAINING_CHECKED) },
+    ...live.map((lang) => ({ loc: localizePath(lang, "/training/programs/"), lastmod: TRAINING_LIST.reportDate > isoDate(TRAINING_CHECKED) ? TRAINING_LIST.reportDate : isoDate(TRAINING_CHECKED) })),
     { loc: "/corrections/", lastmod: isoDate(CORRECTIONS[0]?.date ?? LEGAL_UPDATED) },
     ...guide.map((p) => { const { lang, section, slug } = parseGuideId(p.id); return { loc: guidePath(lang, slug, section), lastmod: isoDate(p.data.lastChecked) }; })
   ];

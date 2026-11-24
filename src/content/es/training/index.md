@@ -1,9 +1,9 @@
 ---
-title: "Cómo ser asistente de cuidado en el hogar en Nueva York: capacitación y requisitos"
+title: "Ser asistente de cuidado en el hogar en NY: capacitación y requisitos"
 description: "Lo que Nueva York exige para trabajar como asistente de salud en el hogar o asistente de cuidado personal en una agencia de cuidado en el hogar: horas de capacitación, el examen de habilidades, el Registro de Cuidado en el Hogar, la verificación de antecedentes penales, el examen de salud y la capacitación de cada año. También qué es diferente en CDPAP."
 nav: "Capacitación y requisitos"
 order: 1
-lastChecked: "November 16, 2026"
+lastChecked: "November 24, 2026"
 sources:
   - label: "Departamento de Salud del Estado de Nueva York: guía para operar un programa de capacitación de asistentes de salud en el hogar (agosto de 2021)"
     url: "https://health.ny.gov/professionals/home_care/docs/hhatp_guide.pdf"
@@ -24,6 +24,8 @@ sources:
 ---
 
 Para trabajar como asistente en una agencia de cuidado en el hogar en Nueva York, una persona necesita un **certificado** de un programa de capacitación aprobado por el estado. Hay dos certificados. Un **asistente de salud en el hogar (HHA)** necesita al menos 75 horas de capacitación. Un **asistente de cuidado personal (PCA)** necesita al menos 40 horas. CDPAP es diferente: sus reglas no exigen ninguno de los dos certificados.
+
+Más información: [Asistente de salud en el hogar, PCA o CNA](/training/hha-pca-cna/).
 
 ## ¿Cuáles son los pasos?
 
@@ -62,7 +64,7 @@ La nota para aprobar es 80%.
 - Un programa de asistente de salud en el hogar aprobado por el Departamento de Salud puede cobrar a la persona en capacitación hasta $100, por cosas que la persona se queda. Un programa que cobra más debe estar aprobado por el Departamento de Educación.
 - Un programa de asistente de cuidado personal aprobado por el Departamento de Salud no puede cobrar ninguna tarifa ni matrícula.
 
-Más información: [Programas de capacitación aprobados, por distrito y condado](/training/programs/) (de la lista del Departamento de Salud; la página está en inglés).
+Más información: [Programas de capacitación aprobados, por distrito y condado](/training/programs/) (de la lista del Departamento de Salud) · [Capacitación gratis o pagada](/training/free-training/).
 
 **Capacitación en otros idiomas.** Los programas aprobados pueden enseñar en un idioma que no sea inglés. El instructor de enfermería debe hablar bien el inglés y ese idioma. Cada clase se da en un solo idioma, sin intérprete.
 
@@ -79,6 +81,8 @@ El **Registro de Cuidado en el Hogar (Home Care Registry)** es la lista del Depa
 Las agencias de cuidado en el hogar deben hacer una **verificación de antecedentes penales** para los trabajadores que cuidan a pacientes. Es una revisión de los antecedentes penales de una persona. La agencia le pide al Departamento de Salud que la haga. Las huellas digitales de la persona se comparan con los registros del Estado de Nueva York y del FBI.
 
 El Departamento de Salud revisa cualquier antecedente que encuentre y decide si la persona puede trabajar en el cuidado en el hogar. El Contralor del Estado de Nueva York revisó las verificaciones de abril de 2014 a diciembre de 2016. Cerca del 83% de las verificaciones no encontraron antecedentes penales. En cerca del 3.5% de las verificaciones, se decidió que la persona no podía trabajar en el cuidado en el hogar.
+
+Más información: [Verificación de antecedentes en el cuidado en el hogar: qué esperar](/training/background-check/).
 
 **Identidad y permiso para trabajar.** La agencia también revisa la identificación de cada trabajador nuevo. Como todo empleador en los Estados Unidos, revisa el permiso para trabajar con el Formulario I-9.
 
@@ -103,6 +107,8 @@ Después de eso, hay un examen de salud y una revisión de TB cada año.
 Un asistente de salud en el hogar deja de estar calificado después de 24 meses seguidos sin trabajar como asistente de salud en el hogar para una agencia de cuidado en el hogar con licencia o certificada. Para volver a trabajar como asistente de salud en el hogar, la persona puede tomar otra vez el examen de habilidades en lugar de todo el curso. Después recibe un certificado nuevo.
 
 El certificado de asistente de cuidado personal no vence.
+
+Más información: [Certificado caducado de asistente de salud en el hogar](/training/certification-lapsed/).
 
 ## ¿Qué es diferente en CDPAP?
 

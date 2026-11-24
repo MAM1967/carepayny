@@ -6,7 +6,7 @@
 // them), and tests/events.test.js checks it. Anything not listed is dropped.
 //
 // Used by: src/components/Calculator.astro, src/layouts/Base.astro (page views),
-// src/pages/training/programs.astro (phone taps), functions/go/[id].js (map and
+// src/components/ProgramsPage.astro (phone taps), functions/go/[id].js (map and
 // website links) and functions/api/e.js (the endpoint that writes to Cloudflare
 // Analytics Engine).
 
