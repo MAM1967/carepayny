@@ -15,6 +15,9 @@
   "nav.training": "Training",
   "nav.about": "About",
   "nav.languages": "Language",
+  "nav.menu": "Menu",
+  "share.button": "Share this page",
+  "share.copied": "Link copied.",
 
   "footer.disclaimer.html": "<strong>Estimates, not legal advice.</strong> CarePayNY explains New York's home care pay rules as of {date} and can't account for every situation. Union contracts (such as 1199SEIU), shift differentials, holiday pay, paid time off and other benefits can change what you're owed. The New York State Department of Labor enforces the state's wage laws.",
   "footer.independent": "We're independent and not affiliated with the New York State Department of Health, the Department of Labor, PPL or Medicaid. Rules version {version}.",

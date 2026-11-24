@@ -3,6 +3,8 @@
 One line per English change that translations must follow. Newest first.
 Format: `YYYY-MM-DD · page file · what changed · languages updated (es, zh, …) or "pending"`
 
+- 2026-11-24 · ui nav.menu, share.button, share.copied · new phone "Menu" button and "Share this page" button (back-translation checked: Menu / Share this page / Link copied; ru "Поделиться страницей" = "Share the page") · es, zh, ru
+
 - 2026-11-20 · cdpap/ppl-arbitration.md · opening adds "no single deadline for everyone; each PA's 30 days start when that PA selects Acknowledge" (sources rechecked; back-translation checked) · es, zh, ru
 
 - 2026-11-18 · cdpap/ppl-arbitration.md · new page on PPL's Dispute Resolution Agreement (arbitration) and the 30-day opt-out (first translation, back-translation checked) · es, zh, ru
