@@ -12,9 +12,13 @@ export const CONTACT_EMAIL = "hello@carepayny.com";
 export const EMAIL_SIGNUP_OPEN = (import.meta.env?.PUBLIC_EMAIL_SIGNUP_OPEN ?? "") === "true";
 // The email service named on the Privacy page.
 export const EMAIL_PROVIDER = { name: "Resend", privacyUrl: "https://resend.com/legal/privacy-policy" };
+// Postal address printed at the bottom of every update email (CAN-SPAM). It is needed only before an
+// update email is SENT, not to open sign-up. scripts/email-broadcast.mjs refuses to create a broadcast
+// while this is empty. Example: "MAM Growth Strategies LLC, 123 Main St, Suite 4, Albany, NY 12207".
+export const POSTAL_ADDRESS = "";
 
 // Who runs the site, as named on the Terms and Privacy pages.
 export const OPERATOR = "MAM Growth Strategies LLC";
 
 // Date the Terms and Privacy pages last changed. Update it with every edit.
-export const LEGAL_UPDATED = "November 21, 2026";
+export const LEGAL_UPDATED = "November 24, 2026";

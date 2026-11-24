@@ -1,4 +1,5 @@
 // Text of the one confirmation email (double opt-in), in each site language.
+// readIn is the link text at the top of update emails that points to the same update in that language.
 // Same rules as src/i18n/ui/*.json: write English first, keep every {placeholder},
 // run the back-translation check (docs/translation/). tests/subscribe.test.js checks
 // that every language has every key and the same placeholders.
@@ -10,7 +11,8 @@ export const EMAIL_TEXT = {
     button: "Confirm my email updates",
     expires: "The link works for 48 hours.",
     ignore: "If you did not ask for this, you don't need to do anything. We won't email you again.",
-    footer: "CarePayNY is a free, independent website. It is not part of any government agency."
+    footer: "CarePayNY is a free, independent website. It is not part of any government agency.",
+    readIn: "Read in English"
   },
   es: {
     subject: "Confirme sus actualizaciones por correo electrónico de CarePayNY",
@@ -19,7 +21,8 @@ export const EMAIL_TEXT = {
     button: "Confirmar mis actualizaciones por correo electrónico",
     expires: "El enlace funciona por 48 horas.",
     ignore: "Si usted no pidió esto, no tiene que hacer nada. No le volveremos a escribir.",
-    footer: "CarePayNY es un sitio web gratis e independiente. No es parte de ninguna agencia del gobierno."
+    footer: "CarePayNY es un sitio web gratis e independiente. No es parte de ninguna agencia del gobierno.",
+    readIn: "Leer en español"
   },
   zh: {
     subject: "确认订阅 CarePayNY 电子邮件更新",
@@ -28,7 +31,8 @@ export const EMAIL_TEXT = {
     button: "确认接收电子邮件更新",
     expires: "这个链接在48小时内有效。",
     ignore: "如果您没有申请，不需要做任何事。我们不会再给您发邮件。",
-    footer: "CarePayNY 是一个免费的独立网站，不属于任何政府机构。"
+    footer: "CarePayNY 是一个免费的独立网站，不属于任何政府机构。",
+    readIn: "阅读中文版"
   },
   ru: {
     subject: "Подтвердите подписку на новости CarePayNY",
@@ -37,7 +41,8 @@ export const EMAIL_TEXT = {
     button: "Подтвердить подписку",
     expires: "Ссылка работает 48 часов.",
     ignore: "Если вы не просили об этом, ничего делать не нужно. Мы больше не будем вам писать.",
-    footer: "CarePayNY — бесплатный независимый сайт. Он не относится ни к одному государственному учреждению."
+    footer: "CarePayNY — бесплатный независимый сайт. Он не относится ни к одному государственному учреждению.",
+    readIn: "Читать на русском"
   }
 };
 

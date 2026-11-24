@@ -140,3 +140,14 @@ test("the sign-up page has no calculator inputs", () => {
   assert.deepEqual([...new Set(names)], ["email", "lang", "t", "website"]);
   assert.ok(!/Calculator/.test(src.replace(/^\/\/.*$/gm, "")), "the calculator must not be on the sign-up page");
 });
+
+test("a confirmed sign-up is counted with the language only, never the email address", async () => {
+  const points = [];
+  const env = { ...ENV, EVENTS: { writeDataPoint: (p) => points.push(p) } };
+  const token = await makeToken(SECRET, { email: EMAIL, lang: "zh" });
+  await run(() => confirm({ request: post("/api/confirm", { t: token, lang: "zh" }), env }));
+  assert.equal(points.length, 1);
+  assert.equal(points[0].blobs[0], "signup");
+  assert.equal(points[0].blobs[1], "zh");
+  assert.ok(!JSON.stringify(points).includes(EMAIL) && !JSON.stringify(points).includes("@"), "no email address in the count");
+});

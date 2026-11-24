@@ -1,6 +1,6 @@
 # Plan: open the email list (item 4)
 
-Status: planned November 24, 2026. Owner approval needed at the steps marked **Owner**.
+Status: planned November 24, 2026. **Update, same day: every step that doesn't need Resend is built** (PR "Email list: everything that doesn't need Resend"): steps 9, 10 (count source), 11, and the send tooling. What's left is Resend + Cloudflare setup (steps 1–8) and the postal address before the first send (step 12). Owner approval needed at the steps marked **Owner**.
 Background: the list was approved as a $0 test on November 16, 2026, and built in PR #33 (switched off). How it works and the setup steps: `docs/email-updates.md`.
 
 ## Why now
@@ -27,7 +27,7 @@ The 90-day gate asks for 500 subscribers. Today there are none, because sign-up 
 | 9 | Sign-up prompts where intent is highest (one small PR, 4 languages): a line under the calculator result and on `/pay/minimum-wage-2027/` ("Get a free email when the rates change"), alongside the existing footer and guide-page prompts. Describe, don't direct; no pop-ups | Frontend + translators | PR merged by owner |
 | 10 | Weekly report: add confirmed subscribers, sign-ups by language and unsubscribes (no opens or clicks) | Lead (report change needs owner OK in a live chat) | Report shows the numbers |
 | 11 | First update email draft: "New home care pay rates start January 1, 2027" (English, with links to the es/zh/ru pages) | Writer | Draft ready for owner review |
-| 12 | Postal address for the email footer (CAN-SPAM). No update email is sent before it is added, or before legal advice that it isn't needed | **Owner decision** | Address added, or decision recorded |
+| 12 | Postal address for the email footer (CAN-SPAM): set `POSTAL_ADDRESS` in `src/data/site.js`. Needed only before the first email is sent, not to open sign-up | **Owner decision** | Address added; `scripts/email-broadcast.mjs draft` refuses to run until it is |
 | 13 | Send the first email after the owner approves the text | **Owner** | Sent |
 
 ## Open decision for the owner (step 12)
