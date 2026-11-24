@@ -3,6 +3,10 @@
 One line per English change that translations must follow. Newest first.
 Format: `YYYY-MM-DD · page file · what changed · languages updated (es, zh, …) or "pending"`
 
+- 2026-11-24 · pay/legal-help.md · new page: free legal help with unpaid wages by region (first translation, back-translation checked) · es, zh, ru
+- 2026-11-24 · cdpap/help.md · Legal Aid section renamed "Free legal help", links to the new page; description and intro updated · es, zh, ru
+- 2026-11-24 · ui calc.info.3.html replaced by calc.info.3.nyc.html, calc.info.3.liw.html, calc.info.3.rest.html (calculator shows legal help for the region chosen) · es, zh, ru
+
 - 2026-11-24 · pay/minimum-wage-2027.md · new sections: when the new rate starts, how much more ({{2027.raise.*}} tokens), wage parity 2027 table, proposed March 1, 2027 rates ({{2027.proposed.*}} tokens), how to check January pay; new sources (back-translation checked) · es, zh, ru
 - 2026-11-24 · training/hha-pca-cna.md, certification-lapsed.md, background-check.md, free-training.md · four new training pages (first translation, back-translation checked; background-check supervision paragraph corrected against 10 NYCRR § 402.4(b)(2)(ii) and re-checked) · es, zh, ru
 - 2026-11-24 · training/index.md · four "More:" links to the new pages; programs list no longer marked English-only; es and ru titles shortened to 70 characters or less · es, zh, ru

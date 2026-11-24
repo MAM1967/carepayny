@@ -1,9 +1,9 @@
 ---
 title: "CDPAP 帮助：谁负责什么"
-description: "纽约 CDPAP 照顾者相关的电话号码，以及各个机构负责什么：PPL、健康计划、Medicaid、劳工厅、法律援助和和解管理人。"
+description: "纽约 CDPAP 照顾者相关的电话号码，以及各个机构负责什么：PPL、健康计划、Medicaid、劳工厅、免费法律帮助和和解管理人。"
 nav: "到哪里获得帮助"
 order: 13
-lastChecked: "November 14, 2026"
+lastChecked: "November 24, 2026"
 sources:
   - label: "PPL：纽约 CDPAP 常见问题（联系方式）"
     url: "https://pplfirst.com/new-york-cdpap-frequently-asked-questions/"
@@ -19,7 +19,7 @@ sources:
     url: "https://www.publicpartnershipssettlement.com/"
 ---
 
-在 CDPAP 中，PPL 负责工资、注册和工时表（1-833-247-5346）。受照顾者（CDPAP 中称为“消费者”，即接受照顾的人）的健康计划或地方社会服务办公室决定批准多少时数。纽约州劳工厅受理工资索赔；The Legal Aid Society（法律援助协会）为符合条件的纽约人提供免费法律帮助（212-577-3300）。下面每一部分介绍一个机构。
+在 CDPAP 中，PPL 负责工资、注册和工时表（1-833-247-5346）。受照顾者（CDPAP 中称为“消费者”，即接受照顾的人）的健康计划或地方社会服务办公室决定批准多少时数。纽约州劳工厅受理工资索赔；免费法律帮助要看是哪个地区：[各地区的免费法律帮助](/pay/legal-help/)。下面每一部分介绍一个机构。
 
 ## PPL（发工资、注册、工时表）
 
@@ -58,9 +58,9 @@ PPL 有办公室，接待预约来访的人。
 
 [纽约州劳工厅](https://dol.ny.gov/)负责执行州的工资法律，包括居家护理员最低工资。它受理工资索赔。提出工资索赔是免费的。
 
-## The Legal Aid Society（纽约市免费法律帮助）
+## 免费法律帮助
 
-The Legal Aid Society（法律援助协会）为符合条件的纽约居民提供免费法律帮助，包括 Medicaid 居家护理和被欠工资的问题。电话：212-577-3300。
+在纽约市，The Legal Aid Society（法律援助协会）为符合条件的纽约居民提供免费法律帮助，包括 Medicaid 居家护理和被欠工资的问题。电话：212-577-3300。纽约州其他地区处理工资问题的免费法律帮助，列在[各地区的免费法律帮助](/pay/legal-help/)上。
 
 ## PPL 和解管理人
 

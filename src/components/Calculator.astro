@@ -124,7 +124,10 @@ const html = (key: string, vars = {}) => fmt(strings[key], vars);
       <ul>
         <li>{t("calc.info.1")}</li>
         <li set:html={html("calc.info.2.html", { guideNotPaid: guidePath(lang, "not-paid/index") })} />
-        <li set:html={html("calc.info.3.html")} />
+        {/* Legal help near the person: the line for the region chosen above (shown by the script). */}
+        <li data-legal="nyc" set:html={html("calc.info.3.nyc.html", { legalHelp: guidePath(lang, "legal-help", "pay") })} />
+        <li data-legal="liw" class="hidden" set:html={html("calc.info.3.liw.html", { legalHelp: guidePath(lang, "legal-help", "pay") })} />
+        <li data-legal="rest" class="hidden" set:html={html("calc.info.3.rest.html", { legalHelp: guidePath(lang, "legal-help", "pay") })} />
         <li set:html={html("calc.info.4.html")} />
       </ul>
     </div>
@@ -195,6 +198,8 @@ function queueCalcEvent(r, input) {
 }
 
 function render() {
+  const region = val("region");
+  for (const li of document.querySelectorAll("[data-legal]")) li.classList.toggle("hidden", li.dataset.legal !== region);
   const employer = val("employer");
   $("medicaidBox").classList.toggle("hidden", employer !== "agency");
   const shifts = Math.max(0, Math.floor(num("shifts24")));

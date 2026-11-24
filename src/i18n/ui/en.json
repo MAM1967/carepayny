@@ -155,7 +155,9 @@
   "calc.info.h3": "If something looks wrong",
   "calc.info.1": "Home care workers have a right to a pay notice and a Wage Parity notice from their agency.",
   "calc.info.2.html": "CDPAP caregivers: PPL@Home, at <a href=\"https://pplfirst.com/\">pplfirst.com</a>, shows each timesheet and its status. Our <a href=\"{guideNotPaid}\">CDPAP guide</a> explains PPL's payment messages.",
-  "calc.info.3.html": "Free legal help: <a href=\"https://legalaidnyc.org/\">The Legal Aid Society</a> helps home care workers with unpaid wages.",
+  "calc.info.3.nyc.html": "Free legal help in New York City: <a href=\"https://legalaidnyc.org/get-help/employment/\">The Legal Aid Society</a> helps low-wage workers with unpaid wages. More places: <a href=\"{legalHelp}\">legal help by region</a>.",
+  "calc.info.3.liw.html": "The <a href=\"https://ag.ny.gov/file-complaint/employment\">New York State Attorney General's Labor Bureau</a> takes complaints about unpaid wages. Groups on Long Island and in Westchester: <a href=\"{legalHelp}\">legal help by region</a>.",
+  "calc.info.3.rest.html": "Free legal help upstate: the <a href=\"https://www.wjcny.org/\">Worker Justice Center of New York</a> helps low-wage workers with unpaid wages. More places: <a href=\"{legalHelp}\">legal help by region</a>.",
   "calc.info.4.html": "The <a href=\"https://dol.ny.gov/\">New York State Department of Labor</a> takes wage claims. It's free to file a wage claim.",
 
   "calc.rules.h3": "The {year} rules this uses",

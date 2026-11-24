@@ -155,7 +155,9 @@
   "calc.info.h3": "如果有地方看起来不对",
   "calc.info.1": "居家护理人员有权从机构拿到工资通知和工资平价通知（Wage Parity notice）。",
   "calc.info.2.html": "CDPAP 照顾者：PPL@Home（网址 <a href=\"https://pplfirst.com/\">pplfirst.com</a>）显示每张工时表和它的状态。我们的 <a href=\"{guideNotPaid}\">CDPAP 指南</a>解释 PPL 的付款信息。",
-  "calc.info.3.html": "免费法律帮助：<a href=\"https://legalaidnyc.org/\">The Legal Aid Society</a>（法律援助协会）帮助居家护理人员处理被欠工资的问题。",
+  "calc.info.3.nyc.html": "纽约市的免费法律帮助：<a href=\"https://legalaidnyc.org/get-help/employment/\">The Legal Aid Society</a>（法律援助协会）帮助低工资工人处理被欠工资的问题。更多地方：<a href=\"{legalHelp}\">各地区的法律帮助</a>。",
+  "calc.info.3.liw.html": "<a href=\"https://ag.ny.gov/file-complaint/employment\">纽约州总检察长办公室劳工局</a>受理被欠工资的投诉。长岛和威彻斯特县的团体：<a href=\"{legalHelp}\">各地区的法律帮助</a>。",
+  "calc.info.3.rest.html": "纽约州北部的免费法律帮助：<a href=\"https://www.wjcny.org/\">Worker Justice Center of New York</a>（纽约工人公正中心）帮助低工资工人处理被欠工资的问题。更多地方：<a href=\"{legalHelp}\">各地区的法律帮助</a>。",
   "calc.info.4.html": "<a href=\"https://dol.ny.gov/\">纽约州劳工厅</a>受理工资索赔。提出工资索赔是免费的。",
 
   "calc.rules.h3": "本工具使用的 {year} 年规定",
