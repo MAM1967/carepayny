@@ -2,8 +2,9 @@
 // The pay calculator, in any site language. All text comes from src/i18n/ui/<lang>.json.
 import { RULES } from "../data/rules.js";
 import { UI, t as tFor, guidePath, dateFor } from "../i18n/index.js";
-import { LOCALES, DEFAULT_LOCALE } from "../i18n/locales.js";
+import { LOCALES, DEFAULT_LOCALE, localizePath } from "../i18n/locales.js";
 import { fmt } from "../i18n/format.js";
+import { EMAIL_SIGNUP_OPEN } from "../data/site.js";
 
 interface Props { lang: string }
 const { lang } = Astro.props;
@@ -115,6 +116,8 @@ const html = (key: string, vars = {}) => fmt(strings[key], vars);
         <button type="button" class="ghost" id="resetBtn">{t("calc.reset")}</button>
       </div>
       <p class="small" id="copyMsg" role="status"></p>
+      {/* Shown only once email sign-up is open (PUBLIC_EMAIL_SIGNUP_OPEN). Same text as on guide pages. */}
+      {EMAIL_SIGNUP_OPEN && <p class="updates-cta" set:html={html("guide.updates.html", { updatesUrl: localizePath(lang, "/updates/") })} />}
     </aside>
   </div>
 

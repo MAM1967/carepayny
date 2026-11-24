@@ -23,7 +23,16 @@ Rules:
 - Any form field other than `email`, `lang` and `website` (the honeypot) is rejected.
 - `tests/subscribe.test.js` proves these rules.
 
-## Turning it on (owner steps)
+## What is already built (no Resend setup needed)
+
+- Sign-up form, confirmation email, confirm page and done page, in 4 languages (switched off).
+- Sign-up prompts, shown only once sign-up is on: the footer of every page, the bottom of every guide page, and under the calculator result.
+- A count of confirmed sign-ups for the weekly report: `/api/confirm` writes one `signup` row to Analytics Engine (`carepayny_events`) with only the page language, country and U.S. state. Never the email address. The Privacy page lists it.
+- Update emails: Markdown files in `emails/`, built by `src/lib/update-email.js` into HTML and plain text. Pay figures are `{{tokens}}` from `rules.js`. Each email links to the same page in Spanish, Chinese and Russian, says why the reader gets it, has Resend's unsubscribe link and the postal address, and has no images or tracking.
+- The first update is drafted: `emails/2027-01-new-rates.md` ("New home care pay rates start January 1, 2027").
+- `scripts/email-broadcast.mjs` makes a preview, or creates a **draft** broadcast in Resend. It never sends.
+
+## Turning it on (owner steps, about 25 minutes)
 
 Do these on **Preview** first, test once, then repeat for **Production**.
 
@@ -33,7 +42,7 @@ Do these on **Preview** first, test once, then repeat for **Production**.
    - Create two contact properties, both of type string: `language` and `signed_up_at`.
 3. **Resend > API keys:** create a key with full access, limited to the `carepayny.com` domain if offered.
 4. **Cloudflare > Workers & Pages > carepayny > Settings > Variables and secrets** (Preview environment first):
-   - `PUBLIC_EMAIL_SIGNUP_OPEN` = `true` (plain text; it also turns on the form and links at build time)
+   - `PUBLIC_EMAIL_SIGNUP_OPEN` = `true` (plain text; it also turns on the form and the sign-up prompts at build time)
    - `RESEND_API_KEY` = the key (secret)
    - `SIGNING_SECRET` = a long random string (secret)
    - `RESEND_SEGMENT_ID` = the segment ID
@@ -41,8 +50,14 @@ Do these on **Preview** first, test once, then repeat for **Production**.
 6. Redeploy, sign up with your own address on the preview site, and confirm it.
 7. When it works, set the same variables for Production and redeploy.
 
-## Before the first update email
+## Sending an update
 
-- Add a postal address to the email footer. CAN-SPAM requires one in commercial email. The owner chose to wait on this until the test shows interest, so no update email goes out before it is added (or before legal advice that it isn't needed).
-- Every broadcast includes `{{{RESEND_UNSUBSCRIBE_URL}}}`.
-- The owner approves every send.
+The postal address is needed only here, before an email goes out, not to open sign-up.
+
+1. **Postal address (once):** set `POSTAL_ADDRESS` in `src/data/site.js` (CAN-SPAM requires one in commercial email). The draft step refuses to run while it is empty.
+2. **Write or update the email** in `emails/`. Use `{{tokens}}` for every pay figure. Describe, don't direct.
+3. **Preview:** `node scripts/email-broadcast.mjs preview emails/<file>.md` writes `email-preview/<file>.html` and `.txt` (not committed).
+4. **Draft in Resend:** `RESEND_API_KEY=… RESEND_SEGMENT_ID=… node scripts/email-broadcast.mjs draft emails/<file>.md`. Add `--dry-run` first to see what would be sent to Resend. The script creates a draft only.
+5. **Owner approves and sends** in Resend > Broadcasts. The owner approves every send.
+
+Every broadcast includes `{{{RESEND_UNSUBSCRIBE_URL}}}`; the email builder adds it.

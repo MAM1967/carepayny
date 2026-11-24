@@ -8,6 +8,7 @@
 //
 // Settings: PUBLIC_EMAIL_SIGNUP_OPEN, RESEND_API_KEY, SIGNING_SECRET, RESEND_SEGMENT_ID (optional).
 import { verifyToken, allowedOrigin, pathFor, redirect, normalizeLang } from "../../src/lib/subscribe.js";
+import { usState } from "./e.js";
 
 const API = "https://api.resend.com";
 
@@ -40,6 +41,11 @@ export async function onRequestPost({ request, env }) {
       }
     }
     if (!res.ok) return back("generic");
+    // Count one confirmed sign-up for the weekly report: only the page language, plus country and
+    // U.S. state from Cloudflare. Never the email address. (Privacy page, "How we count".)
+    try {
+      env.EVENTS?.writeDataPoint({ indexes: ["signup"], blobs: ["signup", v.lang, (request.cf && request.cf.country) || "XX", usState(request.cf)], doubles: [1] });
+    } catch { /* counting never blocks a sign-up */ }
     return redirect(`${site}${pathFor(lang, "/updates/done/")}`);
   } catch {
     return back("generic");
