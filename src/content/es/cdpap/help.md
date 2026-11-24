@@ -1,9 +1,9 @@
 ---
 title: "Ayuda con CDPAP: quién se encarga de qué"
-description: "Números de teléfono y de qué se encarga cada oficina para los cuidadores de CDPAP en Nueva York: PPL, los planes de salud, Medicaid, el Departamento de Trabajo, Legal Aid y el administrador del acuerdo."
+description: "Números de teléfono y de qué se encarga cada oficina para los cuidadores de CDPAP en Nueva York: PPL, los planes de salud, Medicaid, el Departamento de Trabajo, la ayuda legal gratis y el administrador del acuerdo."
 nav: "Dónde encontrar ayuda"
 order: 13
-lastChecked: "November 14, 2026"
+lastChecked: "November 24, 2026"
 sources:
   - label: "PPL: preguntas frecuentes sobre CDPAP en Nueva York (contactos)"
     url: "https://pplfirst.com/new-york-cdpap-frequently-asked-questions/"
@@ -19,7 +19,7 @@ sources:
     url: "https://www.publicpartnershipssettlement.com/"
 ---
 
-En CDPAP, PPL se encarga del pago, la inscripción y las hojas de horas (1-833-247-5346). El plan de salud o la oficina local de servicios sociales del consumidor (la persona que recibe el cuidado) decide cuántas horas se aprueban. El Departamento de Trabajo del Estado de Nueva York recibe reclamos de salarios, y The Legal Aid Society da ayuda legal gratis a los neoyorquinos que califican (212-577-3300). Cada sección de abajo trata de una oficina.
+En CDPAP, PPL se encarga del pago, la inscripción y las hojas de horas (1-833-247-5346). El plan de salud o la oficina local de servicios sociales del consumidor (la persona que recibe el cuidado) decide cuántas horas se aprueban. El Departamento de Trabajo del Estado de Nueva York recibe reclamos de salarios, y la ayuda legal gratis depende de la región: [Ayuda legal gratis por región](/pay/legal-help/). Cada sección de abajo trata de una oficina.
 
 ## PPL (nómina, inscripción, hojas de horas)
 
@@ -58,9 +58,9 @@ El número de teléfono del plan de salud o de la oficina está en la tarjeta de
 
 El [Departamento de Trabajo del Estado de Nueva York](https://dol.ny.gov/) hace cumplir las leyes de salarios del estado, entre ellas el salario mínimo para asistentes de cuidado en el hogar. Recibe reclamos de salarios. Presentar un reclamo de salarios es gratis.
 
-## The Legal Aid Society (ayuda legal gratis en NYC)
+## Ayuda legal gratis
 
-The Legal Aid Society da ayuda legal gratis a los neoyorquinos que califican. Esto incluye ayuda con el cuidado en el hogar de Medicaid y los salarios no pagados. Teléfono: 212-577-3300.
+En la Ciudad de Nueva York, The Legal Aid Society da ayuda legal gratis a los neoyorquinos que califican. Esto incluye ayuda con el cuidado en el hogar de Medicaid y los salarios no pagados. Teléfono: 212-577-3300. La ayuda legal gratis para problemas de salarios en otras partes del estado aparece en [Ayuda legal gratis por región](/pay/legal-help/).
 
 ## El administrador del acuerdo con PPL
 

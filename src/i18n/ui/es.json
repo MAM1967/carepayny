@@ -155,7 +155,9 @@
   "calc.info.h3": "Si algo parece estar mal",
   "calc.info.1": "Los trabajadores de cuidado en el hogar tienen derecho a recibir de su agencia un aviso de pago y un aviso de Paridad Salarial (Wage Parity).",
   "calc.info.2.html": "Cuidadores de CDPAP: PPL@Home, en <a href=\"https://pplfirst.com/\">pplfirst.com</a>, muestra cada hoja de horas y su estado. Nuestra <a href=\"{guideNotPaid}\">guía de CDPAP</a> explica los mensajes de pago de PPL.",
-  "calc.info.3.html": "Ayuda legal gratis: <a href=\"https://legalaidnyc.org/\">The Legal Aid Society</a> ayuda a trabajadores de cuidado en el hogar con salarios no pagados.",
+  "calc.info.3.nyc.html": "Ayuda legal gratis en la Ciudad de Nueva York: <a href=\"https://legalaidnyc.org/get-help/employment/\">The Legal Aid Society</a> ayuda a trabajadores de salario bajo con salarios no pagados. Más lugares: <a href=\"{legalHelp}\">ayuda legal por región</a>.",
+  "calc.info.3.liw.html": "La <a href=\"https://ag.ny.gov/file-complaint/employment\">Oficina Laboral de la Fiscalía General del Estado de Nueva York</a> recibe quejas por salarios no pagados. Grupos en Long Island y en Westchester: <a href=\"{legalHelp}\">ayuda legal por región</a>.",
+  "calc.info.3.rest.html": "Ayuda legal gratis en el norte del estado: el <a href=\"https://www.wjcny.org/\">Worker Justice Center of New York</a> ayuda a trabajadores de salario bajo con salarios no pagados. Más lugares: <a href=\"{legalHelp}\">ayuda legal por región</a>.",
   "calc.info.4.html": "El <a href=\"https://dol.ny.gov/\">Departamento de Trabajo del Estado de Nueva York</a> recibe reclamos de salarios. Presentar un reclamo de salarios es gratis.",
 
   "calc.rules.h3": "Las reglas de {year} que usa esta herramienta",

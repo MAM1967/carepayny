@@ -1,9 +1,9 @@
 ---
 title: "CDPAP help: who handles what"
-description: "Phone numbers and what each office handles for CDPAP caregivers in New York: PPL, health plans, Medicaid, the Department of Labor, Legal Aid and the settlement administrator."
+description: "Phone numbers and what each office handles for CDPAP caregivers in New York: PPL, health plans, Medicaid, the Department of Labor, free legal help and the settlement administrator."
 nav: "Where to get help"
 order: 13
-lastChecked: "November 14, 2026"
+lastChecked: "November 24, 2026"
 sources:
   - label: "PPL: New York CDPAP frequently asked questions (contacts)"
     url: "https://pplfirst.com/new-york-cdpap-frequently-asked-questions/"
@@ -19,7 +19,7 @@ sources:
     url: "https://www.publicpartnershipssettlement.com/"
 ---
 
-For CDPAP, PPL handles pay, sign-up and timesheets (1-833-247-5346). The consumer's health plan or local social services office decides how many hours are approved. The New York State Department of Labor takes wage claims, and The Legal Aid Society gives free legal help to New Yorkers who qualify (212-577-3300). Each section below covers one office.
+For CDPAP, PPL handles pay, sign-up and timesheets (1-833-247-5346). The consumer's health plan or local social services office decides how many hours are approved. The New York State Department of Labor takes wage claims, and free legal help depends on the region: [Free legal help by region](/pay/legal-help/). Each section below covers one office.
 
 ## PPL (payroll, sign-up, timesheets)
 
@@ -58,9 +58,9 @@ Their phone number is on the consumer's member card and notices. When a plan cut
 
 The [New York State Department of Labor](https://dol.ny.gov/) enforces the state's wage laws, including the home care aide minimum wage. It takes wage claims. It's free to file a wage claim.
 
-## The Legal Aid Society (free legal help in NYC)
+## Free legal help
 
-The Legal Aid Society gives free legal help to New Yorkers who qualify, including with Medicaid home care and unpaid wages. Phone: 212-577-3300.
+In New York City, The Legal Aid Society gives free legal help to New Yorkers who qualify, including with Medicaid home care and unpaid wages. Phone: 212-577-3300. Free legal help for wage problems in other parts of the state is listed on [Free legal help by region](/pay/legal-help/).
 
 ## The PPL settlement administrator
 
