@@ -75,15 +75,29 @@ const R2026 = {
 const R2027 = {
   ...R2026,
   startsOn: "2027-01-01",
-  version: "2027.2",
+  version: "2027.3",
   effective: "January 1, 2027",
-  lastReviewed: "November 14, 2026",
+  lastReviewed: "November 24, 2026",
   regions: {
     nyc:  { ...R2026.regions.nyc,  hcaMin: 20.00, generalMin: 17.00, wpBenefit: 2.54, wpTotal: 22.54, pplBase: 20.65 },
     liw:  { ...R2026.regions.liw,  hcaMin: 20.00, generalMin: 17.00, wpBenefit: 1.67, wpTotal: 21.67, pplBase: 20.05 },
     rest: { ...R2026.regions.rest, hcaMin: 19.00, generalMin: 16.00, wpBenefit: null, wpTotal: null, pplBase: null }
   },
   ppl: { effective: "January 1, 2026", note: "PPL has not posted 2027 rates yet. These are its latest posted rates." },
+  // NOT LAW. The Governor's Program Bill #44 (October 2026) would let rates rise again on March 1, 2027,
+  // if the Legislature passes it. Shown on guide pages as a proposal only; the calculator never uses it.
+  // Checked November 24, 2026: still a proposal. Remove or turn into a rule set once the bill passes or fails.
+  proposed: {
+    startsOn: "2027-03-01",
+    effective: "March 1, 2027",
+    status: "proposed",
+    hcaMin: { nyc: 20.30, liw: 20.30, rest: 19.30 },
+    generalMin: { nyc: 17.60, liw: 17.60, rest: 16.55 },
+    sources: [
+      { label: "NYS Governor: New York State Minimum Wage for 2027 (\"Proposed Increase on March 1, 2027\")", url: "https://governor.ny.gov/new-york-state-minimum-wage-2027" },
+      { label: "NYS Governor: Program Bill #44 memorandum (minimum wage off-ramp)", url: "https://www.governor.ny.gov/sites/default/files/2026-10/gpb_44_minimum_wage_rates-memo.pdf" }
+    ]
+  },
   sources: [
     { label: "NYS Governor: New York State Minimum Wage for 2027", url: "https://governor.ny.gov/new-york-state-minimum-wage-2027" },
     { label: "NYS DOH: Home Care Worker Wage Parity (benefit portion for all periods on or after January 1, 2024)", url: "https://www.health.ny.gov/health_care/medicaid/redesign/mrt_61.htm" },
@@ -102,6 +116,16 @@ export function rulesFor(date = new Date()) {
   let current = RULESETS[0];
   for (const r of RULESETS) if (r.startsOn <= day) current = r;
   return current;
+}
+
+/**
+ * The next rule set, if it starts within `days` days after `date` (for a "new rates start soon" note).
+ * Returns null when nothing new starts in that window.
+ */
+export function upcomingRules(date = new Date(), days = 31) {
+  const day = isoDay(date);
+  const until = isoDay(new Date(date.getFullYear(), date.getMonth(), date.getDate() + days));
+  return RULESETS.find((r) => r.startsOn > day && r.startsOn <= until) || null;
 }
 
 // The rule set in effect today (build time for static text, visit time in the browser).

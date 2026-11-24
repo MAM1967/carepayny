@@ -45,6 +45,22 @@ for (const [year, R] of Object.entries(RULES_BY_YEAR)) {
   }
   TOKENS[`${year}.general.nyc`] = money(R.regions.nyc.generalMin);
   TOKENS[`${year}.general.rest`] = money(R.regions.rest.generalMin);
+  // Raise over the year before, per hour and for a 40-hour week, e.g. {{2027.raise.nyc}}, {{2027.raise.nyc.week40}}.
+  const prev = RULES_BY_YEAR[Number(year) - 1];
+  if (prev) {
+    for (const [key, reg] of Object.entries(R.regions)) {
+      const up = Math.round((reg.hcaMin - prev.regions[key].hcaMin) * 100) / 100;
+      TOKENS[`${year}.raise.${key}`] = money(up);
+      TOKENS[`${year}.raise.${key}.week40`] = money(Math.round(up * 40 * 100) / 100);
+    }
+  }
+  // A proposed (not yet law) change, e.g. {{2027.proposed.min.nyc}}. Never used by the calculator.
+  if (R.proposed) {
+    for (const key of Object.keys(R.proposed.hcaMin)) {
+      TOKENS[`${year}.proposed.min.${key}`] = money(R.proposed.hcaMin[key]);
+      TOKENS[`${year}.proposed.general.${key}`] = money(R.proposed.generalMin[key]);
+    }
+  }
 }
 
 // A few tokens are words, not numbers; they come from the page's language file.
@@ -76,7 +92,7 @@ export function fillTokens(text, file = "") {
 }
 
 // Remark plugin: replaces tokens in text, link text and table cells. In translated
-// pages it also points links between our own pages (/, /cdpap/… and /pay/…) to the same language.
+// pages it also points links between our own pages (/, /cdpap/…, /pay/… and /training/…) to the same language.
 export function remarkTokens() {
   return (tree, file) => {
     const lang = langOfFile(file?.path);
@@ -84,7 +100,7 @@ export function remarkTokens() {
       if ((node.type === "text" || node.type === "inlineCode") && typeof node.value === "string") {
         node.value = fillTokens(node.value, file?.path);
       }
-      if (lang !== "en" && node.type === "link" && typeof node.url === "string" && (node.url === "/" || node.url.startsWith("/cdpap") || node.url.startsWith("/pay/"))) {
+      if (lang !== "en" && node.type === "link" && typeof node.url === "string" && (node.url === "/" || node.url.startsWith("/cdpap") || node.url.startsWith("/pay/") || node.url.startsWith("/training/"))) {
         node.url = `/${lang}${node.url}`;
       }
       if (node.children) node.children.forEach(walk);

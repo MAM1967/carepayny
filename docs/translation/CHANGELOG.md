@@ -3,6 +3,11 @@
 One line per English change that translations must follow. Newest first.
 Format: `YYYY-MM-DD · page file · what changed · languages updated (es, zh, …) or "pending"`
 
+- 2026-11-24 · pay/minimum-wage-2027.md · new sections: when the new rate starts, how much more ({{2027.raise.*}} tokens), wage parity 2027 table, proposed March 1, 2027 rates ({{2027.proposed.*}} tokens), how to check January pay; new sources (back-translation checked) · es, zh, ru
+- 2026-11-24 · training/hha-pca-cna.md, certification-lapsed.md, background-check.md, free-training.md · four new training pages (first translation, back-translation checked; background-check supervision paragraph corrected against 10 NYCRR § 402.4(b)(2)(ii) and re-checked) · es, zh, ru
+- 2026-11-24 · training/index.md · four "More:" links to the new pages; programs list no longer marked English-only; es and ru titles shortened to 70 characters or less · es, zh, ru
+- 2026-11-24 · ui calc.upcoming, calc.upcoming.link, programs.* (61 keys) · December "new rates start" note on the calculator; /training/programs/ now translated (back-translation checked) · es, zh, ru
+
 - 2026-11-24 · ui nav.menu, share.button, share.copied · new phone "Menu" button and "Share this page" button (back-translation checked: Menu / Share this page / Link copied; ru "Поделиться страницей" = "Share the page") · es, zh, ru
 
 - 2026-11-20 · cdpap/ppl-arbitration.md · opening adds "no single deadline for everyone; each PA's 30 days start when that PA selects Acknowledge" (sources rechecked; back-translation checked) · es, zh, ru

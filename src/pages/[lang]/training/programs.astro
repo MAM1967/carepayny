@@ -1,0 +1,11 @@
+---
+// /es/training/programs/, /zh/training/programs/, /ru/training/programs/: only for complete languages.
+import ProgramsPage from "../../../components/ProgramsPage.astro";
+import { publishedLocales } from "../../../i18n/index.js";
+
+export async function getStaticPaths() {
+  return (await publishedLocales()).filter((l) => l !== "en").map((lang) => ({ params: { lang } }));
+}
+const { lang } = Astro.params;
+---
+<ProgramsPage lang={lang} />

@@ -27,6 +27,7 @@ const html = (key: string, vars = {}) => fmt(strings[key], vars);
     <span class="badge" id="rulesBadge">{t("calc.badge", { date: dateFor(lang, RULES.effective) })}</span>
     <h1>{t("calc.h1")}</h1>
     <p>{t("calc.intro")}</p>
+    <p class="upcoming hidden" id="upcoming" role="note"><strong id="upcomingText"></strong> <a id="upcomingLink" href={links.minimum}>{t("calc.upcoming.link")}</a></p>
   </header>
 
   <div class="grid">
@@ -151,7 +152,7 @@ const html = (key: string, vars = {}) => fmt(strings[key], vars);
 
 <script>
 import { computeWeek } from "../lib/calc.js";
-import { RULES } from "../data/rules.js";
+import { RULES, upcomingRules } from "../data/rules.js";
 import { makeT, localDate } from "../i18n/format.js";
 import { calcEvent, sanitize, send, returningFlag } from "../lib/events.js";
 
@@ -257,6 +258,12 @@ function initStatic() {
     t("calc.rules.shifts"),
     t("calc.rules.overtime")
   ].map((x) => `<li>${x}</li>`).join("");
+  // In the month before new rates start (for example, December 2026), say so. Figures come from rules.js.
+  const next = upcomingRules(new Date());
+  if (next) {
+    $("upcomingText").textContent = t("calc.upcoming", { date: localDate(next.effective, intl), nyc: money(next.regions.nyc.hcaMin), rest: money(next.regions.rest.hcaMin) });
+    $("upcoming").classList.remove("hidden");
+  }
 }
 
 const onEdit = (e) => { if (e.isTrusted) edited = true; render(); };
