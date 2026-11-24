@@ -52,6 +52,8 @@ const graph = { "@context": "https://schema.org", "@graph": [ORGANIZATION, WEBSI
   <link rel="preload" href={bodyFont400} as="font" type="font/woff2" crossorigin>
   <link rel="preload" href={bodyFont700} as="font" type="font/woff2" crossorigin>
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.webmanifest">
   <link rel="sitemap" href="/sitemap.xml">
   {alternates.length > 1 && alternates.map((a) => <link rel="alternate" hreflang={LOCALES[a.lang].hreflang} href={new URL(a.href, SITE_URL).href}>)}
   {alternates.length > 1 && <link rel="alternate" hreflang="x-default" href={new URL(englishUrl, SITE_URL).href}>}
@@ -78,7 +80,11 @@ const graph = { "@context": "https://schema.org", "@graph": [ORGANIZATION, WEBSI
         <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><rect width="64" height="64" rx="16"/><path class="heart" d="M32 51C32 51 12 39.5 12 25.5C12 18.5 17.5 14 23.5 14C27.3 14 30.4 16 32 19C33.6 16 36.7 14 40.5 14C46.5 14 52 18.5 52 25.5C52 39.5 32 51 32 51Z"/><path class="check" d="M23.5 31L29.5 37L41 25"/></svg>
         <span class="brand-name">CarePay<span>NY</span></span>
       </a>
-      <nav class="site-nav" aria-label={t("nav.main")}>
+      <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="site-nav">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+        {t("nav.menu")}
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label={t("nav.main")}>
         <a href={localizePath(lang, "/")}>{t("nav.payCheck")}</a>
         <a href={localizePath(lang, "/pay/")}>{t("nav.payGuide")}</a>
         <a href={localizePath(lang, "/cdpap/")}>{t("nav.guide")}</a>
@@ -99,6 +105,15 @@ const graph = { "@context": "https://schema.org", "@graph": [ORGANIZATION, WEBSI
       <div class="wrap"><p class="translated-notice" set:html={html("notice.translated.html", { englishUrl, email: CONTACT_EMAIL })} /></div>
     )}
     <slot />
+    {!noindex && (
+      <div class="share-wrap">
+        <button type="button" class="ghost share-btn" hidden data-copied={t("share.copied")}>
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M12 15V4M7.5 8.5 12 4l4.5 4.5M5 13v6h14v-6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          {t("share.button")}
+        </button>
+        <span class="small share-msg" role="status"></span>
+      </div>
+    )}
   </main>
   <footer class="wrap">
     <div class="disclaimer">
@@ -110,6 +125,37 @@ const graph = { "@context": "https://schema.org", "@graph": [ORGANIZATION, WEBSI
     </div>
   </footer>
   {beacon && <script is:inline type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon={beacon}></script>}
+  <script>
+    // Phones: fold the main menu behind a "Menu" button. Without JavaScript the menu just stays open.
+    const header = document.querySelector(".site-header");
+    const toggle = header?.querySelector(".menu-toggle");
+    if (header && toggle) {
+      header.classList.add("has-menu");
+      toggle.addEventListener("click", () => {
+        const open = header.classList.toggle("menu-open");
+        toggle.setAttribute("aria-expanded", String(open));
+      });
+    }
+
+    // "Share this page": the phone's share sheet (WhatsApp, texts...) or, if there is none, copy the link.
+    // Shares only the page address. Nothing is counted or sent to us.
+    const shareBtn = document.querySelector<HTMLButtonElement>(".share-btn");
+    if (shareBtn && (navigator.share || navigator.clipboard)) {
+      const msg = document.querySelector(".share-msg");
+      const url = document.querySelector<HTMLLinkElement>('link[rel="canonical"]')?.href || location.href;
+      shareBtn.hidden = false;
+      shareBtn.addEventListener("click", async () => {
+        if (navigator.share) {
+          try { await navigator.share({ title: document.title, url }); } catch { /* closed the share sheet */ }
+          return;
+        }
+        try {
+          await navigator.clipboard.writeText(url);
+          if (msg) msg.textContent = shareBtn.dataset.copied || "";
+        } catch { /* copying blocked */ }
+      });
+    }
+  </script>
   <script>
     // Anonymous page view with a yes/no "visited before" marker (src/lib/events.js).
     // Runs only when <body data-count="1"> (site launched and counting on for this page).
