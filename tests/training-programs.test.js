@@ -1,6 +1,7 @@
 // The training program list (src/data/training-programs.js) and its outbound link counter.
 import { test } from "node:test";
 import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
 import DATA from "../src/data/training-programs.js";
 import { sanitize } from "../src/lib/events.js";
 import { onRequestGet, mapUrl, webUrl, UTM } from "../functions/go/[id].js";
@@ -79,4 +80,10 @@ test("website links get the CarePayNY tracking tags", () => {
   for (const [k, v] of Object.entries(UTM)) assert.equal(u.searchParams.get(k), v);
   assert.equal(u.searchParams.get("x"), "1");
   assert.equal(webUrl({ url: null }), null);
+});
+
+test("the programs page links straight to maps and websites, never through /go/ (no redirect pages for Google)", () => {
+  const src = readFileSync("src/components/ProgramsPage.astro", "utf8");
+  assert.ok(!/href=\{`\/go\//.test(src), "programs page still builds /go/ links");
+  assert.match(src, /href=\{mapUrl\(p\)\}/);
 });

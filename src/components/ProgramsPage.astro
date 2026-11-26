@@ -2,14 +2,15 @@
 // The list of home care aide training programs on the NYS Department of Health's approved list,
 // in any site language. Program names, addresses and place names stay as DOH wrote them (English).
 // Data: src/data/training-programs.js (built by scripts/training-programs.py). Order is neutral
-// (area, then A to Z) and never depends on payment. Map and website links go through /go/<id>
-// (functions/go/[id].js), which only redirects; taps are counted with the anonymous "out" event.
+// (area, then A to Z) and never depends on payment. Map and website links go straight to Google Maps
+// or the program's website (src/lib/program-links.js); taps are counted with the anonymous "out" event.
 import Base from "../layouts/Base.astro";
 import DATA from "../data/training-programs.js";
 import { SITE_URL, isoDate } from "../lib/seo.js";
 import { UI, t as tFor, dateFor } from "../i18n/index.js";
 import { LOCALES, DEFAULT_LOCALE, localizePath } from "../i18n/locales.js";
 import { fmt } from "../i18n/format.js";
+import { mapUrl, webUrl } from "../lib/program-links.js";
 
 interface Props { lang: string }
 const { lang } = Astro.props;
@@ -162,8 +163,8 @@ const clientText = { lang, shown: strings["programs.shown"] };
                 {p.pca && <span class="program-tags"><span class="badge">{p.hybrid.includes("PCA") ? t("programs.tag.pcaHybrid") : t("programs.tag.pca")}</span><span class="program-langs">{p.pcaLangs.map(langName).join(", ")}</span></span>}
                 <span class="program-links">
                   <a href={telHref(p.phone)} data-out="tel">{p.phone}</a>
-                  <a href={`/go/${p.id}?to=map`} data-out="map" rel="nofollow noopener" target="_blank">{t("programs.link.map")}</a>
-                  {p.url && <a href={`/go/${p.id}?to=web`} data-out="web" rel="nofollow noopener" target="_blank">{t("programs.link.web")}</a>}
+                  <a href={mapUrl(p)} data-out="map" rel="nofollow noopener" target="_blank">{t("programs.link.map")}</a>
+                  {webUrl(p) && <a href={webUrl(p)} data-out="web" rel="nofollow noopener" target="_blank">{t("programs.link.web")}</a>}
                 </span>
               </li>
             ))}
