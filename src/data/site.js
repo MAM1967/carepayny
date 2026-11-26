@@ -21,4 +21,4 @@ export const POSTAL_ADDRESS = "";
 export const OPERATOR = "MAM Growth Strategies LLC";
 
 // Date the Terms and Privacy pages last changed. Update it with every edit.
-export const LEGAL_UPDATED = "November 24, 2026";
+export const LEGAL_UPDATED = "November 26, 2026";

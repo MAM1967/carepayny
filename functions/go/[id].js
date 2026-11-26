@@ -1,28 +1,16 @@
-// GET /go/<program id>?to=map|web — outbound links from /training/programs/.
-// Only redirects. Every outbound program link goes through here, so a link can later be
-// changed in one place (for example, to add a tracking tag) without editing pages.
+// GET /go/<program id>?to=map|web — old outbound links from /training/programs/.
+// Only redirects, with a noindex header. Since Nov 26, 2026 the programs page links straight to the
+// map or website (src/lib/program-links.js), so search engines stop finding redirecting /go/ pages.
+// This stays for /go/ links people already shared or bookmarked.
 // Taps are counted in the browser by the programs page, not here: scrapers that follow
 // links without tapping them made server-side counts useless (Nov 2026).
 import DATA from "../../src/data/training-programs.js";
 
 const BY_ID = new Map(DATA.programs.map((p) => [p.id, p]));
+import { mapUrl, webUrl, UTM } from "../../src/lib/program-links.js";
+export { mapUrl, webUrl, UTM };
+
 const DIRECTORY = "/training/programs/";
-// Tags added to program websites so the program can see visits from CarePayNY in its own analytics.
-export const UTM = { utm_source: "carepayny", utm_medium: "referral", utm_campaign: "training-directory" };
-
-export function mapUrl(p) {
-  const q = `${p.name}, ${p.address}, ${p.city}, NY ${p.zip}`;
-  return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(q)}`;
-}
-
-export function webUrl(p) {
-  if (!p.url) return null;
-  try {
-    const u = new URL(p.url);
-    for (const [k, v] of Object.entries(UTM)) u.searchParams.set(k, v);
-    return u.toString();
-  } catch { return null; }
-}
 
 const redirect = (to) => new Response(null, {
   status: 302,
